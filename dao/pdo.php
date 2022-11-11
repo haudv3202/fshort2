@@ -11,7 +11,6 @@ function getConnect(){
     return $connect;
 }
 
-
 //truy vấn nhiều bản ghi
 function pdo_query_all($query){
     // select * from users where email = ? or role_id = ?

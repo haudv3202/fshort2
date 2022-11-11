@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/google/vendor/composer" />
+      <path value="$PROJECT_DIR$/google/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/google/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/google/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/google/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/google/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/google/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/google/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/google/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/google/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/google/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/google/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/google/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/google/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/google/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/google/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/google/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/google/vendor/guzzlehttp/psr7" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/google/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+</project>
