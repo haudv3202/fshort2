@@ -36,7 +36,15 @@
                             <div class="alert alert-danger" role="alert">
                                 <?php echo $_SESSION['error_token'] ;?>
                             </div>
-                        <?php    }
+                        <?php
+                            unset($_SESSION['error_token']);
+                        }else if(isset($_SESSION['error'])) {?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $_SESSION['error'] ;?>
+                            </div>
+                            <?php
+                            unset($_SESSION['error']);
+                        }
                         ?>
 
                         <form action="" method="post">

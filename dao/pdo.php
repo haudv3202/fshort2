@@ -41,11 +41,13 @@ function pdo_query_one($query){
     $stmt = $conn->prepare($query);
     $stmt->execute($args);
     $data = $stmt->fetch();
-    if(count($data) > 0){
-        return $data;
+    if(!empty($data)){
+        if(count($data) > 0){
+            return $data;
+        }
+    }else {
+        return null;
     }
-    return null;
-
 }
 
 
