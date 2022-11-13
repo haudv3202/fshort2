@@ -16,6 +16,9 @@
     <!-- Style -->
     <link rel="stylesheet" href="../public/register_login/css/style.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+
 </head>
 <body>
 <div class="content">
@@ -63,12 +66,18 @@
                             <!--                            </div>-->
 
                             <input type="submit" name="sub_log" value="Log In" class="btn text-white btn-block btn-primary">
-
+                            <div class="text-right my-4 h5" >
+                                <a href="?fogotPass" >Fogot Password</a>
+                                <a href="?register" >Register</a>
+                            </div>
                             <span class="d-block text-left my-4 text-muted"> or sign in with</span>
 
                             <div class="social-login">
                                 <a href="<?php echo $client->createAuthUrl()?>" class="google">
                                     <span class="icon-google mr-3"></span>
+                                </a>
+                                <a href="index.php" class="facebook">
+                                    <span class="bi bi-house-door-fill mr-3"></span>
                                 </a>
                             </div>
                         </form>

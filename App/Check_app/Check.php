@@ -13,6 +13,15 @@ function tailcheck($email){
     }
 }
 
+function checkData($name_post){
+    $namePost = $_POST["{$name_post}"] == "" ? "" : $_POST["{$name_post}"];
+    if($namePost ==  ""){
+        return false;
+    }else {
+        return $namePost;
+    }
+}
+
 function route($path){
     header('location:'.$path);
 }
@@ -26,4 +35,5 @@ function checkToken($token){
         return false;
     }
 }
+
 ?>

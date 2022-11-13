@@ -14,4 +14,14 @@ function check_token($token){
     return pdo_query_one($sql);
 }
 
+function checkEmail($email){
+    $sql = "SELECT id,email FROM account WHERE email = '$email'";
+    return pdo_query_one($sql);
+}
+
+function fogotAccount($id,$password){
+    $sql = "UPDATE account SET password = '$password' WHERE id = '$id'";
+    return pdo_query_one($sql);
+}
+
 ?>

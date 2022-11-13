@@ -20,22 +20,26 @@
             $password = checkData('password');
             $ress_pass = checkData('re_pass');
 
-            if(tailcheck($email) ==  true){
-                if($password == $ress_pass){
-                    $token = substr(rand(0,999999),0,6);
-                    $title = "Token password";
-                    $content = "Your verification code is " . "<b>$token</b>";
-                    $result_mail = send_token($title,$content, $email);
-                    $_SESSION['token_check'] = $token;
-                    $_SESSION['username'] =  $username;
-                    $_SESSION['email'] = $email;
-                    $_SESSION['password'] = $password;
-                    $_SESSION['status'] = 1;
-                    route('?token');
+            if($username != false && $email != false && $password != false && $ress_pass != false  ){
+                if(tailcheck($email) ==  true){
+                    if($password == $ress_pass){
+                        $token = substr(rand(0,999999),0,6);
+                        $title = "Token password";
+                        $content = "Your verification code is " . "<b>$token</b>";
+                        $result_mail = send_token($title,$content, $email);
+                        $_SESSION['token_check'] = $token;
+                        $_SESSION['username'] =  $username;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['password'] = $password;
+                        $_SESSION['status'] = 1;
+                        route('?token');
+                    }
+                }else {
+                    $_SESSION["error"] = 'Bạn không có quyền truy cập';
+                    route('?register');
                 }
             }else {
-                $_SESSION["error"] = 'Bạn không có quyền truy cập';
-                route('?register');
+                $_SESSION["error"] = 'Không để trống';
             }
         }
         include_once('./resgister_login/v_register.php');
@@ -97,9 +101,16 @@
         if(isset($_POST["submit_account"])){
             $pass = checkData('new_pass');
             $ress_pass = checkData('ress_pass');
-            if($pass == $ress_pass){
-                $result = add_account($_SESSION['userinfo']['full_name'],$_SESSION['userinfo']['email'],md5($pass),$_SESSION['userinfo']['token_user']);
-                route('?login');
+            if(isset($_SESSION['email_fogot'])){
+                if($pass == $ress_pass){
+                    $result = fogotAccount($_SESSION['id_fogot'],md5($pass));
+                    route('?login');
+                }
+            }else {
+                if($pass == $ress_pass){
+                    $result = add_account($_SESSION['userinfo']['full_name'],$_SESSION['userinfo']['email'],md5($pass),$_SESSION['userinfo']['token_user']);
+                    route('?login');
+                }
             }
         }
         include_once('./resgister_login/v_change_password.php');
@@ -114,18 +125,52 @@
         if(isset($_POST['sub_log'])){
             $email = checkData('em_log');
             $password = checkData('pass_log');
-
-            if(!empty($email) || $password){
-                $data = check_account($email,md5($password));
-                if(isset($data)){
-                    route('index.php');
-                }else {
-                    $_SESSION["error_account"] = 'Sai mật khẩu hoặc email';
-                    route('?login');
+            if($email != false && $password != false){
+                if(!empty($email) || $password){
+                    $data = check_account($email,md5($password));
+                    if(isset($data)){
+                        route('index.php');
+                    }else {
+                        $_SESSION["error_account"] = 'Sai mật khẩu hoặc email';
+                        route('?login');
+                    }
                 }
+            }else{
+                $_SESSION["error_account"] = 'Phải điền tất cả các trường';
             }
+
         }
         include_once('./resgister_login/v_login.php');
+    }else if(isset($_GET['fogotPass'])){
+        require_once ("../mail/SendMail.php");
+        if(isset($_SESSION["error_forgot"])){
+            $error = $_SESSION["error_forgot"];
+            echo "<script>alert('$error')</script>";
+            unset($_SESSION['error_forgot']);
+        }
+        if(isset($_POST['email_submit'])){
+            $email = checkData('email_fogot');
+//            print_r();
+//            die();
+            if($email != false){
+                if(!empty(checkEmail($email))){
+                    $token = substr(rand(0,999999),0,6);
+                    $title = "Token password";
+                    $content = "Your verification code is " . "<b>$token</b>";
+                    $result_mail = send_token($title,$content,$email);
+                    $_SESSION['userinfo']['token_check'] = $token;
+                    $_SESSION['status'] = 1;
+                    $_SESSION['id_fogot'] = checkEmail($email)['id'];
+                    $_SESSION['email_fogot'] = checkEmail($email)['email'];
+                    route('?token');
+                }else {
+                    $_SESSION["error_forgot"] = 'Email không tồn tại';
+                }
+            }else{
+                $_SESSION["error_forgot"] = 'Phải điền tất cả các trường';
+            }
+        }
+        include_once('./resgister_login/v_fogot_password.php');
     }else{
         $VIEW_NAME = 'trang-chu.php';
         include_once './layout.php';

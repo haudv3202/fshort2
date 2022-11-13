@@ -6,10 +6,7 @@ function dd(){
     var_dump($args);
 }
 
-function checkData($name_post){
-    $namePost = $_POST["{$name_post}"] == "" ? "" : $_POST["{$name_post}"];
-    return $namePost;
-}
+
 
 
 
