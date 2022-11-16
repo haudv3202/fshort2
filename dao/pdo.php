@@ -11,7 +11,6 @@ function getConnect(){
     return $connect;
 }
 
-
 //truy vấn nhiều bản ghi
 function pdo_query_all($query){
     // select * from users where email = ? or role_id = ?
@@ -42,11 +41,13 @@ function pdo_query_one($query){
     $stmt = $conn->prepare($query);
     $stmt->execute($args);
     $data = $stmt->fetch();
-    if(count($data) > 0){
-        return $data;
+    if(!empty($data)){
+        if(count($data) > 0){
+            return $data;
+        }
+    }else {
+        return null;
     }
-    return null;
-
 }
 
 
