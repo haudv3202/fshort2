@@ -21,6 +21,42 @@ function checkEmail($email){
 
 function fogotAccount($id,$password){
     $sql = "UPDATE account SET password = '$password' WHERE id = '$id'";
+    return pdo_execute($sql);
+}
+
+function Allaccount(){
+    $sql = "SELECT * FROM account";
+    return pdo_query_all($sql);
+}
+
+function AllBand(){
+    $sql = "SELECT * FROM account WHERE level_ban > 0";
+    return pdo_query_all($sql);
+}
+
+function Band($id,$role_band){
+    $sql = "UPDATE account SET level_ban = '$role_band' WHERE id = '$id'";
+    return pdo_execute($sql);
+}
+
+function searchEmail($email){
+//    $sql = "SELECT * FROM account WHERE name LIKE '%$name%' OR email LIKE '%$email%'";
+    $sql = "SELECT * FROM account WHERE email LIKE '%$email%'";
+    return pdo_query_all($sql);
+}
+
+function account_one_row($id){
+    $sql = "SELECT * FROM account WHERE id = '$id'";
+    return pdo_query_one($sql);
+}
+
+function searchName($name){
+    $sql = "SELECT * FROM account WHERE name LIKE '%$name%'";
+    return pdo_query_all($sql);
+}
+
+function nameUser($id){
+    $sql = "SELECT name FROM account WHERE id = '$id'";
     return pdo_query_one($sql);
 }
 
