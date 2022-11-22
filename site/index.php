@@ -129,7 +129,13 @@
                 if(!empty($email) || $password){
                     $data = check_account($email,md5($password));
                     if(isset($data)){
-                        route('index.php');
+                        if($data['role_id'] == 2 || $data['role_id'] == 3){
+                            $_SESSION['info'] = $data;
+                            route('../admin/');
+                        }else {
+                            $_SESSION['info'] = $data;
+                            route('index.php');
+                        }
                     }else {
                         $_SESSION["error_account"] = 'Sai mật khẩu hoặc email';
                         route('?login');
