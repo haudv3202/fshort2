@@ -235,10 +235,18 @@ if(isset($_SESSION['success'])){
 </div>
 
 <!-- ================upload file thôi, đừng động nhé-============ -->
+
+
+<!--</form>-->
 <div class="post_content_video_news">
     <div class="postvideo">
         <div class="testposstvd">
-            <form onsubmit="submitForm(event)">
+<!--            <form action="" method="post" enctype="multipart/form-data">-->
+<!--                <input type="text" name="title1">-->
+<!--                <input type="file" name="video" id="">-->
+<!--                <input type="submit" name="sb-vd" value="gui">-->
+<!--            </form>-->
+            <form   action="" method="post" enctype="multipart/form-data">
                 <h3>Create post</h3>
                 <div class="logo_name_videos">
                     <img
@@ -259,14 +267,15 @@ if(isset($_SESSION['success'])){
                         id="valueInput"
                         class="post_content_video"
                         placeholder="What's on your mind ?"
+                        name="title"
                 />
                 <br>
                 <p class="btn_add_video">  Add Video <i class="bx bxs-hand-up"></i></p>
 
                 <span
-                ><input type="file" id="valuefile" class="post_videos"
+                ><input type="file" name="videohome" id="valuefile" class="post_videos"
                     /></span>
-                <button type="submit">Đăng</button>
+                <button type="submit" onclick="test()" name="sb_video">Đăng</button>
                 <i onclick="postvd()" class="bx bxs-x-circle"></i>
             </form>
         </div>
