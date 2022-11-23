@@ -37,8 +37,8 @@ if(isset($_SESSION['info'])){
         }
 
 
-            $VIEW_NAME = 'v_accouns.php';
-            include_once './templates/layout.php';
+        $VIEW_NAME = 'v_accouns.php';
+        include_once './templates/layout.php';
 
 
 
@@ -56,9 +56,9 @@ if(isset($_SESSION['info'])){
             }
         }
 
-            $allData = AllBand();
-            $VIEW_NAME = 'v_band.php';
-            include_once './templates/layout.php';
+        $allData = AllBand();
+        $VIEW_NAME = 'v_band.php';
+        include_once './templates/layout.php';
 
     }else if(isset($_GET['posts'])){
 
@@ -101,6 +101,12 @@ if(isset($_SESSION['info'])){
         $allRows = allRoles();
         $linkCDN = viewCssCDN('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">');
 //        $linkCSS = viewCSS('./public/src/styles/');
+        if(!empty($_POST['item_id'])){
+            $id = $_POST['item_id'];
+            $role_id = $_POST['status_role'];
+            setRoleId($id,$role_id);
+        }
+
         $VIEW_NAME = 'v_employee_account.php';
         include_once './templates/layout.php';
     }else {
