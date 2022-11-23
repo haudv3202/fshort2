@@ -60,4 +60,9 @@ function nameUser($id){
     return pdo_query_one($sql);
 }
 
+function setRoleId($id,$role_id){
+    $sql = "UPDATE account SET role_id = '$role_id' WHERE id = '$id'";
+    return pdo_execute($sql);
+}
+
 ?>

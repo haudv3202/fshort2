@@ -13,7 +13,7 @@ if(isset($_GET['tao-moi'])){
     $id = $_GET['id'];
     product_remove_by_cate_id($id);
     category_remove_by_id($id);
-    header('location: ' . ADMIN_BASE . '/danh-muc/index.php');
+    header('location: ' . ADMIN_BASE . '/danh-muc/video.php');
     die;
     // thực hiện hành động xoá
     // điều hướng về danh sách

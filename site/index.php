@@ -11,6 +11,17 @@
     }else if(isset($_GET['danh-muc'])){
         $VIEW_NAME = 'danh-muc.php';
         include_once './layout.php';
+    }else if(isset($_GET['news'])){
+        include_once '../cloudinary/video.php';
+//        echo "<pre>";
+//        print_r($data['url']);
+//        if(isset($_POST['sb-vd'])){
+//            echo 'news video';
+//        }else {
+//            echo "img news";
+//        }
+        $VIEW_NAME = 'news.php';
+        include_once './layout.php';
     }else if(isset($_GET['register'])){
         require_once ('../google/config.php');
         require_once ("../mail/SendMail.php");

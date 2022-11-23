@@ -1,7 +1,7 @@
-<form action="" method="post" enctype="multipart/form-data">
-    <input type="file" name="image_1" id="">
-    <input type="submit" name="submit" value="Update">
-</form>
+<!--<form action="" method="post" enctype="multipart/form-data">-->
+<!--    <input type="file" name="image_1" id="">-->
+<!--    <input type="submit" name="submit" value="Update">-->
+<!--</form>-->
 
 <?php 
 
@@ -18,8 +18,8 @@ Configuration::instance([
 
     //   (new UploadApi())->upload($path); img
     $path =  null;
-    if(isset($_POST['submit'])){
-        $a = $_FILES['image_1'];
+    if(isset($_POST['sb-vd'])){
+        $a = $_FILES['video'];
         $path = $a['tmp_name'];
         $namevideo = $a['name'];
         $name = explode(".",$namevideo);

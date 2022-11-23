@@ -1,5 +1,4 @@
-home
-<!--video-->
+news
 <form action=""  method="POST" enctype="multipart/form-data">
     <input type="file" name="video">
     <input type="text" name="text-vd" >
@@ -11,5 +10,3 @@ home
     <input type="text" name="text-img" id="">
     <input type="submit" name="sb-img"  value="gửi ảnh">
 </form>
-
-
