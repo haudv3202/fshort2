@@ -28,7 +28,7 @@
                             <p>Hoàng Minh Anh</p> 
                         </div>
                         <div id="icon_setting">
-                            <a  href="">Đăng xuất</a>
+                            <a class="" href="">Đăng xuất</a>
                         </div>
                     </div>
                     <div id="fix_setting_id" class="row-center-setting">

@@ -34,7 +34,7 @@
             </div>
             <div class="edit_profile_user_detail">
               <button class="btn_edit_user">
-                <i class="bx bxs-edit"></i><span>Sửa hồ sơ</span>
+                <i class="bx bxs-edit"></i><a href="?setting">Sửa hồ sơ</a>
               </button>
             </div>
           </div>

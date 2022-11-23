@@ -3403,30 +3403,32 @@ body::-webkit-scrollbar {
 /* css by minh anh  */
 
 .content_setting {
+  overflow-y: auto;
+  /* width: 728px; */
   background-color: #ffffff;
   border-radius: 5px;
   padding: 16px 0;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
   bottom: 0;
   top: 0;
   padding: 16px 24px 24px;
   height: calc(100vh - 60px);
-  overflow: auto;
 }
-.content_setting::-webkit-scrollbar {
+.container_setting .content_setting::-webkit-scrollbar {
   width: 0 !important;
   display: none;
 }
- .content_setting::-webkit-scrollbar {
+.container_setting .content_setting::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
-.content_setting::-webkit-scrollbar-track {
+.profile_detail_mini_right .comment_user_video_mini::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
 /* Handle */
-.container_setting .content_setting::-webkit-scrollbar-thumb {
+.profile_detail_mini_right .comment_user_video_mini::-webkit-scrollbar-thumb {
   background: #414141;
   border-radius: 10px;
 }
@@ -3479,7 +3481,6 @@ body::-webkit-scrollbar {
   color: rgba(22, 24, 35, 0.5);
   margin-right: 84px;
   margin-left: 16px;
-  margin-bottom: 10px;
 }
 #icon_setting {
   align-items: center;
@@ -3488,7 +3489,6 @@ body::-webkit-scrollbar {
 }
 #icon_setting a {
   text-decoration: none;
-  color: black;
 }
 .on-off-setting {
   width: 44px;

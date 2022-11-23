@@ -29,6 +29,9 @@
     }else if(isset($_GET['detail_posts_other'])){
         $VIEW_NAME = 'detail_posts_user_other.php';
         include_once './layout.php';
+    }else if(isset($_GET['setting'])){
+        $VIEW_NAME = 'setting.php';
+        include_once './layout.php';
     }else if(isset($_GET['register'])){
         require_once ('../google/config.php');
         require_once ("../mail/SendMail.php");

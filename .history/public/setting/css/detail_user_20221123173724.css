@@ -3479,7 +3479,6 @@ body::-webkit-scrollbar {
   color: rgba(22, 24, 35, 0.5);
   margin-right: 84px;
   margin-left: 16px;
-  margin-bottom: 10px;
 }
 #icon_setting {
   align-items: center;
@@ -3488,7 +3487,7 @@ body::-webkit-scrollbar {
 }
 #icon_setting a {
   text-decoration: none;
-  color: black;
+  co
 }
 .on-off-setting {
   width: 44px;

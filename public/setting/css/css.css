@@ -1,14 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "IBM Plex Sans", sans-serif;
-}
-body{
-    background-color: #f4f4f4;
-    
-}
-.container_setting{
+
+.container{
     width: 1100px;
     margin: auto;
     display: flex;
@@ -36,7 +27,7 @@ body{
     font-weight: 600;
     text-decoration: none;
 }
-i{
+.menu a i{
     margin-right: 12px;
 }
 .content{
@@ -65,24 +56,38 @@ i{
     align-items: center;
     padding-right: 15px;
 }
- h2{
+.content_row h2{
     font-size: 24px;
     line-height: 32px;
     margin: 0 8px 20px;
     font-weight: 700;
 }
-h4{
+.content_row h4{
     font-size: 18px;
     line-height: 24px;
     font-weight: 600;
     color: #161823;
     margin: 16px 16px 12px;
 }
-p{
+.row-center p{
     font-size: 16px;
     line-height: 22px;
     color: #161823;
     margin: 0 16px 10px;
+}
+.center_title p{
+    font-size: 16px;
+    line-height: 24px;
+    
+    color: #161823;
+    margin: 16px 16px 12px;
+}
+.center_title h4{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #161823;
+    margin: 16px 16px 12px;
 }
 .conten-info{
     font-size: 12px;
@@ -91,7 +96,6 @@ p{
     margin-right: 84px;
     margin-left: 16px;
 }
-/* icon */
 #icon{
     align-items: center;
     display: flex;
@@ -128,16 +132,10 @@ p{
 .on-off:checked:before{
     left: 50%;
 }
-
-
-
-
-/* hr */
 hr{
     margin-top: 16px;
 
 }
-/* fix */
 .fix{
     margin: 16px 16px 0px;
 }
@@ -148,16 +146,11 @@ hr{
     align-items: center;
     padding-right: 15px;
 }
-
-/* menu_center */
 .menu_center{
     background-color: rgba(22, 24, 35, 0.03);
     display: none;
     overflow: hidden;
 }
-
-
-/* menu-con */
 .menu_center #fix{
     height: 40px;
 }

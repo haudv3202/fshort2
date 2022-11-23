@@ -1,6 +1,7 @@
 
      <div class="detail_user">
         <div class="box">   
+         
                 <div class="row-centerfix">
                 <div class="content_row_setting">
                     <h2>Quản lý tài khoản</h2>
@@ -28,7 +29,7 @@
                             <p>Hoàng Minh Anh</p> 
                         </div>
                         <div id="icon_setting">
-                            <a  href="">Đăng xuất</a>
+                            <a class="text_red_st" href="">Đăng xuất</a>
                         </div>
                     </div>
                     <div id="fix_setting_id" class="row-center-setting">
@@ -158,4 +159,4 @@
   
 
         </div>
-</div>
+        </

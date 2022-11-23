@@ -218,7 +218,7 @@
                             <a href="?detail_video"> <i class="bx bx-user"></i> View Profile</a>
                         </p>
                         <p>
-                            <a href=""> <i class="bx bxs-cog"></i> Settings</a>
+                            <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
                         </p>
                         <p>
                             <a href=""> <i class="bx bx-log-in"></i> Log Out</a>
