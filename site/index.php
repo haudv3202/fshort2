@@ -3,12 +3,10 @@
     require_once '../global.php';
     require_once '../dao/pdo.php';
     require_once '../dao/account.php';
+    require_once '../dao/posts_dao.php';
     require_once '../App/Check_app/Check.php';
-
-    if(isset($_GET['home'])){
-        $VIEW_NAME = 'home.php';
-        include_once './layout.php';
-    }else if(isset($_GET['about'])){
+    $arr_post = null;
+    if(isset($_GET['about'])){
         $VIEW_NAME = 'about.php';
         include_once './layout.php';
     }else if(isset($_GET['chat'])){
@@ -95,7 +93,7 @@
                     if(login_google($google_account_info['id'])['role_id'] == 2 || login_google($google_account_info['id'])['role_id'] == 3){
                         route('../admin');
                     }else {
-                        route('index.php');
+                        route('video.php');
                     }
                 }
             }else {
@@ -203,7 +201,17 @@
         }
         include_once('./resgister_login/v_fogot_password.php');
     }else{
+        include_once('../cloudinary/video.php');
+        $arr_post = all_post();
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }
 ?>
+
+<script>
+    var abcxyz = <?php echo json_encode($arr_post)?>;
+        console.log(abcxyz);
+</script>
+
+
+
