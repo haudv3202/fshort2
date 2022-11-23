@@ -92,7 +92,11 @@
                     }
                     route('?token');
                 }else {
-                    route('index.php');
+                    if(login_google($google_account_info['id'])['role_id'] == 2 || login_google($google_account_info['id'])['role_id'] == 3){
+                        route('../admin');
+                    }else {
+                        route('index.php');
+                    }
                 }
             }else {
                 $_SESSION["error"] = 'Bạn không có quyền truy cập';
