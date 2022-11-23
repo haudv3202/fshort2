@@ -1,1 +1,0 @@
-<h2>Trang danh mục sản phẩm</h2>

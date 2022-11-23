@@ -5,11 +5,29 @@
     require_once '../dao/account.php';
     require_once '../App/Check_app/Check.php';
 
-    if(isset($_GET['chi-tiet'])){
-        $VIEW_NAME = 'chi-tiet.php';
+    if(isset($_GET['home'])){
+        $VIEW_NAME = 'home.php';
         include_once './layout.php';
-    }else if(isset($_GET['danh-muc'])){
-        $VIEW_NAME = 'danh-muc.php';
+    }else if(isset($_GET['about'])){
+        $VIEW_NAME = 'about.php';
+        include_once './layout.php';
+    }else if(isset($_GET['chat'])){
+        $VIEW_NAME = 'chat.php';
+        include_once './layout.php';
+    }else if(isset($_GET['car'])){
+        $VIEW_NAME = 'car.php';
+        include_once './layout.php';
+    }else if(isset($_GET['detail_video'])){
+        $VIEW_NAME = 'detail_video.php';
+        include_once './layout.php';
+    }else if(isset($_GET['detail_posts'])){
+        $VIEW_NAME = 'detail_posts.php';
+        include_once './layout.php';
+    }else if(isset($_GET['detail_video_other'])){
+        $VIEW_NAME = 'detail_video_user_other.php';
+        include_once './layout.php';
+    }else if(isset($_GET['detail_posts_other'])){
+        $VIEW_NAME = 'detail_posts_user_other.php';
         include_once './layout.php';
     }else if(isset($_GET['register'])){
         require_once ('../google/config.php');
@@ -172,9 +190,7 @@
         }
         include_once('./resgister_login/v_fogot_password.php');
     }else{
-        $VIEW_NAME = 'trang-chu.php';
+        $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }
-
-
 ?>
