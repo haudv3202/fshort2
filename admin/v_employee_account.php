@@ -12,9 +12,9 @@
     </thead>
     <tbody>
     <?php foreach($allData as $value){
-        if($value['role_id'] == 1 || $value['role_id'] == 2 ){
+        if(($value['role_id'] == 1 || $value['role_id'] == 2) && totalBan($value['id'])['totalband'] == 0 ){
             ?>
-            <tr id="row-<?php echo $value['id']?>">
+            <tr>
                 <td>
                     <div >
                         <div class="ms-3">
@@ -33,9 +33,9 @@
                 <td><?php echo $value['login_views']?></td>
                 <td>
                     <?php if($value['role_id'] == 1){?>
-                    <button type="button" class="btn btn-success">Cài nhân viên</button>
+                        <button type="button" id_user="<?php echo $value['id']?>" role_id="2" onclick="permission(<?php echo $value['id']?>)" class="btn btn-success btn-status<?php echo $value['id']?>">Cài nhân viên</button>
                     <?php }else {?>
-                        <button type="button" class="btn btn-danger">Bỏ set</button>
+                        <button type="button" id_user="<?php echo $value['id']?>" role_id="1" onclick="permission(<?php echo $value['id']?>)" class="btn btn-danger btn-status<?php echo $value['id']?>">Bỏ set</button>
                     <?php }?>
                 </td>
             </tr>
