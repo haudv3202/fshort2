@@ -18,11 +18,11 @@
     <!-- CSS -->
     <?php echo !empty($linkCSS) ? $linkCSS : ""; ?>
 
-    <link rel="stylesheet" type="text/css" href="./public/src/styles/core.css">
-    <link rel="stylesheet" type="text/css" href="./public/src/styles/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="./public/vendors/styles/core.css">
+    <link rel="stylesheet" type="text/css" href="./public/vendors/styles/icon-font.min.css">
     <link rel="stylesheet" type="text/css" href="./public/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="./public/src/plugins/datatables/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="./public/src/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="./public/vendors/styles/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
