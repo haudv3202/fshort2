@@ -42,6 +42,13 @@
                             </div>
                             <?php
                             unset($_SESSION['success']);
+                        }else if(isset($_SESSION['error_admin'])){
+                            ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $_SESSION['error_admin'];?>
+                            </div>
+                        <?php
+                            unset($_SESSION['error_admin']);
                         }
                             ?>
 

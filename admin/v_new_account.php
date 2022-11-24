@@ -13,9 +13,10 @@
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Chức vụ</label>
-        <select class="form-select" aria-label="Default select example">
-            <option value="2">Nhân viên</option>
-            <option value="3">Quản trị</option>
+        <select class="form-select">
+            <?php foreach ($roleAll as $value){?>
+            <option value="<?php echo $value['id']?>"><?php echo $value['name']?></option>
+            <?php }?>
         </select>
     </div>
 
