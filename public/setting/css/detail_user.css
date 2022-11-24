@@ -45,33 +45,33 @@ body::-webkit-scrollbar {
 .logo span:nth-child(1) {
   text-shadow: 1px 1.5px 0px red, -1px -1.5px 0px aqua;
   left: 0;
-  animation: span1 0.3s linear 1;
+  animation: span1 1.5s linear 1;
 }
 
 .logo span:nth-child(2) {
   left: 25px;
-  animation: span2 0.4s linear 1;
+  animation: span2 1.6s linear 1;
 }
 
 .logo span:nth-child(3) {
   left: 50px;
-  animation: span3 0.5s linear 1;
+  animation: span3 1.7s linear 1;
 }
 
 .logo span:nth-child(4) {
   left: 75px;
   text-shadow: 1px 1.5px 0px red, -1px -1.5px 0px aqua;
-  animation: span4 0.6s linear 1;
+  animation: span4 1.8s linear 1;
 }
 
 .logo span:nth-child(5) {
   left: 100px;
-  animation: span5 0.7s linear 1;
+  animation: span5 1.9s linear 1;
 }
 
 .logo span:nth-child(6) {
   left: 120px;
-  animation: span6 0.8s 1;
+  animation: span6 2s 1;
 }
 
 @keyframes span1 {
@@ -1622,11 +1622,11 @@ body::-webkit-scrollbar {
     rgb(235, 235, 235),
     rgb(168, 167, 167)
   );
-  border-radius: 8px;
+  border-radius: 50%;
   width: 100%;
 }
 .list_option_left_root .user_left img {
-  width: 20px;
+  width: 36px;
   border-radius: 50%;
   margin: 0 20px;
 }
@@ -1721,12 +1721,6 @@ body::-webkit-scrollbar {
     rgb(168, 167, 167)
   );
   border-radius: 8px;
-}
-.list_option_left_root .user_left img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin: 0 20px;
 }
 .list_option_left_root .user_left span {
   color: rgb(94, 94, 94);
@@ -2933,11 +2927,7 @@ body::-webkit-scrollbar {
   border-radius: 8px;
   width: 100%;
 }
-.list_option_left_root .user_left img {
-  width: 20px;
-  border-radius: 50%;
-  margin: 0 20px;
-}
+
 .list_option_left_root .user_left span {
   color: rgb(94, 94, 94);
 }
