@@ -5,7 +5,7 @@
     require_once '../dao/account.php';
     require_once '../dao/posts_dao.php';
     require_once '../App/Check_app/Check.php';
-    $arr_post = null;
+    $posts = [] ;
     if(isset($_GET['about'])){
         $VIEW_NAME = 'about.php';
         include_once './layout.php';
@@ -202,11 +202,24 @@
         include_once('./resgister_login/v_fogot_password.php');
     }else{
         include_once('../cloudinary/video.php');
-        $arr_post = all_post();
+        $arr = all_post();
+        foreach ($arr as $value){
+//            nameUser($value['id_account'])[0]
+            $posts[] = [
+                'name' => nameUser($value['id_account'])[0],
+                'time_create' => $value['create_date'],
+                'title' => $value['title'],
+                'link' => $value['link'],
+                'views' => $value['views'],
+                'likes' => $value['likes']];
+        }
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }
+    require_once('../public/setting/js/home.php');
 ?>
+
+
 
 
 
