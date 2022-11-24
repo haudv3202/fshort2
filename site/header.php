@@ -84,8 +84,7 @@
                         <h3>Tất cả</h3>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -94,8 +93,7 @@
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -105,8 +103,7 @@
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -116,8 +113,7 @@
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -127,8 +123,7 @@
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -137,8 +132,7 @@
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -156,48 +150,42 @@
                         <h3>Trước đó</h3>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>#ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/313347520_1069237247086088_8949704310338389666_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=A3jjfTUob10AX9YPMpc&_nc_ht=scontent.fhan2-2.fna&oh=00_AfBbsbglIWgfjyCT33Mqd97TPTbLmCNN3k3bgeWtpx5tzA&oe=6375D837"
-                                alt=""
+                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
@@ -209,7 +197,7 @@
                         <span>ManhCuong</span>
                         <img
                             onclick="IMG()"
-                            src="../public/setting/img/cuongdo.jpg"
+                            src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             alt=""
                         />
                     </div>
@@ -272,7 +260,7 @@
                 <div class="user_left">
                     <span>ManhCuong</span>
                     <img
-                        src="src/img/cuongdo.jpg"
+                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                         alt=""
                     />
                 </div>

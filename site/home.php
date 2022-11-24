@@ -28,9 +28,7 @@ if(isset($_SESSION['success'])){
         <div class="user_and_friend">
             <div class="user_login_right_root">
                 <div class="logo_name_videos">
-                    <img
-                            src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                            alt=""
+                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                     />
                     <div class="text_logo_name_videos">
                         <p>
@@ -52,9 +50,7 @@ if(isset($_SESSION['success'])){
             <!-- ==============list friends -->
             <div class="list_friends_root_right">
                 <div class="logo_name_videos">
-                    <img
-                            src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                            alt=""
+                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                     />
                     <div class="text_logo_name_videos">
                         <p>
@@ -76,9 +72,7 @@ if(isset($_SESSION['success'])){
             </div>
             <div class="list_friends_root_right">
                 <div class="logo_name_videos">
-                    <img
-                            src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                            alt=""
+                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                     />
                     <div class="text_logo_name_videos">
                         <p>
@@ -96,9 +90,7 @@ if(isset($_SESSION['success'])){
             </div>
             <div class="list_friends_root_right">
                 <div class="logo_name_videos">
-                    <img
-                            src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                            alt=""
+                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                     />
                     <div class="text_logo_name_videos">
                         <p>
@@ -116,9 +108,7 @@ if(isset($_SESSION['success'])){
             </div>
             <div class="list_friends_root_right">
                 <div class="logo_name_videos">
-                    <img
-                            src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                            alt=""
+                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                     />
                     <div class="text_logo_name_videos">
                         <p>
@@ -249,9 +239,7 @@ if(isset($_SESSION['success'])){
             <form   action="" method="post" enctype="multipart/form-data">
                 <h3>Create post</h3>
                 <div class="logo_name_videos">
-                    <img
-                            src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                            alt=""
+                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                     />
                     <div class="text_logo_name_videos">
                         <p>
@@ -286,9 +274,7 @@ if(isset($_SESSION['success'])){
             <form onsubmit="submitFormNews(event)">
                 <h3>Create post</h3>
                 <div class="logo_name_videos">
-                    <img
-                            src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                            alt=""
+                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                     />
                     <div class="text_logo_name_videos">
                         <p>

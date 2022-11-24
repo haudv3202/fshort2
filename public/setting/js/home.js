@@ -130,7 +130,7 @@ function Video_home(datavideohome) {
                    <div class="logo_name_videos_btn">
     
             <div class="logo_name_videos">
-                <img src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
+                <img src="../setting/img/anh-gai-xinh-Viet-Name.jpg"
                     alt="">
                 <div class="text_logo_name_videos">
                     <p><a href="?detail_video_other">Cristiano Ronaldo</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
@@ -165,7 +165,7 @@ function Video_home(datavideohome) {
     </div>
     <div class="comment_video_page">
         <div class="info_comment_video_page">
-            <img src="https://scontent.fhan3-2.fna.fbcdn.net/v/t1.15752-9/312107847_1196560997565728_8179199288161697139_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_ohc=JeuULjMZGO0AX_mqE76&_nc_ht=scontent.fhan3-2.fna&oh=03_AdRTjsav79Kck9Dmss5USy6wW1qmbTPVLgNGhvfDS4rknw&oe=6396E68D" alt="">
+            <img src="./img/Anh-gai-xinh-Viet-Nam.jpg" alt="">
             <div class="text_logo_name_videos">
                 <p>Hậu ăn cứt<i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                 <p>November 4 at 3:28 AM ~ <i class='bx bx-world'></i></p>
@@ -199,8 +199,7 @@ function About_home(dataabouthome) {
     <div class="logo_name_videos_btn">
 
         <div class="logo_name_videos">
-            <img src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                alt="">
+            <img src="./img/anh-gai-xinh-Viet-Nam.jpg"                alt="">
             <div class="text_logo_name_videos">
                 <p><a href="?detail_video_other">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                 <p>November 4 at 3:28 AM ~ <i class='bx bx-world'></i></p>
@@ -234,7 +233,7 @@ function About_home(dataabouthome) {
     </div>
     <div class="comment_video_page">
         <div class="info_comment_video_page">
-            <img src="https://scontent.fhan3-2.fna.fbcdn.net/v/t1.15752-9/312107847_1196560997565728_8179199288161697139_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_ohc=JeuULjMZGO0AX_mqE76&_nc_ht=scontent.fhan3-2.fna&oh=03_AdRTjsav79Kck9Dmss5USy6wW1qmbTPVLgNGhvfDS4rknw&oe=6396E68D" alt="">
+            <img src="./img/anh-gai-xinh-Viet-Nam.jpg" alt="">
             <div class="text_logo_name_videos">
                 <p>Hậu ăn cứt<i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                 <p>November 4 at 3:28 AM ~ <i class='bx bx-world'></i></p>
