@@ -117,6 +117,18 @@ if(isset($_SESSION['info'])){
             $name = $_POST['nameAc'];
             $email = $_POST['EmailAc'];
             $pass = rand_string(8);
+            if(tailcheck($email) ==  true){
+                $title = "Create account successfully!";
+                $content = "Xin chào ". $name ." Chúc mừng bạn tạo tài khoản thành công với mật khẩu là " . "<b>$pass</b> vui lòng đăng nhập để đổi mật khẩu <a href='http://localhost/fshort2/site/index.php?login'>Đăng nhập</a>";
+                $result_mail = send_token($title,$content,$email);
+                new_account($name,$email,md5($pass));
+                $_SESSION['new_succesfully'] = "Tạo tài khoản thành công !" ;
+                route('?newAccount');
+            }else {
+                $_SESSION['error_new'] = "Sai định dạng email" ;
+                route('?newAccount');
+            }
+
         }
         $VIEW_NAME = 'v_new_account.php';
         include_once './templates/layout.php';

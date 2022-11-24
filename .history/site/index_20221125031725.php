@@ -204,6 +204,7 @@
         include_once('./resgister_login/v_fogot_password.php');
     }else{
         include_once('../cloudinary/video.php');
+=======
         $arr = all_post();
         foreach ($arr as $value){
 //            nameUser($value['id_account'])[0]
@@ -215,6 +216,7 @@
                 'views' => $value['views'],
                 'likes' => $value['likes']];
         }
+>>>>>>> 1319b0f282b3ef7486367f606fe4f5aab8827ccd
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }

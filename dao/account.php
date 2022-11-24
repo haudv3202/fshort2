@@ -8,6 +8,11 @@ function add_account($name,$email,$password,$token_user){
     return pdo_execute($sql);
 }
 
+function new_account($name,$email,$password){
+    $sql = "INSERT INTO account (id,name, email, password, create_date,token_user) VALUES (NULL,'$name','$email','$password',CURRENT_TIMESTAMP(),NULL)";
+    return pdo_execute($sql);
+}
+
 function check_account($email,$password){
     $sql = "SELECT * FROM account WHERE email = ? AND password = ?";
     return pdo_query_one($sql,$email,$password);

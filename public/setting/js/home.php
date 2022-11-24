@@ -1,65 +1,6 @@
-const array_user_detail = [
-  {
-    id: 1,
-    name: "Remember Me",
-    singer: "Sơn Tùng MTP",
-    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667831209/Fshort/video/vai%20%C3%A1o%20ph%C3%B9%20sa%20lofi%20-%20Finished%20rendering.mp4",
-  },
-  {
-    id: 2,
-    name: "Waiting For You",
-    singer: "Mono",
-    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667831607/Fshort/video/Sinh%20vi%C3%AAn%20Cao%20%C4%91%E1%BA%B3ng%20FPT%20Polytechnic.mp4",
-  },
-  {
-    id: 3,
-    name: "Một Năm Mới Bình An",
-    singer: "Sơn Tùng MTP",
-    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1669098799/Fshort/video/New%20Document%20-%20Google%20Chrome%202022-11-08%2023-34-14.mp4",
-  },
-  {
-    id: 4,
-    name: "Mantoiyat",
-    singer: "Raftaar x Nawazuddin Siddiqui",
-    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667919971/Fshort/video/test.mp4",
-  },
-  {
-    id: 5,
-    name: "Aage Chal",
-    singer: "Raftaar",
-    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667810750/Fshort/video/Tr%E1%BA%A3%20l%E1%BB%9Di%20%40DJ%20Ji.mp4",
-  },
-  {
-    id: 6,
-    name: "Damn",
-    singer: "Raftaar x kr$na",
-    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667831607/Fshort/video/Sinh%20vi%C3%AAn%20Cao%20%C4%91%E1%BA%B3ng%20FPT%20Polytechnic.mp4",
-  },
-  {
-    id: 7,
-    name: "Feeling You",
-    singer: "Raftaar x Harjas",
-    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667919971/Fshort/video/test.mp4",
-  },
-  {
-    id: 8,
-    name: "Remember Me",
-    singer: "Sơn Tùng MTP",
-    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667810750/Fshort/video/Tr%E1%BA%A3%20l%E1%BB%9Di%20%40DJ%20Ji.mp4",
-  },
-  {
-    id: 9,
-    name: "Waiting For You",
-    singer: "Mono",
-    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1669098799/Fshort/video/New%20Document%20-%20Google%20Chrome%202022-11-08%2023-34-14.mp4",
-  },
-  {
-    id: 10,
-    name: "Một Năm Mới Bình An",
-    singer: "Sơn Tùng MTP",
-    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667831209/Fshort/video/vai%20%C3%A1o%20ph%C3%B9%20sa%20lofi%20-%20Finished%20rendering.mp4",
-  },
-];
+<script>
+const array_user_detail = <?php echo json_encode($posts); ?>;
+console.log(array_user_detail);
 
 const array_posts_user = [
   {
@@ -133,8 +74,8 @@ function Video_home(datavideohome) {
                 <img src="../setting/img/anh-gai-xinh-Viet-Name.jpg"
                     alt="">
                 <div class="text_logo_name_videos">
-                    <p><a href="?detail_video_other">Cristiano Ronaldo</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
-                    <p>November 4 at 3:28 AM ~ <i class='bx bx-world'></i></p>
+                    <p><a href="?detail_video_other">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                    <p>${item.time_create} <i class='bx bx-world'></i></p>
                 </div>
             </div>
     
@@ -918,4 +859,5 @@ if (coll) {
     });
   }
 }
-// end minh anh js 
+// end minh anh js
+</script>

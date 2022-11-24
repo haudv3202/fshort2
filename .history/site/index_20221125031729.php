@@ -215,6 +215,7 @@
                 'views' => $value['views'],
                 'likes' => $value['likes']];
         }
+>>>>>>> 1319b0f282b3ef7486367f606fe4f5aab8827ccd
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }

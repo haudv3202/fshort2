@@ -1,3 +1,12 @@
+<?php if(isset($_SESSION['new_succesfully'])){?>
+    <div class="alert alert-success" role="alert">
+        <?php echo $_SESSION['new_succesfully']?>
+    </div>
+<?php unset($_SESSION['new_succesfully']); }else if(isset($_SESSION['error_new'])){?>
+    <div class="alert alert-danger" role="alert">
+        <?php echo $_SESSION['error_new']?>
+    </div>
+<?php unset($_SESSION['error_new']); }?>
 <form class="my-4" action="" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>

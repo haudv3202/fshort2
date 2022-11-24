@@ -16,8 +16,12 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../public/setting/css/detail_user.css" />
+=======
+    <link rel="stylesheet" href="../public/setting/css/detail_user.css?v=<?php echo time(); ?>" />
+>>>>>>> 1319b0f282b3ef7486367f606fe4f5aab8827ccd
 </head>
 
 <body>
