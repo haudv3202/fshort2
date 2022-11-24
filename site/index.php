@@ -208,10 +208,5 @@
     }
 ?>
 
-<script>
-    var abcxyz = <?php echo json_encode($arr_post)?>;
-        console.log(abcxyz);
-</script>
-
 
 
