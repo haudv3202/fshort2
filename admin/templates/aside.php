@@ -27,7 +27,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="dropdown-toggle no-arrow text-decoration-none">
+                    <a href="?newAccount" class="dropdown-toggle no-arrow text-decoration-none">
                         <span class="micon dw dw-diagram"></span><span class="mtext">Tạo tài khoản</span>
                     </a>
                 </li>
