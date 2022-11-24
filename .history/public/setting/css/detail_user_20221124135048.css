@@ -3078,8 +3078,8 @@ body::-webkit-scrollbar {
 }
 .input_comment {
   padding: 10px 20px;
-  margin: 50px 0px 30px 0px;
-  border: 2px solid #c6c6c6;
+  margin: 50px 0px 20px 0px;
+  border: 2px solid gray;
   border-radius: 10px;
 }
 .value_comment_user {

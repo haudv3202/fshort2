@@ -302,5 +302,3 @@
         </div>
       </div>
     </div>
-
-    <div id="product_sp">

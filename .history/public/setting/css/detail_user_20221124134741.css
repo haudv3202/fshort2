@@ -3078,9 +3078,8 @@ body::-webkit-scrollbar {
 }
 .input_comment {
   padding: 10px 20px;
-  margin: 50px 0px 30px 0px;
-  border: 2px solid #c6c6c6;
-  border-radius: 10px;
+  margin : 50px;
+  border: 1px solid gray;
 }
 .value_comment_user {
   width: 80%;

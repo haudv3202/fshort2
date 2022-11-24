@@ -213,7 +213,7 @@ function About_home(dataabouthome) {
         </div>
     </div>
     <div class="links_video">
-        <span onclick="showProduct()"><img src="${item.links}" width="66%" alt=""></span>
+        <span><img src="${item.links}" width="66%" alt=""></span>
     </div>
     <div class="feeling">
         <div class="icon_felling">
@@ -364,24 +364,24 @@ window.addEventListener("resize", checkScroll, false);
 //     }
 // });
 // ============== load=================//
-// window.addEventListener("load", () => {
-//   const loader = document.querySelector(".loader");
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
 
-//   loader.classList.add("loader-hidden");
+  loader.classList.add("loader-hidden");
 
-//   loader.addEventListener("transitionend", () => {
+  loader.addEventListener("transitionend", () => {
 
-//     document.body.removeChild("loader");
+    document.body.removeChild("loader");
 
-//   })
-// });
+  })
+});
 
 
 
-// const TextLoadervd = document.getElementById("text_loader");
-// TextLoadervd.classList.add("text_loader_hidden");
-// const LogoHeader = document.getElementById("logo_loader");
-// LogoHeader.classList.add("logo_loader_hidden");
+const TextLoadervd = document.getElementById("text_loader");
+TextLoadervd.classList.add("text_loader_hidden");
+const LogoHeader = document.getElementById("logo_loader");
+LogoHeader.classList.add("logo_loader_hidden");
 
 
 

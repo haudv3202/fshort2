@@ -144,8 +144,7 @@ function Video_home(datavideohome) {
             </div>
         </div>
     <div class="links_video">
-     <span onclick="showVideo()"><video  width="50%" height="60%" preload=""  controls type="video/mp4" loop
-            src="${item.link}"></video></span>
+     <span
     </div>
     <div class="feeling">
         <div class="icon_felling">
@@ -213,7 +212,7 @@ function About_home(dataabouthome) {
         </div>
     </div>
     <div class="links_video">
-        <span onclick="showProduct()"><img src="${item.links}" width="66%" alt=""></span>
+        <img src="${item.links}" width="66%" alt="">
     </div>
     <div class="feeling">
         <div class="icon_felling">
@@ -364,24 +363,24 @@ window.addEventListener("resize", checkScroll, false);
 //     }
 // });
 // ============== load=================//
-// window.addEventListener("load", () => {
-//   const loader = document.querySelector(".loader");
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
 
-//   loader.classList.add("loader-hidden");
+  loader.classList.add("loader-hidden");
 
-//   loader.addEventListener("transitionend", () => {
+  loader.addEventListener("transitionend", () => {
 
-//     document.body.removeChild("loader");
+    document.body.removeChild("loader");
 
-//   })
-// });
+  })
+});
 
 
 
-// const TextLoadervd = document.getElementById("text_loader");
-// TextLoadervd.classList.add("text_loader_hidden");
-// const LogoHeader = document.getElementById("logo_loader");
-// LogoHeader.classList.add("logo_loader_hidden");
+const TextLoadervd = document.getElementById("text_loader");
+TextLoadervd.classList.add("text_loader_hidden");
+const LogoHeader = document.getElementById("logo_loader");
+LogoHeader.classList.add("logo_loader_hidden");
 
 
 
@@ -501,6 +500,7 @@ for (let i = 0; i < clickvideoid.length; i++) {
   clickvideoid[i].addEventListener("click", () => {
     valueviewvideo[i] = valueviewvideo[i] + 1;
     valuespan[i].innerHTML = valueviewvideo[i];
+    console.log(valueviewvideo);
   });
 }
 

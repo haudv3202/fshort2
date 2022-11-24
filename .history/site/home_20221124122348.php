@@ -323,7 +323,7 @@ if(isset($_SESSION['success'])){
         <div class="video_center">
           <span onclick="play()">
             <video  class="video_click_play"
-            src="https://res.cloudinary.com/dnbbehk5b/video/upload/v1667919971/Fshort/video/test.mp4"
+            src="../public/setting/Video/Snaptik.app_7163614237363834139.mp4"
             width="41%"
           ></video>
           </span>
