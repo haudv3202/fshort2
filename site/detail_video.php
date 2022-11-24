@@ -80,7 +80,7 @@
         <div class="video_center">
           <span onclick="play()">
             <video  class="video_click_play"
-            src="../public/setting/Video/Snaptik.app_7163614237363834139.mp4"
+            src="https://res.cloudinary.com/dnbbehk5b/video/upload/v1667919971/Fshort/video/test.mp4"
             width="41%"
           ></video>
           </span>
@@ -113,7 +113,7 @@
         <div class="avatar_name_icon_video_mini_right">
           <div class="avatar_mini_video">
             <img
-              src="../public/setting/img/4k-programming-hello-world-text-tpiuwb02b1g2u7kb.jpg"
+              src="https://res.cloudinary.com/dnbbehk5b/video/upload/v1667919971/Fshort/video/test.mp4"
               alt=""
             />
           </div>
