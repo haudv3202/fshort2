@@ -1797,7 +1797,7 @@ body::-webkit-scrollbar {
   color: white;
   cursor: pointer;
 }
-.btn_edit_user a{
+.btn_edit_user a {
   text-decoration: none;
   color: white;
 }
@@ -3393,14 +3393,14 @@ body::-webkit-scrollbar {
 
 @keyframes loading {
   from {
-    transform: rotate(0turn);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(1turn);
+    transform: rotate(390deg);
   }
 }
 
-/* css by minh anh  */
+/* css by minh anh hải sửa lại gần hết */
 
 .content_setting {
   background-color: #ffffff;
@@ -3416,16 +3416,12 @@ body::-webkit-scrollbar {
   width: 0 !important;
   display: none;
 }
- .content_setting::-webkit-scrollbar {
+.content_setting::-webkit-scrollbar {
   width: 10px;
 }
-
-/* Track */
 .content_setting::-webkit-scrollbar-track {
   border-radius: 10px;
 }
-
-/* Handle */
 .container_setting .content_setting::-webkit-scrollbar-thumb {
   background: #414141;
   border-radius: 10px;
@@ -3454,7 +3450,7 @@ body::-webkit-scrollbar {
   margin: 16px 16px 12px;
 }
 .row-center-setting p {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 22px;
   color: #161823;
   margin: 0 16px 10px;
@@ -3473,14 +3469,6 @@ body::-webkit-scrollbar {
   color: #161823;
   margin: 16px 16px 12px;
 }
-.conten-info-setting {
-  font-size: 12px;
-  line-height: 15px;
-  color: rgba(22, 24, 35, 0.5);
-  margin-right: 84px;
-  margin-left: 16px;
-  margin-bottom: 10px;
-}
 #icon_setting {
   align-items: center;
   display: flex;
@@ -3490,40 +3478,8 @@ body::-webkit-scrollbar {
   text-decoration: none;
   color: black;
 }
-.on-off-setting {
-  width: 44px;
-  height: 24px;
-  appearance: none;
-  background: rgba(22, 24, 35, 0.12);
-  border-radius: 100px;
-  position: relative;
-  top: 0;
-  left: 0;
-  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.on-off-setting:before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  left: 2px;
-  top: 8%;
-  border-radius: 100%;
-  background: #fff;
-  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-}
-.on-off-setting:checked {
-  background: rgb(11, 224, 155);
-}
-.on-off-setting:checked:before {
-  left: 50%;
-}
-
-.container_setting hr {
+hr {
   margin-top: 16px;
-}
-.fix_setting {
-  margin: 16px 16px 0px;
 }
 #fix_setting_id {
   margin: 16px 0 12px;
@@ -3532,11 +3488,82 @@ body::-webkit-scrollbar {
   align-items: center;
   padding-right: 15px;
 }
-.menu_center_setting {
-  background-color: rgba(22, 24, 35, 0.03);
-  display: none;
-  overflow: hidden;
-}
-.menu_center_setting #fix_setting_id {
+#fix_setting_id {
   height: 40px;
 }
+.form_setting_account {
+  margin-left: 10px;
+}
+.content_row_setting .form_setting_account .setting_account p,
+.setting_account_name_role p,
+.setting_account_pass_button p {
+  font-size: 22px;
+  margin: 3px 0;
+}
+.content_row_setting .form_setting_account .setting_account input,
+.setting_account_name_role input,
+.setting_account_pass_button input {
+  font-size: 17px;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #c6c6c6;
+  padding: 10px 0px 10px 20px;
+  margin: 10px 0 5px 0;
+}
+.content_row_setting .form_setting_account .setting_account {
+  margin: 20px 0;
+}
+.setting_account_name_role {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.setting_account_pass_button {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.setting_account_pass_button .button_edit_setting button {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 44px;
+  min-height: 25px;
+  min-width: 0;
+  outline: none;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 50%;
+  will-change: transform;
+}
+
+.setting_account_pass_button .button_edit_setting button:disabled {
+  pointer-events: none;
+}
+
+.setting_account_pass_button .button_edit_setting button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.setting_account_pass_button .button_edit_setting button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+/* end css by minh anh hải sửa lại gần hết */

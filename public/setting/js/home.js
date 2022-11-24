@@ -3,61 +3,61 @@ const array_user_detail = [
     id: 1,
     name: "Remember Me",
     singer: "Sơn Tùng MTP",
-    link: "../public/setting/Video/Snaptik.app_7162392369164307739.mp4",
+    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667831209/Fshort/video/vai%20%C3%A1o%20ph%C3%B9%20sa%20lofi%20-%20Finished%20rendering.mp4",
   },
   {
     id: 2,
     name: "Waiting For You",
     singer: "Mono",
-    link: "../public/setting/Video/Snaptik.app_7154930992099364142.mp4",
+    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667831607/Fshort/video/Sinh%20vi%C3%AAn%20Cao%20%C4%91%E1%BA%B3ng%20FPT%20Polytechnic.mp4",
   },
   {
     id: 3,
     name: "Một Năm Mới Bình An",
     singer: "Sơn Tùng MTP",
-    link: "../public/setting/Video/Snaptik.app_7163515308651679003.mp4",
+    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1669098799/Fshort/video/New%20Document%20-%20Google%20Chrome%202022-11-08%2023-34-14.mp4",
   },
   {
     id: 4,
     name: "Mantoiyat",
     singer: "Raftaar x Nawazuddin Siddiqui",
-    link: "../public/setting/Video/Snaptik.app_7163609441110084891.mp4",
+    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667919971/Fshort/video/test.mp4",
   },
   {
     id: 5,
     name: "Aage Chal",
     singer: "Raftaar",
-    link: "../public/setting/Video/Snaptik.app_7163614237363834139.mp4",
+    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667810750/Fshort/video/Tr%E1%BA%A3%20l%E1%BB%9Di%20%40DJ%20Ji.mp4",
   },
   {
     id: 6,
     name: "Damn",
     singer: "Raftaar x kr$na",
-    link: "../public/setting/Video/Snaptik.app_7163609441110084891.mp4",
+    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667831607/Fshort/video/Sinh%20vi%C3%AAn%20Cao%20%C4%91%E1%BA%B3ng%20FPT%20Polytechnic.mp4",
   },
   {
     id: 7,
     name: "Feeling You",
     singer: "Raftaar x Harjas",
-    link: "../public/setting/Video/Snaptik.app_7163853757409676571.mp4",
+    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667919971/Fshort/video/test.mp4",
   },
   {
     id: 8,
     name: "Remember Me",
     singer: "Sơn Tùng MTP",
-    link: "../public/setting/Video/Snaptik.app_7162392369164307739.mp4",
+    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667810750/Fshort/video/Tr%E1%BA%A3%20l%E1%BB%9Di%20%40DJ%20Ji.mp4",
   },
   {
     id: 9,
     name: "Waiting For You",
     singer: "Mono",
-    link: "../public/setting/Video/Snaptik.app_7154930992099364142.mp4",
+    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1669098799/Fshort/video/New%20Document%20-%20Google%20Chrome%202022-11-08%2023-34-14.mp4",
   },
   {
     id: 10,
     name: "Một Năm Mới Bình An",
     singer: "Sơn Tùng MTP",
-    link: "../public/setting/Video/Snaptik.app_7163515308651679003.mp4",
+    link: "https://res.cloudinary.com/dnbbehk5b/video/upload/v1667831209/Fshort/video/vai%20%C3%A1o%20ph%C3%B9%20sa%20lofi%20-%20Finished%20rendering.mp4",
   },
 ];
 
@@ -75,42 +75,48 @@ const array_posts_user = [
     name: "Đặng văn Hậu",
     title:
       "Tôi thường không lên kế hoạch tỉ mỉ cho tất cả mọi thứ ngay từ bước ban đầu. Trái lại, tôi sẽ vừa làm vừa quan sát và rút kinh nghiệm.",
-    links: "../public/setting/img/4k-programming-hello-world-text-tpiuwb02b1g2u7kb.jpg",
+    links:
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830813/oqsyfsnqipojkqpvqkda.png",
   },
   {
     id: 3,
     name: "Lê Sỹ Hải",
     title:
       "Bãi cát vàng còn mang sương ẩm nhè nhẹ lướt qua gót chân, tiếng sóng biển xì xào từ phía xa vẫy gọi. Tôi bước từng bước xuống dòng nước mát, cảm nhận ánh sáng bình minh chạm tới gót sen.",
-    links: "../public/setting/img/5557920_CV.jpg",
+    links:
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830785/drorblngurit435c7lxa.png",
   },
   {
     id: 4,
-    name: "Đậu Phương Thảo",
+    name: "Bùi Mạnh Cưởng",
     title:
       "Một chút nhớ dệt nên tương tư, một chút thương dệt nên vương vấn, đám mây trắng dệt nên bầu trời xanh.",
-    links: "../public/setting/img/bi-quyet-chup-anh-hoang-hon-dep-Binhminhdigital(1).jpg",
+    links:
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830873/iyofin4rdu1pdk2vorl3.jpg",
   },
   {
     id: 5,
     name: "Nguyễn Viết Trọng",
     title:
       "Thà yêu một người bình thường để cảm thấy mình đặc biệt còn hơn là yêu một người quá đặc biệt để rồi bị cho là tầm thường.",
-    links: "../public/setting/img/chup-anh-hoang-hon-bang-smartphone_800x450.jpg",
+    links:
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830813/oqsyfsnqipojkqpvqkda.png",
   },
   {
     id: 6,
     name: "Bùi Mạnh Cường",
     title:
       "Trong nhiếp ảnh có những khoảnh khắc tinh tế đến mức nó trở nên thật hơn cả bản thân thực tại đó",
-    links: "../public/setting/img/images.jpg",
+    links:
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830785/drorblngurit435c7lxa.png",
   },
   {
     id: 7,
     name: "Lê Sỹ Hải",
     title:
       "Vũ trụ này cân bằng đến nỗi chỉ việc bạn có một vấn đề cũng đã là dấu hiệu cho thấy có một giải pháp.",
-    links: "../public/setting/img/Ngan-Ha25.jpg",
+    links:
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830873/iyofin4rdu1pdk2vorl3.jpg",
   },
 ];
 
