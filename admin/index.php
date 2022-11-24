@@ -109,6 +109,17 @@ if(isset($_SESSION['info'])){
 
         $VIEW_NAME = 'v_employee_account.php';
         include_once './templates/layout.php';
+    }else if(isset($_GET['newAccount'])){
+        $linkCDN = viewCssCDN('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">');
+        require_once ("../mail/SendMail.php");
+        if(isset($_POST['submit_account'])){
+            $name = $_POST['nameAc'];
+            $email = $_POST['EmailAc'];
+            $pass = rand_string(8);
+            echo $pass;
+        }
+        $VIEW_NAME = 'v_new_account.php';
+        include_once './templates/layout.php';
     }else {
         $VIEW_NAME = 'v_home.php';
         include_once './templates/layout.php';
