@@ -206,6 +206,6 @@
             </div>
             <span id="close" class=""><i onclick="showProduct()" class="bx bx-x text-white fw-normal fs-1 position-absolute top-0 right-0"></i></span>
        </div>
-</div>
-    </div>
+       </div>
+  </div>
 

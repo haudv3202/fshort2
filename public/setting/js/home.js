@@ -144,8 +144,8 @@ function Video_home(datavideohome) {
             </div>
         </div>
     <div class="links_video">
-        <video width="50%" height="60%" preload=""  controls type="video/mp4" loop
-            src="${item.link}"></video>
+     <span onclick="showVideo()"><video  width="50%" height="60%" preload=""  controls type="video/mp4" loop
+            src="${item.link}"></video></span>
     </div>
     <div class="feeling">
         <div class="icon_felling">
@@ -212,7 +212,9 @@ function About_home(dataabouthome) {
         </div>
     </div>
     <div class="links_video">
+        <span onclick="showProduct()">
         <img src="${item.links}" width="66%" alt="">
+        </span>
     </div>
     <div class="feeling">
         <div class="icon_felling">
@@ -500,7 +502,6 @@ for (let i = 0; i < clickvideoid.length; i++) {
   clickvideoid[i].addEventListener("click", () => {
     valueviewvideo[i] = valueviewvideo[i] + 1;
     valuespan[i].innerHTML = valueviewvideo[i];
-    console.log(valueviewvideo);
   });
 }
 

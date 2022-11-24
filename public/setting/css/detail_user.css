@@ -3067,10 +3067,10 @@ body::-webkit-scrollbar {
   margin: 0 10px 0 0;
 }
 .input_comment {
-  border-top: 1px solid gray;
   padding: 10px 20px;
-  margin-top: 50px;
-  border-bottom: 1px solid gray;
+  margin: 50px 0px 30px 0px;
+  border: 2px solid #c6c6c6;
+  border-radius: 10px;
 }
 .value_comment_user {
   width: 80%;
