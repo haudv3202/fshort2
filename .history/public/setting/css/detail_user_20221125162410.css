@@ -1366,6 +1366,30 @@ body::-webkit-scrollbar {
   border-radius: 50%;
 }
 
+.profile_detail_mini_right .comment_user_video_mini {
+  margin-top: 20px;
+  height: 365px;
+  overflow: auto;
+  border-top: 1px solid #c6c6c636;
+  border-bottom: 1px solid #c6c6c636;
+}
+.profile_detail_mini_right .comment_user_video_mini::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.profile_detail_mini_right .comment_user_video_mini::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+.profile_detail_mini_right .comment_user_video_mini::-webkit-scrollbar-thumb {
+  background: #414141;
+  border-radius: 10px;
+}
+.user_comment_video_mini {
+  margin: 30px 0px 0px 40px;
+}
 .user_comment_video_mini .avatar_name_icon_mini_video {
   display: flex;
   align-items: center;
@@ -1391,12 +1415,9 @@ body::-webkit-scrollbar {
   padding-right: 10px;
   font-style: italic;
 }
-.name_comment_mini_video
+name_comment_mini_video
   .time_cmt_vdmini {
-  font-size: 13px;
-  font-style: italic;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #c6c6c6;
+  font-size: 14px;
 }
 .user_comment_video_mini .comment_video_mini i {
   font-size: 23px;
@@ -2541,7 +2562,7 @@ body::-webkit-scrollbar {
 
 .profile_detail_mini_right .comment_user_video_mini {
   margin-top: 20px;
-  height: 410px;
+  height: 365px;
   overflow: auto;
   border-top: 1px solid #c6c6c636;
   border-bottom: 1px solid #c6c6c636;

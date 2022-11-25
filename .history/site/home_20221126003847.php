@@ -418,7 +418,7 @@ if(isset($_SESSION['success'])){
 
             <?php
                         }
-                ?>
+                        ?>
         </div>
         <form method="POST" id="comment_form" class="input_button_comment_video_mini">
           <input class="ip_cmt_mini" oninput="checkcomment_ipvideo()" type="text"placeholder="Thêm bình luận...">
