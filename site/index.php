@@ -203,15 +203,19 @@
     }else{
         include_once('../cloudinary/video.php');
         $arr = all_post();
+//        echo "<pre>";
+//        $a = account_one_row(13)['link_avatar'];
+//        print_r($a);
+//        die();
         foreach ($arr as $value){
-//            nameUser($value['id_account'])[0]
             $posts[] = [
-                'name' => nameUser($value['id_account'])[0],
+                'name' => account_one_row($value['id_account'])['name'],
                 'time_create' => $value['create_date'],
                 'title' => $value['title'],
                 'link' => $value['link'],
                 'views' => $value['views'],
-                'likes' => $value['likes']];
+                'likes' => $value['likes'],
+                'avatar' => account_one_row(13)['link_avatar']];
         }
         $VIEW_NAME = 'home.php';
         include_once './layout.php';

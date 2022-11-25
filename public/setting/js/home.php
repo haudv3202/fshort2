@@ -71,7 +71,7 @@ function Video_home(datavideohome) {
                    <div class="logo_name_videos_btn">
     
             <div class="logo_name_videos">
-                <img src="../setting/img/anh-gai-xinh-Viet-Name.jpg"
+                <img src="${item.avatar}"
                     alt="">
                 <div class="text_logo_name_videos">
                     <p><a href="?detail_video_other">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
