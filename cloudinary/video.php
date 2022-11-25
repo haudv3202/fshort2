@@ -16,8 +16,12 @@ Configuration::instance([
     'url' => [
       'secure' => true]]);
 
-    //   (new UploadApi())->upload($path); img
-    $path =  null;
+//        $path =   $_FILES['image_1']['tmp_name'];
+//        $name = $_FILES['image_1']['name'];
+//
+//       (new UploadApi())->upload($path,[
+//           'public_id' => 'Fshort/avatar/'. $name
+//       ]);
     if(isset($_POST['sb_video'])){
         $a = $_FILES['videohome'];
         $title = $_POST['title'];
@@ -25,14 +29,12 @@ Configuration::instance([
             $namevideo = $a['name'];
             $name = explode(".",$namevideo);
             $data = (new UploadApi())->upload($path, [
-                    'resource_type' => 'video',
-                    'public_id' => 'Fshort/video/' . $name[0],
-                    'chunk_size' => 6000000,
-                    'eager' => [
-                        ['width' => 720, 'height' => 1280, 'crop' => 'pad'],
-                        ['width' => 160, 'height' => 100, 'crop' => 'crop', 'gravity' => 'south']],
-                    'eager_async' => true,
-                    'eager_notification_url' => 'https://mysite.example.com/notify_endpoint']
+                'resource_type' => 'video',
+                'public_id' => 'Fshort/video/' . $name[0],
+                'chunk_size' => 6000000,
+                'eager' => [
+                    ['width' => 720, 'height' => 1280, 'crop' => 'pad'],
+                    ['width' => 160, 'height' => 100, 'crop' => 'crop', 'gravity' => 'south']]]
             );
             echo $title;
             echo $data['url'];
