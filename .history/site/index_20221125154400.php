@@ -19,7 +19,6 @@
                 'views' => $value['views'],
                 'likes' => $value['likes']];
         }
-        
     if(isset($_GET['about'])){
         $VIEW_NAME = 'about.php';
         include_once './layout.php';
@@ -215,7 +214,6 @@
         }
         include_once('./resgister_login/v_fogot_password.php');
     }else{
-        $allcmt = Load_allcmt();
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }

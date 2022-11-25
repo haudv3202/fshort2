@@ -342,7 +342,7 @@ if(isset($_SESSION['success'])){
         <div class="avatar_name_icon_video_mini_right">
           <div class="avatar_mini_video">
             <img
-              src="https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366476/Fshort/image_post/hd-wallpaper-3625405_1920_uldxjo.jpg"
+              src="../public/setting/img/4k-programming-hello-world-text-tpiuwb02b1g2u7kb.jpg"
               alt=""
             />
           </div>
@@ -402,16 +402,16 @@ if(isset($_SESSION['success'])){
             <div class="user_comment_video_mini">
               <div class="avatar_name_icon_mini_video">
                 <div class="avatar_mini_video">
-                  <img src="https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366476/Fshort/image_post/1582719_l54ptb.jpg" alt="">
+                  <img src="../public/setting/img/chup-anh-hoang-hon-bang-smartphone_800x450.jpg" alt="">
                 </div>
                 <div class="name_comment_mini_video">
                               <h4><?php  echo nameUser($value["id_account"])[0] ?></h4>
-                              <span class="time_cmt_vdmini"><?php  echo $value["create_date"]?></span>
                     </div>
               </div>
               <div class="comment_video_mini">
                <div class="text_comment_video_mini">
                  <span><?php  echo $value["content"] ?></span><br>
+                <span class="time_cmt_vdmini"><?php  echo $value["id_account"]?></span>
                </div>
               </div>
             </div>

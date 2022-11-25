@@ -71,11 +71,11 @@ function Video_home(datavideohome) {
                    <div class="logo_name_videos_btn">
     
             <div class="logo_name_videos">
-                <img src="https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366476/Fshort/image_post/alien-planet-hd-computer-7mlds37jr2v371k0_xhjorr.jpg"
+                <img src="../setting/img/anh-gai-xinh-Viet-Name.jpg"
                     alt="">
                 <div class="text_logo_name_videos">
                     <p><a href="?detail_video_other">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
-                    <p>${item.time_create} ~ <i class='bx bx-world'></i></p>
+                    <p>${item.time_create}  <i class='bx bx-world'></i></p>
                 </div>
             </div>
     

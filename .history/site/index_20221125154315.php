@@ -5,21 +5,9 @@
     require_once '../dao/account.php';
     require_once '../dao/posts_dao.php';
     require_once '../dao/comment.php';
+    // require_once '../dao/fetch_comment.php';
     require_once '../App/Check_app/Check.php';
     $posts = [] ;
-       include_once('../cloudinary/video.php');
-        $arr = all_post();
-        foreach ($arr as $value){
-//            nameUser($value['id_account'])[0]
-            $posts[] = [
-                'name' => nameUser($value['id_account'])[0],
-                'time_create' => $value['create_date'],
-                'title' => $value['title'],
-                'link' => $value['link'],
-                'views' => $value['views'],
-                'likes' => $value['likes']];
-        }
-        
     if(isset($_GET['about'])){
         $VIEW_NAME = 'about.php';
         include_once './layout.php';
@@ -215,7 +203,7 @@
         }
         include_once('./resgister_login/v_fogot_password.php');
     }else{
-        $allcmt = Load_allcmt();
+     
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }

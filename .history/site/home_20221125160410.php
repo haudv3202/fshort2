@@ -342,7 +342,7 @@ if(isset($_SESSION['success'])){
         <div class="avatar_name_icon_video_mini_right">
           <div class="avatar_mini_video">
             <img
-              src="https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366476/Fshort/image_post/hd-wallpaper-3625405_1920_uldxjo.jpg"
+              src="../public/setting/img/4k-programming-hello-world-text-tpiuwb02b1g2u7kb.jpg"
               alt=""
             />
           </div>

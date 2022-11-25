@@ -215,7 +215,7 @@
         }
         include_once('./resgister_login/v_fogot_password.php');
     }else{
-        $allcmt = Load_allcmt();
+        $allcmt =Load_allcmt()
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }
