@@ -231,11 +231,6 @@ if(isset($_SESSION['success'])){
 <div class="post_content_video_news">
     <div class="postvideo">
         <div class="testposstvd">
-<!--            <form action="" method="post" enctype="multipart/form-data">-->
-<!--                <input type="text" name="title1">-->
-<!--                <input type="file" name="video" id="">-->
-<!--                <input type="submit" name="sb-vd" value="gui">-->
-<!--            </form>-->
             <form   action="" method="post" enctype="multipart/form-data">
                 <h3>Create post</h3>
                 <div class="logo_name_videos">
@@ -249,7 +244,6 @@ if(isset($_SESSION['success'])){
                         <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
                     </div>
                 </div>
-
                 <input
                         type="text"
                         id="valueInput"

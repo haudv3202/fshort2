@@ -16,6 +16,17 @@
         $VIEW_NAME = 'car.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video'])){
+        $arr = all_post();
+        foreach ($arr as $value){
+            $posts[] = [
+                'name' => account_one_row($value['id_account'])['name'],
+                'time_create' => $value['create_date'],
+                'title' => $value['title'],
+                'link' => $value['link'],
+                'views' => $value['views'],
+                'likes' => $value['likes'],
+                'avatar' => account_one_row($value['id_account'])['link_avatar']];
+        }
         $VIEW_NAME = 'detail_video.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_posts'])){
@@ -55,8 +66,7 @@
                     }
                 }else {
                     $_SESSION["error"] = 'Bạn không có quyền truy cập';
-                    route('?register');
-                }
+                    }
             }else {
                 $_SESSION["error"] = 'Không để trống';
             }
@@ -203,19 +213,25 @@
     }else{
         include_once('../cloudinary/video.php');
         $arr = all_post();
-//        echo "<pre>";
-//        $a = account_one_row(13)['link_avatar'];
-//        print_r($a);
-//        die();
+
+//        if(isset($_POST['submit_like'])){
+//            $id_post = $_POST['id_post'];
+//            echo "<script type='text/javascript'>
+//                alert('$id_post')
+//            </script>";
+//        }
+
         foreach ($arr as $value){
             $posts[] = [
+                'id_user_log' => $_SESSION['info']['id'],
+                'id_post' => $value['id'],
                 'name' => account_one_row($value['id_account'])['name'],
                 'time_create' => $value['create_date'],
                 'title' => $value['title'],
                 'link' => $value['link'],
                 'views' => $value['views'],
                 'likes' => $value['likes'],
-                'avatar' => account_one_row(13)['link_avatar']];
+                'avatar' => account_one_row($value['id_account'])['link_avatar']];
         }
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
