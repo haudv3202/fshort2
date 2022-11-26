@@ -38,7 +38,7 @@ Configuration::instance([
             );
             echo $title;
             echo $data['url'];
-//            new_post($title,$data['url'],1,$_SESSION['info']['id']);
+            new_post($title,$data['url'],1,$_SESSION['info']['id']);
 
 
     }

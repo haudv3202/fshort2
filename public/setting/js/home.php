@@ -1,6 +1,5 @@
 <script>
 const array_user_detail = <?php echo json_encode($posts); ?>;
-console.log(array_user_detail);
 
 const array_posts_user = [
   {
@@ -85,12 +84,16 @@ function Video_home(datavideohome) {
             </div>
         </div>
     <div class="links_video">
-     <span onclick="showVideo()"><video  width="50%" height="60%" preload=""  controls type="video/mp4" loop
+     <span onclick="showVideo()"><video  width="50%" preload=""  controls type="video/mp4" loop
             src="${item.link}"></video></span>
     </div>
     <div class="feeling">
         <div class="icon_felling">
-            <i class='bx bx-heart'></i>
+<form action=""  method="POST">
+            <input type="hidden" name="id_user" value="${item.id_user_log}">
+             <input type="hidden" name="id_post" value="${item.id_post}">
+            <button type="submit" name="submit_like"><i class='bx bx-heart'></i></button>
+</form>
             <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
             <i class='bx bx-share bx-flip-horizontal'></i>
         </div>
@@ -140,7 +143,9 @@ function About_home(dataabouthome) {
     </div>
     <div class="feeling">
         <div class="icon_felling">
+<form action=""  onchange="this.form.submit()" method="POST">
             <i class='bx bx-heart'></i>
+</form>
             <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
             <i class='bx bx-share bx-flip-horizontal'></i>
         </div>
@@ -199,6 +204,7 @@ function Vieo_detail(data) {
   }
 }
 Vieo_detail(array_user_detail);
+console.log(array_user_detail);
 
 // render posts
 
