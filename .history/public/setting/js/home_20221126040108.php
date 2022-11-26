@@ -104,7 +104,7 @@ function Video_home(datavideohome) {
         <p>Tôi thật hối hận khi không biết tới dev front end Mạnh Cường sớm hơn, thật đáng tiếc huhuhu. Bởi vì anh ta
             quá là đỉnh đi mà huhuhu 😭😭😭 </p>
     </div>
-        
+      
     `;
     }
   }

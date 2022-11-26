@@ -16,42 +16,12 @@
         $VIEW_NAME = 'car.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video'])){
-           $arr = all_post();
-//        echo "<pre>";
-//        $a = account_one_row(13)['link_avatar'];
-//        print_r($a);
-//        die();
-        foreach ($arr as $value){
-            $posts[] = [
-                'name' => account_one_row($value['id_account'])['name'],
-                'time_create' => $value['create_date'],
-                'title' => $value['title'],
-                'link' => $value['link'],
-                'views' => $value['views'],
-                'likes' => $value['likes'],
-                'avatar' => account_one_row($value['id_account'])['link_avatar']];
-        }
         $VIEW_NAME = 'detail_video.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_posts'])){
         $VIEW_NAME = 'detail_posts.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video_other'])){
-           $arr = all_post();
-//        echo "<pre>";
-//        $a = account_one_row(13)['link_avatar'];
-//        print_r($a);
-//        die();
-        foreach ($arr as $value){
-            $posts[] = [
-                'name' => account_one_row($value['id_account'])['name'],
-                'time_create' => $value['create_date'],
-                'title' => $value['title'],
-                'link' => $value['link'],
-                'views' => $value['views'],
-                'likes' => $value['likes'],
-                'avatar' => account_one_row($value['id_account'])['link_avatar']];
-        }
         $VIEW_NAME = 'detail_video_user_other.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_posts_other'])){
@@ -247,7 +217,6 @@
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar']];
         }
-
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }

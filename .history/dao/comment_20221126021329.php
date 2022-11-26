@@ -19,8 +19,7 @@
     }
 
     function delete_bl($id){
-        $sql = "DELETE FROM comments WHERE id=".$id;
+        $sql = "DELETE FROM commwest WHERE id=".$id;
         pdo_execute($sql);
     }
-    
 ?>

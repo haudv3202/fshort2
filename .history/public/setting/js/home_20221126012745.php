@@ -9,7 +9,7 @@ const array_posts_user = [
     title:
       "Bình minh đó nơi chúng ta đã tựa đầu vào vai nhau/Giờ này đã trở thành hoàng hôn buông xuống hai mái đầu",
     links:
-      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366478/Fshort/image_post/4k-programming-hello-world-text-tpiuwb02b1g2u7kb_ovroa1.jpg",
+      "https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/76751495_172066153991896_1405418040618647552_n.jpg?stp=dst-jpg_p526x296&_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=QnJPIDS-aE0AX-aT29F&_nc_ht=scontent.fhan14-2.fna&oh=00_AfCUTrNAm8sxsVkkiy2bm9ce6GlZYcuzcOA6ikhMd7Sl_g&oe=63A35E18",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const array_posts_user = [
     title:
       "Tôi thường không lên kế hoạch tỉ mỉ cho tất cả mọi thứ ngay từ bước ban đầu. Trái lại, tôi sẽ vừa làm vừa quan sát và rút kinh nghiệm.",
     links:
-      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366476/Fshort/image_post/pexels-luis-del-r%C3%ADo-15286_fbhqua.jpg",
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830813/oqsyfsnqipojkqpvqkda.png",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const array_posts_user = [
     title:
       "Bãi cát vàng còn mang sương ẩm nhè nhẹ lướt qua gót chân, tiếng sóng biển xì xào từ phía xa vẫy gọi. Tôi bước từng bước xuống dòng nước mát, cảm nhận ánh sáng bình minh chạm tới gót sen.",
     links:
-      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366477/Fshort/image_post/z3848694750049_d4110b22a9054ede47f05a797f58621d_uctfu8.jpg",
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830785/drorblngurit435c7lxa.png",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const array_posts_user = [
     title:
       "Một chút nhớ dệt nên tương tư, một chút thương dệt nên vương vấn, đám mây trắng dệt nên bầu trời xanh.",
     links:
-      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366475/Fshort/image_post/314720588_5384992408296148_6359242766829522728_n_ussain.jpg",
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830873/iyofin4rdu1pdk2vorl3.jpg",
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const array_posts_user = [
     title:
       "Thà yêu một người bình thường để cảm thấy mình đặc biệt còn hơn là yêu một người quá đặc biệt để rồi bị cho là tầm thường.",
     links:
-      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366476/Fshort/image_post/alien-planet-hd-computer-7mlds37jr2v371k0_xhjorr.jpg",
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830813/oqsyfsnqipojkqpvqkda.png",
   },
   {
     id: 6,
@@ -49,7 +49,7 @@ const array_posts_user = [
     title:
       "Trong nhiếp ảnh có những khoảnh khắc tinh tế đến mức nó trở nên thật hơn cả bản thân thực tại đó",
     links:
-      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366476/Fshort/image_post/hd-wallpaper-3625405_1920_uldxjo.jpg",
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830785/drorblngurit435c7lxa.png",
   },
   {
     id: 7,
@@ -57,7 +57,7 @@ const array_posts_user = [
     title:
       "Vũ trụ này cân bằng đến nỗi chỉ việc bạn có một vấn đề cũng đã là dấu hiệu cho thấy có một giải pháp.",
     links:
-      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1669366476/Fshort/image_post/1582719_l54ptb.jpg",
+      "https://res.cloudinary.com/dnbbehk5b/image/upload/v1667830873/iyofin4rdu1pdk2vorl3.jpg",
   },
 ];
 
@@ -104,8 +104,27 @@ function Video_home(datavideohome) {
         <p>Tôi thật hối hận khi không biết tới dev front end Mạnh Cường sớm hơn, thật đáng tiếc huhuhu. Bởi vì anh ta
             quá là đỉnh đi mà huhuhu 😭😭😭 </p>
     </div>
-        
-    `;
+    <div class="comment_video_page">
+        <div class="info_comment_video_page">
+            <img src="./img/Anh-gai-xinh-Viet-Nam.jpg" alt="">
+            <div class="text_logo_name_videos">
+                <p>Hậu ăn cứt<i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                <p>November 4 at 3:28 AM ~ <i class='bx bx-world'></i></p>
+            </div>
+        </div>
+        <div class="value_comment_user">
+            <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.
+          </p>
+        </div>
+    </div>
+    <div class="input_comment">
+      <form action="">
+        <i class='bx bx-wink-smile'></i>
+        <input type="text" required  placeholder="Thêm bình luận">
+        <button type="submit"> Đăng</button>
+      </form>
+    </div>`;
     }
   }
 }
@@ -399,7 +418,6 @@ if (mini_video) {
     var videoplay = document.querySelector(".video_click_play");
     var playiconvd = document.querySelector(".icon_play_video_center");
     var videos = document.querySelector("#video_detail_mini");
-    var videohome = document.querySelector(".links_video");
     if (videos.style.display == "block") {
       videoplay.pause();
       videoplay.load();
@@ -407,7 +425,6 @@ if (mini_video) {
       videos.style.display = "none";
     } else {
       videoplay.play();
-      
       playiconvd.style.display = "none";
       videos.style.display = "block";
     }

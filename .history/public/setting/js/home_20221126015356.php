@@ -104,8 +104,27 @@ function Video_home(datavideohome) {
         <p>Tôi thật hối hận khi không biết tới dev front end Mạnh Cường sớm hơn, thật đáng tiếc huhuhu. Bởi vì anh ta
             quá là đỉnh đi mà huhuhu 😭😭😭 </p>
     </div>
-        
-    `;
+    <div class="comment_video_page">
+        <div class="info_comment_video_page">
+            <img src="./img/Anh-gai-xinh-Viet-Nam.jpg" alt="">
+            <div class="text_logo_name_videos">
+                <p>Hậu ăn cứt<i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                <p>November 4 at 3:28 AM ~ <i class='bx bx-world'></i></p>
+            </div>
+        </div>
+        <div class="value_comment_user">
+            <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.
+          </p>
+        </div>
+    </div>
+    <div class="input_comment">
+      <form action="">
+        <i class='bx bx-wink-smile'></i>
+        <input type="text" required  placeholder="Thêm bình luận">
+        <button type="submit"> Đăng</button>
+      </form>
+    </div>`;
     }
   }
 }
@@ -399,20 +418,21 @@ if (mini_video) {
     var videoplay = document.querySelector(".video_click_play");
     var playiconvd = document.querySelector(".icon_play_video_center");
     var videos = document.querySelector("#video_detail_mini");
-    var videohome = document.querySelector(".links_video");
-    if (videos.style.display == "block") {
-      videoplay.pause();
-      videoplay.load();
-      playiconvd.style.display = "block";
-      videos.style.display = "none";
-    } else {
-      videoplay.play();
-      
-      playiconvd.style.display = "none";
-      videos.style.display = "block";
+    var videohome = document.querySelector(".links_video");_
+    if (videohome.pause() && videos.style.display == "block"){    
+        videohome.pause();
+        videoplay.load();
+        videoplay.load();
+        playiconvd.style.display = "block";
+        videos.style.display = "none";
+      } else {
+        videoplay.play();
+        playiconvd.style.display = "none";
+        videos.style.display = "block";
+      }
     }
-  }
-}
+
+    }
 
 // click ++value view
 

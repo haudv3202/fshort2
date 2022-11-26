@@ -22,5 +22,4 @@
         $sql = "DELETE FROM comments WHERE id=".$id;
         pdo_execute($sql);
     }
-    
 ?>
