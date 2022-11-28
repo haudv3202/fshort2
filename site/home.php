@@ -19,10 +19,7 @@ if(isset($_SESSION['success'])){
         <div class="list_post_right">
             <p>Hôm nay có gì mới không nào!!!</p>
             <button onclick="postvd()" type="button">
-                <i class="bx bx-video-plus"></i> Post Videos
-            </button>
-            <button onclick="postnews()" type="button">
-                <i class="bx bx-plus"></i>Post News
+                <i class="bx bx-video-plus"></i> Tải lên
             </button>
         </div>
         <div class="user_and_friend">
@@ -229,8 +226,14 @@ if(isset($_SESSION['success'])){
 
 <!--</form>-->
 <div class="post_content_video_news">
+    <?php if(isset($_SESSION['info']) ){?>
     <div class="postvideo">
         <div class="testposstvd">
+            <?php if(isset($_SESSION['error_upload'])) {
+                $error = $_SESSION['error_upload'];
+                echo "<script>alert('$error')</script>'";
+                unset($_SESSION['error_upload']);
+            }?>
             <form   action="" method="post" enctype="multipart/form-data">
                 <h3>Create post</h3>
                 <div class="logo_name_videos">
@@ -244,13 +247,11 @@ if(isset($_SESSION['success'])){
                         <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
                     </div>
                 </div>
-                <input
-                        type="text"
-                        id="valueInput"
-                        class="post_content_video"
-                        placeholder="What's on your mind ?"
-                        name="title"
-                />
+
+                <div id="CustomFormPost" style="width:300px">
+                    <textarea   id="valueInput" placeholder="What's on your mind ?" name="title" ></textarea>
+                </div>
+
                 <br>
                 <p class="btn_add_video">  Add Video <i class="bx bxs-hand-up"></i></p>
 
@@ -262,40 +263,14 @@ if(isset($_SESSION['success'])){
             </form>
         </div>
     </div>
-
-    <div class="postnews">
-        <div class="testposstvd">
-            <form onsubmit="submitFormNews(event)">
-                <h3>Create post</h3>
-                <div class="logo_name_videos">
-                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
-                    />
-                    <div class="text_logo_name_videos">
-                        <p>
-                            Cristiano Ronaldo
-                            <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
-                        </p>
-                        <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                    </div>
-                </div>
-
-                <input
-                        type="text"
-                        id="valueInputNews"
-                        class="post_content_video"
-                        placeholder="What's on your mind ?"
-                />
-                <br>
-                <p class="btn_add_video">  Add Video <i class="bx bxs-hand-up"></i></p>
-
-                <span
-                ><input type="file" id="valueFileNews" class="post_videos"
-                    /></span>
-                <button type="submit">Đăng</button>
-                <i onclick="postnews()" class="bx bxs-x-circle"></i>
-            </form>
+    <?php }else{?>
+        <div class="postvideo">
+            <div class="testposstvd">
+                <i onclick="postvd()" class="bx bxs-x-circle"></i>
+                <a href="?login" style="background: #fff;padding: 50px;border-radius: 12px;text-decoration: none;color: blue;">Vui lòng đăng nhập để đăng bài</a>
+            </div>
         </div>
-    </div>
+    <?php }?>
 </div>
 
 <div id="video_detail_mini">

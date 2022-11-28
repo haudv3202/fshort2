@@ -18,6 +18,9 @@
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="../public/setting/css/detail_user.css" />
+    <link rel="stylesheet" href="../public/setting/css/emojionearea.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../public/setting/js/emojionearea.min.js"></script>
 
 </head>
 
@@ -195,11 +198,12 @@
                     </div>
                 </div>
                 <div class="img-login-header">
+                    <?php if(isset($_SESSION['info'])){?>
                     <div class="user_loginn">
-                        <span>ManhCuong</span>
+                        <span><?php echo $_SESSION['info']['name'];?></span>
                         <img
                             onclick="IMG()"
-                            src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                            src="<?php echo $_SESSION['info']['link_avatar'];?>"
                             alt=""
                         />
                     </div>
@@ -212,9 +216,12 @@
                             <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
                         </p>
                         <p>
-                            <a href=""> <i class="bx bx-log-in"></i> Log Out</a>
+                            <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
                         </p>
                     </div>
+                    <?php }else{?>
+                        <a href="?login" >Đăng nhập</a>
+                    <?php }?>
                 </div>
             </div>
         </div>
@@ -260,11 +267,13 @@
                     <span>Thông báo</span>
                 </p>
                 <div class="user_left">
-                    <span>ManhCuong</span>
+
+                        <span>ManhCuong</span>
                     <img
                     src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                         alt=""
                     />
+
                 </div>
             </div>
         </div>

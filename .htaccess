@@ -1,0 +1,1 @@
+SetEnvIfNoCase Request_URI ^ / thumb.php no-gzip -vary

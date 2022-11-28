@@ -4,9 +4,32 @@
     require_once '../dao/pdo.php';
     require_once '../dao/account.php';
     require_once '../dao/posts_dao.php';
+    require_once '../dao/comment.php';
     require_once '../App/Check_app/Check.php';
-    $posts = [] ;
+    require_once '../App/getid3/getid3.php';
+    $posts_video = [] ;
+    $posts_news = [] ;
     if(isset($_GET['about'])){
+        $arr = all_post_news();
+        include_once('../cloudinary/post.php');
+
+        $id_user = null;
+        if(!empty($_SESSION['info'])){
+            $id_user = $_SESSION['info']['id'];
+        }
+
+        foreach ($arr as $value){
+            $posts_news[] = [
+                'id_user_log' => $id_user,
+                'id_post' => $value['id'],
+                'name' => account_one_row($value['id_account'])['name'],
+                'time_create' => $value['create_date'],
+                'title' => str_replace('<br>', '<br><br>',nl2br($value['content'], FALSE)),
+                'link' => $value['link'],
+                'views' => $value['views'],
+                'likes' => $value['likes'],
+                'avatar' => account_one_row($value['id_account'])['link_avatar']];
+        }
         $VIEW_NAME = 'about.php';
         include_once './layout.php';
     }else if(isset($_GET['chat'])){
@@ -210,9 +233,13 @@
             }
         }
         include_once('./resgister_login/v_fogot_password.php');
+    }
+    else if(isset($_GET['logout'])){
+        session_unset();
+        route('?index.php');
     }else{
+        $arr = all_post_video();
         include_once('../cloudinary/video.php');
-        $arr = all_post();
 
 //        if(isset($_POST['submit_like'])){
 //            $id_post = $_POST['id_post'];
@@ -220,10 +247,24 @@
 //                alert('$id_post')
 //            </script>";
 //        }
-
+        $id_user = null;
+        if(!empty($_SESSION['info'])){
+            $id_user = $_SESSION['info']['id'];
+        }
         foreach ($arr as $value){
-            $posts[] = [
-                'id_user_log' => $_SESSION['info']['id'],
+            $comments = [];
+
+            foreach (comment_video_all($value['id']) as $value2 ){
+                $comments[] = [
+                    'name_user_comment' => account_one_row($value2['id_account'])['name'],
+                    'content' => $value2['content'],
+                    'id_post' => $value2['id_post'],
+                    'time_date' => $value2['create_date'],
+                    'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
+                    ];
+            }
+            $posts_video[] = [
+                'id_user_log' => $id_user,
                 'id_post' => $value['id'],
                 'name' => account_one_row($value['id_account'])['name'],
                 'time_create' => $value['create_date'],
@@ -231,7 +272,9 @@
                 'link' => $value['link'],
                 'views' => $value['views'],
                 'likes' => $value['likes'],
-                'avatar' => account_one_row($value['id_account'])['link_avatar']];
+                'avatar' => account_one_row($value['id_account'])['link_avatar'],
+                'comments' => $comments
+            ];
         }
         $VIEW_NAME = 'home.php';
         include_once './layout.php';

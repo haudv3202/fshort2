@@ -3026,6 +3026,10 @@ body::-webkit-scrollbar {
   font-size: 15px;
   margin-top: 20px;
 }
+
+.content_news_page{
+  padding-top:20px;
+}
 .info_comment_video_page {
   display: flex;
   align-items: center;
@@ -3169,6 +3173,9 @@ body::-webkit-scrollbar {
   font-size: 20px;
   margin-bottom: 20px;
 }
+#CustomFormPost {
+width:500px;
+}
 .postnews #valueInputNews {
   width: 350px;
   border: none;
@@ -3211,8 +3218,8 @@ body::-webkit-scrollbar {
 
 .postvideo #valuefile {
   position: absolute;
-  left: 37px;
-  top: 233px;
+  left: 20px;
+  top: 270px;
   opacity: 0;
   font-size: 22px;
   cursor: pointer;
@@ -3220,8 +3227,8 @@ body::-webkit-scrollbar {
 }
 .postnews #valueFileNews {
   position: absolute;
-  left: 37px;
-  top: 233px;
+  left: 20px;
+  top: 67%;
   opacity: 0;
   font-size: 22px;
   cursor: pointer;

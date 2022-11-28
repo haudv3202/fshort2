@@ -17,12 +17,23 @@ function post($id){
     return pdo_query_all($sql);
 }
 
-function new_post($title,$link,$id_cate,$id_acc){
-    $sql = "INSERT INTO posts VALUES (NULL,'$title','$link',CURRENT_TIMESTAMP(),NULL,'$id_acc','$id_cate',NULL,0,0,0)";
+function new_post_video($title,$link,$id_cate,$id_acc){
+    $sql = "INSERT INTO posts VALUES (NULL,'$title','$link',CURRENT_TIMESTAMP(),NULL,'$id_acc','$id_cate',0,0,0,NULL)";
     return pdo_execute($sql);
 }
 
-function all_post(){
-    $sql ="SELECT * FROM posts";
+function new_post($content,$link,$id_cate,$id_acc){
+    $sql = "INSERT INTO posts VALUES (NULL,NULL,'$link',CURRENT_TIMESTAMP(),NULL,'$id_acc','$id_cate',0,0,0,'$content')";
+    return pdo_execute($sql);
+}
+
+function all_post_video(){
+    $sql ="SELECT * FROM posts WHERE cate_id = 1 ORDER BY create_date	 DESC";
     return pdo_query_all($sql);
 }
+
+function all_post_news(){
+    $sql ="SELECT * FROM posts WHERE cate_id = 2 ORDER BY create_date	 DESC";
+    return pdo_query_all($sql);
+}
+
