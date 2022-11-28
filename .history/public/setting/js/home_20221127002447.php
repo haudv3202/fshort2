@@ -128,7 +128,7 @@ if (ListvideoHome) {
     <div class="input_comment">
       <form action="">
         <i class='bx bx-wink-smile'></i>
-        <input type="hidden" name="id_post" value="">
+        <input type="hidden" name="id_post" value="<?=$_GET['id']?>">
         <input type="text" name="content" required  placeholder="Thêm bình luận">
         <button type="submit" name="submit_comment"> Đăng</button>
       </form>

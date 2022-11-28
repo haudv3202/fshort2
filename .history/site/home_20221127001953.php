@@ -298,7 +298,6 @@ if(isset($_SESSION['success'])){
     </div>
 </div>
 
-<div id="video_detail_mini">
       <div class="video_detail_mini_left">
         <div class="video_center">
           <span onclick="play()">

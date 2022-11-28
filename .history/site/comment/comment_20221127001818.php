@@ -4,7 +4,6 @@
     include "../../dao/comment.php";
     $idpro = $_REQUEST['idpro'];
     $dsbl = load_allbl($idpro);
-    if (isset($_SESSION['info'])&&($_SESSION['info']>0)){
 
 ?>
 <!DOCTYPE html>
@@ -31,10 +30,8 @@
 <body>
 
  <div class="comment_video_page">
-    <?php
-                  if (isset($_SESSION['userinfo'])){
-                    $iduser = $_SESSION['user']['id_kh'];
-                    ?>
+    
+                 
         <div class="info_comment_video_page">
             <img src="./img/Anh-gai-xinh-Viet-Nam.jpg" alt="">
             <div class="text_logo_name_videos">
@@ -48,10 +45,10 @@
           </p>
         </div>
     </div>
-    <?php 
-    
-         }
-        ?>
+   <?php
+         if (isset($_SESSION['info'])){
+                    $iduser = $_SESSION['info']['id_kh'];
+                    ?>
     <div class="input_comment">
       <form action="">
         <i class='bx bx-wink-smile'></i>
@@ -60,12 +57,15 @@
         <button type="submit" name="submit_comment"> Đăng</button>
       </form>
     </div>
-   
+    <?php 
+    
+         }else{
+          echo "<a href='index.php?login' target='_parent'>Bạn vui lòng đăng nhập</a>";
+    }
+        ?>
 </body>
 </html>
 
 <?php
-    }else{
-          echo "<a href='index.php?login'>Bạn vui lòng đăng nhập</a>";
     }
     ?>

@@ -6,7 +6,7 @@
     }
 
       function insert_comment($noidung,$makh,$idpro,$ngaybl){
-        $sql = "INSERT INTO comments(noi_dung,ma_kh,idpro,ngay_bl) VALUES ('$noidung','$makh','$idpro','$ngaybl')";
+        $sql = "INSERT INTO binh_luan(noi_dung,ma_kh,idpro,ngay_bl) VALUES ('$noidung','$makh','$idpro','$ngaybl')";
         pdo_execute($sql);
     }
     function comment_one_video($id_video_home){

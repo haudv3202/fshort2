@@ -423,4 +423,6 @@ if(isset($_SESSION['success'])){
     </div>
 
 
-       
+        <div id="comment_post_home">
+                        <iframe src="comment.php?id=<?=$_GET['id']?>" frameborder="0"></iframe>
+         </div>

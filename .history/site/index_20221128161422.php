@@ -18,6 +18,7 @@
         include_once './layout.php';
     }else if(isset($_GET['detail_video'])){
            $arr = all_post();
+           $cmt = Load_allcmt();
 //        echo "<pre>";
 //        $a = account_one_row(13)['link_avatar'];
 //        print_r($a);
@@ -32,6 +33,7 @@
                 'views' => $value['views'],
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar'],
+                'avatar' => Load_allcmt($value['id_account'])['link_avatar'],
             ];
         }
         $VIEW_NAME = 'detail_video.php';
@@ -231,7 +233,6 @@
     }else{
         include_once('../cloudinary/video.php');
         $arr = all_post();
-        $arrcmt = Load_allcmt();
 
 //        if(isset($_POST['submit_like'])){
 //            $id_post = $_POST['id_post'];
@@ -252,6 +253,7 @@
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar']];
         }
+
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }

@@ -231,7 +231,6 @@
     }else{
         include_once('../cloudinary/video.php');
         $arr = all_post();
-        $arrcmt = Load_allcmt();
 
 //        if(isset($_POST['submit_like'])){
 //            $id_post = $_POST['id_post'];
@@ -251,7 +250,9 @@
                 'views' => $value['views'],
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar']];
+                'content' => comment_one_row($value['id_account'])['content'],
         }
+
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }

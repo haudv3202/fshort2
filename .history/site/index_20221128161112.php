@@ -4,7 +4,6 @@
     require_once '../dao/pdo.php';
     require_once '../dao/account.php';
     require_once '../dao/posts_dao.php';
-    require_once '../dao/comment.php';
     require_once '../App/Check_app/Check.php';
     $posts = [] ;
     if(isset($_GET['about'])){
@@ -17,6 +16,7 @@
         $VIEW_NAME = 'car.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video'])){
+           $arr = all_post();
            $arr = all_post();
 //        echo "<pre>";
 //        $a = account_one_row(13)['link_avatar'];
@@ -31,8 +31,8 @@
                 'link' => $value['link'],
                 'views' => $value['views'],
                 'likes' => $value['likes'],
-                'avatar' => account_one_row($value['id_account'])['link_avatar'],
-            ];
+                'avatar' => account_one_row($value['id_account'])['link_avatar'];
+                'content' => Load_allcmt($value['content']);
         }
         $VIEW_NAME = 'detail_video.php';
         include_once './layout.php';
@@ -231,7 +231,6 @@
     }else{
         include_once('../cloudinary/video.php');
         $arr = all_post();
-        $arrcmt = Load_allcmt();
 
 //        if(isset($_POST['submit_like'])){
 //            $id_post = $_POST['id_post'];
@@ -252,6 +251,7 @@
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar']];
         }
+
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }

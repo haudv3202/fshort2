@@ -107,33 +107,10 @@ if (ListvideoHome) {
         <p>Tôi thật hối hận khi không biết tới dev front end Mạnh Cường sớm hơn, thật đáng tiếc huhuhu. Bởi vì anh ta
             quá là đỉnh đi mà huhuhu 😭😭😭 </p>
     </div>
-    
-        <div id="comment_post_home">
-             <div class="comment_video_page">
-    
-                 
-        <div class="info_comment_video_page">
-            <img src="./img/Anh-gai-xinh-Viet-Nam.jpg" alt="">
-            <div class="text_logo_name_videos">
-                <p>Hậu ăn cứt<i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
-                <p>November 4 at 3:28 AM ~ <i class='bx bx-world'></i></p>
-            </div>
-        </div>
-        <div class="value_comment_user">
-            <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.
-          </p>
-        </div>
-    </div>
-    <div class="input_comment">
-      <form action="">
-        <i class='bx bx-wink-smile'></i>
-        <input type="hidden" name="id_post" value="">
-        <input type="text" name="content" required  placeholder="Thêm bình luận">
-        <button type="submit" name="submit_comment"> Đăng</button>
-      </form>
-    </div>
+   <div id="comment_post_home">
+                        <iframe src="comment.php?id=<?=$_GET['id']?>" frameborder="0"></iframe>
          </div>
+           
         
     `;
     }

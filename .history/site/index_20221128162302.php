@@ -252,6 +252,8 @@
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar']];
         }
+        
+
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }
