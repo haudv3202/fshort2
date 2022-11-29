@@ -22,7 +22,6 @@ if(isset($_SESSION['info'])){
 
         $allAccount = Allaccount();
         $allData = [];
-
         foreach ($allAccount as $value){
             if(totalBan($value['id'])['totalband'] ==  1 || totalBan($value['id'])['totalband'] ==  2){
                 $a = timeBand($value['id'])[0]['time_open'];
@@ -39,8 +38,6 @@ if(isset($_SESSION['info'])){
 
         $VIEW_NAME = 'v_accouns.php';
         include_once './templates/layout.php';
-
-
 
     }else if(isset($_GET['bandAccount'])){
         if(isset( $_POST['item_id'])){
@@ -123,10 +120,8 @@ if(isset($_SESSION['info'])){
                 $result_mail = send_token($title,$content,$email);
                 new_account($name,$email,md5($pass));
                 $_SESSION['new_succesfully'] = "Tạo tài khoản thành công !" ;
-                route('?newAccount');
             }else {
                 $_SESSION['error_new'] = "Sai định dạng email" ;
-                route('?newAccount');
             }
 
         }

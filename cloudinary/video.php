@@ -3,7 +3,7 @@
 <!--    <input type="submit" name="submit" value="Update">-->
 <!--</form>-->
 
-<?php 
+<?php
 
 require_once "vendor/autoload.php";
 use Cloudinary\Configuration\Configuration;
@@ -23,22 +23,27 @@ Configuration::instance([
 //           'public_id' => 'Fshort/avatar/'. $name
 //       ]);
     if(isset($_POST['sb_video'])){
-        $a = $_FILES['videohome'];
-        $title = $_POST['title'];
-            $path = $a['tmp_name'];
-            $namevideo = $a['name'];
+        $video = $_FILES['videohome'];
+        $getID3 = new getID3;
+        $file = $getID3->analyze($video['tmp_name']);
+        if($file['video']['resolution_x'] == 576 && $file['video']['resolution_y'] >= 1000){
+            $title = $_POST['title'];
+            $path = $video['tmp_name'];
+            $namevideo = $video['name'];
             $name = explode(".",$namevideo);
             $data = (new UploadApi())->upload($path, [
                 'resource_type' => 'video',
                 'public_id' => 'Fshort/video/' . $name[0],
                 'chunk_size' => 6000000,
-                'eager' => [
-                    ['width' => 720, 'height' => 1280, 'crop' => 'pad'],
-                    ['width' => 160, 'height' => 100, 'crop' => 'crop', 'gravity' => 'south']]]
+                 "height"=>1024, "width"=>576, "crop"=>"crop"
+                ]
             );
-            echo $title;
-            echo $data['url'];
-            new_post($title,$data['url'],1,$_SESSION['info']['id']);
+            new_post_video($title,$data['url'],1,$_SESSION['info']['id']);
+            route('index.php');
+        }else {
+            $_SESSION['error_upload'] = "Sai kích thước vui lòng upload đúng video kích thước 576 * >= 1000 ";
+        }
+
 
 
     }
