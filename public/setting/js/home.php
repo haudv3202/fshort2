@@ -50,8 +50,11 @@ function Video_home(datavideohome) {
             </div>
         </div>
     <div class="links_video">
-  <span onclick="showVideo()" ><video  width="50%" preload=""  controls type="video/mp4" loop
-            src="${item.link}"></video></span>
+  <span onclick="showVideo()" >
+  <video onplay="getCurTime();" autoplay  width="50%" preload="" id="Video"  controls type="video/mp4" loop
+            src="${item.link}">
+            </video>
+            </span>
     </div>
     <div class="feeling">
         <div class="icon_felling">
@@ -61,11 +64,11 @@ function Video_home(datavideohome) {
             <button type="submit" name="submit_like"><i class='bx bx-heart'></i></button>
 </form>
             <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
-            <i class='bx bx-share bx-flip-horizontal'></i>
+            <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
         </div>
         <div class="infor_view">
             <p>100 lượt thích</p>
-            <p>0 Views</p>
+            <p><span id="view">0</span> Views</p>
         </div>
     </div>
     <div class="content_video_page">
@@ -120,11 +123,11 @@ function About_home(dataabouthome) {
             <i class='bx bx-heart'></i>
 </form>
             <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
-            <i class='bx bx-share bx-flip-horizontal'></i>
+            <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
         </div>
         <div class="infor_view">
             <p>100 lượt thích</p>
-            <p>0 views</p>
+            <p><span id="view">0</span> Views</p>
         </div>
     </div>
     <div class="content_news_page">
@@ -816,8 +819,52 @@ if (coll) {
   }
 }
 // end minh anh js
+// url
+function notify(type,message){
+    (()=>{
+      let n = document.createElement("div");
+      let id = Math.random().toString(36).substr(2,10);
+      n.setAttribute("id",id);
+      n.classList.add("notification",type);
+      n.innerText = message;
+      document.getElementById("notification-area").appendChild(n);
+      setTimeout(()=>{
+        var notifications = document.getElementById("notification-area").getElementsByClassName("notification");
+        for(let i=0;i<notifications.length;i++){
+          if(notifications[i].getAttribute("id") == id){
+            notifications[i].remove();
+            break;
+          }
+        }
+      },10000);
+    })();
+  }
+  
+  function getURL(){
+    navigator.clipboard.writeText(window.location.href);
+    notify("success","Đã sao chép");
+  }
 
-
+  // view
+  var triggerTime=5, fired=0;
+function getCurTime(){
+            var myVideo = document.getElementsByTagName('Video')[0];          
+            
+            var a=0
+            myVideo.addEventListener("timeupdate",function(){
+                var timer=myVideo.currentTime.toFixed(2);
+                if (timer > triggerTime){
+                    if (!fired) {
+                a++; //in other words, increment the first time it's clicked, but then not again until after the variable has been reset to false, which happens at the end of the video.
+                view.innerHTML=a;
+                console.log(a);  
+            }
+            fired = true;
+                } 
+            })
+            myVideo.addEventListener('ended', function(){fired=false;}, false);
+        }
+// end
 </script>
 
 <script type="text/javascript">
