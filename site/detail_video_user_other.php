@@ -1,16 +1,20 @@
-
+<?php
+                
+                if(isset($_SESSION['info'])){
+                    $user = $_SESSION['info'];
+                  ?>
       <div class="detail_user">
         <div class="avatar_name_detail_user">
           <div class="mt-3 avatar_detail_user">
             <img
               class="img"
-              src="../public/setting/img/z3813258660358_a0f98002b39707510fb60cf2d7eded19.jpg"
+              src="<?php echo account_one_row($value['id_account'])['link_avatar'] ?>"
               alt=""
             />
           </div>
           <div class="name_detail_user">
             <div class="id_user_detail">
-              <h1>leehai1508</h1>
+              <h2><?php echo account_one_row($value['id_account'])['name'] ?></h2>
               <div class="share_user_detail">
                 <i class='bx bx-share bx-flip-horizontal share_user_detail_i' ></i>
                 <ul class="coplink_user_detail">
@@ -30,11 +34,11 @@
               </div>
             </div>
             <div class="name_user_detail">
-              <h2>LeeHair</h2>
+              <h2>#<?php echo account_one_row($value['id_account'])['id']  ?><?php echo account_one_row($value['id_account'])['name'] ?></h2>
             </div>
             <div class="edit_profile_user_detail">
-              <button class="btn_edit_user_other"  onclick="followOther(this)" data-follow="1">
-                <span class="btn_edit_user_other_span">Follow</span>
+              <button class="btn_edit_user">
+                <i class="bx bxs-edit"></i><a href="?setting">Sửa hồ sơ</a>
               </button>
             </div>
           </div>
@@ -56,6 +60,11 @@
         <div class="Story_user_detai mt-2">
           <span class="ms-4 text-secondary fs-5">Chưa có tiểu sử.</span>
         </div>
+        <?php
+                
+                }
+                    
+                  ?>
         <div class="Post_user_detail">
          <div class="title_video_user_detail">
             <span class="btn_video fs-5 fw-normal"

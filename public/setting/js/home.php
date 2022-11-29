@@ -8,14 +8,15 @@ const array_posts_user = <?php echo json_encode($posts_news); ?>;
 // render content page
 function Video_home(datavideohome) {
   let ListvideoHome = document.querySelector(".videos_page");
-  if (ListvideoHome) {
+if (ListvideoHome) {
     ListvideoHome.innerHTML = "";
 
 
     for (let item of datavideohome) {
+      // $linksp = "index.php?detail_video_mini&id_post=".${item.id_post};
         var Comments_video = "";
         for (let video_comment of item.comments) {
-            Comments_video += `
+          Comments_video += `
             <div class="info_comment_video_page">
                 <img src="${video_comment.avatar_comment}" alt="">
                 <div class="text_logo_name_videos">
@@ -31,7 +32,6 @@ function Video_home(datavideohome) {
         `
         }
 
-
         ListvideoHome.innerHTML += `
                    <div class="logo_name_videos_btn">
     
@@ -39,7 +39,7 @@ function Video_home(datavideohome) {
                 <img src="${item.avatar}"
                     alt="">
                 <div class="text_logo_name_videos">
-                    <p><a href="?detail_video_other">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                    <p><a href="?detail_video_mini&id_post=".${item.id_post}>${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                     <p>${item.time_create} <i class='bx bx-world'></i></p>
                 </div>
             </div>
@@ -50,19 +50,18 @@ function Video_home(datavideohome) {
             </div>
         </div>
     <div class="links_video">
-  <span onclick="showVideo()" >
-  <video onplay="getCurTime();" autoplay  width="50%" preload="" id="Video"  controls type="video/mp4" loop
-            src="${item.link}">
-            </video>
-            </span>
+
+  <a href="?detail_video_mini" ><video  width="50%" preload=""  controls type="video/mp4" loop
+            src="${item.link}"></video></a>
+
     </div>
     <div class="feeling">
         <div class="icon_felling">
-<form action=""  method="POST">
+          <form action=""  method="POST">
             <input type="hidden" name="id_user" value="${item.id_user_log}">
              <input type="hidden" name="id_post" value="${item.id_post}">
-            <button type="submit" name="submit_like"><i class='bx bx-heart'></i></button>
-</form>
+            <button type="submit" name="submit_like" class="heart_form_felling"><i class='bx bx-heart'></i></button>
+          </form>
             <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
             <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
         </div>
@@ -79,12 +78,17 @@ function Video_home(datavideohome) {
 ` + Comments_video + `
 </div>
     <div class="input_comment">
-      <form action="" method="post">
+      <form action="index.php" method="post">
         <i class='bx bx-wink-smile'></i>
-        <input type="text" required  placeholder="Thêm bình luận">
-        <button type="submit"> Đăng</button>
+        <input type="hidden" name="id_post" value="${item.id_post}">
+        <input type="hidden" name="name_cmt" value="${item.name}">
+        <input type="text" name="content_video_home" required  placeholder="Thêm bình luận">
+        <button type="submit" name="submit_comment_home"> Đăng</button>
       </form>
-    </div>`;
+    </div>
+         </div>
+        
+    `;
     }
   }
 }
@@ -112,16 +116,21 @@ function About_home(dataabouthome) {
             <button onclick="follow(this)" data-follow="1" class="btnFLLL">follow</button>
         </div>
     </div>
+      <div class="content_news_page">
+        <p>${item.title}</p>
+    </div>
     <div class="links_video">
         <span onclick="showProduct()">
         <img src="${item.link}" width="100%" style="border-radius:5px;" alt="">
         </span>
     </div>
-    <div class="feeling">
+<div class="feeling">
         <div class="icon_felling">
-<form action=""  onchange="this.form.submit()" method="POST">
-            <i class='bx bx-heart'></i>
-</form>
+          <form action=""  method="POST">
+            <input type="hidden" name="id_user" value="${item.id_user_log}">
+             <input type="hidden" name="id_post" value="${item.id_post}">
+            <button type="submit" name="submit_like" class="heart_form_felling"><i class='bx bx-heart'></i></button>
+          </form>
             <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
             <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
         </div>
@@ -129,9 +138,6 @@ function About_home(dataabouthome) {
             <p>100 lượt thích</p>
             <p><span id="view">0</span> Views</p>
         </div>
-    </div>
-    <div class="content_news_page">
-        <p>${item.title}</p>
     </div>
     <div class="comment_video_page">
         <div class="info_comment_video_page">
@@ -148,10 +154,12 @@ function About_home(dataabouthome) {
         </div>
     </div>
     <div class="input_comment">
-      <form action="">
+       <form action="index.php" method="post">
         <i class='bx bx-wink-smile'></i>
-        <input type="text" required  placeholder="Thêm bình luận">
-        <button type="submit"> Đăng</button>
+        <input type="hidden" name="id_post" value="${item.id_post}">
+        <input type="hidden" name="name_cmt" value="${item.name}">
+        <input type="text" name="content_video_home" required  placeholder="Thêm bình luận">
+        <button type="submit" name="submit_comment_home"> Đăng</button>
       </form>
     </div>
   `;
@@ -169,8 +177,8 @@ function Vieo_detail(data) {
     for (let item of data) {
       ListVideouser.innerHTML += `
               <div class="video_user_detail" >
-                          <span onclick="showVideo()"> <video src="${item.link}" type="video/mp4" type="video/mp4" muted class="vid" loop>
-                          </video></span>
+                          <a href="?detail_video_mini"> <video src="${item.link}" type="video/mp4" type="video/mp4" muted class="vid" loop>
+                          </video></a>
                           <div class="views_video_user_detail d-flex align-items-center">
                             <i class='bx bx-play fs-4'></i><span class="view_video">0</span>
                           </div>
@@ -191,7 +199,7 @@ function Posts_user(datauser) {
                <div
               class="posts_user_detail"
             >
-              <span onclick="showProduct()"><img src="${item.links}" /></span>
+              <span onclick="showProduct()"><img src="${item.link}" /></span>
                 <div class="icon_posts_user" onclick="showProduct()">
                   <span>
                     <i class="bx bxs-heart"></i> 1k
@@ -372,25 +380,27 @@ function test() {
 
 
 //=================//
-var mini_video = document.querySelector("#video_detail_mini");
-if (mini_video) {
-  document.querySelector("#video_detail_mini").style.display = "none";
-  function showVideo() {
-    var videoplay = document.querySelector(".video_click_play");
-    var playiconvd = document.querySelector(".icon_play_video_center");
-    var videos = document.querySelector("#video_detail_mini");
-    if (videos.style.display == "block") {
-      videoplay.pause();
-      videoplay.load();
-      playiconvd.style.display = "block";
-      videos.style.display = "none";
-    } else {
-      videoplay.play();
-      playiconvd.style.display = "none";
-      videos.style.display = "block";
-    }
-  }
-}
+// var mini_video = document.querySelector("#video_detail_mini");
+// if (mini_video) {
+//   document.querySelector("#video_detail_mini").style.display = "none";
+//   function showVideo() {
+//     var videoplay = document.querySelector(".video_click_play");
+//     var playiconvd = document.querySelector(".icon_play_video_center");
+//     var videos = document.querySelector("#video_detail_mini");
+//     var videohome = document.querySelector(".links_video");
+//     if (videos.style.display == "block") {
+//       videoplay.pause();
+//       videoplay.load();
+//       playiconvd.style.display = "block";
+//       videos.style.display = "none";
+//     } else {
+//       videoplay.play();
+      
+//       playiconvd.style.display = "none";
+//       videos.style.display = "block";
+//     }
+//   }
+// }
 
 // click ++value view
 
