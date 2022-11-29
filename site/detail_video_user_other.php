@@ -88,7 +88,7 @@
       <div class="video_detail_mini_left">
         <div class="video_center">
           <span onclick="play()">
-            <video  class="video_click_play"
+            <video  class="video_click_play" onplay="getCurTime();"
             src="../public/setting/Video/Snaptik.app_7163614237363834139.mp4"
             width="41%"
           ></video>

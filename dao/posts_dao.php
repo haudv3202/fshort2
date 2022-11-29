@@ -36,3 +36,16 @@ function all_post_news(){
     $sql ="SELECT * FROM posts WHERE cate_id = 2 ORDER BY create_date	 DESC";
     return pdo_query_all($sql);
 }
+
+function all_post_video_detail($id_account){
+    $sql ="SELECT * FROM posts WHERE id_account = '$id_account' AND cate_id = 1 ORDER BY create_date DESC";
+    return pdo_query_all($sql);
+}
+
+function all_post_news_detail($id_account){
+    $sql ="SELECT * FROM posts WHERE id_account = '$id_account' AND cate_id = 2 ORDER BY create_date DESC";
+    return pdo_query_all($sql);
+}
+
+?>
+

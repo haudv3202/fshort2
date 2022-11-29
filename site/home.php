@@ -125,7 +125,7 @@ if(isset($_SESSION['success'])){
                 <div class="list_friends_root_right">
                     <div class="logo_name_videos">
                         <img
-                                src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
+                                src=""
                                 alt=""
                         />
                         <div class="text_logo_name_videos">
@@ -148,7 +148,7 @@ if(isset($_SESSION['success'])){
                 <div class="list_friends_root_right">
                     <div class="logo_name_videos">
                         <img
-                                src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
+                                src=""
                                 alt=""
                         />
                         <div class="text_logo_name_videos">
@@ -171,7 +171,7 @@ if(isset($_SESSION['success'])){
                 <div class="list_friends_root_right">
                     <div class="logo_name_videos">
                         <img
-                                src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
+                                src=""
                                 alt=""
                         />
                         <div class="text_logo_name_videos">
@@ -194,7 +194,7 @@ if(isset($_SESSION['success'])){
                 <div class="list_friends_root_right">
                     <div class="logo_name_videos">
                         <img
-                                src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
+                                src="s"
                                 alt=""
                         />
                         <div class="text_logo_name_videos">
@@ -273,4 +273,5 @@ if(isset($_SESSION['success'])){
     <?php }?>
 </div>
 
-       
+      
+

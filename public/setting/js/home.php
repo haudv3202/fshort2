@@ -1,6 +1,6 @@
 <script>
 const array_user_detail = <?php echo json_encode($posts_video); ?>;
-console.log(array_user_detail);
+// console.log(array_user_detail);
 
 const array_posts_user = <?php echo json_encode($posts_news); ?>;
 // console.log(array_posts_user);
@@ -52,6 +52,7 @@ if (ListvideoHome) {
     <div class="links_video">
   <a href="?detail_video_mini" ><video  width="50%" preload=""  controls type="video/mp4" loop
             src="${item.link}"></video></a>
+
     </div>
     <div class="feeling">
         <div class="icon_felling">
@@ -61,11 +62,11 @@ if (ListvideoHome) {
             <button type="submit" name="submit_like" class="heart_form_felling"><i class='bx bx-heart'></i></button>
           </form>
             <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
-            <i class='bx bx-share bx-flip-horizontal'></i>
+            <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
         </div>
         <div class="infor_view">
             <p>100 lượt thích</p>
-            <p>0 Views</p>
+            <p><span id="view">0</span> Views</p>
         </div>
     </div>
     <div class="content_video_page">
@@ -130,11 +131,11 @@ function About_home(dataabouthome) {
             <button type="submit" name="submit_like" class="heart_form_felling"><i class='bx bx-heart'></i></button>
           </form>
             <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
-            <i class='bx bx-share bx-flip-horizontal'></i>
+            <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
         </div>
         <div class="infor_view">
             <p>100 lượt thích</p>
-            <p>0 Views</p>
+            <p><span id="view">0</span> Views</p>
         </div>
     </div>
     <div class="comment_video_page">
@@ -187,7 +188,6 @@ function Vieo_detail(data) {
 Vieo_detail(array_user_detail);
 
 // render posts
-
 function Posts_user(datauser) {
   let ListPosts = document.querySelector(".Posts_user");
   if (ListPosts) {
@@ -378,27 +378,26 @@ function test() {
 
 
 //=================//
-// var mini_video = document.querySelector("#video_detail_mini");
-// if (mini_video) {
-//   document.querySelector("#video_detail_mini").style.display = "none";
-//   function showVideo() {
-//     var videoplay = document.querySelector(".video_click_play");
-//     var playiconvd = document.querySelector(".icon_play_video_center");
-//     var videos = document.querySelector("#video_detail_mini");
-//     var videohome = document.querySelector(".links_video");
-//     if (videos.style.display == "block") {
-//       videoplay.pause();
-//       videoplay.load();
-//       playiconvd.style.display = "block";
-//       videos.style.display = "none";
-//     } else {
-//       videoplay.play();
-      
-//       playiconvd.style.display = "none";
-//       videos.style.display = "block";
-//     }
-//   }
-// }
+
+var mini_video = document.querySelector("#video_detail_mini");
+if (mini_video) {
+  document.querySelector("#video_detail_mini").style.display = "none";
+  function showVideo() {
+    var videoplay = document.querySelector(".video_click_play");
+    var playiconvd = document.querySelector(".icon_play_video_center");
+    var videos = document.querySelector("#video_detail_mini");
+    if (videos.style.display == "block") {
+      videoplay.pause();
+      videoplay.load();
+      playiconvd.style.display = "block";
+      videos.style.display = "none";
+    } else {
+        videoplay.play();
+      playiconvd.style.display = "none";
+      videos.style.display = "block";
+    }
+  }
+}
 
 // click ++value view
 
@@ -827,8 +826,52 @@ if (coll) {
   }
 }
 // end minh anh js
+// url
+function notify(type,message){
+    (()=>{
+      let n = document.createElement("div");
+      let id = Math.random().toString(36).substr(2,10);
+      n.setAttribute("id",id);
+      n.classList.add("notification",type);
+      n.innerText = message;
+      document.getElementById("notification-area").appendChild(n);
+      setTimeout(()=>{
+        var notifications = document.getElementById("notification-area").getElementsByClassName("notification");
+        for(let i=0;i<notifications.length;i++){
+          if(notifications[i].getAttribute("id") == id){
+            notifications[i].remove();
+            break;
+          }
+        }
+      },10000);
+    })();
+  }
+  
+  function getURL(){
+    navigator.clipboard.writeText(window.location.href);
+    notify("success","Đã sao chép");
+  }
 
-
+  // view
+  var triggerTime=5, fired=0;
+function getCurTime(){
+            var myVideo = document.getElementsByTagName('Video')[0];          
+            
+            var a=0
+            myVideo.addEventListener("timeupdate",function(){
+                var timer=myVideo.currentTime.toFixed(2);
+                if (timer > triggerTime){
+                    if (!fired) {
+                a++; //in other words, increment the first time it's clicked, but then not again until after the variable has been reset to false, which happens at the end of the video.
+                view.innerHTML=a;
+                console.log(a);  
+            }
+            fired = true;
+                } 
+            })
+            myVideo.addEventListener('ended', function(){fired=false;}, false);
+        }
+// end
 </script>
 
 <script type="text/javascript">
