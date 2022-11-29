@@ -1,6 +1,6 @@
 <script>
 const array_user_detail = <?php echo json_encode($posts_video); ?>;
-console.log(array_user_detail);
+// console.log(array_user_detail);
 
 const array_posts_user = <?php echo json_encode($posts_news); ?>;
 // console.log(array_posts_user);
@@ -50,7 +50,7 @@ function Video_home(datavideohome) {
             </div>
         </div>
     <div class="links_video">
-  <span onclick="showVideo()" ><video  width="50%" preload=""  controls type="video/mp4" loop
+  <span onclick="showVideo()" ><video  width="50%" preload=""   controls type="video/mp4" loop
             src="${item.link}"></video></span>
     </div>
     <div class="feeling">
@@ -109,6 +109,9 @@ function About_home(dataabouthome) {
             <button onclick="follow(this)" data-follow="1" class="btnFLLL">follow</button>
         </div>
     </div>
+    <div class="content_news_page">
+        <p>${item.title}</p>
+    </div>
     <div class="links_video">
         <span onclick="showProduct()">
         <img src="${item.link}" width="100%" style="border-radius:5px;" alt="">
@@ -127,9 +130,7 @@ function About_home(dataabouthome) {
             <p>0 views</p>
         </div>
     </div>
-    <div class="content_news_page">
-        <p>${item.title}</p>
-    </div>
+
     <div class="comment_video_page">
         <div class="info_comment_video_page">
             <img src="./img/anh-gai-xinh-Viet-Nam.jpg" alt="">
@@ -178,7 +179,6 @@ function Vieo_detail(data) {
 Vieo_detail(array_user_detail);
 
 // render posts
-
 function Posts_user(datauser) {
   let ListPosts = document.querySelector(".Posts_user");
   if (ListPosts) {
@@ -188,7 +188,7 @@ function Posts_user(datauser) {
                <div
               class="posts_user_detail"
             >
-              <span onclick="showProduct()"><img src="${item.links}" /></span>
+              <span onclick="showProduct()"><img src="${item.link}" /></span>
                 <div class="icon_posts_user" onclick="showProduct()">
                   <span>
                     <i class="bx bxs-heart"></i> 1k
@@ -382,7 +382,7 @@ if (mini_video) {
       playiconvd.style.display = "block";
       videos.style.display = "none";
     } else {
-      videoplay.play();
+        videoplay.play();
       playiconvd.style.display = "none";
       videos.style.display = "block";
     }

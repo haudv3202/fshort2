@@ -1,7 +1,7 @@
 <?php
 @session_start();
 require_once '../App/Check_app/Check.php';
-if(isset($_SESSION['info'])){
+if(isset($_SESSION['info']) && ($_SESSION['info']['role_id'] == 2 || $_SESSION['info']['role_id'] == 3)){
     require_once '../global.php';
     require_once '../dao/pdo.php';
     require_once '../dao/account.php';
@@ -15,6 +15,9 @@ if(isset($_SESSION['info'])){
     if(isset($_GET['chi-tiet'])){
         $VIEW_NAME = 'chi-tiet.php';
         include_once './templates/layout.php';
+    }if(isset($_GET['logout'])){
+        session_unset();
+        route('../site/?home');
     }else if(isset($_GET['danh-muc'])){
         $VIEW_NAME = 'danh-muc.php';
         include_once './templates/layout.php';

@@ -198,7 +198,7 @@
                     </div>
                 </div>
                 <div class="img-login-header">
-                    <?php if(isset($_SESSION['info'])){?>
+                    <?php if(isset($_SESSION['info']) && $_SESSION['info']['role_id'] == 1 ){?>
                     <div class="user_loginn">
                         <span><?php echo $_SESSION['info']['name'];?></span>
                         <img
@@ -219,6 +219,30 @@
                             <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
                         </p>
                     </div>
+                    <?php }else if(isset($_SESSION['info']) && ($_SESSION['info']['role_id'] == 2 || $_SESSION['info']['role_id'] == 3)){?>
+                        <div class="user_loginn">
+                            <span><?php echo $_SESSION['info']['name'];?></span>
+                            <img
+                                    onclick="IMG()"
+                                    src="<?php echo $_SESSION['info']['link_avatar'];?>"
+                                    alt=""
+                            />
+                        </div>
+
+                        <div class="info_login_headerr">
+                            <p>
+                                <a href="?detail_video"> <i class="bx bx-user"></i> View Profile</a>
+                            </p>
+                            <p>
+                                <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
+                            </p>
+                            <p>
+                                <a href="?setting"> <i class="bx bxs-cog"></i>Admin</a>
+                            </p>
+                            <p>
+                                <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
+                            </p>
+                        </div>
                     <?php }else{?>
                         <a href="?login" >Đăng nhập</a>
                     <?php }?>

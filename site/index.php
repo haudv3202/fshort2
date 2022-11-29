@@ -39,9 +39,9 @@
         $VIEW_NAME = 'car.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video'])){
-        $arr = all_post();
+        $arr = all_post_video_detail($_SESSION['info']['id']);
         foreach ($arr as $value){
-            $posts[] = [
+            $posts_video[] = [
                 'name' => account_one_row($value['id_account'])['name'],
                 'time_create' => $value['create_date'],
                 'title' => $value['title'],
@@ -53,6 +53,17 @@
         $VIEW_NAME = 'detail_video.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_posts'])){
+        $arr = all_post_news_detail($_SESSION['info']['id']);
+        foreach ($arr as $value){
+            $posts_news[] = [
+                'name' => account_one_row($value['id_account'])['name'],
+                'time_create' => $value['create_date'],
+                'title' => $value['title'],
+                'link' => $value['link'],
+                'views' => $value['views'],
+                'likes' => $value['likes'],
+                'avatar' => account_one_row($value['id_account'])['link_avatar']];
+        }
         $VIEW_NAME = 'detail_posts.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video_other'])){
