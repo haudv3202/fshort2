@@ -47,3 +47,5 @@ function all_post_news_detail($id_account){
     return pdo_query_all($sql);
 }
 
+?>
+

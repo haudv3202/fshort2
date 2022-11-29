@@ -10,9 +10,86 @@
     $posts_video = [] ;
     $posts_news = [] ;
     if(isset($_GET['about'])){
-        $arr = all_post_news();
         include_once('../cloudinary/post.php');
+        $arr = all_post_news();
+        $id_user = null;
+        if(!empty($_SESSION['info'])){
+            $id_user = $_SESSION['info']['id'];
+        }
 
+        foreach ($arr as $value){
+               $comments = [];
+                foreach (comment_all($value['id']) as $value2 ){
+                $comments[] = [
+                    'name_user_comment' => account_one_row($value2['id_account'])['name'],
+                    'content' => $value2['content'],
+                    'id_post' => $value2['id_post'],
+                    'time_date' => $value2['create_date'],
+                    'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
+                    ];
+                }
+            $posts_news[] = [
+                'id_user_log' => $id_user,
+                'id_post' => $value['id'],
+                'cate_id' => $value['cate_id'],
+                'name' => account_one_row($value['id_account'])['name'],
+                'time_create' => $value['create_date'],
+                'title' => str_replace('<br>', '<br><br>',nl2br($value['content'], FALSE)),
+                'link' => $value['link'],
+                'views' => $value['views'],
+                'likes' => $value['likes'],
+                'avatar' => account_one_row($value['id_account'])['link_avatar']];
+        }
+             if (isset($_POST['submit_comment_home'])){
+                    $content = $_POST['content_video_home'];
+                    $id_post = $_POST['id_post'];
+                    $tenkh = $_POST['name_cmt'];
+                    $id_account = $_SESSION['info']['id'];
+                    insert_comment($content,$id_account,$id_post);
+                    header('Location: index.php?about');
+            }
+        $VIEW_NAME = 'about.php';
+        include_once './layout.php';
+    }else if(isset($_GET['chat'])){
+        $VIEW_NAME = 'chat.php';
+        include_once './layout.php';
+    }else if(isset($_GET['car'])){
+        $VIEW_NAME = 'car.php';
+        include_once './layout.php';
+    }else if(isset($_GET['detail_video'])){
+        $arr = all_post_video_detail($_SESSION['info']['id']);
+        if(!empty($_SESSION['info'])){
+            $id_user = $_SESSION['info']['id'];
+        }
+        foreach ($arr as $value){
+            $comments = [];
+
+            foreach (comment_all($value['id']) as $value2 ){
+                $comments[] = [
+                    'name_user_comment' => account_one_row($value2['id_account'])['name'],
+                    'content' => $value2['content'],
+                    'id_post' => $value2['id_post'],
+                    'time_date' => $value2['create_date'],
+                    'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
+                    ];
+            }
+            $posts_video[] = [
+                'id_user_log' => $id_user,
+                'id_post' => $value['id'],
+                'name' => account_one_row($value['id_account'])['name'],
+                'time_create' => $value['create_date'],
+                'title' => $value['title'],
+                'link' => $value['link'],
+                'views' => $value['views'],
+                'likes' => $value['likes'],
+                'avatar' => account_one_row($value['id_account'])['link_avatar'],
+                'comments' => $comments
+            ];
+        }
+        $VIEW_NAME = 'detail_video.php';
+        include_once './layout.php';
+    }else if(isset($_GET['detail_posts'])){
+        $arr = all_post_news_detail($_SESSION['info']['id']);
         $id_user = null;
         if(!empty($_SESSION['info'])){
             $id_user = $_SESSION['info']['id'];
@@ -30,43 +107,39 @@
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar']];
         }
-        $VIEW_NAME = 'about.php';
-        include_once './layout.php';
-    }else if(isset($_GET['chat'])){
-        $VIEW_NAME = 'chat.php';
-        include_once './layout.php';
-    }else if(isset($_GET['car'])){
-        $VIEW_NAME = 'car.php';
-        include_once './layout.php';
-    }else if(isset($_GET['detail_video'])){
-        $arr = all_post_video_detail($_SESSION['info']['id']);
-        foreach ($arr as $value){
-            $posts_video[] = [
-                'name' => account_one_row($value['id_account'])['name'],
-                'time_create' => $value['create_date'],
-                'title' => $value['title'],
-                'link' => $value['link'],
-                'views' => $value['views'],
-                'likes' => $value['likes'],
-                'avatar' => account_one_row($value['id_account'])['link_avatar']];
-        }
-        $VIEW_NAME = 'detail_video.php';
-        include_once './layout.php';
-    }else if(isset($_GET['detail_posts'])){
-        $arr = all_post_news_detail($_SESSION['info']['id']);
-        foreach ($arr as $value){
-            $posts_news[] = [
-                'name' => account_one_row($value['id_account'])['name'],
-                'time_create' => $value['create_date'],
-                'title' => $value['title'],
-                'link' => $value['link'],
-                'views' => $value['views'],
-                'likes' => $value['likes'],
-                'avatar' => account_one_row($value['id_account'])['link_avatar']];
-        }
         $VIEW_NAME = 'detail_posts.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video_other'])){
+      $arr = all_post_video();
+        if(!empty($_SESSION['info'])){
+            $id_user = $_SESSION['info']['id'];
+        }
+        foreach ($arr as $value){
+
+            $comments = [];
+
+            foreach (comment_all($value['id']) as $value2 ){
+                $comments[] = [
+                    'name_user_comment' => account_one_row($value2['id_account'])['name'],
+                    'content' => $value2['content'],
+                    'id_post' => $value2['id_post'],
+                    'time_date' => $value2['create_date'],
+                    'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
+                    ];
+            }
+            $posts_video[] = [
+                'id_user_log' => $id_user,
+                'id_post' => $value['id'],
+                'name' => account_one_row($value['id_account'])['name'],
+                'time_create' => $value['create_date'],
+                'title' => $value['title'],
+                'link' => $value['link'],
+                'views' => $value['views'],
+                'likes' => $value['likes'],
+                'avatar' => account_one_row($value['id_account'])['link_avatar'],
+                'comments' => $comments
+            ];
+        }
         $VIEW_NAME = 'detail_video_user_other.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_posts_other'])){
@@ -74,6 +147,14 @@
         include_once './layout.php';
     }else if(isset($_GET['setting'])){
         $VIEW_NAME = 'setting.php';
+        include_once './layout.php';
+    }else if(isset($_GET['detail_video_mini'])){
+        if (isset($_GET['id_post'])&&($_GET['id_post']>0)){
+                $id_post = $_GET['id_post'];
+                $onepost = post($id_post);
+                header('Location: index.php?detail_video_mini');
+            }
+        $VIEW_NAME = 'detail_video_mini.php';
         include_once './layout.php';
     }else if(isset($_GET['register'])){
         require_once ('../google/config.php');
@@ -251,13 +332,6 @@
     }else{
         $arr = all_post_video();
         include_once('../cloudinary/video.php');
-
-//        if(isset($_POST['submit_like'])){
-//            $id_post = $_POST['id_post'];
-//            echo "<script type='text/javascript'>
-//                alert('$id_post')
-//            </script>";
-//        }
         $id_user = null;
         if(!empty($_SESSION['info'])){
             $id_user = $_SESSION['info']['id'];
@@ -265,7 +339,7 @@
         foreach ($arr as $value){
             $comments = [];
 
-            foreach (comment_video_all($value['id']) as $value2 ){
+            foreach (comment_all($value['id']) as $value2 ){
                 $comments[] = [
                     'name_user_comment' => account_one_row($value2['id_account'])['name'],
                     'content' => $value2['content'],
@@ -277,6 +351,7 @@
             $posts_video[] = [
                 'id_user_log' => $id_user,
                 'id_post' => $value['id'],
+                'cate_idpost' => $value['cate_id'],
                 'name' => account_one_row($value['id_account'])['name'],
                 'time_create' => $value['create_date'],
                 'title' => $value['title'],
@@ -287,11 +362,20 @@
                 'comments' => $comments
             ];
         }
+         if (isset($_POST['submit_comment_home'])){
+                    $content = $_POST['content_video_home'];
+                    $id_post = $_POST['id_post'];
+                    $tenkh = $_POST['name_cmt'];
+                    $id_account = $_SESSION['info']['id'];
+                    insert_comment($content,$id_account,$id_post);
+                    header('Location: index.php');
+                }
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     }
     require_once('../public/setting/js/home.php');
 ?>
+
 
 
 
