@@ -38,7 +38,9 @@
                 'link' => $value['link'],
                 'views' => $value['views'],
                 'likes' => $value['likes'],
-                'avatar' => account_one_row($value['id_account'])['link_avatar']];
+                'avatar' => account_one_row($value['id_account'])['link_avatar'],
+                'comments' => $comments];
+
         }
              if (isset($_POST['submit_comment_home'])){
                     $content = $_POST['content_video_home'];
