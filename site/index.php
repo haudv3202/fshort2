@@ -38,7 +38,9 @@
                 'link' => $value['link'],
                 'views' => $value['views'],
                 'likes' => $value['likes'],
-                'avatar' => account_one_row($value['id_account'])['link_avatar']];
+                'avatar' => account_one_row($value['id_account'])['link_avatar'],
+                'comments' => $comments];
+
         }
              if (isset($_POST['submit_comment_home'])){
                     $content = $_POST['content_video_home'];
@@ -149,7 +151,7 @@
         $VIEW_NAME = 'setting.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video_mini'])){
-        if (isset($_GET['id_post'])&&($_GET['id_post']>0)){
+        if (isset($_GET['id_post'])){
                 $id_post = $_GET['id_post'];
                 $onepost = post($id_post);
                 header('Location: index.php?detail_video_mini');

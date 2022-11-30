@@ -3,17 +3,16 @@ const array_user_detail = <?php echo json_encode($posts_video); ?>;
 // console.log(array_user_detail);
 
 const array_posts_user = <?php echo json_encode($posts_news); ?>;
-// console.log(array_posts_user);
+console.log(array_posts_user);
 
 // render content page
 function Video_home(datavideohome) {
   let ListvideoHome = document.querySelector(".videos_page");
 if (ListvideoHome) {
     ListvideoHome.innerHTML = "";
-
-
     for (let item of datavideohome) {
-      // $linksp = "index.php?detail_video_mini&id_post=".${item.id_post};
+      // $linksp = ${item.id_post};
+
         var Comments_video = "";
         for (let video_comment of item.comments) {
           Comments_video += `
@@ -39,7 +38,7 @@ if (ListvideoHome) {
                 <img src="${item.avatar}"
                     alt="">
                 <div class="text_logo_name_videos">
-                    <p><a href="?detail_video_mini&id_post=".${item.id_post}>${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                    <p><a href="?detail_video_mini&id_post="${item.id_post}>${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                     <p>${item.time_create} <i class='bx bx-world'></i></p>
                 </div>
             </div>
@@ -50,7 +49,7 @@ if (ListvideoHome) {
             </div>
         </div>
     <div class="links_video">
-  <a href="?detail_video_mini" ><video  width="50%" preload=""  controls type="video/mp4" loop
+  <a href="?detail_video_mini&id_post="${item.id_post}><video  width="50%" preload=""  controls type="video/mp4" loop
             src="${item.link}"></video></a>
 
     </div>
@@ -99,6 +98,24 @@ function About_home(dataabouthome) {
   if (ListaboutHome) {
     ListaboutHome.innerHTML = "";
     for (let item of dataabouthome) {
+        var comments_news = "";
+        for (let video_comment of item.comments) {
+            comments_news += `
+            <div class="info_comment_video_page">
+                <img src="${video_comment.avatar_comment}" alt="">
+                <div class="text_logo_name_videos">
+                <p>${video_comment.name_user_comment}<i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+            <p>${video_comment.time_date} ~ <i class='bx bx-world'></i></p>
+        </div>
+        </div>
+            <div class="value_comment_user">
+                <p>
+                    ${video_comment.content}
+                </p>
+            </div>
+        `
+        }
+
       ListaboutHome.innerHTML += `
     <div class="logo_name_videos_btn">
 
@@ -139,18 +156,7 @@ function About_home(dataabouthome) {
         </div>
     </div>
     <div class="comment_video_page">
-        <div class="info_comment_video_page">
-            <img src="./img/anh-gai-xinh-Viet-Nam.jpg" alt="">
-            <div class="text_logo_name_videos">
-                <p>Hậu ăn cứt<i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
-                <p>November 4 at 3:28 AM ~ <i class='bx bx-world'></i></p>
-            </div>
-        </div>
-        <div class="value_comment_user">
-            <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.
-          </p>
-        </div>
+        `+ comments_news +`
     </div>
     <div class="input_comment">
        <form action="index.php" method="post">
