@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36fa856e-ab94-412b-8688-003ab55a3f4e" name="Changes" comment="update fogot google">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/setting/js/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/setting/js/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="future/haudv3202/admin" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -179,6 +177,7 @@
       <workItem from="1669819717278" duration="285000" />
       <workItem from="1669820434148" duration="1413000" />
       <workItem from="1669825550698" duration="3533000" />
+      <workItem from="1669875575256" duration="310000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1668142420554</created>
