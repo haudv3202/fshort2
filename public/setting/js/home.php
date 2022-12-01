@@ -1,6 +1,6 @@
 <script>
 const array_user_detail = <?php echo json_encode($posts_video); ?>;
-// console.log(array_user_detail);
+console.log(array_user_detail);
 
 const array_posts_user = <?php echo json_encode($posts_news); ?>;
 console.log(array_posts_user);
@@ -58,11 +58,11 @@ if (ListvideoHome) {
     </div>
     <div class="feeling">
         <div class="icon_felling">
-          <form action=""  method="POST">
-            <input type="hidden" name="id_user" value="${item.id_user_log}">
-             <input type="hidden" name="id_post" value="${item.id_post}">
-            <button type="submit" name="submit_like" class="heart_form_felling"><i class='bx bx-heart'></i></button>
-          </form>
+        <form action=""  method="POST">
+                        <input type="hidden" name="id_user" value="${item.id_user_log}">
+                        <input type="hidden" name="id_post" value="${item.id_post}">
+                        <button type="submit" name="submit_like"> <i onclick="heartPost()" class='bx bxs-heart' style='color:`+ checkLike(`${item.status_like}`) +`;'></i></button>
+            </form>
             <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
             <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
         </div>
@@ -123,7 +123,7 @@ function About_home(dataabouthome) {
     <div class="logo_name_videos_btn">
 
         <div class="logo_name_videos">
-            <img src="${item.avatar}"                alt="">
+            <img src="${item.avatar}"alt="">
             <div class="text_logo_name_videos">
                 <p><a href="?detail_video_other">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                 <p>${item.time_create}<i class='bx bx-world'></i></p>
@@ -175,7 +175,13 @@ function About_home(dataabouthome) {
   }
 }
 About_home(array_posts_user);
-
+function checkLike(statuslike){
+    if(statuslike == 1 ){
+        return "red";
+    }else {
+      return "#000";
+    }
+  }
 // render video user
 
 function Vieo_detail(data) {

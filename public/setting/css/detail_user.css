@@ -2831,6 +2831,10 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
 }
+.icon_felling form button {
+  background-color: transparent !important;
+  border: none;
+}
 .feeling .icon_felling i {
   font-size: 25px;
   margin: 0 10px;
