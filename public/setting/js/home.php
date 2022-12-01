@@ -49,7 +49,10 @@ if (ListvideoHome) {
             </div>
         </div>
     <div class="links_video">
-  <a href="?detail_video_mini&id_post="${item.id_post}><video  width="50%" preload=""  controls type="video/mp4" loop
+
+
+  <a href="?detail_video_mini" ><video  width="50%" preload="" onplay="getCurTime();" id="Video" controls type="video/mp4" loop
+
             src="${item.link}"></video></a>
 
     </div>
@@ -65,7 +68,7 @@ if (ListvideoHome) {
         </div>
         <div class="infor_view">
             <p>100 lượt thích</p>
-            <p><span id="view">0</span> Views</p>
+            <p><span id="views">0</span> Views</p>
         </div>
     </div>
     <div class="content_video_page">
@@ -787,16 +790,6 @@ function checkcomment_ipvideo() {
 checkcomment_ipvideo();
 
 // hover video play
-const Video = document.querySelectorAll(".vid");
-for (let i = 0; i <= Video.length; i++) {
-  Video[i].addEventListener("mouseover", function () {
-    Video[i].play();
-  });
-  Video[i].addEventListener("mouseout", function () {
-    Video[i].pause();
-    Video[i].load();
-  });
-}
 
 // click heart Number
 
@@ -816,6 +809,8 @@ function heart_video_cmt() {
 }
 
 // minh anh js 
+
+//hello
 var coll = document.getElementsByClassName("row-centerfix");
 if (coll) {
   var i;
@@ -862,14 +857,14 @@ function notify(type,message){
   var triggerTime=5, fired=0;
 function getCurTime(){
             var myVideo = document.getElementsByTagName('Video')[0];          
-            
-            var a=0
+            myVideo.play();
+            var a=0;
             myVideo.addEventListener("timeupdate",function(){
                 var timer=myVideo.currentTime.toFixed(2);
                 if (timer > triggerTime){
                     if (!fired) {
                 a++; //in other words, increment the first time it's clicked, but then not again until after the variable has been reset to false, which happens at the end of the video.
-                view.innerHTML=a;
+                views.innerHTML=a;
                 console.log(a);  
             }
             fired = true;
