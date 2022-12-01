@@ -1,4 +1,7 @@
+<?php 
+  if(isset($_SESSION['info'])){
 
+?>
      <div class="detail_user">
         <div class="box">   
                 <div class="row-centerfix">
@@ -8,7 +11,7 @@
                 <div class="menu_center">               
                     <div id="fix_setting_id" class="row-center-setting">
                         <div  class="center_title_setting">
-                            <p>Lê Sỹ Hải</p> 
+                            <p><?php echo $_SESSION['info']['name'] ?></p> 
                         </div>
                         <div id="icon_setting">
                             <a  href="">Xóa Vĩnh Viễn</a>
@@ -24,7 +27,7 @@
                          <div class="setting_account_name_role">
                         <div class="name_settimg_account">
                                 <p for="">Tên Tài Khoản</p>
-                        <input type="text" placeholder="Lê Sỹ Hải">
+                        <input type="text" placeholder="<?php echo $_SESSION['info']['name'] ?>">
                         </div>
                         <div class="role_setting_account">
                                <p for="">Vai Trò</p>
@@ -33,12 +36,12 @@
                         </div>
                         <div class="setting_account">
                             <p for="">Email</p>
-                        <input type="text" placeholder="hailsph22054@fpt.edu.vn">
+                        <input type="text" placeholder="<?php echo $_SESSION['info']['email'] ?>">
                         </div>
                          <div class="setting_account_pass_button">
                          <div class="pass_setting_account">
                                <p for="">Mật Khẩu</p>
-                        <input type="text" placeholder="***********">
+                        <input type="text" disabled placeholder="<?php echo $_SESSION['info']['password'] ?>">
                          </div>
                         <div class="button_edit_setting">
                             <button>Sửa Tài Khoản</button>
@@ -49,3 +52,6 @@
                     </div>
         </div>
 </div>
+     <?php
+        }
+        ?>

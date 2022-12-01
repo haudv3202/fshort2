@@ -155,11 +155,31 @@
         if (isset($_GET['id_post'])){
                 $id_post = $_GET['id_post'];
                 $onepost = post($id_post);
-                header('Location: index.php?detail_video_mini');
+            }
+              if (isset($_POST['submit_comment_home'])){
+                    $content = $_POST['content_video_home'];
+                    $id_post = $_POST['id_post'];
+                    $id_account = $_SESSION['info']['id'];
+                    insert_comment($content,$id_account,$id_post);
+                    header('Location: index.php?detail_video_mini');
             }
         $VIEW_NAME = 'detail_video_mini.php';
         include_once './layout.php';
-    }else if(isset($_GET['register'])){
+    }else if(isset($_GET['detail_posts_mini'])){
+        if (isset($_GET['id_post'])){
+                $id_post = $_GET['id_post'];
+                $onepost = post($id_post);
+            }
+              if (isset($_POST['submit_comment_home'])){
+                    $content = $_POST['content_video_home'];
+                    $id_post = $_POST['id_post'];
+                    $id_account = $_SESSION['info']['id'];
+                    insert_comment($content,$id_account,$id_post);
+                    header('Location: index.php?detail_posts_mini');
+            }
+                    $VIEW_NAME = 'detail_posts_mini.php';
+                    include_once './layout.php';
+        }else if(isset($_GET['register'])){
         require_once ('../google/config.php');
         require_once ("../mail/SendMail.php");
         if(isset($_POST['resgister'])){
@@ -397,7 +417,7 @@
                     $id_account = $_SESSION['info']['id'];
                     insert_comment($content,$id_account,$id_post);
                     header('Location: index.php');
-                }
+            }
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     } 
