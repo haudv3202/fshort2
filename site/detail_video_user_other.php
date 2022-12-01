@@ -24,10 +24,10 @@
                       <p>Chia Sẻ Với Facebook</p></a
                     >
                   </li>
-                  <li>
-                    <a href=""
+                  <li >
+                    <a  onclick="getURL();"
                       ><i class="bx bx-link-alt"></i>
-                      <p>Sao chép liên kết</p></a
+                      <p>cheps</p></a
                     >
                   </li>
                 </ul>

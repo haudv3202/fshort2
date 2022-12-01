@@ -808,7 +808,7 @@ function heart_video_cmt() {
   }
 }
 
-// minh anh js 
+// minh anh js
 
 //hello
 var coll = document.getElementsByClassName("row-centerfix");
