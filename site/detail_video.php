@@ -25,7 +25,7 @@
                     >
                   </li>
                   <li>
-                    <a href=""
+                    <a onclick="getURL();"
                       ><i class="bx bx-link-alt"></i>
                       <p>Sao chép liên kết</p></a
                     >
