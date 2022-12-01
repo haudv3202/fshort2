@@ -1472,6 +1472,9 @@ body::-webkit-scrollbar {
   width: 950px;
   height: 600px;
 }
+.post_center{
+  top: 10%;
+}
 /* end detail posts mini  */
 
 /* volume video mini */
@@ -2238,7 +2241,6 @@ body::-webkit-scrollbar {
 #video_detail_mini .video_detail_mini_left .video_center {
   text-align: center;
   position: relative;
-  top: 10%;
 }
 #video_detail_mini
   .video_detail_mini_left
@@ -2601,7 +2603,7 @@ body::-webkit-scrollbar {
 
 .profile_detail_mini_right .comment_user_video_mini {
   margin-top: 20px;
-  height: 410px;
+  height: 390px;
   overflow: auto;
   border-top: 1px solid #c6c6c636;
   border-bottom: 1px solid #c6c6c636;

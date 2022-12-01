@@ -161,7 +161,7 @@ function About_home(dataabouthome) {
         <p>${item.title}</p>
         </div>
        <div class="content_news_page_span">
-        <span onclick="ClickLimitText()">Xem thêm</span>
+        <span class="content_news_page_span_text" onclick="ClickLimitText()">Xem thêm</span>
         </div>
     <div class="links_video">
         <a href="?detail_posts_mini&id_post=${item.id_post}">
@@ -216,7 +216,7 @@ function Vieo_detail(data) {
     for (let item of data) {
       ListVideouser.innerHTML += `
               <div class="video_user_detail" >
-                          <a href="?detail_video_mini"> <video src="${item.link}" type="video/mp4" type="video/mp4" muted class="vid" loop>
+                          <a href="?detail_video_mini&id_post=${item.id_post}"> <video src="${item.link}" type="video/mp4" type="video/mp4" muted class="vid" loop>
                           </video></a>
                           <div class="views_video_user_detail d-flex align-items-center">
                             <i class='bx bx-play fs-4'></i><span class="view_video">0</span>
@@ -237,7 +237,7 @@ function Posts_user(datauser) {
                <div
               class="posts_user_detail"
             >
-              <span onclick="showProduct()"><img src="${item.link}" /></span>
+              <a href="?detail_posts_mini&id_post=${item.id_post}">><img src="${item.link}" /></a>
                 <div class="icon_posts_user" onclick="showProduct()">
                   <span>
                     <i class="bx bxs-heart"></i> 1k
@@ -311,19 +311,30 @@ if (limit_text) {
   function ClickLimitText() {
      var limit_text_box = document.querySelectorAll(".content_news_page");
      var limit_text_text = document.querySelectorAll(".content_news_page p");
-    var limit_text_after = document.querySelectorAll(".content_news_page_span span");
+    
      for (let i = 0; i < limit_text_after.length; i++) {
     if (limit_text_text[i].style.display == "-webkit-box"){
-      limit_text_after[i].innerHTML = "Ẩn Bớt";
+      // limit_text_after[i].innerHTML = "Ẩn Bớt";
       limit_text_text[i].style.display = "";
     }else{
-          limit_text_after[i].innerHTML = "Xem thêm";
+          // limit_text_after[i].innerHTML = "Xem thêm";
          limit_text_text[i].style.display = "-webkit-box";
     }
   }
 }
 }
 
+var limit_text_after = document.querySelectorAll(".content_news_page_span_text");
+console.log(limit_text_after);
+     for (let i = 0; i < limit_text_after.length; i++) {
+      limit_text_after[i].addEventListener("click", ()=>{
+    if (limit_text_after[i].innerHTML == "Xem thêm"){
+      limit_text_after[i].innerHTML = "Ẩn Bớt";
+    }else{
+          limit_text_after[i].innerHTML = "Xem thêm";
+    }
+  });
+}
 
 // const videoss = document.getElementById("videotest");
  
