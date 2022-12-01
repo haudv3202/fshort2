@@ -6,7 +6,7 @@
       // die();
     ?>
       <div class="video_detail_mini_left">
-        <div class="video_center">
+        <div class="video_center post_center">
           <span onclick="play()">
             <img  class="posts_click_play"
             src="<?php echo $value['link'] ?>"
