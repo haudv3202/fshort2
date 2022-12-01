@@ -3,7 +3,7 @@ const array_user_detail = <?php echo json_encode($posts_video); ?>;
 console.log(array_user_detail);
 
 const array_posts_user = <?php echo json_encode($posts_news); ?>;
-console.log(array_posts_user);
+// console.log(array_posts_user);
 
 // render content page
 function Video_home(datavideohome) {
@@ -31,6 +31,21 @@ if (ListvideoHome) {
         `
         }
 
+        var follow = "";
+        if(`${item.follow}` == 0){
+            follow = ` <form action="" method="post">
+                    <input name="id_account_follow" type="hidden" value="${item.id_user_post}"/>
+                    <input name="id_log_follow" type="hidden" value="${item.id_user_log}"/>
+                    <button name="follows"   class="btnFLLL">follow</button>
+            </form>`
+        }else  {
+            follow = ""
+        }
+
+        if(`${item.id_user_log}` == `${item.id_user_post}`){
+            follow = ""
+        }
+
         ListvideoHome.innerHTML += `
                    <div class="logo_name_videos_btn">
     
@@ -43,10 +58,16 @@ if (ListvideoHome) {
                 </div>
             </div>
     
-            <div class="btn_logo_name_video">
+            <div class="btn_logo_name_video">`+ follow +
+            // <form action="" method="post">
+            //         <input name="id_account_follow" type="hidden" value="${item.id_user_post}"/>
+            //         <input name="id_log_follow" type="hidden" value="${item.id_user_log}"/>
+            //         <button name="follows"   class="btnFLLL">follow</button>
+            // </form>
                 <!-- <input type="button" value="hello" id="test"> -->
-                <button onclick="follow(this)" data-follow="1" class="btnFLLL">follow</button>
-            </div>
+<!--onclick="follow(this)"-->
+<!--data-follow="1"-->
+        `</div>
         </div>
 
     <div class="links_video" onclick="showVideo()">
@@ -541,22 +562,22 @@ function commentPost() {
 }
 
 // ===================follow===============//
-let followcheck = "follow";
-function follow(btn) {
-  var follow = btn.dataset.follow;
-  console.log(btn.dataset.follow);
-  if (Number(follow)) {
-    btn.innerHTML = "following";
-    btn.dataset.follow = 0;
-  } else {
-    var checkFL = confirm("Do you want unfollow ?");
-    if (checkFL == false) {
-      btn.innerHTML = "following";
-    } else {
-      btn.innerHTML = "follow";
-      btn.dataset.follow = 1;
-    }
-  }
+// let followcheck = "follow";
+// function follow(btn) {
+//   var follow = btn.dataset.follow;
+//   console.log(btn.dataset.follow);
+//   if (Number(follow)) {
+//     btn.innerHTML = "following";
+//     btn.dataset.follow = 0;
+//   } else {
+//     var checkFL = confirm("Do you want unfollow ?");
+//     if (checkFL == false) {
+//       btn.innerHTML = "following";
+//     } else {
+//       btn.innerHTML = "follow";
+//       btn.dataset.follow = 1;
+//     }
+//   }
   // if (followcheck == "follow") {
   //   followscheck = "following";
   // } else {
@@ -569,7 +590,7 @@ function follow(btn) {
   //     this.innerHTML = followcheck;
   //   })
   // }
-}
+// }
 
 // ================= follow right root==============//
 
