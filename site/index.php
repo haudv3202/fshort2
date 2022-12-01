@@ -5,6 +5,7 @@
     require_once '../dao/account.php';
     require_once '../dao/posts_dao.php';
     require_once '../dao/comment.php';
+    require_once '../dao/like.php';
     require_once '../App/Check_app/Check.php';
     require_once '../App/getid3/getid3.php';
     $posts_video = [] ;
@@ -355,12 +356,18 @@
         $arr = all_post_video();
         include_once('../cloudinary/video.php');
         $id_user = null;
+
         if(!empty($_SESSION['info'])){
             $id_user = $_SESSION['info']['id'];
         }
         foreach ($arr as $value){
             $comments = [];
-
+            $status_like = null;
+            if(countLike($id_user,$value['id'])['totallike']>0){
+                $status_like = 1;
+            }else {
+                $status_like = 0;
+            }
             foreach (comment_all($value['id']) as $value2 ){
                 $comments[] = [
                     'name_user_comment' => account_one_row($value2['id_account'])['name'],
@@ -381,9 +388,28 @@
                 'views' => $value['views'],
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar'],
-                'comments' => $comments
+                'comments' => $comments,
+                'status_like' => $status_like
             ];
         }
+
+
+        // like 
+        if(isset($_POST['submit_like'])){
+            $id_user = $_POST['id_user'];
+            $id_post = $_POST['id_post'];
+          
+            if(countLike($id_user,$id_post)['totallike']>0){
+                deleteLike($id_user,$id_post);
+                PostUnLike($id_post);
+                route('?index.php');
+            }else {
+                like($id_user,$id_post);
+                PostLike($id_post);
+                route('?index.php');
+            }
+        }
+    
          if (isset($_POST['submit_comment_home'])){
                     $content = $_POST['content_video_home'];
                     $id_post = $_POST['id_post'];
@@ -394,12 +420,5 @@
             }
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
-    }
+    } 
     require_once('../public/setting/js/home.php');
-?>
-
-
-
-
-
-
