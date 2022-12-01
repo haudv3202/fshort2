@@ -256,13 +256,14 @@
         <!-- đây là menu cột bên trái, anh em dùng phần này nhé -->
         <div class="left_root">
             <div class="search_header">
-                <form action="">
-                    <i class="bx bx-search-alt"></i>
+                <form action="index.php?home" method="post">
+                    <button type="submit" ><i class="bx bx-search-alt" name="timkiemsp"></i></button>
                     <input
                         type="text"
-                        name="name"
                         id=""
                         placeholder="Search Fshort"
+                        placeholder="Tìm Kiếm Sản Phẩm"
+                         name="nhapemail"
                     />
                 </form>
             </div>
