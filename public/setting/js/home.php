@@ -38,7 +38,7 @@ if (ListvideoHome) {
                 <img src="${item.avatar}"
                     alt="">
                 <div class="text_logo_name_videos">
-                    <p><a href="?detail_video_mini&id_post="${item.id_post}>${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                    <p><a href="?detail_video_other&id_post="${item.id_post}>${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                     <p>${item.time_create} <i class='bx bx-world'></i></p>
                 </div>
             </div>
@@ -48,7 +48,7 @@ if (ListvideoHome) {
                 <button onclick="follow(this)" data-follow="1" class="btnFLLL">follow</button>
             </div>
         </div>
-    <div class="links_video">
+    <div class="links_video" onclick="showVideo()">
   <a href="?detail_video_mini&id_post=${item.id_post}"><video  width="50%"  controls type="video/mp4" loop
             src="${item.link}"></video></a>
 
@@ -120,7 +120,7 @@ function About_home(dataabouthome) {
     <div class="logo_name_videos_btn">
 
         <div class="logo_name_videos">
-            <img src="${item.avatar}"                alt="">
+            <img src="${item.avatar}" alt="">
             <div class="text_logo_name_videos">
                 <p><a href="?detail_video_other">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                 <p>${item.time_create}<i class='bx bx-world'></i></p>
@@ -134,11 +134,14 @@ function About_home(dataabouthome) {
     </div>
       <div class="content_news_page">
         <p>${item.title}</p>
-    </div>
+        </div>
+       <div class="content_news_page_span">
+        <span onclick="ClickLimitText()">Xem thêm</span>
+        </div>
     <div class="links_video">
-        <span onclick="showProduct()">
+        <a href="?detail_posts_mini&id_post=${item.id_post}">
         <img src="${item.link}" width="100%" style="border-radius:5px;" alt="">
-        </span>
+        </a>
     </div>
 <div class="feeling">
         <div class="icon_felling">
@@ -267,6 +270,28 @@ window.addEventListener("resize", checkScroll, false);
 //  detail video button
 // =============== visibility =============//
 
+var limit_text = document.querySelector(".content_news_page");
+
+if (limit_text) { 
+  var limit_text_p = document.querySelectorAll(".content_news_page p")
+    for (let i = 0; i < limit_text_p.length; i++) {
+  limit_text_p[i].style.display ="-webkit-box";
+  }
+  function ClickLimitText() {
+     var limit_text_box = document.querySelectorAll(".content_news_page");
+     var limit_text_text = document.querySelectorAll(".content_news_page p");
+    var limit_text_after = document.querySelectorAll(".content_news_page_span span");
+     for (let i = 0; i < limit_text_after.length; i++) {
+    if (limit_text_text[i].style.display == "-webkit-box"){
+      limit_text_after[i].innerHTML = "Ẩn Bớt";
+      limit_text_text[i].style.display = "";
+    }else{
+          limit_text_after[i].innerHTML = "Xem thêm";
+         limit_text_text[i].style.display = "-webkit-box";
+    }
+  }
+}
+}
 
 
 // const videoss = document.getElementById("videotest");
@@ -384,26 +409,6 @@ function test() {
 
 
 //=================//
-
-var mini_video = document.querySelector("#video_detail_mini");
-if (mini_video) {
-  document.querySelector("#video_detail_mini").style.display = "none";
-  function showVideo() {
-    var videoplay = document.querySelector(".video_click_play");
-    var playiconvd = document.querySelector(".icon_play_video_center");
-    var videos = document.querySelector("#video_detail_mini");
-    if (videos.style.display == "block") {
-      videoplay.pause();
-      videoplay.load();
-      playiconvd.style.display = "block";
-      videos.style.display = "none";
-    } else {
-        videoplay.play();
-      playiconvd.style.display = "none";
-      videos.style.display = "block";
-    }
-  }
-}
 
 // click ++value view
 
@@ -647,29 +652,7 @@ function validate(event) {
   }
 }
 
-//  detail posts button
-var mini_posts = document.querySelector("#product_sp");
-if (mini_posts) {
-  var unproduct = (document.querySelector("#product_sp").style.display =
-    "none");
-  function showProduct() {
-    var post = document.querySelector("#product_sp");
-    var pcs = document.querySelector(".product_content_sp");
-    if (post.style.display == "flex") {
-      post.style.display = "none";
-      post.style.transition = ".6s";
-      pcs.style.top = "-10px";
-      pcs.style.transition = ".6s";
-    } else {
-      post.style.display = "flex";
-      post.style.justifyContent = "center";
-      post.style.alignItems = "center";
-      pcs.style.top = "0";
-      pcs.style.left = "0";
-      pcs.style.transition = ".6s";
-    }
-  }
-}
+
 
 // Check value input
 var fromcmtpoosts = document.querySelector(".input_comment_user");
@@ -690,52 +673,20 @@ if (fromcmtpoosts) {
   checkcomment_ip();
 }
 
-// add like comment video
+// add like comment posts
 
-var valuenumberposts = 0;
-var numberlikeposts = document.querySelector(".number_view_posts");
-const iconheart = document.querySelector("#heart-icon");
-function clickheartposts() {
-  if (iconheart.classList[1] == "bx-heart") {
-    iconheart.classList.add("bxs-heart");
-    iconheart.classList.remove("bx-heart");
-    valuenumberposts++;
-    numberlikeposts.innerHTML = valuenumberposts;
-  } else {
-    iconheart.classList.add("bx-heart");
-    iconheart.classList.remove("bxs-heart");
-    valuenumberposts--;
-    numberlikeposts.innerHTML = valuenumberposts;
+  
+function clicklike() {
+    const likei = document.querySelector("#like-posts-mini");
+     if (likei.classList[1] == "bxs-like") {
+        likei.classList.add("bx-like");
+        likei.classList.remove("bxs-like");
+      } else {
+        likei.classList.add("bxs-like");
+        likei.classList.remove("bx-like");
+      }
   }
-}
 
-// even click commnent
-
-var comment = document.querySelector(".user_comment_box");
-if (comment) {
-  document.querySelector(".user_comment_box").style.display = "none";
-  function comment() {
-    var commnentfs = document.querySelector(".user_comment_box");
-    var comtposts = document.querySelector(".comment_posts_user");
-    const iconchat = document.querySelector("#chat-icon");
-    if (
-      iconchat.classList[1] == "bxs-message-rounded" ||
-      commnentfs.style.display == "block"
-    ) {
-      commnentfs.style.display = "none";
-      comtposts.style.height = "150px";
-      comtposts.style.transition = ".3s";
-      iconchat.classList.add("bx-message-rounded");
-      iconchat.classList.remove("bxs-message-rounded");
-    } else {
-      comtposts.style.height = "400px";
-      comtposts.style.transition = ".3s";
-      commnentfs.style.display = "block";
-      iconchat.classList.add("bxs-message-rounded");
-      iconchat.classList.remove("bx-message-rounded");
-    }
-  }
-}
 
 // follow and unfollow user
 var bgfollow = document.querySelector(".btn_edit_user_other");
