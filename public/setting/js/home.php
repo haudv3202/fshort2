@@ -64,27 +64,14 @@ if (ListvideoHome) {
             //         <input name="id_log_follow" type="hidden" value="${item.id_user_log}"/>
             //         <button name="follows"   class="btnFLLL">follow</button>
             // </form>
-                <!-- <input type="button" value="hello" id="test"> -->
-<!--onclick="follow(this)"-->
-<!--data-follow="1"-->
+
         `</div>
         </div>
-<<<<<<< HEAD
+
     <div class="links_video">
-<<<<<<< HEAD
-  <a href="?detail_video_mini&id_post=${item.id_post}"><video  width="50%"  controls type="video/mp4" loop
-=======
 
 
-  <a href="?detail_video_mini" ><video  width="50%" preload="" onplay="getCurTime();" id="Video" controls type="video/mp4" loop
-
->>>>>>> 6bd861499c1697024d96f0e349bfcf0e7e065fe3
-=======
-
-    <div class="links_video" onclick="showVideo()">
-  <a href="?detail_video_mini&id_post=${item.id_post}"><video  width="50%"  controls type="video/mp4" loop
-
->>>>>>> 5014e4df9f7f846c1ac991a2c5dabdc51254dc4f
+  <a href="?detail_video_mini&id_post=${item.id_post}" ><video  width="50%" onplay="getCurTime();" id="Video" controls type="video/mp4" loop
             src="${item.link}"></video></a>
 
     </div>

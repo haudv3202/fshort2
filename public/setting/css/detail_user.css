@@ -2889,10 +2889,7 @@ body::-webkit-scrollbar {
   font-size: 25px;
   margin: 0 10px;
 }
-.heart_form_felling {
-  border: none !important;
-  background-color: transparent !important;
-}
+
 .feeling .icon_felling i:hover {
   color: rgba(77, 77, 77, 0.61);
   cursor: pointer;

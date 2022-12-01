@@ -370,11 +370,11 @@
                 $status_like = 0;
             }
             $follow = null;
-            if(!empty(follow_user($value['id_account'],$id_user))){
-                $follow = 1;
-            }else {
-                $follow = 0;
-            }
+            // if(!empty(follow_user($value['id_account'],$id_user))){
+            //     $follow = 1;
+            // }else {
+            //     $follow = 0;
+            // }
 
             foreach (comment_all($value['id']) as $value2 ){
                 $comments[] = [
