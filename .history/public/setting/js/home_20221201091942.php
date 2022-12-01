@@ -49,7 +49,7 @@ if (ListvideoHome) {
             </div>
         </div>
     <div class="links_video">
-  <a href="?detail_video_mini&id_post=${item.id_post}"><video  width="50%"  controls type="video/mp4" loop
+  <a href="?detail_video_mini&id_post=${item.id_post}><video  width="50%" preload=""  controls type="video/mp4" loop
             src="${item.link}"></video></a>
 
     </div>

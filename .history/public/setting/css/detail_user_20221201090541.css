@@ -1517,8 +1517,8 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 .list_option_left_root .user_left img {
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  width: 36px;
   border-radius: 50%;
   margin: 0 20px;
 }
@@ -1599,7 +1599,24 @@ body::-webkit-scrollbar {
     rgb(255, 255, 255)
   );
 }
-
+.list_option_left_root .user_left {
+  margin-top: 20px;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background-image: linear-gradient(
+    to right,
+    rgb(168, 167, 167),
+    rgb(235, 235, 235),
+    rgb(168, 167, 167)
+  );
+  border-radius: 8px;
+}
+.list_option_left_root .user_left span {
+  color: rgb(94, 94, 94);
+}
 
 /* ============end content_detail_user=============== */
 
