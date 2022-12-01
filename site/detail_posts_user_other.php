@@ -20,13 +20,13 @@
                 <i class='bx bx-share bx-flip-horizontal share_user_detail_i' ></i>
                 <ul class="coplink_user_detail">
                   <li>
-                    <a href=""
+                    <a 
                       ><i class="bx bxl-facebook"></i>
                       <p>Chia Sẻ Với Facebook</p></a
                     >
                   </li>
                   <li>
-                    <a href=""
+                    <a  onclick="getURL();"
                       ><i class="bx bx-link-alt"></i>
                       <p>Sao chép liên kết</p></a
                     >
