@@ -6,6 +6,7 @@
     require_once '../dao/posts_dao.php';
     require_once '../dao/comment.php';
     require_once '../dao/like.php';
+    require_once '../dao/user_follow_dao.php';
     require_once '../App/Check_app/Check.php';
     require_once '../App/getid3/getid3.php';
     $posts_video = [] ;
@@ -368,6 +369,13 @@
             }else {
                 $status_like = 0;
             }
+            $follow = null;
+            if(!empty(follow_user($value['id_account'],$id_user))){
+                $follow = 1;
+            }else {
+                $follow = 0;
+            }
+
             foreach (comment_all($value['id']) as $value2 ){
                 $comments[] = [
                     'name_user_comment' => account_one_row($value2['id_account'])['name'],
@@ -389,8 +397,18 @@
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar'],
                 'comments' => $comments,
-                'status_like' => $status_like
+                'status_like' => $status_like,
+                'follow' => $follow,
+                'id_user_post' => $value['id_account']
             ];
+        }
+
+//        follow
+        if(isset($_POST['follows'])){
+            $id_account_follow = $_POST['id_account_follow'];
+            $id_account_log = $_POST['id_log_follow'];
+            follow_user_new($id_account_follow,$id_account_log);
+            route('?index.php');
         }
 
 
