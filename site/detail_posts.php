@@ -9,13 +9,15 @@
           <div class="mt-3 avatar_detail_user">
             <img
               class="img"
-              src="<?php echo $user['link_avatar'] ?>"
+            src="<?php echo $_SESSION['info']['link_avatar'];?>"
               alt=""
             />
           </div>
           <div class="name_detail_user">
             <div class="id_user_detail">
-               <h2><?php echo $user['name'] ?></h2>
+
+              <h2><?php echo $_SESSION['info']['name'];?></h2>
+
               <div class="share_user_detail">
                 <i class='bx bx-share bx-flip-horizontal share_user_detail_i' ></i>
                 <ul class="coplink_user_detail">
@@ -35,7 +37,7 @@
               </div>
             </div>
             <div class="name_user_detail">
-              <h2>#<?php echo $user['id']  ?><?php echo $user['name'] ?></h2>
+              <h3>#<?php echo $_SESSION['info']['id'];?><</h3>
             </div>
             <div class="edit_profile_user_detail">
               <button class="btn_edit_user">

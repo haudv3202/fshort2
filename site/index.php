@@ -10,8 +10,8 @@
     $posts_video = [] ;
     $posts_news = [] ;
     if(isset($_GET['about'])){
+        include_once('../cloudinary/post.php');
         $arr = all_post_news();
-  include_once('../cloudinary/post.php');
         $id_user = null;
         if(!empty($_SESSION['info'])){
             $id_user = $_SESSION['info']['id'];
@@ -19,8 +19,7 @@
 
         foreach ($arr as $value){
                $comments = [];
-
-            foreach (comment_all($value['id']) as $value2 ){
+                foreach (comment_all($value['id']) as $value2 ){
                 $comments[] = [
                     'name_user_comment' => account_one_row($value2['id_account'])['name'],
                     'content' => $value2['content'],
@@ -28,7 +27,7 @@
                     'time_date' => $value2['create_date'],
                     'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
                     ];
-            }
+                }
             $posts_news[] = [
                 'id_user_log' => $id_user,
                 'id_post' => $value['id'],
@@ -39,7 +38,9 @@
                 'link' => $value['link'],
                 'views' => $value['views'],
                 'likes' => $value['likes'],
-                'avatar' => account_one_row($value['id_account'])['link_avatar']];
+                'avatar' => account_one_row($value['id_account'])['link_avatar'],
+                'comments' => $comments];
+
         }
              if (isset($_POST['submit_comment_home'])){
                     $content = $_POST['content_video_home'];
@@ -58,7 +59,7 @@
         $VIEW_NAME = 'car.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video'])){
-  $arr = all_post_video();
+        $arr = all_post_video_detail($_SESSION['info']['id']);
         if(!empty($_SESSION['info'])){
             $id_user = $_SESSION['info']['id'];
         }
@@ -90,7 +91,7 @@
         $VIEW_NAME = 'detail_video.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_posts'])){
-         $arr = all_post_news();
+        $arr = all_post_news_detail($_SESSION['info']['id']);
         $id_user = null;
         if(!empty($_SESSION['info'])){
             $id_user = $_SESSION['info']['id'];
@@ -150,11 +151,9 @@
         $VIEW_NAME = 'setting.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video_mini'])){
-        if (isset($_GET['id_post'])&&($_GET['id_post']>0)){
+        if (isset($_GET['id_post'])){
                 $id_post = $_GET['id_post'];
-                console.log($id_post);
                 $onepost = post($id_post);
-                console.log($onepost);
                 header('Location: index.php?detail_video_mini');
             }
         $VIEW_NAME = 'detail_video_mini.php';
