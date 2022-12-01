@@ -1,1 +1,0 @@
-a class="icon_close_mini" href="?home"

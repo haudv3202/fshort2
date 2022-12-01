@@ -5,8 +5,6 @@ const array_user_detail = <?php echo json_encode($posts_video); ?>;
 const array_posts_user = <?php echo json_encode($posts_news); ?>;
 console.log(array_posts_user);
 
-//hello cuonwfg
-// hello hau 
 // render content page
 function Video_home(datavideohome) {
   let ListvideoHome = document.querySelector(".videos_page");
