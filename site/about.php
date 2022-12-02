@@ -11,7 +11,7 @@
           </div>
           <div class="infor_user_right_root">
             <div class="list_post_right">
-              <p><?php echo $_SESSION['info']['name']?> ơi,hôm nay đăng gì ? </p>
+              <p>Hôm ơi,hôm nay đăng gì ? </p>
               <button onclick="postnews()" type="button">
                 <i class="bx bx-plus"></i>Tải lên
               </button>

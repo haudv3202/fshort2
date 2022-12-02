@@ -1468,11 +1468,11 @@ body::-webkit-scrollbar {
   color: blue;
 }
 .posts_click_play {
-  width: 950px;
-  height: 600px;
+  /*width: 950px;*/
+  /*height: 600px;*/
 }
 .post_center {
-  top: 10%;
+  /*top: 10%;*/
 }
 /* end detail posts mini  */
 
@@ -2938,9 +2938,9 @@ body::-webkit-scrollbar {
   align-items: center;
   margin-top: 20px;
 }
-.comment_video_page {
-  display: none;
-}
+/*.comment_video_page {*/
+/*  display: none;*/
+/*}*/
 .comment_video_page img {
   width: 25px;
   height: 25px;
@@ -3444,4 +3444,9 @@ hr {
   box-shadow: none;
   transform: translateY(0);
 }
+
+.display.show {
+  display: block!important;
+}
+
 /* end css by minh anh hải sửa lại gần hết */
