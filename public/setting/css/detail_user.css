@@ -156,8 +156,11 @@ body::-webkit-scrollbar {
   outline: none;
   transition: 0.3s;
 }
-
-.search_header i {
+.search_header button{
+  border: none;
+  background-color: transparent !important;
+}
+.search_header i{
   cursor: pointer;
   transition: 0.3s;
   font-size: 20px;
@@ -713,10 +716,10 @@ body::-webkit-scrollbar {
   position: relative;
   grid-auto-columns: auto;
 }
-.Posts_user .posts_user_detail > span > img {
-  width: 310px;
-  height: 310px;
-  margin-bottom: 10px;
+.Posts_user .posts_user_detail .img_a_posts img {
+  width: 310px !important;
+  height: 310px !important;
+  margin-bottom: 10px !important;
 }
 .Posts_user .posts_user_detail .icon_posts_user {
   position: absolute;
@@ -733,17 +736,14 @@ body::-webkit-scrollbar {
   justify-content: center;
   gap: 10px;
   cursor: pointer;
+  text-decoration: none;
 }
 .Posts_user .posts_user_detail .icon_posts_user span {
   display: flex;
   align-items: center;
 }
-.Posts_user .posts_user_detail:hover .icon_posts_user {
-  opacity: 1;
-  z-index: 2;
-  transition: 2s;
-}
-.Posts_user .posts_user_detail:hover a img {
+
+.Posts_user .posts_user_detail:hover .img_a_postsch img {
   opacity: 0.8;
   transition: 0.6s;
 }
@@ -1424,8 +1424,7 @@ body::-webkit-scrollbar {
 /* end video detail mini right  */
 
 /* detail posts mini  */
-.content_posts_mini{
-
+.content_posts_mini {
   overflow: auto;
   height: 110px;
 }
@@ -1452,7 +1451,7 @@ body::-webkit-scrollbar {
   align-items: center;
   gap: 10px;
 }
-.Interactive_mini_video .icon_interactive_mini_left_posts i{
+.Interactive_mini_video .icon_interactive_mini_left_posts i {
   font-size: 25px;
   cursor: pointer;
 }
@@ -1465,14 +1464,14 @@ body::-webkit-scrollbar {
   width: 440px;
   font-size: 17px;
 }
-.bxs-like{
+.bxs-like {
   color: blue;
 }
-.posts_click_play{
+.posts_click_play {
   width: 950px;
   height: 600px;
 }
-.post_center{
+.post_center {
   top: 10%;
 }
 /* end detail posts mini  */
@@ -1917,11 +1916,6 @@ body::-webkit-scrollbar {
   height: 310px;
   position: relative;
   grid-auto-columns: auto;
-}
-.Posts_user .posts_user_detail > span > img {
-  width: 310px;
-  height: 310px;
-  margin-bottom: 10px;
 }
 .Posts_user .posts_user_detail .icon_posts_user {
   position: absolute;
@@ -2408,13 +2402,24 @@ body::-webkit-scrollbar {
   color: white;
   line-height: 25px;
 }
-.avatar_name_icon_video_mini_right .name_setting_mini_video .name_mini_video h3{
+.avatar_name_icon_video_mini_right
+  .name_setting_mini_video
+  .name_mini_video
+  h3 {
   font-size: 21px;
 }
-.avatar_name_icon_video_mini_right .name_setting_mini_video .name_mini_video h4 > span{
+.avatar_name_icon_video_mini_right
+  .name_setting_mini_video
+  .name_mini_video
+  h4
+  > span {
   font-size: 18px;
 }
-.avatar_name_icon_video_mini_right .name_setting_mini_video .name_mini_video h4 .date_post_video_mini{
+.avatar_name_icon_video_mini_right
+  .name_setting_mini_video
+  .name_mini_video
+  h4
+  .date_post_video_mini {
   margin-left: 5px;
   font-size: 13px;
   color: #888888;
@@ -2908,7 +2913,6 @@ body::-webkit-scrollbar {
   margin-top: 20px;
 }
 
-
 .content_news_page p {
   padding-top: 20px;
   overflow: hidden;
@@ -2921,7 +2925,7 @@ body::-webkit-scrollbar {
 .content_news_page {
   height: auto;
 }
-.content_news_page_span{
+.content_news_page_span {
   margin-top: 10px;
 }
 .content_news_page_span span {
