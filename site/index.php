@@ -147,6 +147,26 @@
         $VIEW_NAME = 'detail_video_user_other.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_posts_other'])){
+        $arr = all_post_news_detail($_SESSION['info']['id']);
+        $id_user = null;
+        if(!empty($_SESSION['info'])){
+            $id_user = $_SESSION['info']['id'];
+        }
+
+        foreach ($arr as $value){
+            $posts_news[] = [
+                'id_user_log' => $id_user,
+                'id_post' => $value['id'],
+                'name' => account_one_row($value['id_account'])['name'],
+                'time_create' => $value['create_date'],
+                'title' => str_replace('<br>', '<br><br>',nl2br($value['content'], FALSE)),
+                'link' => $value['link'],
+                'views' => $value['views'],
+                'likes' => $value['likes'],
+                'avatar' => account_one_row($value['id_account'])['link_avatar']];
+        }
+        $VIEW_NAME = 'detail_posts.php';
+        include_once './layout.php';
         $VIEW_NAME = 'detail_posts_user_other.php';
         include_once './layout.php';
     }else if(isset($_GET['setting'])){
@@ -370,11 +390,11 @@
                 $status_like = 0;
             }
             $follow = null;
-            if(!empty(follow_user($value['id_account'],$id_user))){
-                $follow = 1;
-            }else {
-                $follow = 0;
-            }
+            // if(!empty(follow_user($value['id_account'],$id_user))){
+            //     $follow = 1;
+            // }else {
+            //     $follow = 0;
+            // }
 
             foreach (comment_all($value['id']) as $value2 ){
                 $comments[] = [

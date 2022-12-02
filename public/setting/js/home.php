@@ -53,7 +53,7 @@ if (ListvideoHome) {
                 <img src="${item.avatar}"
                     alt="">
                 <div class="text_logo_name_videos">
-                    <p><a href="?detail_video_other&id_post="${item.id_post}>${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                    <p><a href="?detail_video_other&id_post=${item.id_post}">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                     <p>${item.time_create} <i class='bx bx-world'></i></p>
                 </div>
             </div>
@@ -64,15 +64,14 @@ if (ListvideoHome) {
             //         <input name="id_log_follow" type="hidden" value="${item.id_user_log}"/>
             //         <button name="follows"   class="btnFLLL">follow</button>
             // </form>
-                <!-- <input type="button" value="hello" id="test"> -->
-<!--onclick="follow(this)"-->
-<!--data-follow="1"-->
+
         `</div>
         </div>
 
-    <div class="links_video" onclick="showVideo()">
-  <a href="?detail_video_mini&id_post=${item.id_post}"><video  width="50%"  controls type="video/mp4" loop
+    <div class="links_video">
 
+
+  <a href="?detail_video_mini&id_post=${item.id_post}" ><video  width="50%" onplay="getCurTime();" id="Video" controls type="video/mp4" loop
             src="${item.link}"></video></a>
 
     </div>
@@ -204,7 +203,7 @@ function checkLike(statuslike){
     if(statuslike == 1 ){
         return "red";
     }else {
-      return "#000";
+      return "gray";
     }
   }
 // render video user
@@ -237,13 +236,13 @@ function Posts_user(datauser) {
                <div
               class="posts_user_detail"
             >
-              <a href="?detail_posts_mini&id_post=${item.id_post}">><img src="${item.link}" /></a>
-                <div class="icon_posts_user" onclick="showProduct()">
+              <a class="img_a_posts" href="?detail_posts_mini&id_post=${item.id_post}"><img src="${item.link}" /></a>
+                <a class="icon_posts_user" href="?detail_posts_mini&id_post=${item.id_post}">
                   <span>
                     <i class="bx bxs-heart"></i> 1k
                   </span>
                   <span><i class='bx bx-message-rounded-dots bx-flip-horizontal' ></i> 200</span>
-                </div>
+                </a>
               </div>`;
     }
   }
