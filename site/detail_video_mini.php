@@ -10,7 +10,7 @@
           <span onclick="play()">
             <video  class="video_click_play"
             src="<?php echo $value['link'] ?>"
-            width="42%"
+            width="42%" loop
           ></video>
           </span>
           <div class="icon_play_video_center">
@@ -119,7 +119,7 @@
           }
           ?>
         </div>
-        <form action="index.php" method="post" class="input_button_comment_video_mini">
+        <form action="" method="post" class="input_button_comment_video_mini">
           <input type="hidden" name="id_post" value="<?php echo $value['id'] ?>">
           <input  class="ip_cmt_mini" oninput="checkcomment_ipvideo()"  name="content_video_home" type="text" placeholder="Thêm bình luận...">
           <button type="submit" class="btn_cmt_vdmini"  name="submit_comment_home">Đăng</button>
