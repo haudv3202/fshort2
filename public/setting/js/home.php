@@ -106,7 +106,7 @@ if (ListvideoHome) {
     <div class="links_video">
 
 
-  <a href="?detail_video_mini&id_post=${item.id_post}" ><video  width="50%" onplay="getCurTime();" id="Video" controls type="video/mp4" loop
+  <a href="?detail_video_mini&id_post=${item.id_post}" ><video  width="50%" onplay="getCurTime();" id="Video" controls type="video/mp4"
             src="${item.link}"></video></a>
 
     </div>
@@ -118,7 +118,7 @@ if (ListvideoHome) {
         </div>
         <div class="infor_view">
             <p>100 lượt thích</p>
-            <p><span id="views">0</span> Views</p>
+            <p><span id="view">0</span>view</p>
         </div>
     </div>
     <div class="content_video_page">
@@ -244,7 +244,7 @@ function About_home(dataabouthome) {
         </div>
         <div class="infor_view">
             <p>100 lượt thích</p>
-            <p><span id="view">0</span> Views</p>
+            <p><span id="views">0</span> Views</p>
         </div>
     </div>
     <div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
@@ -908,17 +908,17 @@ function notify(type,message){
   }
 
   // view
-  var triggerTime=5, fired=0;
-function getCurTime(){
+  var triggerTime=2, fired=0;
+  function getCurTime(){
             var myVideo = document.getElementsByTagName('Video')[0];          
-            myVideo.play();
+            var viewVideo = document.getElementById('view');
             var a=0;
             myVideo.addEventListener("timeupdate",function(){
                 var timer=myVideo.currentTime.toFixed(2);
                 if (timer > triggerTime){
                     if (!fired) {
-                a++; //in other words, increment the first time it's clicked, but then not again until after the variable has been reset to false, which happens at the end of the video.
-                views.innerHTML=a;
+                        a++; //in other words, increment the first time it's clicked, but then not again until after the variable has been reset to false, which happens at the end of the video.
+                viewVideo.innerHTML=a;
                 console.log(a);  
             }
             fired = true;
@@ -926,6 +926,7 @@ function getCurTime(){
             })
             myVideo.addEventListener('ended', function(){fired=false;}, false);
         }
+
 // end
 </script>
 

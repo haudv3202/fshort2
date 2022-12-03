@@ -82,7 +82,7 @@
           </div>
           <div class="icon_interactive_mini_right">
            <div class="icon_link_right_mini">
-             <i class='bx bx-link' ></i>
+             <i class='bx bx-link' onclick="getURL();" ></i>
              <span>Copy link</span>
            </div>
             <div class="icon_face_right_mini">
