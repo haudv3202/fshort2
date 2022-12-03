@@ -20,7 +20,19 @@
         }
 
         foreach ($arr as $value){
-               $comments = [];
+            $comments = [];
+            $status_like = null;
+            if(countLike($id_user,$value['id'])['totallike']>0){
+                $status_like = 1;
+            }else {
+                $status_like = 0;
+            }
+            $follow = null;
+            if(!empty(follow_user($value['id_account'],$id_user))){
+                $follow = 1;
+            }else {
+                $follow = 0;
+            }
                 foreach (comment_all($value['id']) as $value2 ){
                 $comments[] = [
                     'name_user_comment' => account_one_row($value2['id_account'])['name'],
@@ -41,17 +53,35 @@
                 'views' => $value['views'],
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar'],
-                'comments' => $comments];
+                'comments' => $comments,
+                'status_like' => $status_like,
+                ];
 
         }
-             if (isset($_POST['submit_comment_home'])){
-                    $content = $_POST['content_video_home'];
+
+        if(isset($_POST['submit_like'])){
+            $id_user = $_POST['id_user'];
+            $id_post = $_POST['id_post'];
+
+            if(countLike($id_user,$id_post)['totallike']>0){
+                deleteLike($id_user,$id_post);
+                PostUnLike($id_post);
+                route('?about');
+            }else {
+                like($id_user,$id_post);
+                PostLike($id_post);
+                route('?about');
+            }
+        }
+             if (isset($_POST['submit_comment_about'])){
+                    $content = $_POST['content_video_about'];
                     $id_post = $_POST['id_post'];
                     $tenkh = $_POST['name_cmt'];
                     $id_account = $_SESSION['info']['id'];
                     insert_comment($content,$id_account,$id_post);
-                    header('Location: index.php?about');
+                    route('?about');
             }
+            $allaccount = AllaccountRandom();
         $VIEW_NAME = 'about.php';
         include_once './layout.php';
     }else if(isset($_GET['chat'])){
@@ -132,7 +162,7 @@
                     ];
             }
             $posts_video[] = [
-                'id_user_log' => $id_user,
+                // 'id_user_log' => $id_user,
                 'id_post' => $value['id'],
                 'name' => account_one_row($value['id_account'])['name'],
                 'time_create' => $value['create_date'],
@@ -165,8 +195,6 @@
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar']];
         }
-        $VIEW_NAME = 'detail_posts.php';
-        include_once './layout.php';
         $VIEW_NAME = 'detail_posts_user_other.php';
         include_once './layout.php';
     }else if(isset($_GET['setting'])){
@@ -182,7 +210,7 @@
                     $id_post = $_POST['id_post'];
                     $id_account = $_SESSION['info']['id'];
                     insert_comment($content,$id_account,$id_post);
-                    header('Location: index.php?detail_video_mini');
+                    route('?detail_video_mini&id_post='.$id_post);
             }
         $VIEW_NAME = 'detail_video_mini.php';
         include_once './layout.php';
@@ -390,11 +418,11 @@
                 $status_like = 0;
             }
             $follow = null;
-            // if(!empty(follow_user($value['id_account'],$id_user))){
-            //     $follow = 1;
-            // }else {
-            //     $follow = 0;
-            // }
+             if(!empty(follow_user($value['id_account'],$id_user))){
+                 $follow = 1;
+             }else {
+                 $follow = 0;
+             }
 
             foreach (comment_all($value['id']) as $value2 ){
                 $comments[] = [
@@ -454,8 +482,9 @@
                     $tenkh = $_POST['name_cmt'];
                     $id_account = $_SESSION['info']['id'];
                     insert_comment($content,$id_account,$id_post);
-                    header('Location: index.php');
+                    route('?index.php');
             }
+              $allaccount = AllaccountRandom();
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     } 

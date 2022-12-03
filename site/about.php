@@ -4,14 +4,13 @@
           <div id="main-page about_render_video">
          <div class="about_render_video news_page">
     
-
 </div> 
 
 
           </div>
           <div class="infor_user_right_root">
             <div class="list_post_right">
-              <p><?php echo $_SESSION['info']['name']?> ơi,hôm nay đăng gì ? </p>
+              <p>Hôm ơi,hôm nay đăng gì ? </p>
               <button onclick="postnews()" type="button">
                 <i class="bx bx-plus"></i>Tải lên
               </button>
@@ -35,24 +34,32 @@
 <!--                  <a href="">Chuyển</a>-->
 <!--                </div>-->
 <!--              </div>-->
-              <div class="note_view_all_friends">
-                <p>Gợi ý cho bạn</p>
-                <p onclick="viewAll()" id="viewAll">Xem tất cả</p>
-              </div>
-
+<?php 
+            if (isset($_SESSION['info'])){
+              
+                ?>
+<div class="note_view_all_friends">
+  <p>Gợi ý cho bạn</p>
+  <p onclick="viewAll()" id="viewAll">Xem tất cả</p>
+</div>
+<?php 
+              
+              foreach ($allaccount as $value){
+                
+                ?>
               <!-- ==============list friends -->
               <div class="list_friends_root_right">
                 <div class="logo_name_videos">
                   <img
-                    src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
+                    src="<?php echo account_one_row($value['id'])['link_avatar'] ?>"
                     alt=""
                   />
                   <div class="text_logo_name_videos">
                     <p>
-                      Cristiano Ronaldo
+                      <?php echo $value['name'] ?>
                       <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
                     </p>
-                    <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
+                    <p> <?php echo $value['create_date'] ?> ~ <i class="bx bx-world"></i></p>
                   </div>
                 </div>
                 <div class="logout_right_root">
@@ -64,161 +71,13 @@
                     Follow
                   </p>
                 </div>
-              </div>
-              <div class="list_friends_root_right">
-                <div class="logo_name_videos">
-                  <img
-                    src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                    alt=""
-                  />
-                  <div class="text_logo_name_videos">
-                    <p>
-                      Cristiano Ronaldo
-                      <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
-                    </p>
-                    <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                  </div>
                 </div>
-                <div class="logout_right_root">
-                  <p onclick="followRight(this)" class="follow_right_root">
-                    Follow
-                  </p>
-                </div>
-              </div>
-              <div class="list_friends_root_right">
-                <div class="logo_name_videos">
-                  <img
-                    src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                    alt=""
-                  />
-                  <div class="text_logo_name_videos">
-                    <p>
-                      Cristiano Ronaldo
-                      <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
-                    </p>
-                    <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                  </div>
-                </div>
-                <div class="logout_right_root">
-                  <p onclick="followRight(this)" class="follow_right_root">
-                    Follow
-                  </p>
-                </div>
-              </div>
-              <div class="list_friends_root_right">
-                <div class="logo_name_videos">
-                  <img
-                    src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                    alt=""
-                  />
-                  <div class="text_logo_name_videos">
-                    <p>
-                      Cristiano Ronaldosfsafgsadg
-                      <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
-                    </p>
-                    <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                  </div>
-                </div>
-                <div class="logout_right_root">
-                  <p onclick="followRight()" class="follow_right_root">
-                    Follow
-                  </p>
-                </div>
-              </div>
-              <div class="viewall_friends_root_right">
-                <div class="list_friends_root_right">
-                  <div class="logo_name_videos">
-                    <img
-                      src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                      alt=""
-                    />
-                    <div class="text_logo_name_videos">
-                      <p>
-                        Cristiano Ronaldo
-                        <i
-                          class="bx bxs-check-circle"
-                          style="color: #2e88ff"
-                        ></i>
-                      </p>
-                      <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                    </div>
-                  </div>
-                  <div class="logout_right_root">
-                    <p onclick="followRight(this)" class="follow_right_root">
-                      Follow
-                    </p>
-                  </div>
-                </div>
-                <div class="list_friends_root_right">
-                  <div class="logo_name_videos">
-                    <img
-                      src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                      alt=""
-                    />
-                    <div class="text_logo_name_videos">
-                      <p>
-                        Cristiano Ronaldo
-                        <i
-                          class="bx bxs-check-circle"
-                          style="color: #2e88ff"
-                        ></i>
-                      </p>
-                      <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                    </div>
-                  </div>
-                  <div class="logout_right_root">
-                    <p onclick="followRight(this)" class="follow_right_root">
-                      Follow
-                    </p>
-                  </div>
-                </div>
-                <div class="list_friends_root_right">
-                  <div class="logo_name_videos">
-                    <img
-                      src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                      alt=""
-                    />
-                    <div class="text_logo_name_videos">
-                      <p>
-                        Cristiano Ronaldo
-                        <i
-                          class="bx bxs-check-circle"
-                          style="color: #2e88ff"
-                        ></i>
-                      </p>
-                      <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                    </div>
-                  </div>
-                  <div class="logout_right_root">
-                    <p onclick="followRight(this)" class="follow_right_root">
-                      Follow
-                    </p>
-                  </div>
-                </div>
-                <div class="list_friends_root_right">
-                  <div class="logo_name_videos">
-                    <img
-                      src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.6435-9/190108336_322648402555040_2100790391455013605_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DToGjk3hkasAX9wjEDD&_nc_ht=scontent.fhan2-1.fna&oh=00_AfDrshz1dpQG6f22a97d0X3EZUflybpE1t2KdKkECIi5tQ&oe=63960180"
-                      alt=""
-                    />
-                    <div class="text_logo_name_videos">
-                      <p>
-                        Cristiano Ronaldo0000000000
-                        <i
-                          class="bx bxs-check-circle"
-                          style="color: #2e88ff"
-                        ></i>
-                      </p>
-                      <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                    </div>
-                  </div>
-                  <div class="logout_right_root">
-                    <p onclick="followRight(this)" class="follow_right_root">
-                      Follow
-                    </p>
-                  </div>
-                </div>
-              </div>
+                <?php 
+                   }
+                ?>
+                <?php 
+                   }
+                ?>
             </div>
           </div>
         </div>
@@ -254,7 +113,7 @@
                   <span
                     ><input type="file" id="valueFileNews" name="image_post" class="post_videos"
                   /></span>
-            <button type="submit" name="submit_post">Đăng</button>
+            <button type="submit" onclick="News()" name="submit_post">Đăng</button>
             <i onclick="postnews()" class="bx bxs-x-circle"></i>
           </form>
         </div>
