@@ -81,6 +81,7 @@
                     insert_comment($content,$id_account,$id_post);
                     route('?about');
             }
+            $allaccount = AllaccountRandom();
         $VIEW_NAME = 'about.php';
         include_once './layout.php';
     }else if(isset($_GET['chat'])){
@@ -161,7 +162,7 @@
                     ];
             }
             $posts_video[] = [
-                'id_user_log' => $id_user,
+                // 'id_user_log' => $id_user,
                 'id_post' => $value['id'],
                 'name' => account_one_row($value['id_account'])['name'],
                 'time_create' => $value['create_date'],
@@ -194,8 +195,6 @@
                 'likes' => $value['likes'],
                 'avatar' => account_one_row($value['id_account'])['link_avatar']];
         }
-        $VIEW_NAME = 'detail_posts.php';
-        include_once './layout.php';
         $VIEW_NAME = 'detail_posts_user_other.php';
         include_once './layout.php';
     }else if(isset($_GET['setting'])){
@@ -485,6 +484,7 @@
                     insert_comment($content,$id_account,$id_post);
                     route('?index.php');
             }
+              $allaccount = AllaccountRandom();
         $VIEW_NAME = 'home.php';
         include_once './layout.php';
     } 

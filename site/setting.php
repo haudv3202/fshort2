@@ -26,23 +26,25 @@
                     <form action="" class="form_setting_account">
                          <div class="setting_account_name_role">
                         <div class="name_settimg_account">
-                                <p for="">Tên Tài Khoản</p>
+                                <p for="">Tên tài khoản</p>
                         <input type="text" placeholder="<?php echo $_SESSION['info']['name'] ?>">
                         </div>
                         <div class="role_setting_account">
-                               <p for="">Vai Trò</p>
-                        <input type="text" placeholder="Người Dùng" disabled>
+                               <p for="">Mật khẩu cũ</p>
+                        <input type="text" placeholder="<?php echo $_SESSION['info']['password'] ?>" disabled>
                         </div>
                         </div>
-                        <div class="setting_account">
-                            <p for="">Email</p>
-                        <input type="text" placeholder="<?php echo $_SESSION['info']['email'] ?>">
+                        <div class="grid_new_pass">
+                            <div class="setting_account">
+                            <p for="">Mật Khẩu Mới</p>
+                            <input type="text" placeholder="Nhập Mật Khẩu Bạn Muốn Tạo...">
+                        </div>
+                             <div class="pass_setting_account">
+                               <p for="">Nhập lại mật khẩu mới</p>
+                                <input type="text" placeholder="Nhập Lại Mật Khẩu bạn Vừa Tạo....">
+                         </div>
                         </div>
                          <div class="setting_account_pass_button">
-                         <div class="pass_setting_account">
-                               <p for="">Mật Khẩu</p>
-                        <input type="text" disabled placeholder="<?php echo $_SESSION['info']['password'] ?>">
-                         </div>
                         <div class="button_edit_setting">
                             <button>Sửa Tài Khoản</button>
                         </div>

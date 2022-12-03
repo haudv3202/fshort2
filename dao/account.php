@@ -37,6 +37,11 @@ function Allaccount(){
     return pdo_query_all($sql);
 }
 
+function AllaccountRandom(){
+    $sql = "SELECT * FROM account ORDER BY RAND() LIMIT 0,5";
+    return pdo_query_all($sql);
+}
+
 function AllBand(){
     $sql = "SELECT * FROM account WHERE level_ban > 0";
     return pdo_query_all($sql);

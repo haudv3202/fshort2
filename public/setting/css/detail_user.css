@@ -1591,6 +1591,7 @@ body::-webkit-scrollbar {
 }
 .infor_user_right_root {
   width: 100%;
+
 }
 .list_post_right {
   text-align: center;
@@ -1600,7 +1601,7 @@ body::-webkit-scrollbar {
   border: 1px solid #2e88ff;
   color: #2e88ff;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 20px;
   font-weight: 600;
   cursor: pointer;
@@ -2485,7 +2486,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 35px 0 35px;
+  margin: 20px 25px 0 25px;
 }
 .icon_interactive_mini_right {
   display: flex;
@@ -2576,8 +2577,7 @@ body::-webkit-scrollbar {
 .Interactive_mini_video .icon_interactive_mini_left {
   display: flex;
   align-items: center;
-
-  gap: 10px;
+  gap: 20px;
   color: white;
 }
 .Interactive_mini_video .icon_face_right_mini:hover span,
@@ -2798,6 +2798,9 @@ body::-webkit-scrollbar {
 .infor_user_right_root {
   width: 100%;
 }
+.user_random{
+  height: 200px;
+}
 .list_post_right {
   text-align: center;
 }
@@ -2846,7 +2849,16 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
 }
-.btn_logo_name_video button {
+.btn_logo_name_video a {
+  padding: 2px 10px;
+  color: red;
+  background-color: transparent;
+  border: 1px solid red;
+  border-radius: 5px;
+  transition: 0.2s linear;
+  text-decoration: none;
+}
+.btnFLLL{
   padding: 2px 10px;
   color: red;
   background-color: transparent;
@@ -2937,6 +2949,12 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   margin-top: 20px;
+  gap: 10px;
+}
+.info_comment_video_page img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 /*.comment_video_page {*/
 /*  display: none;*/
@@ -3173,6 +3191,7 @@ body::-webkit-scrollbar {
 }
 .user_and_friend {
   width: 100%;
+  height: 20px !important;
 }
 .user_login_right_root,
 .note_view_all_friends,
@@ -3191,6 +3210,11 @@ body::-webkit-scrollbar {
   text-decoration: none;
   color: #2e88ff;
   cursor: pointer;
+    background-color: transparent;
+  border: 1px solid #2e88ff;
+  border-radius: 5px;
+  transition: 0.2s linear;
+  padding: 5px 10px;
 }
 .note_view_all_friends p:nth-child(1) {
   color: gray;
@@ -3374,13 +3398,13 @@ hr {
 }
 .content_row_setting .form_setting_account .setting_account p,
 .setting_account_name_role p,
-.setting_account_pass_button p {
+.grid_new_pass p {
   font-size: 22px;
   margin: 3px 0;
 }
 .content_row_setting .form_setting_account .setting_account input,
 .setting_account_name_role input,
-.setting_account_pass_button input {
+.grid_new_pass input {
   font-size: 17px;
   width: 100%;
   border-radius: 10px;
@@ -3388,6 +3412,9 @@ hr {
   border: 1px solid #c6c6c6;
   padding: 10px 0px 10px 20px;
   margin: 10px 0 5px 0;
+}
+.grid_new_pass .pass_setting_account{
+  margin-top: 21px;
 }
 .content_row_setting .form_setting_account .setting_account {
   margin: 20px 0;
@@ -3397,11 +3424,12 @@ hr {
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
-.setting_account_pass_button {
+.grid_new_pass {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
+
 .setting_account_pass_button .button_edit_setting button {
   appearance: none;
   background-color: #000000;
@@ -3427,8 +3455,9 @@ hr {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 50%;
+  width: 100%;
   will-change: transform;
+  /* float: right; */
 }
 
 .setting_account_pass_button .button_edit_setting button:disabled {
