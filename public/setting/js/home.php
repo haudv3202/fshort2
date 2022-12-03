@@ -454,7 +454,7 @@ function submitFormNews(event) {
 }
 
 function News() {
-  alert('hello');
+  alert('Bạn Phải Chờ Quản Trị Viên Duyệt');
   const TextLoadervd = document.getElementById("text_loader");
   const LogoHeader = document.getElementById("logo_loader");
   const loader = document.querySelector(".loader");
@@ -480,7 +480,7 @@ function News() {
 }
 
 function test() {
-  alert('hello');
+  alert('Bạn Phải Chờ Quản Trị Viên Duyệt');
   const TextLoadervd = document.getElementById("text_loader");
   const LogoHeader = document.getElementById("logo_loader");
   const loader = document.querySelector(".loader");

@@ -9,3 +9,4 @@ function follow_user($id_account_follow,$id_log_follow){
     $sql = "SELECT * FROM user_follow WHERE follower = '$id_account_follow' AND id_follow = '$id_log_follow'";
     return pdo_query_one($sql);
 }
+?>
