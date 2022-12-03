@@ -121,7 +121,19 @@
         </div>
         <form action="" method="post" class="input_button_comment_video_mini">
           <input type="hidden" name="id_post" value="<?php echo $value['id'] ?>">
+          <?php 
+
+            if (isset($_SESSION['info'])){
+              
+          ?>
           <input  class="ip_cmt_mini" oninput="checkcomment_ipvideo()"  name="content_video_home" type="text" placeholder="Thêm bình luận...">
+          <?php
+            }else{
+              ?>
+              <input  class="ip_cmt_mini" oninput="checkcomment_ipvideo()"  name="content_video_home" type="text" disabled placeholder="Đăng nhập để bình luận...">
+              <?php
+            }
+          ?>
           <button type="submit" class="btn_cmt_vdmini"  name="submit_comment_home">Đăng</button>
         </form>
       </div>

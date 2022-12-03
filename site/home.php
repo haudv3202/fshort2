@@ -23,6 +23,9 @@ if(isset($_SESSION['success'])){
             </button>
         </div>
         <div class="user_and_friend">
+            <?php
+            if (isset($_SESSION['info'])){
+            ?>
             <div class="user_login_right_root">
                 <div class="logo_name_videos">
                     <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
@@ -43,179 +46,43 @@ if(isset($_SESSION['success'])){
                 <p>Gợi ý cho bạn</p>
                 <p onclick="viewAll()" id="viewAll">Xem tất cả</p>
             </div>
-
             <!-- ==============list friends -->
-            <div class="list_friends_root_right">
+            <?php 
+              foreach ($allaccount as $value){
+                  ?>
+              <!-- ==============list friends -->
+              <div class="list_friends_root_right">
                 <div class="logo_name_videos">
-                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
-                    />
-                    <div class="text_logo_name_videos">
-                        <p>
-                            Cristiano Ronaldo
-                            <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
-                        </p>
-                        <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                    </div>
+                  <img
+                    src="<?php echo account_one_row($value['id'])['link_avatar'] ?>"
+                    alt=""
+                  />
+                  <div class="text_logo_name_videos">
+                    <p>
+                      <?php echo $value['name'] ?>
+                      <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
+                    </p>
+                    <p> <?php echo $value['create_date'] ?> ~ <i class="bx bx-world"></i></p>
+                  </div>
                 </div>
                 <div class="logout_right_root">
-                    <p
-                            onclick="followRight(this)"
-                            data-follow="1"
-                            class="follow_right_root"
-                    >
-                        Follow
-                    </p>
+                  <p
+                    onclick="followRight(this)"
+                    data-follow="1"
+                    class="follow_right_root"
+                  >
+                    Follow
+                  </p>
                 </div>
-            </div>
-            <div class="list_friends_root_right">
-                <div class="logo_name_videos">
-                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
-                    />
-                    <div class="text_logo_name_videos">
-                        <p>
-                            Cristiano Ronaldo
-                            <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
-                        </p>
-                        <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                    </div>
-                </div>
-                <div class="logout_right_root">
-                    <p onclick="followRight(this)" class="follow_right_root">
-                        Follow
-                    </p>
-                </div>
-            </div>
-            <div class="list_friends_root_right">
-                <div class="logo_name_videos">
-                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
-                    />
-                    <div class="text_logo_name_videos">
-                        <p>
-                            Cristiano Ronaldo
-                            <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
-                        </p>
-                        <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                    </div>
-                </div>
-                <div class="logout_right_root">
-                    <p onclick="followRight(this)" class="follow_right_root">
-                        Follow
-                    </p>
-                </div>
-            </div>
-            <div class="list_friends_root_right">
-                <div class="logo_name_videos">
-                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
-                    />
-                    <div class="text_logo_name_videos">
-                        <p>
-                            Cristiano Ronaldo
-                            <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
-                        </p>
-                        <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                    </div>
-                </div>
-                <div class="logout_right_root">
-                    <p onclick="followRight()" class="follow_right_root">
-                        Follow
-                    </p>
-                </div>
-            </div>
-            <div class="viewall_friends_root_right">
-                <div class="list_friends_root_right">
-                    <div class="logo_name_videos">
-                        <img
-                                src=""
-                                alt=""
-                        />
-                        <div class="text_logo_name_videos">
-                            <p>
-                                Cristiano Ronaldo
-                                <i
-                                        class="bx bxs-check-circle"
-                                        style="color: #2e88ff"
-                                ></i>
-                            </p>
-                            <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                        </div>
-                    </div>
-                    <div class="logout_right_root">
-                        <p onclick="followRight(this)" class="follow_right_root">
-                            Follow
-                        </p>
-                    </div>
-                </div>
-                <div class="list_friends_root_right">
-                    <div class="logo_name_videos">
-                        <img
-                                src=""
-                                alt=""
-                        />
-                        <div class="text_logo_name_videos">
-                            <p>
-                                Cristiano Ronaldo
-                                <i
-                                        class="bx bxs-check-circle"
-                                        style="color: #2e88ff"
-                                ></i>
-                            </p>
-                            <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                        </div>
-                    </div>
-                    <div class="logout_right_root">
-                        <p onclick="followRight(this)" class="follow_right_root">
-                            Follow
-                        </p>
-                    </div>
-                </div>
-                <div class="list_friends_root_right">
-                    <div class="logo_name_videos">
-                        <img
-                                src=""
-                                alt=""
-                        />
-                        <div class="text_logo_name_videos">
-                            <p>
-                                Cristiano Ronaldo
-                                <i
-                                        class="bx bxs-check-circle"
-                                        style="color: #2e88ff"
-                                ></i>
-                            </p>
-                            <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                        </div>
-                    </div>
-                    <div class="logout_right_root">
-                        <p onclick="followRight(this)" class="follow_right_root">
-                            Follow
-                        </p>
-                    </div>
-                </div>
-                <div class="list_friends_root_right">
-                    <div class="logo_name_videos">
-                        <img
-                                src="s"
-                                alt=""
-                        />
-                        <div class="text_logo_name_videos">
-                            <p>
-                                Cristiano Ronaldo0000000000
-                                <i
-                                        class="bx bxs-check-circle"
-                                        style="color: #2e88ff"
-                                ></i>
-                            </p>
-                            <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                        </div>
-                    </div>
-                    <div class="logout_right_root">
-                        <p onclick="followRight(this)" class="follow_right_root">
-                            Follow
-                        </p>
-                    </div>
-                </div>
-            </div>
+              </div>
+                <?php 
+                }
+                ?>
         </div>
+           <?php 
+              }
+
+                ?>
     </div>
 </div>
 </div>
