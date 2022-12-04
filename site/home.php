@@ -133,8 +133,10 @@ if(isset($_SESSION['success'])){
     <?php }else{?>
         <div class="postvideo">
             <div class="testposstvd">
-                <i onclick="postvd()" class="bx bxs-x-circle"></i>
-                <a href="?login" style="background: #fff;padding: 50px;border-radius: 12px;text-decoration: none;color: blue;">Vui lòng đăng nhập để đăng bài</a>
+               <div class="errol_post_Video">
+               <i onclick="postvd()" class="bx bxs-x-circle"></i>
+                <a href="?login" style="background: red;padding: 50px;border-radius: 12px;text-decoration: none;color: blue;">Vui lòng đăng nhập để đăng bài</a>
+               </div>
             </div>
         </div>
     <?php }?>
