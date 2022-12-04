@@ -2903,6 +2903,7 @@ body::-webkit-scrollbar {
   border: none;
 }
 .feeling .icon_felling i {
+  color: gray;
   font-size: 25px;
   margin: 0 10px;
 }
