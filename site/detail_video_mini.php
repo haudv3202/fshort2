@@ -80,9 +80,11 @@
               <span class="view_interactive_mini">124</span>
             </div>
           </div>
+
           <div class="icon_interactive_mini_right ">
            <div class="icon_link_right_mini" onclick="getURL();">
              <i class='bx bx-link'    ></i>
+
              <span>Copy link</span>
            </div>
            
