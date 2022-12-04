@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                         <div class="button_edit_setting">
-                            <button>Cập Nhật Tài Khoản</button>
+                            <button type="submit" name="update_account">Cập Nhật Tài Khoản</button>
                         </div>
                         </div>
                         
