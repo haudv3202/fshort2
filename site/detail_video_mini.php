@@ -80,11 +80,15 @@
               <span class="view_interactive_mini">124</span>
             </div>
           </div>
-          <div class="icon_interactive_mini_right">
-           <div class="icon_link_right_mini">
-             <i class='bx bx-link' ></i>
+
+          <div class="icon_interactive_mini_right ">
+           <div class="icon_link_right_mini" onclick="getURL();">
+             <i class='bx bx-link'    ></i>
+
              <span>Copy link</span>
            </div>
+           
+      
             <div class="icon_face_right_mini">
               <i class='bx bxl-facebook' ></i>
               <span>Chia sẻ lên facebook</span>
@@ -95,6 +99,7 @@
           </div>
 
         </div>
+        <div id="notification-area"></div>
         <div class="comment_user_video_mini">
           <?php
             foreach (comment_all($value['id']) as $value2 ){

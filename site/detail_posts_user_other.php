@@ -34,6 +34,8 @@
                 </ul>
               </div>
             </div>
+            <div id="notification-area">
+        </div>
             <div class="name_user_detail">
               <h2>#<?php echo $user['id']  ?><?php echo $user['name'] ?></h2>
             </div>

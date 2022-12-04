@@ -36,6 +36,8 @@
                 </ul>
               </div>
             </div>
+            <div id="notification-area">
+        </div>
             <div class="name_user_detail">
               <h3>#<?php echo $_SESSION['info']['id'];?><</h3>
             </div>

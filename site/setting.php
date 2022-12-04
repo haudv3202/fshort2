@@ -62,5 +62,9 @@
         </div>
 </div>
      <?php
-        }
+        }else{
         ?>
+                <p class="login_setting">Đăng NHập Để Chỉnh Sửa Tài Khoản</p>
+        <?php
+        }
+        ?>  

@@ -93,27 +93,25 @@ if(isset($_SESSION['success'])){
 
 <!--</form>-->
 <div class="post_content_video_news">
-    <?php if(isset($_SESSION['info']) )
-    {?>
+    <?php if(isset($_SESSION['info']) ){?>
     <div class="postvideo">
         <div class="testposstvd">
             <?php if(isset($_SESSION['error_upload'])) {
                 $error = $_SESSION['error_upload'];
                 echo "<script>alert('$error')</script>'";
                 unset($_SESSION['error_upload']);
-
             }?>
             <form   action="" method="post" enctype="multipart/form-data">
                 <h3>Create post</h3>
                 <div class="logo_name_videos">
-                    <img src="<?php echo $_SESSION['info']['link_avatar'] ?>"
+                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                     />
                     <div class="text_logo_name_videos">
                         <p>
-                           <?php echo $_SESSION['info']['name'] ?>
+                            Cristiano Ronaldo
                             <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
                         </p>
-                        <p><?php echo $_SESSION['info']['create_date'] ?> ~ <i class="bx bx-world"></i></p>
+                        <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
                     </div>
                 </div>
 

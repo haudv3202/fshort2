@@ -31,6 +31,7 @@
                     >
                   </li>
                 </ul>
+                <div id="notification-area"></div>
               </div>
             </div>
             <div class="name_user_detail">
