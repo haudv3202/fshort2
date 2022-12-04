@@ -2906,9 +2906,6 @@ body::-webkit-scrollbar {
   color: gray;
   font-size: 25px;
   margin: 0 10px;
-}
-
-.feeling .icon_felling i:hover {
   color: rgba(77, 77, 77, 0.61);
   cursor: pointer;
 }
@@ -3091,11 +3088,13 @@ body::-webkit-scrollbar {
 
 .postvideo #valueInput {
   width: 350px;
+  width: 250px;
   border: none;
   outline: none;
   padding: 5px 0 50px 10px;
   font-size: 20px;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 #CustomFormPost {
   width: 500px;
@@ -3399,7 +3398,8 @@ hr {
 }
 .content_row_setting .form_setting_account .setting_account p,
 .setting_account_name_role p,
-.grid_new_pass p {
+.grid_new_pass p ,
+.setting_account_pass_button .image_setting .update_image_setting p{
   font-size: 22px;
   margin: 3px 0;
 }
@@ -3430,8 +3430,51 @@ hr {
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
-
+.setting_account_pass_button {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.setting_account_pass_button .image_setting img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.setting_account_pass_button .image_setting{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.update_image_setting input{
+  width: 150px;
+  overflow: hidden;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Chọn ảnh mới';
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
 .setting_account_pass_button .button_edit_setting button {
+  margin-top: 30px !important;
   appearance: none;
   background-color: #000000;
   border: 2px solid #1a1a1a;
@@ -3458,7 +3501,6 @@ hr {
   touch-action: manipulation;
   width: 100%;
   will-change: transform;
-  /* float: right; */
 }
 
 .setting_account_pass_button .button_edit_setting button:disabled {
@@ -3480,3 +3522,34 @@ hr {
 }
 
 /* end css by minh anh hải sửa lại gần hết */
+#notification-area {
+  position:fixed;
+  top: 2%;
+  right:2px;
+  width:250px;
+  z-index: 10;
+}
+
+#notification-area .notification {
+  position:relative;
+  padding:15px 10px;
+  background:#111;
+  color:#f5f5f5;
+  font-family:"Raleway";
+  font-size:14px;
+  font-weight:600;
+  border-radius:5px;
+  margin:5px 0px;
+  opacity:0;
+  left:20px;
+  animation:showNotification 500ms ease-in-out forwards;
+}
+@keyframes showNotification {
+  to {
+    opacity:1;
+    left:0px;
+  }
+}
+#notification-area .notification.info {
+  background:#00acee;
+}

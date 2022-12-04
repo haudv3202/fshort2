@@ -31,7 +31,7 @@
                         </div>
                         <div class="role_setting_account">
                                <p for="">Mật khẩu cũ</p>
-                        <input type="text" placeholder="<?php echo $_SESSION['info']['password'] ?>" disabled>
+                        <input type="text" placeholder="Nhập mật khẩu cũ..." >
                         </div>
                         </div>
                         <div class="grid_new_pass">
@@ -45,8 +45,15 @@
                          </div>
                         </div>
                          <div class="setting_account_pass_button">
+                            <div class="image_setting">
+                                <img src="<?php echo $_SESSION['info']['link_avatar'] ?>" alt="">
+                                <div class="update_image_setting">
+                                    <p for="">Thêm mới ảnh</p>
+                                <input class="custom-file-input" type="file">
+                                </div>
+                            </div>
                         <div class="button_edit_setting">
-                            <button>Sửa Tài Khoản</button>
+                            <button>Cập Nhật Tài Khoản</button>
                         </div>
                         </div>
                         
