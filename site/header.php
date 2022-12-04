@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../public/setting/css/emojionearea.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../public/setting/js/emojionearea.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>

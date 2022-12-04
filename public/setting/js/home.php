@@ -1,9 +1,10 @@
 <script>
+    console.log('%cStop!Xin chào các cao thủ xin nhẹ tay!Em mới học code css😫', 'color: red; font-size: 30px; font-weight: bold;');
     const array_user_detail = <?php echo json_encode($posts_video); ?>;
-    console.log(array_user_detail);
+    // console.log(array_user_detail);
 
     const array_posts_user = <?php echo json_encode($posts_news); ?>;
-    console.log(array_posts_user);
+    // console.log(array_posts_user);
 
     // render content page
     function Video_home(datavideohome) {
@@ -12,7 +13,6 @@
             ListvideoHome.innerHTML = "";
             for (let item of datavideohome) {
                 // $linksp = ${item.id_post};
-// alert('Chào bạn nhé test');
                 var Comments_video = "";
                 var follow = "";
                 var like = "";
@@ -383,7 +383,7 @@
     }
 
     var limit_text_after = document.querySelectorAll(".content_news_page_span_text");
-    console.log(limit_text_after);
+    // console.log(limit_text_after);
     for (let i = 0; i < limit_text_after.length; i++) {
         limit_text_after[i].addEventListener("click", ()=>{
             if (limit_text_after[i].innerHTML == "Xem thêm"){
@@ -603,7 +603,7 @@
 
     // ================Login INdex=============//
 
-    document.querySelector(".info_login_headerr").style.display = "none";
+    // document.querySelector(".info_login_headerr").style.display = "none";
     function IMG() {
         var loginUser = document.querySelector(".info_login_headerr");
         if (loginUser.style.display == "block") {
@@ -882,29 +882,23 @@
     }
     // end minh anh js
     // url
-    function notify(type,message){
-        (()=>{
-            let n = document.createElement("div");
-            let id = Math.random().toString(36).substr(2,10);
-            n.setAttribute("id",id);
-            n.classList.add("notification",type);
-            n.innerText = message;
-            document.getElementById("notification-area").appendChild(n);
-            setTimeout(()=>{
-                var notifications = document.getElementById("notification-area").getElementsByClassName("notification");
-                for(let i=0;i<notifications.length;i++){
-                    if(notifications[i].getAttribute("id") == id){
-                        notifications[i].remove();
-                        break;
-                    }
-                }
-            },10000);
-        })();
-    }
-
     function getURL(){
+        Toastify({
+            text: "Sao chép thành công",
+            duration: 3000,
+            destination: "https://www.facebook.com/haudn02",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                borderRadius:'20px',
+            },
+            onClick: function(){} // Callback after click
+        }).showToast();
         navigator.clipboard.writeText(window.location.href);
-        notify("success","Đã sao chép");
     }
 
     // view
@@ -936,6 +930,7 @@
             shortnames: true
         });
     });
+
 
 </script>
 
