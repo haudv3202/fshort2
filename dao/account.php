@@ -81,4 +81,5 @@ function user_other($id){
     $sql = "SELECT * FROM account WHERE id = '$id'";
     return pdo_query_one($sql);
 }
+
 ?>
