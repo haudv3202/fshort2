@@ -77,7 +77,6 @@ function setRoleId($id,$role_id){
     $sql = "UPDATE account SET role_id = '$role_id' WHERE id = '$id'";
     return pdo_execute($sql);
 }
-
 function user_other($id){
     $sql = "SELECT * FROM account WHERE id = '$id'";
     return pdo_query_one($sql);

@@ -1,15 +1,16 @@
 
-      <div class="detail_user">
-        <div class="avatar_name_detail_user">
-          <div class="mt-3 avatar_detail_user">
+<div class="detail_user">
+    <div class="avatar_name_detail_user">
+        <div class="mt-3 avatar_detail_user">
             <img
               class="img"
               src="<?php echo $user['link_avatar'];?>"
               alt=""
             />
-          </div>
-          <div class="name_detail_user">
+        </div>
+        <div class="name_detail_user">
             <div class="id_user_detail">
+
               <h2><?php echo $user['name'];?></h2>
               <div class="share_user_detail">
                 <i class='bx bx-share bx-flip-horizontal share_user_detail_i' ></i>
@@ -42,41 +43,43 @@
               <?php }?>
           </div>
         </div>
-        <div class="ms-4 mt-3 contact_user_detail">
-          <div class="Interactive">
+    </div>
+    <div class="ms-4 mt-3 contact_user_detail">
+        <div class="Interactive">
             <h5 class="number_user_fl">1</h5>
             <span class="text_interactive">Đang Follow</span>
-          </div>
-          <div class="Interactive">
+        </div>
+        <div class="Interactive">
             <h5 class="number_user_fl">1.5M</h5>
             <span class="text_interactive">Follower</span>
-          </div>
-          <div class="Interactive">
+        </div>
+        <div class="Interactive">
             <h5 class="number_user_fl">100M</h5>
             <span class="text_interactive">Thích</span>
-          </div>
         </div>
-        <div class="Story_user_detai mt-2">
-          <span class="ms-4 text-secondary fs-5">Chưa có tiểu sử.</span>
-        </div>
+    </div>
+    <div class="Story_user_detai mt-2">
+        <span class="ms-4 text-secondary fs-5">Chưa có tiểu sử.</span>
+    </div>
 
-        <div class="Post_user_detail">
-         <div class="title_video_user_detail">
+    <div class="Post_user_detail">
+        <div class="title_video_user_detail">
             <span class="btn_video fs-5 fw-normal"
+
    ><a href="?detail_video_other&id_account=<?php echo $user['id'] ?>">Video</a></span
    >
              <span class="btn_video fs-5 fw-normal"
              ><a href="?detail_posts_other&id_account=<?php echo $user['id'] ?>">Bài Viết</a></span
              >
             <span class="btn_video fs-5 fst-normal"
-              ><i class="bx bxs-lock-alt"></i
-              ><a href="?detail_video">Đã thích</a></span
+            ><i class="bx bxs-lock-alt"></i
+                ><a href="?detail_video">Đã thích</a></span
             >
-          </div>
-          <div class="Post_video_user_detail ms-3 row">
-            <!-- Render  -->
-          </div>
         </div>
-      </div>
+        <div class="Post_video_user_detail ms-3 row">
+            <!-- Render  -->
+        </div>
     </div>
+</div>
+</div>
  

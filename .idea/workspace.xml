@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="36fa856e-ab94-412b-8688-003ab55a3f4e" name="Changes" comment="update profile other">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/detail_posts_user_other.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/detail_posts_user_other.php" afterDir="false" />
@@ -27,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="future/haudv3202/user" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -438,6 +439,7 @@
       <option name="project" value="LOCAL" />
       <updated>1669877077652</updated>
     </task>
+
     <task id="LOCAL-00035" summary="update alert messege copy share and messege error F12">
       <created>1670145493021</created>
       <option name="number" value="00035" />
@@ -453,6 +455,7 @@
       <updated>1670165425359</updated>
     </task>
     <option name="localTasksCounter" value="37" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,9 +479,11 @@
     <MESSAGE value="update register google" />
     <MESSAGE value="update login google" />
     <MESSAGE value="update fogot google" />
+
     <MESSAGE value="update alert messege copy share and messege error F12" />
     <MESSAGE value="update profile other" />
     <option name="LAST_COMMIT_MESSAGE" value="update profile other" />
+
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

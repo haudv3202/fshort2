@@ -3036,6 +3036,15 @@ body::-webkit-scrollbar {
 .postvideo {
   display: none;
 }
+.errol_post_Video{
+  position: relative;
+}
+.errol_post_Video i{
+  position: absolute;
+  top: -36px;
+  font-size: 23px;
+  right: 10px;
+}
 .postnews {
   display: none;
 }
@@ -3143,8 +3152,8 @@ body::-webkit-scrollbar {
 .postvideo #valuefile {
   position: absolute;
   left: 20px;
-  top: 270px;
-  opacity: 0;
+  top: 256px;
+  opacity: 1;
   font-size: 22px;
   cursor: pointer;
   width: 150px;
