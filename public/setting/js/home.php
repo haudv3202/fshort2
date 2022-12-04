@@ -12,7 +12,7 @@ if (ListvideoHome) {
     ListvideoHome.innerHTML = "";
     for (let item of datavideohome) {
       // $linksp = ${item.id_post};
-alert('Chào bạn nhé test');
+// alert('Chào bạn nhé test');
         var Comments_video = "";
         var follow = "";
         var like = "";
