@@ -55,6 +55,7 @@
                 'avatar' => account_one_row($value['id_account'])['link_avatar'],
                 'comments' => $comments,
                 'status_like' => $status_like,
+                'id_user_post' => $value['id_account']
                 ];
 
         }
@@ -144,10 +145,21 @@
         $VIEW_NAME = 'detail_posts.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_video_other'])){
-      $arr = all_post_video();
-        if(!empty($_SESSION['info'])){
-            $id_user = $_SESSION['info']['id'];
+        $id_user_post = null;
+        if(isset($_GET['id_account'])){
+            $id_user_post = $_GET['id_account'];
         }
+        $arr = all_post_video_detail($id_user_post);
+        $user = user_other($id_user_post);
+//        $user['id'] == $_SESSION['info']['id']
+//            print_r($user['id'] );
+//            print_r($_SESSION['info']['id']);
+//            if($_SESSION['info']['id'] == $user['id'] ){
+//                echo "đúng";
+//            }else {
+//                echo "sai";
+//            }
+//            die();
         foreach ($arr as $value){
 
             $comments = [];
@@ -177,15 +189,18 @@
         $VIEW_NAME = 'detail_video_user_other.php';
         include_once './layout.php';
     }else if(isset($_GET['detail_posts_other'])){
-        $arr = all_post_news_detail($_SESSION['info']['id']);
-        $id_user = null;
-        if(!empty($_SESSION['info'])){
-            $id_user = $_SESSION['info']['id'];
+        $id_user_post = null;
+        if(isset($_GET['id_account'])){
+            $id_user_post = $_GET['id_account'];
         }
+        $arr = all_post_news_detail($id_user_post);
+        $user = user_other($id_user_post);
+//        echo "<pre>";
+//        print_r($arr);
+//        die();
 
         foreach ($arr as $value){
             $posts_news[] = [
-                'id_user_log' => $id_user,
                 'id_post' => $value['id'],
                 'name' => account_one_row($value['id_account'])['name'],
                 'time_create' => $value['create_date'],

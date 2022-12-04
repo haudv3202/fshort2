@@ -417,7 +417,7 @@ body::-webkit-scrollbar {
   border-radius: 8px;
   top: 50px;
   right: 0px;
-  display: block;
+  display: none;
 }
 
 .info_login_headerr::after {

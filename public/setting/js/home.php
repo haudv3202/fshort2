@@ -4,7 +4,7 @@
     // console.log(array_user_detail);
 
     const array_posts_user = <?php echo json_encode($posts_news); ?>;
-    // console.log(array_posts_user);
+    console.log(array_posts_user);
 
     // render content page
     function Video_home(datavideohome) {
@@ -88,7 +88,7 @@
                 <img src="${item.avatar}"
                     alt="">
                 <div class="text_logo_name_videos">
-                    <p><a href="?detail_video_other&id_post=${item.id_post}">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                    <p><a href="?detail_video_other&id_account=${item.id_user_post}">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                     <p>${item.time_create} <i class='bx bx-world'></i></p>
                 </div>
             </div>
@@ -215,7 +215,7 @@
             <img src="${item.avatar}" alt="">
 
             <div class="text_logo_name_videos">
-                <p><a href="?detail_video_other">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                <p><a href="?detail_posts_other&id_account=${item.id_user_post}">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                 <p>${item.time_create}<i class='bx bx-world'></i></p>
             </div>
         </div>
