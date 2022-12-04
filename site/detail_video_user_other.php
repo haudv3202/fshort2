@@ -23,11 +23,12 @@
                   <li >
                     <a  onclick="getURL();"
                       ><i class="bx bx-link-alt"></i>
-                      <p>cheps</p></a
+                      <p>Sao Chép Liên Kết</p></a
                     >
                   </li>
                 </ul>
               </div>
+              <div id="notification-area"></div>
             </div>
             <div class="name_user_detail">
               <h2>#007</h2>
