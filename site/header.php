@@ -7,12 +7,12 @@
     <meta charset="UTF-8" />
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"> -->
     <link
-        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-        rel="stylesheet"
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
     />
     <link
-        href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Roboto:ital,wght@0,500;1,700&display=swap"
-        rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Roboto:ital,wght@0,500;1,700&display=swap"
+            rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../public/setting/css/emojionearea.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../public/setting/js/emojionearea.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -79,17 +79,17 @@
                             <form action="">
                                 <i class="bx bx-search-alt"></i>
                                 <input
-                                    type="text"
-                                    name="name"
-                                    id=""
-                                    placeholder="Search Messenger"
+                                        type="text"
+                                        name="name"
+                                        id=""
+                                        placeholder="Search Messenger"
                                 />
                             </form>
                         </div>
                         <h3>Tất cả</h3>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -98,7 +98,7 @@
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -108,7 +108,7 @@
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -118,7 +118,7 @@
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -128,7 +128,7 @@
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -137,7 +137,7 @@
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p>
                                 <b>#ManhCuongEnterTaiment</b> <br />
@@ -155,42 +155,42 @@
                         <h3>Trước đó</h3>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>#ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
                         <div class="item_notifications">
                             <img
-                                src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                                    src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
                             />
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
@@ -199,26 +199,26 @@
                 </div>
                 <div class="img-login-header">
                     <?php if(isset($_SESSION['info']) && $_SESSION['info']['role_id'] == 1 ){?>
-                    <div class="user_loginn">
-                        <span><?php echo $_SESSION['info']['name'];?></span>
-                        <img
-                            onclick="IMG()"
-                            src="<?php echo $_SESSION['info']['link_avatar'];?>"
-                            alt=""
-                        />
-                    </div>
+                        <div class="user_loginn">
+                            <span><?php echo $_SESSION['info']['name'];?></span>
+                            <img
+                                    onclick="IMG()"
+                                    src="<?php echo $_SESSION['info']['link_avatar'];?>"
+                                    alt=""
+                            />
+                        </div>
 
-                    <div class="info_login_headerr">
-                        <p>
-                            <a href="?detail_video"> <i class="bx bx-user"></i> View Profile</a>
-                        </p>
-                        <p>
-                            <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
-                        </p>
-                        <p>
-                            <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
-                        </p>
-                    </div>
+                        <div class="info_login_headerr">
+                            <p>
+                                <a href="?detail_video"> <i class="bx bx-user"></i> View Profile</a>
+                            </p>
+                            <p>
+                                <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
+                            </p>
+                            <p>
+                                <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
+                            </p>
+                        </div>
                     <?php }else if(isset($_SESSION['info']) && ($_SESSION['info']['role_id'] == 2 || $_SESSION['info']['role_id'] == 3)){?>
                         <div class="user_loginn">
                             <span><?php echo $_SESSION['info']['name'];?></span>
@@ -245,7 +245,7 @@
                         </div>
                     <?php }else{?>
 
-                            <a class="login_header" href="?login" >Đăng nhập</a>
+                        <a class="login_header" href="?login" >Đăng nhập</a>
                     <?php }?>
                 </div>
             </div>
@@ -259,11 +259,11 @@
                 <form action="index.php?home" method="post">
                     <button type="submit" ><i class="bx bx-search-alt" name="timkiemsp"></i></button>
                     <input
-                        type="text"
-                        id=""
-                        placeholder="Search Fshort"
-                        placeholder="Tìm Kiếm Sản Phẩm"
-                         name="nhapemail"
+                            type="text"
+                            id=""
+                            placeholder="Search Fshort"
+                            placeholder="Tìm Kiếm Sản Phẩm"
+                            name="nhapemail"
                     />
                 </form>
             </div>
@@ -293,19 +293,19 @@
                     <span>Thông báo</span>
                 </p>
                 <?php if(isset($_SESSION['info'])){?>
-                <div class="user_left">
+                    <div class="user_left">
 
                         <span><?php echo $_SESSION['info']['name'];?></span>
-                    <img
-                    src="<?php echo $_SESSION['info']['link_avatar'];?>"
-                        alt=""
-                    />
+                        <img
+                                src="<?php echo $_SESSION['info']['link_avatar'];?>"
+                                alt=""
+                        />
 
-                </div>
-            <?php }else{?>
-                        <a class="login_header_left" href="?login" >Đăng nhập</a>
-                    <?php }?>
+                    </div>
+                <?php }else{?>
+                    <a class="login_header_left" href="?login" >Đăng nhập</a>
+                <?php }?>
             </div>
         </div>
 
-<!--        Đây là header -->
+        <!--        Đây là header -->
