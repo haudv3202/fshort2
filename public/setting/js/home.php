@@ -904,6 +904,10 @@
         navigator.clipboard.writeText(window.location.href);
     }
 
+    function goBack() {
+        window.history.back()
+    }
+
     // view
     var triggerTime=5, fired=0;
     function getCurTime(){

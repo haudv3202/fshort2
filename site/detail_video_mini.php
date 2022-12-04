@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="icon_video_center">
-            <a href="?home" class="close_video_detail_mini">
+            <a onclick="goBack()" class="close_video_detail_mini">
                 <i class="bx bx-x"></i>
             </a>
             <div class="btn_report">
