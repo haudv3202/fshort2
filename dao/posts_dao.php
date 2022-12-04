@@ -1,5 +1,5 @@
 <?php
-
+// lấy lại lauout nhé   
 function allposts($id_account){
     $sql = "SELECT * FROM posts WHERE id_account = '$id_account'";
     return pdo_query_all($sql);
