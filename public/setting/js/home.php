@@ -3,7 +3,7 @@ const array_user_detail = <?php echo json_encode($posts_video); ?>;
 console.log(array_user_detail);
 
 const array_posts_user = <?php echo json_encode($posts_news); ?>;
-console.log(array_posts_user);
+// console.log(array_posts_user);
 
 // render content page
 function Video_home(datavideohome) {
@@ -14,13 +14,8 @@ if (ListvideoHome) {
       // $linksp = ${item.id_post};
 
         var Comments_video = "";
-        var follow = "";
-        var like = "";
-        var comment = "";
-
-        if(`${item.id_user_log}` != 'null'){
-            for (let video_comment of item.comments) {
-                Comments_video += `
+        for (let video_comment of item.comments) {
+          Comments_video += `
             <div class="info_comment_video_page">
                 <img src="${video_comment.avatar_comment}" alt="">
                 <div class="text_logo_name_videos">
@@ -34,52 +29,22 @@ if (ListvideoHome) {
                 </p>
             </div>
         `
-            }
-            if(`${item.follow}` == 0){
-                follow = ` <form action="" method="post">
+        }
+
+        var follow = "";
+        if(`${item.follow}` == 0){
+            follow = ` <form action="" method="post">
                     <input name="id_account_follow" type="hidden" value="${item.id_user_post}"/>
                     <input name="id_log_follow" type="hidden" value="${item.id_user_log}"/>
                     <button name="follows"   class="btnFLLL">follow</button>
             </form>`
-            }else  {
-                follow = ""
-            }
-
-            if(`${item.id_user_log}` == `${item.id_user_post}`){
-                follow = ""
-            }
-
-            like =`<form action=""  method="POST">
-                <input type="hidden" name="id_user" value="${item.id_user_log}">
-                    <input type="hidden" name="id_post" value="${item.id_post}">
-                        <button type="submit" name="submit_like"> <i onclick="heartPost()" class='bx bxs-heart' style='color:`+ checkLike(`${item.status_like}`) +`;'></i></button>
-            </form>`
-
-            comment = ` <form action="" method="post">
-        <i class='bx bx-wink-smile'></i>
-        <input type="hidden" name="id_post" value="${item.id_post}">
-        <input type="hidden" name="name_cmt" value="${item.name}">
-        <input type="text" name="content_video_home" required  placeholder="Thêm bình luận">
-        <button type="submit" name="submit_comment_home"> Đăng</button>
-      </form>`
-
-        }else {
-            Comments_video +=` <div class="error_comment">
-            <a href="?login">Vui lòng đăng nhập để xem comment</a>
-            </div>`
-
-            follow = "<a href='?login'>follow</a>"
-
-            like = "<a href='?login'><i class='bx bxs-heart'></i></a>"
-            comment = `<form action="" method="post">
-        <i class='bx bx-wink-smile'></i>
-          <input type="text" name="content_video_home" required disabled placeholder="Đăng nhập để bình luận">
-        <button type="submit" disabled name="submit_comment_home"> Đăng</button>
-      </form>`
+        }else  {
+            follow = ""
         }
 
-
-
+        if(`${item.id_user_log}` == `${item.id_user_post}`){
+            follow = ""
+        }
 
         ListvideoHome.innerHTML += `
                    <div class="logo_name_videos_btn">
@@ -112,9 +77,16 @@ if (ListvideoHome) {
     </div>
     <div class="feeling">
         <div class="icon_felling">
-        `+like+`
-            <i onclick="show_comment(`+`${item.id_post}`+`)" class='bx bx-message-rounded cmtPost'></i>
+        <form action=""  method="POST">
+                        <input type="hidden" name="id_user" value="${item.id_user_log}">
+                        <input type="hidden" name="id_post" value="${item.id_post}">
+                        <button type="submit" name="submit_like"> <i onclick="heartPost()" class='bx bxs-heart' style='color:`+ checkLike(`${item.status_like}`) +`;'></i></button>
+            </form>
+            <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
             <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
+            
+      </div>
+      <div id="notification-area">
         </div>
         <div class="infor_view">
             <p>100 lượt thích</p>
@@ -125,10 +97,18 @@ if (ListvideoHome) {
         <p><b>#manhcuongEntertaiment</b></p>
         <p>${item.title}</p>
     </div>
-<div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
+<div class="comment_video_page">
 ` + Comments_video + `
 </div>
-    <div class="input_comment">`+comment+`
+    <div class="input_comment">
+      <form action="index.php" method="post">
+        <i class='bx bx-wink-smile'></i>
+        <input type="hidden" name="id_post" value="${item.id_post}">
+        <input type="hidden" name="name_cmt" value="${item.name}">
+        <input type="text" name="content_video_home" required  placeholder="Thêm bình luận">
+        <button type="submit" name="submit_comment_home"> Đăng</button>
+      </form>
+    </div>
          </div>
         
     `;
@@ -144,12 +124,8 @@ function About_home(dataabouthome) {
     ListaboutHome.innerHTML = "";
     for (let item of dataabouthome) {
         var comments_news = "";
-        var like = "";
-        var comment = "";
-        var follow = "";
-        if(`${item.id_user_log}` != 'null'){
-            for (let video_comment of item.comments) {
-                comments_news += `
+        for (let video_comment of item.comments) {
+            comments_news += `
             <div class="info_comment_video_page">
                 <img src="${video_comment.avatar_comment}" alt="">
                 <div class="text_logo_name_videos">
@@ -163,48 +139,6 @@ function About_home(dataabouthome) {
                 </p>
             </div>
         `
-            }
-
-            if(`${item.follow}` == 0){
-                follow = ` <form action="" method="post">
-                    <input name="id_account_follow" type="hidden" value="${item.id_user_post}"/>
-                    <input name="id_log_follow" type="hidden" value="${item.id_user_log}"/>
-                    <button name="follows"   class="btnFLLL">follow</button>
-            </form>`
-            }else  {
-                follow = ""
-            }
-
-            if(`${item.id_user_log}` == `${item.id_user_post}`){
-                follow = ""
-            }
-
-            like =`<form action=""  method="POST">
-                <input type="hidden" name="id_user" value="${item.id_user_log}">
-                    <input type="hidden" name="id_post" value="${item.id_post}">
-                        <button type="submit" name="submit_like"> <i onclick="heartPost()" class='bx bxs-heart' style='color:`+ checkLike(`${item.status_like}`) +`;'></i></button>
-            </form>`
-
-            comment = `<form action="" method="post">
-        <i class='bx bx-wink-smile'></i>
-        <input type="hidden" name="id_post" value="${item.id_post}">
-        <input type="hidden" name="name_cmt" value="${item.name}">
-        <input type="text" name="content_video_about" required  placeholder="Thêm bình luận">
-        <button type="submit" name="submit_comment_about"> Đăng</button>
-      </form>`
-        }else {
-            comments_news +=` <div class="error_comment">
-            <a href="?login">Vui lòng đăng nhập để xem comment</a>
-            </div>`
-
-            follow = "<a href='?login'>follow</a>"
-
-            like = "<a href='?login'><i class='bx bxs-heart'></i></a>"
-            comment = `<form action="" method="post">
-        <i class='bx bx-wink-smile'></i>
-          <input type="text" name="content_video_home" required disabled placeholder="Đăng nhập để bình luận">
-        <button type="submit" disabled name="submit_comment_home"> Đăng</button>
-      </form>`
         }
 
       ListaboutHome.innerHTML += `
@@ -220,9 +154,9 @@ function About_home(dataabouthome) {
             </div>
         </div>
 
-        <div class="btn_logo_name_video">`+ follow +`
+        <div class="btn_logo_name_video">
             <!-- <input type="button" value="hello" id="test"> -->
-
+            <button onclick="follow(this)" data-follow="1" class="btnFLLL">follow</button>
         </div>
     </div>
       <div class="content_news_page">
@@ -238,8 +172,12 @@ function About_home(dataabouthome) {
     </div>
 <div class="feeling">
         <div class="icon_felling">
-         `+like+`
-            <i onclick="show_comment(`+`${item.id_post}`+`)" class='bx bx-message-rounded cmtPost'></i>
+          <form action=""  method="POST">
+            <input type="hidden" name="id_user" value="${item.id_user_log}">
+             <input type="hidden" name="id_post" value="${item.id_post}">
+            <button type="submit" name="submit_like" class="heart_form_felling"><i class='bx bx-heart'></i></button>
+          </form>
+            <i onclick="commentPost()" class='bx bx-message-rounded cmtPost'></i>
             <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
         </div>
         <div class="infor_view">
@@ -247,11 +185,17 @@ function About_home(dataabouthome) {
             <p><span id="views">0</span> Views</p>
         </div>
     </div>
-    <div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
+    <div class="comment_video_page">
         `+ comments_news +`
     </div>
     <div class="input_comment">
-       `+comment+`
+       <form action="index.php" method="post">
+        <i class='bx bx-wink-smile'></i>
+        <input type="hidden" name="id_post" value="${item.id_post}">
+        <input type="hidden" name="name_cmt" value="${item.name}">
+        <input type="text" name="content_video_home" required  placeholder="Thêm bình luận">
+        <button type="submit" name="submit_comment_home"> Đăng</button>
+      </form>
     </div>
   `;
     }
@@ -295,7 +239,7 @@ function Posts_user(datauser) {
                <div
               class="posts_user_detail"
             >
-              <a class="img_a_posts" href="?detail_posts_mini&id_post=${item.id_post}"><img src="${item.link}" width="100%"/></a>
+              <a class="img_a_posts" href="?detail_posts_mini&id_post=${item.id_post}"><img src="${item.link}" /></a>
                 <a class="icon_posts_user" href="?detail_posts_mini&id_post=${item.id_post}">
                   <span>
                     <i class="bx bxs-heart"></i> 1k
@@ -454,7 +398,7 @@ function submitFormNews(event) {
 }
 
 function News() {
-  alert('Bạn Phải Chờ Quản Trị Viên Duyệt');
+  alert('hello');
   const TextLoadervd = document.getElementById("text_loader");
   const LogoHeader = document.getElementById("logo_loader");
   const loader = document.querySelector(".loader");
@@ -480,7 +424,7 @@ function News() {
 }
 
 function test() {
-  alert('Bạn Phải Chờ Quản Trị Viên Duyệt');
+  alert('hello');
   const TextLoadervd = document.getElementById("text_loader");
   const LogoHeader = document.getElementById("logo_loader");
   const loader = document.querySelector(".loader");
@@ -614,27 +558,21 @@ function IMG() {
 }
 
 // ==============comment post video============//
-// let check = "none";
-// function commentPost() {
-//   if (check == "none") {
-//     check = "block";
-//   } else {
-//     check = "none";
-//   }
-//   let cmtPost = document.querySelectorAll(".cmtPost");
-//   let commentPost = document.querySelectorAll(".comment_video_page");
-//   for (let i = 0; i < commentPost.length; i++) {
-//     cmtPost[i].addEventListener("click", function () {
-//       commentPost[i].style.display = check;
-//     });
-//   }
-// }
-
-function show_comment($id){
-    const cmtPost = document.querySelector(".comment_video_page"+$id);
-    cmtPost.classList.toggle("show");
+let check = "none";
+function commentPost() {
+  if (check == "none") {
+    check = "block";
+  } else {
+    check = "none";
+  }
+  let cmtPost = document.querySelectorAll(".cmtPost");
+  let commentPost = document.querySelectorAll(".comment_video_page");
+  for (let i = 0; i < commentPost.length; i++) {
+    cmtPost[i].addEventListener("click", function () {
+      commentPost[i].style.display = check;
+    });
+  }
 }
-
 
 // ===================follow===============//
 // let followcheck = "follow";
@@ -883,29 +821,29 @@ if (coll) {
 // end minh anh js
 // url
 function notify(type,message){
-    (()=>{
-      let n = document.createElement("div");
-      let id = Math.random().toString(36).substr(2,10);
-      n.setAttribute("id",id);
-      n.classList.add("notification",type);
-      n.innerText = message;
-      document.getElementById("notification-area").appendChild(n);
-      setTimeout(()=>{
-        var notifications = document.getElementById("notification-area").getElementsByClassName("notification");
-        for(let i=0;i<notifications.length;i++){
-          if(notifications[i].getAttribute("id") == id){
-            notifications[i].remove();
-            break;
-          }
+  (()=>{
+    let n = document.createElement("div");
+    let id = Math.random().toString(36).substr(2,10);
+    n.setAttribute("id",id);
+    n.classList.add("notification",type);
+    n.innerText = message;
+    document.getElementById("notification-area").appendChild(n);
+    setTimeout(()=>{
+      var notifications = document.getElementById("notification-area").getElementsByClassName("notification");
+      for(let i=0;i<notifications.length;i++){
+        if(notifications[i].getAttribute("id") == id){
+          notifications[i].remove();
+          break;
         }
-      },10000);
-    })();
-  }
-  
-  function getURL(){
-    navigator.clipboard.writeText(window.location.href);
-    notify("success","Đã sao chép");
-  }
+      }
+    },10000);
+  })();
+}
+
+function getURL(){
+  notify("info","Đã sao chép");
+  navigator.clipboard.writeText(window.location.href);
+}
 
   // view
   var triggerTime=2, fired=0;
