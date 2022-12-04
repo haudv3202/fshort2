@@ -138,28 +138,12 @@
     0 0 8px rgba(102, 175, 233, 0.6);
 }
 .emojionearea .emojionearea-editor {
-  width: 280px;
-  height: 200px;
+  width: 299px;
   border: none;
   outline: none;
   padding: 5px 0 50px 10px;
   font-size: 20px;
   margin-bottom: 20px;
-  overflow: auto;
-}
-.emojionearea .emojionearea-editor::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-.emojionearea .emojionearea-editor::-webkit-scrollbar-track {
-  border-radius: 10px;
-}
-
-/* Handle */
-.emojionearea .emojionearea-editor::-webkit-scrollbar-thumb {
-  background: #b5b5b5;
-  border-radius: 10px;
 }
 .emojionearea .emojionearea-editor:empty:before {
   content: attr(placeholder);
