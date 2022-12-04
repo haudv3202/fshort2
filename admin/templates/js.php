@@ -9,3 +9,4 @@
 <script src="./public/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 <script src="./public/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 <script src="./public/src/scripts/dashboard.js"></script>
+<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
