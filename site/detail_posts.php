@@ -39,7 +39,7 @@
             <div id="notification-area">
         </div>
             <div class="name_user_detail">
-              <h3>#<?php echo $_SESSION['info']['id'];?><</h3>
+              <h3>#<?php echo $_SESSION['info']['id'];?></h3>
             </div>
             <div class="edit_profile_user_detail">
               <button class="btn_edit_user">
