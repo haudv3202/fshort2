@@ -135,7 +135,7 @@ if(isset($_SESSION['success'])){
             <div class="testposstvd">
                <div class="errol_post_Video">
                <i onclick="postvd()" class="bx bxs-x-circle"></i>
-                <span>Vui lòng <a href="?login" style="background:#ccc;padding: 50px;border-radius: 12px;color: blue;"> đăng nhập</a></span>
+               <p style="background:#ccc;padding: 50px;border-radius: 12px;">Vui lòng <a href="?login"> đăng nhập </a> để đăng video</p> 
                </div>
             </div>
         </div>
