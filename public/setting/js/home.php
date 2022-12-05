@@ -107,8 +107,7 @@
     <div class="links_video">
 
 
-  <a href="?detail_video_mini&id_post=${item.id_post}" ><video  width="50%" onplay="getCurTime();" id="Video" controls type="video/mp4" loop
-            src="${item.link}"></video></a>
+  <a href="?detail_video_mini&id_post=${item.id_post}" ><video  width="50%" onplay="getCurTime();" id="Video" controls type="video/mp4" loop src="${item.link}"></video></a>
 
     </div>
     <div class="feeling">
@@ -275,8 +274,7 @@
             for (let item of data) {
                 ListVideouser.innerHTML += `
               <div class="video_user_detail" >
-                          <a href="?detail_video_mini&id_post=${item.id_post}"> <video src="${item.link}" type="video/mp4" type="video/mp4" muted class="vid" loop>
-                          </video></a>
+                          <a href="?detail_video_mini&id_post=${item.id_post}"><div class="vid_box"><video class="vid" src="${item.link}" type="video/mp4" type="video/mp4" muted loop></video></div></a>
                           <div class="views_video_user_detail d-flex align-items-center">
                             <i class='bx bx-play fs-4'></i><span class="view_video">0</span>
                           </div>
@@ -505,7 +503,6 @@
         }, 6000);
         // setTimeout(function () {loader.classList.add("loader-hidden")},6000);
     }
-
 
 
 
@@ -845,6 +842,16 @@
     checkcomment_ipvideo();
 
     // hover video play
+const Video = document.querySelectorAll(".vid");
+for (let i = 0; i <= Video.length; i++) {
+  Video[i].addEventListener("mouseover", function () {
+    Video[i].play();
+  });
+  Video[i].addEventListener("mouseout", function () {
+    Video[i].pause();
+    Video[i].load();
+  });
+}
 
     // click heart Number
 
