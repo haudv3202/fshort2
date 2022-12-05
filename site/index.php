@@ -213,6 +213,55 @@ if(isset($_GET['about'])){
     $VIEW_NAME = 'detail_posts_user_other.php';
     include_once './layout.php';
 }else if(isset($_GET['setting'])){
+    if(isset($_POST['update_account'])){
+        $id = $_SESSION['info']['id'];
+        $name = $_POST['name_profile'];
+        $old_pass = $_POST['old_pass'];
+        $new_pass = $_POST['new_pass'];
+        $ress_pass = $_POST['ress_pass'];
+        $image_profile = $_FILES['img_profile_update'];
+//        if(!empty($name)){
+//            echo $name. " " . $old_pass . " " . $new_pass . " " . $ress_pass ;
+//            die();
+//        }
+        if((!empty($old_pass) && !empty($name) && !empty($image_profile)) && check_pass($id,md5($old_pass))['total_ac'] > 0){
+            if((!empty($new_pass) && !empty($ress_pass) ) && ($new_pass == $ress_pass)){
+                $path = $image_profile['tmp_name'];
+                $name_image = $image_profile['name'];
+                include_once('../cloudinary/update_avatar.php');
+                update_profile($id,$name,md5($new_pass),$data['url']);
+                $_SESSION['update_profile'] = 'Cập nhật thành công!';
+                $_SESSION['info']['link_avatar'] = $data['url'];
+                $_SESSION['info']['name'] = $name;
+                route('?home');
+            }else {
+                update_profile($id,$_SESSION['info']['name'],$_SESSION['info']['password'],$_SESSION['info']['link_avatar']);
+                $_SESSION['update_profile'] = 'Cập nhật thành công!';
+            }
+        }else {
+            if(!empty($name) && ($new_pass == "" && $old_pass == ""  && $ress_pass  == ""  && $image_profile == "")){
+                update_profile($id,$name,$_SESSION['info']['password'],$_SESSION['info']['link_avatar']);
+                $_SESSION['update_profile'] = 'Cập nhật thành công!';
+            }else if((!empty($new_pass) && !empty($old_pass) && !empty($ress_pass)) && (empty($name) && empty($image_profile) )){
+                if(($new_pass == $ress_pass) && check_pass($id,md5($old_pass))['total_ac'] > 0){
+                    update_profile($id,$_SESSION['info']['name'],md5($new_pass),$_SESSION['info']['link_avatar']);
+                    $_SESSION['update_profile'] = 'Cập nhật thành công!';
+                }
+            }else if(!empty($image_profile) && (empty($name) && empty($old_pass) && empty($ress_pass) && empty($new_pass) )) {
+                $path = $image_profile['tmp_name'];
+                $name_image = $image_profile['name'];
+                $data = (new UploadApi())->upload($path,[
+                    'public_id' => 'Fshort/image_post/'. $name_image
+                ]);
+
+                update_profile($id,$_SESSION['info']['name'],$_SESSION['info']['password'],$data['url']);
+                $_SESSION['update_profile'] = 'Cập nhật thành công!';
+            }else {
+                $_SESSION['update_profile'] = 'Lỗi cập nhật Vui lòng kiểm tra lại!';
+            }
+        }
+
+    }
     $VIEW_NAME = 'setting.php';
     include_once './layout.php';
 }else if(isset($_GET['detail_video_mini'])){

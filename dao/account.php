@@ -82,4 +82,14 @@ function user_other($id){
     return pdo_query_one($sql);
 }
 
+function update_profile($id,$name,$password,$avatar){
+    $sql = "UPDATE account SET name = '$name',password = '$password',link_avatar = '$avatar' WHERE id = '$id'";
+    return pdo_execute($sql);
+}
+
+function check_pass($id,$password){
+    $sql ="SELECT COUNT(password) as total_ac FROM account WHERE id = '$id' AND password = '$password'";
+    return pdo_query_one($sql);
+}
+
 ?>

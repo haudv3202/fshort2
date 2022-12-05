@@ -1,6 +1,11 @@
 <?php 
   if(isset($_SESSION['info'])){
 
+      if(isset($_SESSION['update_profile'])){
+          $update = $_SESSION['update_profile'];
+          echo "<script>alert('$update')</script>";
+          unset($_SESSION['update_profile']);
+      }
 ?>
      <div class="detail_user">
         <div class="box">   
@@ -23,25 +28,25 @@
                 <hr>
                 <div class="content_row_setting">
                     <h2>Thông Tin Tài Khoản</h2>
-                    <form action="" class="form_setting_account">
+                    <form action="" class="form_setting_account" method="POST" enctype="multipart/form-data">
                          <div class="setting_account_name_role">
                         <div class="name_settimg_account">
                                 <p for="">Tên tài khoản</p>
-                        <input type="text" placeholder="<?php echo $_SESSION['info']['name'] ?>">
+                        <input type="text" name="name_profile" placeholder="<?php echo $_SESSION['info']['name'] ?>">
                         </div>
                         <div class="role_setting_account">
                                <p for="">Mật khẩu cũ</p>
-                        <input type="text" placeholder="Nhập mật khẩu cũ..." >
+                        <input type="text" name="old_pass" placeholder="Nhập mật khẩu cũ..." >
                         </div>
                         </div>
                         <div class="grid_new_pass">
                             <div class="setting_account">
                             <p for="">Mật Khẩu Mới</p>
-                            <input type="text" placeholder="Nhập Mật Khẩu Bạn Muốn Tạo...">
+                            <input type="text" name="new_pass" placeholder="Nhập Mật Khẩu Bạn Muốn Tạo...">
                         </div>
                              <div class="pass_setting_account">
                                <p for="">Nhập lại mật khẩu mới</p>
-                                <input type="text" placeholder="Nhập Lại Mật Khẩu bạn Vừa Tạo....">
+                                <input type="text" name="ress_pass" placeholder="Nhập Lại Mật Khẩu bạn Vừa Tạo....">
                          </div>
                         </div>
                          <div class="setting_account_pass_button">
@@ -49,7 +54,7 @@
                                 <img src="<?php echo $_SESSION['info']['link_avatar'] ?>" alt="">
                                 <div class="update_image_setting">
                                     <p for="">Thêm mới ảnh</p>
-                                <input class="custom-file-input" type="file">
+                                <input class="custom-file-input" type="file" name="img_profile_update">
                                 </div>
                             </div>
                         <div class="button_edit_setting">
