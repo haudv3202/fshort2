@@ -230,18 +230,20 @@
                         </div>
 
                         <div class="info_login_headerr">
-                            <p>
+                        <ul>
+                            <li>
                                 <a href="?detail_video"> <i class="bx bx-user"></i> View Profile</a>
-                            </p>
-                            <p>
+                            </li>
+                            <li>
                                 <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
-                            </p>
-                            <p>
+                            </li>
+                            <li>
                                 <a href="?setting"> <i class="bx bxs-cog"></i>Admin</a>
-                            </p>
-                            <p>
+                            </li>
+                            <li>
                                 <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
-                            </p>
+                            </li>
+                        </ul>
                         </div>
                     <?php }else{?>
 

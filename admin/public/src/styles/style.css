@@ -100,6 +100,9 @@ p {
   margin: 0 0 15px 0;
   padding: 0;
 }
+.mtext{
+  margin-left: 10px !important;
+}
 .slick-slide {
   outline: none !important;
 }
@@ -1141,20 +1144,36 @@ table.dataTable.display tbody tr.odd.selected {
   background-color: #1b00ff !important;
 }
 /* datatable style */
-table.dataTable thead .sorting:before,
+
 table.dataTable thead .sorting:after,
-table.dataTable thead .sorting_asc:before,
 table.dataTable thead .sorting_asc:after,
-table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_desc:after,
-table.dataTable thead .sorting_asc_disabled:before,
 table.dataTable thead .sorting_asc_disabled:after,
-table.dataTable thead .sorting_desc_disabled:before,
 table.dataTable thead .sorting_desc_disabled:after {
-  font-family: "dropways";
-  font-size: 14px;
+  content: "..";
+  right: 0.2em;
+  height: 10px;
+  width: 10px;
+  background-color: rgb(1, 112, 94);
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  margin-left: 13px;
+  
 }
 table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:before{
+  content: "..";
+  right: 0.2em;
+  height: 10px;
+  width: 10px;
+  background-color: rgb(1, 112, 94);
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
+
+  margin-right: 13px;
+}
+/* table.dataTable thead .sorting:before,
 table.dataTable thead .sorting_asc:before,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_asc_disabled:before,
@@ -1172,7 +1191,7 @@ table.dataTable thead .sorting_desc_disabled:after {
 table.dataTable thead .sorting_asc:before,
 table.dataTable thead .sorting_desc:after {
   color: #1b00ff;
-}
+} */
 table.dataTable > tbody > tr.child ul.dtr-details {
   white-space: normal;
 }
