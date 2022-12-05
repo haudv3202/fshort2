@@ -8,10 +8,12 @@
     <div class="video_detail_mini_left">
         <div class="video_center">
           <span onclick="play()">
-            <video  class="video_click_play"
+            <div class="box_video_mini_size">
+                <video  class="video_click_play"
                     src="<?php echo $value['link'] ?>"
-                    width="42%" loop
+                 loop
             ></video>
+            </div>
           </span>
             <div class="icon_play_video_center">
                 <i onclick="play()" class="fa-solid fa-play"></i>

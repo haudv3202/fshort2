@@ -611,9 +611,29 @@ body::-webkit-scrollbar {
   transition: 0.6s;
   width: 100%;
 }
-.Post_user_detail .Post_video_user_detail video {
+.Post_user_detail .Post_video_user_detail .vid_box{
   width: 225px;
+  height: 400px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.box_video_mini_size{
+  width: 420px;
+  height: 750px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.Post_user_detail .Post_video_user_detail video {
+  width: 100%;
   cursor: pointer;
 }
 .detail_user .Post_user_detail .Post_video_user_detail .video_user_detail {
@@ -1054,9 +1074,9 @@ body::-webkit-scrollbar {
   left: 0;
   height: 100%;
 }
-#video_detail_mini .video_detail_mini_left .video_center {
+#video_detail_mini .video_detail_mini_left .video_center  .video_click_play{
+  width: 100%;
   text-align: center;
-  position: relative;
 }
 #video_detail_mini
   .video_detail_mini_left
@@ -1813,11 +1833,6 @@ body::-webkit-scrollbar {
   transition: 0.6s;
   width: 100%;
 }
-.Post_user_detail .Post_video_user_detail video {
-  width: 225px;
-  border-radius: 10px;
-  cursor: pointer;
-}
 .detail_user .Post_user_detail .Post_video_user_detail .video_user_detail {
   position: relative;
   /* left: 10%; */
@@ -2252,10 +2267,6 @@ body::-webkit-scrollbar {
   top: 0;
   left: 0;
   height: 100%;
-}
-#video_detail_mini .video_detail_mini_left .video_center {
-  text-align: center;
-  position: relative;
 }
 #video_detail_mini
   .video_detail_mini_left
