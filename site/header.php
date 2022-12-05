@@ -208,17 +208,19 @@
                             />
                         </div>
 
-                        <div class="info_login_headerr">
-                            <p>
+
+                    <div class="info_login_headerr">
+                        <ul class="menu_list">
+                            <li>
                                 <a href="?detail_video"> <i class="bx bx-user"></i> View Profile</a>
-                            </p>
-                            <p>
+                            </li>
+                            <li>
                                 <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
-                            </p>
-                            <p>
+                            </li>
+                            <li>
                                 <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
-                            </p>
-                        </div>
+                            </li>
+                        </ul>
                     <?php }else if(isset($_SESSION['info']) && ($_SESSION['info']['role_id'] == 2 || $_SESSION['info']['role_id'] == 3)){?>
                         <div class="user_loginn">
                             <span><?php echo $_SESSION['info']['name'];?></span>
@@ -230,18 +232,20 @@
                         </div>
 
                         <div class="info_login_headerr">
-                            <p>
-                                <a href="?detail_video"> <i class="bx bx-user"></i> View Profile</a>
-                            </p>
-                            <p>
-                                <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
-                            </p>
-                            <p>
-                                <a href="?setting"> <i class="bx bxs-cog"></i>Admin</a>
-                            </p>
-                            <p>
-                                <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
-                            </p>
+                            <ul class="menu_list">
+                                <li>
+                                    <a href="?detail_video"> <i class="bx bx-user"></i> View Profile</a>
+                                </li>
+                                <li>
+                                    <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
+                                </li>
+                                <li>
+                                    <a href="?setting"> <i class="bx bxs-cog"></i>Admin</a>
+                                </li>
+                                <li>
+                                    <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
+                                </li>
+                            </ul>
                         </div>
                     <?php }else{?>
 

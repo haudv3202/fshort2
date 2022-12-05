@@ -420,34 +420,54 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.info_login_headerr::after {
-  content: "";
-  width: 15px;
-  height: 15px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  position: absolute;
-  box-shadow: 1px 1px 5px rgb(128, 128, 128);
-  top: -15px;
-  left: 155px;
-  background-color: rgb(233, 233, 233);
+.menu_list li {
+  list-style: none;
 }
 
-.info_login_headerr p {
-  width: max-content;
-  padding: 10px 0;
-  transition: 0.2s linear;
-  padding: 15px 20px;
-}
-
-.info_login_headerr p a {
+.menu_list li a {
   text-decoration: none;
   color: #000;
+  padding: 10px 20px;
+  transition: 0.2s linear;
+  display:block;
 }
 
-.info_login_headerr p:hover {
+.menu_list li a:hover {
   background: rgba(228, 228, 228, 0.795);
-  width: 100%;
 }
+
+.menu_list li a i {
+  padding-right: 5px;
+}
+
+/*.info_login_headerr::after {*/
+/*  content: "";*/
+/*  width: 15px;*/
+/*  height: 15px;*/
+/*  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);*/
+/*  position: absolute;*/
+/*  box-shadow: 1px 1px 5px rgb(128, 128, 128);*/
+/*  top: -15px;*/
+/*  left: 155px;*/
+/*  background-color: rgb(233, 233, 233);*/
+/*}*/
+
+/*.info_login_headerr p {*/
+/*  width: max-content;*/
+/*  padding: 10px 0;*/
+/*  transition: 0.2s linear;*/
+/*  padding: 15px 20px;*/
+/*}*/
+
+/*.info_login_headerr p a {*/
+/*  text-decoration: none;*/
+/*  color: #000;*/
+/*}*/
+
+/*.info_login_headerr p:hover {*/
+/*  background: rgba(228, 228, 228, 0.795);*/
+/*  width: 100%;*/
+/*}*/
 
 /* detail user  */
 
@@ -3527,6 +3547,17 @@ hr {
 
 .display.show {
   display: block!important;
+}
+
+.resize_video {
+  width: 300px;
+  height: 530px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  margin: 0 auto;
+  border-radius:12px;
 }
 
 /* end css by minh anh hải sửa lại gần hết */
