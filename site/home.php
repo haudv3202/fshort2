@@ -62,7 +62,6 @@ if(isset($_SESSION['success'])){
                       <?php echo $value['name'] ?>
                       <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
                     </p>
-                    <p> <?php echo $value['create_date'] ?> ~ <i class="bx bx-world"></i></p>
                   </div>
                 </div>
                 <div class="logout_right_root">
@@ -111,7 +110,6 @@ if(isset($_SESSION['success'])){
                             Cristiano Ronaldo
                             <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
                         </p>
-                        <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
                     </div>
                 </div>
 
