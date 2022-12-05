@@ -13,22 +13,22 @@
             <ul id="accordion-menu">
                 <li>
                     <a href="?AllAccount" class="dropdown-toggle no-arrow text-decoration-none">
-                        <span class="micon dw dw-diagram"></span><span class="mtext">Quản lí tài khoản</span>
+                       </i><i class='bx bxs-user-account' ></i><span class="mtext">Quản lí tài khoản</span>
                     </a>
                 </li>
                 <li>
                     <a href="?bandAccount" class="dropdown-toggle no-arrow text-decoration-none">
-                        <span class="micon dw dw-diagram"></span><span class="mtext">Tài khoản bị cấm</span>
+                    <i class='bx bx-user-x'></i><span class="mtext">Tài khoản bị cấm</span>
                     </a>
                 </li>
                 <li>
                     <a href="?employee" class="dropdown-toggle no-arrow text-decoration-none">
-                        <span class="micon dw dw-diagram"></span><span class="mtext">Quản lí nhân viên</span>
+                    <i class='bx bxs-book-bookmark'></i><span class="mtext">Quản lí nhân viên</span>
                     </a>
                 </li>
                 <li>
                     <a href="?newAccount" class="dropdown-toggle no-arrow text-decoration-none">
-                        <span class="micon dw dw-diagram"></span><span class="mtext">Tạo tài khoản</span>
+                    <i class='bx bxs-user-plus'></i><span class="mtext">Tạo tài khoản</span>
                     </a>
                 </li>
             </ul>
