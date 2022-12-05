@@ -1,5 +1,5 @@
 <script>
-    console.log('Cường đpẹ trai vc😫', 'color: red; font-size: 30px; font-weight: bold;');
+    console.log('Stop!😫', 'color: red; font-size: 30px; font-weight: bold;');
     const array_user_detail = <?php echo json_encode($posts_video); ?>;
     // console.log(array_user_detail);
 
@@ -105,8 +105,15 @@
         </div>
 
     <div class="links_video">
+
   <a href="?detail_video_mini&id_post=${item.id_post}" ><video  width="100%" onplay="getCurTime();" id="Video" controls type="video/mp4" loop
+
             src="${item.link}"></video></a>
+
+<!--        <div class="controls_video">-->
+<!--                <i class='bx bxs-volume-full'></i>-->
+<!--                <input type="range" class="volumes">-->
+<!--        </div>-->
 
     </div>
     <div class="feeling">

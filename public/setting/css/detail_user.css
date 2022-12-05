@@ -2910,6 +2910,7 @@ body::-webkit-scrollbar {
   height: 530px;
   background-color: #000;
   margin:20px auto ;
+  /*position:relative;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2926,6 +2927,33 @@ body::-webkit-scrollbar {
   z-index: 200;
   color: red;
 }
+/*.links_video .controls_video {*/
+/*  position: absolute;*/
+/*  right: 0;*/
+/*  bottom: 0;*/
+/*}*/
+
+/*.links_video .controls_video i {*/
+/*  position: absolute;*/
+/*  color: #fff;*/
+/*  right: 8px;*/
+/*  font-size: 20px;*/
+/*  bottom: 5px;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.links_video .controls_video i:focus .volumes{*/
+/*    color: red;*/
+/*}*/
+
+/*.links_video .controls_video input[type="range"] {*/
+/*  transform: rotate(-90deg);*/
+/*  position: absolute;*/
+/*  right: -46px;*/
+/*  bottom: 90px;*/
+/*  display:none;*/
+/*}*/
+
 .feeling {
   display: flex;
   justify-content: space-between;
