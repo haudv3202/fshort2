@@ -2913,11 +2913,24 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.links_video_post img{
+  margin-top: 20px;
+  text-align: center;
+  background-color: #000;
+  margin:20px auto ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
 }
 .links_video video {
   position: relative;
   z-index: 1;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 .links_video .controls_links_video i {
   position: absolute;

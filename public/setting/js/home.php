@@ -230,7 +230,7 @@
        <div class="content_news_page_span">
         <span class="content_news_page_span_text" onclick="ClickLimitText()">Xem thêm</span>
         </div>
-    <div class="links_video">
+    <div class="links_video_post links_video_post">
         <a href="?detail_posts_mini&id_post=${item.id_post}">
         <img src="${item.link}" width="100%" style="border-radius:5px;" alt="">
         </a>
