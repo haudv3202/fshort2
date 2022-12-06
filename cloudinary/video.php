@@ -24,6 +24,9 @@ Configuration::instance([
 //       ]);
     if(isset($_POST['sb_video'])){
         $video = $_FILES['videohome'];
+//        echo $video['size'];
+//        die();
+        if($video['size'] < 6291456){
             $title = $_POST['title'];
             $path = $video['tmp_name'];
             $namevideo = $video['name'];
@@ -37,6 +40,11 @@ Configuration::instance([
             );
             new_post_video($title,$data['url'],1,$_SESSION['info']['id']);
             route('index.php');
+        }else {
+            echo "<script>alert('Kiểm tra lại kích thước video < 6mb')</script>";
+            route('index.php');
+        }
+
     }
 
 ?>
