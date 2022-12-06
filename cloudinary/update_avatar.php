@@ -12,6 +12,6 @@ Configuration::instance([
         'secure' => true]]);
 
     $data = (new UploadApi())->upload($path,[
-        'public_id' => 'Fshort/image_post/'. $name_image
+        'public_id' => 'Fshort/avatar/'. $name_image
     ]);
 ?>

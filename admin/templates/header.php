@@ -121,9 +121,9 @@
             <div class="dropdown">
                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="./public/vendors/images/photo1.jpg" alt="">
+							<img src="<?php echo $_SESSION['info']['link_avatar'];?>" alt="">
 						</span>
-                    <span class="user-name">Ross D. Hau</span>
+                    <span class="user-name"><?php echo $_SESSION['info']['name'];?></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                     <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
