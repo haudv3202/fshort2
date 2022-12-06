@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36fa856e-ab94-412b-8688-003ab55a3f4e" name="Changes" comment="fix conflit">
-      <change afterPath="$PROJECT_DIR$/cloudinary/update_avatar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/09f100ed-820e-4c33-8cfa-5946a89b7522.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/09f100ed-820e-4c33-8cfa-5946a89b7522.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudinary/video.php" beforeDir="false" afterPath="$PROJECT_DIR$/cloudinary/video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/setting/css/detail_user.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/setting/css/detail_user.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/setting/js/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/setting/js/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/setting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/v_home.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/v_home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudinary/update_avatar.php" beforeDir="false" afterPath="$PROJECT_DIR$/cloudinary/update_avatar.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,6 +205,7 @@
       <workItem from="1670219689859" duration="1503000" />
       <workItem from="1670240401640" duration="4949000" />
       <workItem from="1670266556702" duration="4266000" />
+      <workItem from="1670304095272" duration="764000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1668142420554</created>
