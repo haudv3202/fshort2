@@ -10,10 +10,11 @@
             href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
             rel="stylesheet"
     />
-    <link
+    <!-- <link
             href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Roboto:ital,wght@0,500;1,700&display=swap"
             rel="stylesheet"
-    />
+    /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
@@ -209,15 +210,17 @@
                         </div>
 
                         <div class="info_login_headerr">
-                            <p>
+                            <ul>
+                                <li>
                                 <a href="?detail_video"> <i class="bx bx-user"></i> View Profile</a>
-                            </p>
-                            <p>
-                                <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
-                            </p>
-                            <p>
-                                <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
-                            </p>
+                                </li>
+                                <li>
+                                    <a href="?setting"> <i class="bx bxs-cog"></i> Settings</a>
+                                </li>
+                                <li>
+                                    <a href="?logout"> <i class="bx bx-log-in"></i> Log Out</a>
+                                </li>
+                            </ul>
                         </div>
                     <?php }else if(isset($_SESSION['info']) && ($_SESSION['info']['role_id'] == 2 || $_SESSION['info']['role_id'] == 3)){?>
                         <div class="user_loginn">
@@ -288,7 +291,7 @@
                 </p>
                 <p>
                     <i class="bx bx-plus-circle"></i>
-                    <span>Tạo</span>
+                    <span>Tạo mới </span>
                 </p>
                 <p>
                     <i class="bx bxs-bell-ring"></i>
@@ -305,7 +308,9 @@
 
                     </div>
                 <?php }else{?>
+                    <div class="user_left_failed">
                     <a class="login_header_left" href="?login" >Đăng nhập</a>
+                    </div>
                 <?php }?>
             </div>
         </div>
