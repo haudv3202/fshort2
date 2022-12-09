@@ -451,27 +451,27 @@ body::-webkit-scrollbar{
 
 .info_login_headerr::after {
   content: "";
-  width: 15px;
+  width: 25px;
   height: 15px;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   position: absolute;
-  top: -15px;
-  left: 160px;
+  top: -8%;
   background-color: #ed8c72;
+  right: 2%;
 }
 
 .info_login_headerr li {
-  width: max-content;
-  transition: 0.2s linear;
+  /*width: max-content;*/
   list-style: none;
-  transition: 0.2s linear;
 }
 
 .list_menu li a {
+  transition: 0.2s linear;
   text-decoration: none;
   color: #fff;
-  width: max-content;
-  padding: 10px 20px !important;
+  /*width: max-content;*/
+  padding: 10px 20px ;
+  display:block;
 }
 
 .list_menu li a:hover {

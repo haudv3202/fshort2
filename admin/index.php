@@ -63,12 +63,8 @@ if(isset($_SESSION['info']) && ($_SESSION['info']['role_id'] == 2 || $_SESSION['
     }else if(isset($_GET['posts'])){
 
         $dataPost = null;
-        $hastag = [];
         if(!empty($_GET['id'])){
             $dataPost = allposts($_GET['id']);
-            foreach ($dataPost as $value){
-                $hastag[$value['id']] = explode(',',$value['hastag']);
-            }
         }
 
         if(isset( $_POST['id_user'])){
@@ -99,7 +95,6 @@ if(isset($_SESSION['info']) && ($_SESSION['info']['role_id'] == 2 || $_SESSION['
     }else if(isset($_GET['employee'])){
         $allData = Allaccount();
         $allRows = allRoles();
-        $linkCDN = viewCssCDN('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">');
 //        $linkCSS = viewCSS('./public/src/styles/');
         if(!empty($_POST['item_id'])){
             $id = $_POST['item_id'];
@@ -117,15 +112,20 @@ if(isset($_SESSION['info']) && ($_SESSION['info']['role_id'] == 2 || $_SESSION['
             $name = $_POST['nameAc'];
             $email = $_POST['EmailAc'];
             $pass = rand_string(8);
-            if(tailcheck($email) ==  true){
-                $title = "Create account successfully!";
-                $content = "Xin chào ". $name ." Chúc mừng bạn tạo tài khoản thành công với mật khẩu là " . "<b>$pass</b> vui lòng đăng nhập để đổi mật khẩu <a href='http://localhost/fshort2/site/index.php?login'>Đăng nhập</a>";
-                $result_mail = send_token($title,$content,$email);
-                new_account($name,$email,md5($pass));
-                $_SESSION['new_succesfully'] = "Tạo tài khoản thành công !" ;
+            if(!empty($name) && !empty($email)){
+                if(tailcheck($email) ==  true){
+                    $title = "Create account successfully!";
+                    $content = "Xin chào ". $name ." Chúc mừng bạn tạo tài khoản thành công với mật khẩu là " . "<b>$pass</b> vui lòng đăng nhập để đổi mật khẩu <a href='http://localhost/fshort2/site/index.php?login'>Đăng nhập</a>";
+                    $result_mail = send_token($title,$content,$email);
+                    new_account($name,$email,md5($pass));
+                    $_SESSION['new_succesfully'] = "Tạo tài khoản thành công !" ;
+                }else {
+                    $_SESSION['error_new'] = "Sai định dạng email" ;
+                }
             }else {
-                $_SESSION['error_new'] = "Sai định dạng email" ;
+                $_SESSION['error_new'] = "Vui lòng không để trống" ;
             }
+
 
         }
         $VIEW_NAME = 'v_new_account.php';
