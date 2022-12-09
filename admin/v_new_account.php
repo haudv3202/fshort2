@@ -7,6 +7,9 @@
         <?php echo $_SESSION['error_new']?>
     </div>
 <?php unset($_SESSION['error_new']); }?>
+<div class="pd-20">
+    <h4 class="text-blue h4">Tạo tài khoản</h4>
+</div>
 <form class="my-4" action="" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>

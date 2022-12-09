@@ -1157,7 +1157,7 @@ table.dataTable thead .sorting_desc_disabled:after {
   background-color: rgb(1, 112, 94);
   clip-path: polygon(0 0, 0% 100%, 100% 50%);
   margin-left: 13px;
-  
+  transform: rotate(90deg);
 }
 table.dataTable thead .sorting:before,
 table.dataTable thead .sorting_asc:before,
@@ -1170,7 +1170,7 @@ table.dataTable thead .sorting_desc_disabled:before{
   width: 10px;
   background-color: rgb(1, 112, 94);
   clip-path: polygon(100% 0, 100% 100%, 0 50%);
-
+  transform: rotate(90deg);
   margin-right: 13px;
 }
 /* table.dataTable thead .sorting:before,

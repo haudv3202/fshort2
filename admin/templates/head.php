@@ -20,7 +20,6 @@
     <!-- CSS -->
     <?php echo !empty($linkCSS) ? $linkCSS : ""; ?>
     <link rel="stylesheet" type="text/css" href="./public/src/styles/core.css">
-    <link rel="stylesheet" type="text/css" href="./public/src/styles/icon-font.min.css">
     <link rel="stylesheet" type="text/css" href="./public/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="./public/src/plugins/datatables/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="./public/src/styles/style.css">

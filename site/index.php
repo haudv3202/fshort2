@@ -7,6 +7,7 @@ require_once '../dao/posts_dao.php';
 require_once '../dao/comment.php';
 require_once '../dao/like.php';
 require_once '../dao/user_follow_dao.php';
+require_once '../dao/ban_dao.php';
 require_once '../App/Check_app/Check.php';
 require_once '../App/getid3/getid3.php';
 $_SESSION['posts_video'] = [] ;
@@ -108,7 +109,7 @@ if(isset($_GET['about'])){
                 'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
             ];
         }
-        $posts_video[] = [
+        $_SESSION['posts_video'][] = [
             'id_user_log' => $id_user,
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
@@ -173,7 +174,7 @@ if(isset($_GET['about'])){
                 'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
             ];
         }
-        $posts_video[] = [
+        $_SESSION['posts_video'][] = [
             // 'id_user_log' => $id_user,
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
@@ -351,11 +352,32 @@ if(isset($_GET['about'])){
                 }
                 route('?token');
             }else {
-                if(login_google($google_account_info['id'])['role_id'] == 2 || login_google($google_account_info['id'])['role_id'] == 3){
-                    route('../admin');
+//                echo "<pre>";
+                $band = UserBand(login_google($google_account_info['id'])['id']);
+//                print_r(login_google($google_account_info['id']));
+//                print_r($band);
+//                die();
+                if(empty($band)){
+                    if(login_google($google_account_info['id'])['role_id'] == 2 || login_google($google_account_info['id'])['role_id'] == 3){
+                        route('../admin');
+                    }else {
+                        route('index.php');
+                    }
                 }else {
-                    route('video.php');
+                    $date_current = date('Y-m-d H:i:s');
+                    $ThatTime = $band[0]['time_open'];
+                    if(strtotime($date_current) >= strtotime($ThatTime)){
+                        if(login_google($google_account_info['id'])['role_id'] == 2 || login_google($google_account_info['id'])['role_id'] == 3){
+                            route('../admin');
+                        }else {
+                            route('index.php');
+                        }
+                    }else {
+                        $_SESSION["error_account"] = 'Bạn đã bị cấm ' . '<i class="bi bi-exclamation-triangle"></i>' . 'Tài khoản sẽ được mở vào lúc ' . $band[0]['time_open'];
+                        route('?login');
+                    }
                 }
+
             }
         }else {
             $_SESSION["error"] = 'Bạn không có quyền truy cập';
@@ -400,12 +422,6 @@ if(isset($_GET['about'])){
     include_once('./resgister_login/v_change_password.php');
 }else if(isset($_GET['login'])){
     require_once ('../google/config.php');
-
-    if(isset($_SESSION["error_account"])){
-        $error = $_SESSION["error_account"];
-        echo "<script>alert('$error')</script>";
-        unset($_SESSION['error_account']);
-    }
     if(isset($_POST['sub_log'])){
         $email = checkData('em_log');
         $password = checkData('pass_log');
@@ -413,35 +429,44 @@ if(isset($_GET['about'])){
             if(!empty($email) || $password){
                 $data = check_account($email,md5($password));
                 if(isset($data)){
-                    if($data['role_id'] == 2 || $data['role_id'] == 3){
-                        $_SESSION['info'] = $data;
-                        route('../admin/');
+                    $band = UserBand($data['id']);
+                    if(empty($band)){
+                            if($data['role_id'] == 2 || $data['role_id'] == 3){
+                                $_SESSION['info'] = $data;
+                                route('../admin/');
+                            }else {
+                                $_SESSION['info'] = $data;
+                                route('index.php');
+                            }
                     }else {
-                        $_SESSION['info'] = $data;
-                        route('index.php');
+                        $date_current = date('Y-m-d H:i:s');
+                        $ThatTime = $band[0]['time_open'];
+                        if(strtotime($date_current) >= strtotime($ThatTime)){
+                            if($data['role_id'] == 2 || $data['role_id'] == 3){
+                                $_SESSION['info'] = $data;
+                                route('../admin/');
+                            }else {
+                                $_SESSION['info'] = $data;
+                                route('index.php');
+                            }
+                        }else {
+                            $_SESSION["error_account"] = 'Bạn đã bị cấm ' . '<i class="bi bi-exclamation-triangle"></i>' . 'Tài khoản sẽ được mở vào lúc ' . $band[0]['time_open'];
+                        }
                     }
                 }else {
                     $_SESSION["error_account"] = 'Sai mật khẩu hoặc email';
-                    route('?login');
-                }
+                    }
             }
         }else{
-            $_SESSION["error_account"] = 'Phải điền tất cả các trường';
+            $_SESSION["error_account"] = 'Vui lòng không để trống';
         }
 
     }
     include_once('./resgister_login/v_login.php');
 }else if(isset($_GET['fogotPass'])){
     require_once ("../mail/SendMail.php");
-    if(isset($_SESSION["error_forgot"])){
-        $error = $_SESSION["error_forgot"];
-        echo "<script>alert('$error')</script>";
-        unset($_SESSION['error_forgot']);
-    }
     if(isset($_POST['email_submit'])){
         $email = checkData('email_fogot');
-//            print_r();
-//            die();
         if($email != false){
             if(!empty(checkEmail($email))){
                 $token = substr(rand(0,999999),0,6);
@@ -457,7 +482,7 @@ if(isset($_GET['about'])){
                 $_SESSION["error_forgot"] = 'Email không tồn tại';
             }
         }else{
-            $_SESSION["error_forgot"] = 'Phải điền tất cả các trường';
+            $_SESSION["error_forgot"] = 'Vui lòng không để trống';
         }
     }
     include_once('./resgister_login/v_fogot_password.php');
@@ -521,7 +546,6 @@ else if(isset($_GET['logout'])){
         echo "chạy vào này rồi";
         die();
     }
-    echo $_SESSION['count_for'];
 
 //        follow
     if(isset($_POST['follows'])){

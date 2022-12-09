@@ -1,10 +1,10 @@
 <script>
     console.log('%cStop!😫', 'color: red; font-size: 30px; font-weight: bold;');
     const array_user_detail = <?php echo json_encode($_SESSION['posts_video']); ?>;
-    console.log(array_user_detail);
+    // console.log(array_user_detail);
 
     const array_posts_user = <?php echo json_encode($posts_news); ?>;
-    // console.log(array_posts_user);
+    console.log(array_posts_user);
 
 
     // render content page
@@ -120,11 +120,10 @@
         <div class="icon_felling">
         `+like+`
             <i onclick="show_comment(`+`${item.id_post}`+`)" class='bx bx-message-rounded cmtPost'></i>
-            <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
+            <i class='bx bx-share bx-flip-horizontal' onclick="geturlHome(`+`${item.id_post}`+`)"></i>
         </div>
         <div class="infor_view">
-            <p>100 lượt thích</p>
-            <p><span id="views">0</span> Views</p>
+            <p>${item.likes} lượt thích</p>
         </div>
     </div>
     <div class="content_video_page">
@@ -246,11 +245,10 @@
         <div class="icon_felling">
          `+like+`
             <i onclick="show_comment(`+`${item.id_post}`+`)" class='bx bx-message-rounded cmtPost'></i>
-            <i class='bx bx-share bx-flip-horizontal' onclick="getURL();"></i>
+            <i class='bx bx-share bx-flip-horizontal' onclick="geturlHome(`+`${item.id_post}`+`)"></i>
         </div>
         <div class="infor_view">
-            <p>100 lượt thích</p>
-            <p><span id="view">0</span> Views</p>
+            <p>${item.likes} lượt thích</p>
         </div>
     </div>
     <div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
@@ -915,6 +913,37 @@ for (let i = 0; i <= Video.length; i++) {
             onClick: function(){} // Callback after click
         }).showToast();
         navigator.clipboard.writeText(window.location.href);
+    }
+
+    function geturlHome($id){
+        const href_current = window.location.href;
+        let array_url = href_current.split("/");
+        let url_detail = null;
+        if(array_url[5].localeCompare('?index.php') ==  0){
+             url_detail = href_current.replace("?index.php", "?detail_video_mini&id_post="+$id);
+        }else if(array_url[5].localeCompare('?home') ==  0){
+             url_detail = href_current.replace("?home", "?detail_video_mini&id_post="+$id);
+        }else if(array_url[5].localeCompare('?about') ==  0){
+            url_detail = href_current.replace("?about", "?detail_posts_mini&id_post="+$id);
+        }
+        Toastify({
+            text: "Sao chép thành công",
+            duration: 3000,
+            destination: "https://www.facebook.com/haudn02",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+
+                borderRadius:'20px',
+            },
+            onClick: function(){} // Callback after click
+        }).showToast();
+        navigator.clipboard.writeText(url_detail);
     }
 
     function goBack() {

@@ -36,13 +36,13 @@
                             <p class="mb-4">Mạng xã hội video ngắn của Fpoly</p>
                         </div>
                         <?php
-                        if(isset($_SESSION['error'])){
+                        if(isset($_SESSION['error_forgot'])){
                             ?>
                             <div class="alert alert-danger" role="alert">
-                                <?php echo $_SESSION['error'];?>
+                                <?php echo $_SESSION['error_forgot'];?>
                             </div>
                             <?php
-                            unset($_SESSION['error']);
+                            unset($_SESSION['error_forgot']);
                         }else{
                             ?>
                             <div class="alert alert-success" role="alert">Nhập email tài khoản quên mật khẩu</div>

@@ -10,7 +10,7 @@
     </div>
     <div class="menu-block customscroll">
         <div class="sidebar-menu">
-            <ul id="accordion-menu">
+            <ul id="accordion-menu " class="pl-2">
                 <li>
                     <a href="?AllAccount" class="dropdown-toggle no-arrow text-decoration-none">
                        </i><i class='bx bxs-user-account' ></i><span class="mtext">Quản lí tài khoản</span>

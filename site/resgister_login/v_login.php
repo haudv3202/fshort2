@@ -37,7 +37,7 @@
                         <?php
                         if(isset($_SESSION['success'])){
                             ?>
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-danger" role="alert">
                                 <?php echo $_SESSION['success'];?>
                             </div>
                             <?php
@@ -49,8 +49,14 @@
                             </div>
                         <?php
                             unset($_SESSION['error_admin']);
-                        }
+                        }else if(isset($_SESSION['error_account'])){
                             ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $_SESSION['error_account'];?>
+                            </div>
+                        <?php
+                            unset($_SESSION['error_account']);
+                        }?>
 
                         <form action="" method="post">
                             <div class="form-group first">
