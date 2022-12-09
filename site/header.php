@@ -10,10 +10,11 @@
             href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
             rel="stylesheet"
     />
-    <link
+    <!-- <link
             href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Roboto:ital,wght@0,500;1,700&display=swap"
             rel="stylesheet"
-    />
+    /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
@@ -290,7 +291,7 @@
                 </p>
                 <p>
                     <i class="bx bx-plus-circle"></i>
-                    <span>Tạo</span>
+                    <span>Tạo mới </span>
                 </p>
                 <p>
                     <i class="bx bxs-bell-ring"></i>
@@ -307,7 +308,9 @@
 
                     </div>
                 <?php }else{?>
+                    <div class="user_left_failed">
                     <a class="login_header_left" href="?login" >Đăng nhập</a>
+                    </div>
                 <?php }?>
             </div>
         </div>

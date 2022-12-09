@@ -60,7 +60,7 @@ if(isset($_SESSION['success'])){
                   <div class="text_logo_name_videos">
                     <p>
                       <?php echo $value['name'] ?>
-                      <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
+                      <i class="bx bxs-check-circle" style="color: #2988bc"></i>
                     </p>
                   </div>
                 </div>
@@ -130,10 +130,12 @@ if(isset($_SESSION['success'])){
     </div>
     <?php }else{?>
         <div class="postvideo">
-            <div class="testposstvd">
-               <div class="errol_post_Video">
-               <i onclick="postvd()" class="bx bxs-x-circle"></i>
-               <p style="background:#ccc;padding: 50px;border-radius: 12px;">Vui lòng <a href="?login"> đăng nhập </a> để đăng video</p> 
+            <div class="testposstvd" onclick="postvd()">
+               <div class="errol_post_Video" style="background:#ed8c72;padding: 0px 30px 30px;color:#fff;border-radius: 70px;">
+                <img src="../public/setting/img/logo.png" alt="">
+                <div class="style_errol_posst_video"></div>
+               <!-- <i onclick="postvd()" class="bx bxs-x-circle"></i> -->
+               <p >Vui lòng <a href="?login"> đăng nhập </a> để đăng video</p> 
                </div>
             </div>
         </div>
