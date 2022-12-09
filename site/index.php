@@ -9,7 +9,7 @@ require_once '../dao/like.php';
 require_once '../dao/user_follow_dao.php';
 require_once '../App/Check_app/Check.php';
 require_once '../App/getid3/getid3.php';
-$posts_video = [] ;
+$_SESSION['posts_video'] = [] ;
 $posts_news = [] ;
 if(isset($_GET['about'])){
     include_once('../cloudinary/post.php');
@@ -213,6 +213,55 @@ if(isset($_GET['about'])){
     $VIEW_NAME = 'detail_posts_user_other.php';
     include_once './layout.php';
 }else if(isset($_GET['setting'])){
+    if(isset($_POST['update_account'])){
+        $id = $_SESSION['info']['id'];
+        $name = $_POST['name_profile'];
+        $old_pass = $_POST['old_pass'];
+        $new_pass = $_POST['new_pass'];
+        $ress_pass = $_POST['ress_pass'];
+        $image_profile = $_FILES['img_profile_update'];
+//        if(!empty($name)){
+//            echo $name. " " . $old_pass . " " . $new_pass . " " . $ress_pass ;
+//            die();
+//        }
+        if((!empty($old_pass) && !empty($name) && !empty($image_profile)) && check_pass($id,md5($old_pass))['total_ac'] > 0){
+            if((!empty($new_pass) && !empty($ress_pass) ) && ($new_pass == $ress_pass)){
+                $path = $image_profile['tmp_name'];
+                $name_image = $image_profile['name'];
+                include_once('../cloudinary/update_avatar.php');
+                update_profile($id,$name,md5($new_pass),$data['url']);
+                $_SESSION['update_profile'] = 'Cập nhật thành công!';
+                $_SESSION['info']['link_avatar'] = $data['url'];
+                $_SESSION['info']['name'] = $name;
+                route('?home');
+            }else {
+                update_profile($id,$_SESSION['info']['name'],$_SESSION['info']['password'],$_SESSION['info']['link_avatar']);
+                $_SESSION['update_profile'] = 'Cập nhật thành công!';
+            }
+        }else {
+            if(!empty($name) && ($new_pass == "" && $old_pass == ""  && $ress_pass  == ""  && $image_profile == "")){
+                update_profile($id,$name,$_SESSION['info']['password'],$_SESSION['info']['link_avatar']);
+                $_SESSION['update_profile'] = 'Cập nhật thành công!';
+            }else if((!empty($new_pass) && !empty($old_pass) && !empty($ress_pass)) && (empty($name) && empty($image_profile) )){
+                if(($new_pass == $ress_pass) && check_pass($id,md5($old_pass))['total_ac'] > 0){
+                    update_profile($id,$_SESSION['info']['name'],md5($new_pass),$_SESSION['info']['link_avatar']);
+                    $_SESSION['update_profile'] = 'Cập nhật thành công!';
+                }
+            }else if(!empty($image_profile) && (empty($name) && empty($old_pass) && empty($ress_pass) && empty($new_pass) )) {
+                $path = $image_profile['tmp_name'];
+                $name_image = $image_profile['name'];
+                $data = (new UploadApi())->upload($path,[
+                    'public_id' => 'Fshort/image_post/'. $name_image
+                ]);
+
+                update_profile($id,$_SESSION['info']['name'],$_SESSION['info']['password'],$data['url']);
+                $_SESSION['update_profile'] = 'Cập nhật thành công!';
+            }else {
+                $_SESSION['update_profile'] = 'Lỗi cập nhật Vui lòng kiểm tra lại!';
+            }
+        }
+
+    }
     $VIEW_NAME = 'setting.php';
     include_once './layout.php';
 }else if(isset($_GET['detail_video_mini'])){
@@ -417,54 +466,62 @@ else if(isset($_GET['logout'])){
     session_unset();
     route('?index.php');
 }else{
-    $arr = all_post_video();
     include_once('../cloudinary/video.php');
-    $id_user = null;
+    $_SESSION['count_for'] = 0;
+    if($_SESSION['count_for'] == 0 ){
+        $arr = all_post_video();
+        $id_user = null;
 
-    if(!empty($_SESSION['info'])){
-        $id_user = $_SESSION['info']['id'];
-    }
-    foreach ($arr as $value){
-        $comments = [];
-        $status_like = null;
-        if(countLike($id_user,$value['id'])['totallike']>0){
-            $status_like = 1;
-        }else {
-            $status_like = 0;
+        if(!empty($_SESSION['info'])){
+            $id_user = $_SESSION['info']['id'];
         }
-        $follow = null;
-        if(!empty(follow_user($value['id_account'],$id_user))){
-            $follow = 1;
-        }else {
-            $follow = 0;
-        }
+        foreach ($arr as $value){
+            $comments = [];
+            $status_like = null;
+            if(countLike($id_user,$value['id'])['totallike']>0){
+                $status_like = 1;
+            }else {
+                $status_like = 0;
+            }
+            $follow = null;
+            if(!empty(follow_user($value['id_account'],$id_user))){
+                $follow = 1;
+            }else {
+                $follow = 0;
+            }
 
-        foreach (comment_all($value['id']) as $value2 ){
-            $comments[] = [
-                'name_user_comment' => account_one_row($value2['id_account'])['name'],
-                'content' => $value2['content'],
-                'id_post' => $value2['id_post'],
-                'time_date' => $value2['create_date'],
-                'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
+            foreach (comment_all($value['id']) as $value2 ){
+                $comments[] = [
+                    'name_user_comment' => account_one_row($value2['id_account'])['name'],
+                    'content' => $value2['content'],
+                    'id_post' => $value2['id_post'],
+                    'time_date' => $value2['create_date'],
+                    'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
+                ];
+            }
+            $_SESSION['posts_video'][] = [
+                'id_user_log' => $id_user,
+                'id_post' => $value['id'],
+                'cate_idpost' => $value['cate_id'],
+                'name' => account_one_row($value['id_account'])['name'],
+                'time_create' => $value['create_date'],
+                'title' => $value['title'],
+                'link' => $value['link'],
+                'views' => $value['views'],
+                'likes' => $value['likes'],
+                'avatar' => account_one_row($value['id_account'])['link_avatar'],
+                'comments' => $comments,
+                'status_like' => $status_like,
+                'follow' => $follow,
+                'id_user_post' => $value['id_account']
             ];
         }
-        $posts_video[] = [
-            'id_user_log' => $id_user,
-            'id_post' => $value['id'],
-            'cate_idpost' => $value['cate_id'],
-            'name' => account_one_row($value['id_account'])['name'],
-            'time_create' => $value['create_date'],
-            'title' => $value['title'],
-            'link' => $value['link'],
-            'views' => $value['views'],
-            'likes' => $value['likes'],
-            'avatar' => account_one_row($value['id_account'])['link_avatar'],
-            'comments' => $comments,
-            'status_like' => $status_like,
-            'follow' => $follow,
-            'id_user_post' => $value['id_account']
-        ];
+        ++$_SESSION['count_for'];
+    }else {
+        echo "chạy vào này rồi";
+        die();
     }
+    echo $_SESSION['count_for'];
 
 //        follow
     if(isset($_POST['follows'])){

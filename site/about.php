@@ -59,7 +59,6 @@
                       <?php echo $value['name'] ?>
                       <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
                     </p>
-                    <p> <?php echo $value['create_date'] ?> ~ <i class="bx bx-world"></i></p>
                   </div>
                 </div>
                 <div class="logout_right_root">

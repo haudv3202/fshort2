@@ -24,9 +24,9 @@ Configuration::instance([
 //       ]);
     if(isset($_POST['sb_video'])){
         $video = $_FILES['videohome'];
-        $getID3 = new getID3;
-        $file = $getID3->analyze($video['tmp_name']);
-        if($file['video']['resolution_x'] == 576 && $file['video']['resolution_y'] >= 1000){
+//        echo $video['size'];
+//        die();
+        if($video['size'] < 6291456){
             $title = $_POST['title'];
             $path = $video['tmp_name'];
             $namevideo = $video['name'];
@@ -41,10 +41,9 @@ Configuration::instance([
             new_post_video($title,$data['url'],1,$_SESSION['info']['id']);
             route('index.php');
         }else {
-            $_SESSION['error_upload'] = "Sai kích thước vui lòng upload đúng video kích thước 576 * >= 1000 ";
+            echo "<script>alert('Kiểm tra lại kích thước video < 6mb')</script>";
+            route('index.php');
         }
-
-
 
     }
 

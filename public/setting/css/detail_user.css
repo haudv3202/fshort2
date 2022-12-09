@@ -464,20 +464,52 @@ body::-webkit-scrollbar{
   width: max-content;
   transition: 0.2s linear;
   list-style: none;
-  padding: 10px 15px;
+  transition: 0.2s linear;
 }
 
-.info_login_headerr li a {
+.list_menu li a {
   text-decoration: none;
   color: #fff;
   width: max-content;
   padding: 10px 20px !important;
 }
 
-.info_login_headerr li:hover {
+.list_menu li a:hover {
   background: rgba(228, 228, 228, 0.795);
-  width: 100%;
 }
+
+.list_menu li a i {
+  margin-right: 5px;
+}
+/*.info_login_headerr::after {*/
+/*  content: "";*/
+/*  width: 15px;*/
+/*  height: 15px;*/
+/*  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);*/
+/*  position: absolute;*/
+/*  box-shadow: 1px 1px 5px rgb(128, 128, 128);*/
+/*  top: -15px;*/
+/*  left: 155px;*/
+/*  background-color: rgb(233, 233, 233);*/
+/*}*/
+
+/*.info_login_headerr li {*/
+/*  width: max-content;*/
+/*  transition: 0.2s linear;*/
+/*  list-style: none;*/
+/*}*/
+
+/*.info_login_headerr li a {*/
+/*  text-decoration: none;*/
+/*  color: #000;*/
+/*  width: max-content;*/
+/*  padding: 10px 20px !important;*/
+/*}*/
+
+/*.info_login_headerr li:hover {*/
+/*  background: rgba(228, 228, 228, 0.795);*/
+/*  width: 100%;*/
+/*}*/
 
 /* detail user  */
 
@@ -621,9 +653,29 @@ body::-webkit-scrollbar{
   transition: 0.6s;
   width: 100%;
 }
-.Post_user_detail .Post_video_user_detail video {
+.Post_user_detail .Post_video_user_detail .vid_box{
   width: 225px;
+  height: 400px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.box_video_mini_size{
+  width: 420px;
+  height: 750px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.Post_user_detail .Post_video_user_detail video {
+  width: 100%;
   cursor: pointer;
 }
 .detail_user .Post_user_detail .Post_video_user_detail .video_user_detail {
@@ -1064,9 +1116,9 @@ body::-webkit-scrollbar{
   left: 0;
   height: 100%;
 }
-#video_detail_mini .video_detail_mini_left .video_center {
+#video_detail_mini .video_detail_mini_left .video_center  .video_click_play{
+  width: 100%;
   text-align: center;
-  position: relative;
 }
 #video_detail_mini
   .video_detail_mini_left
@@ -1789,11 +1841,6 @@ body::-webkit-scrollbar{
   transition: 0.6s;
   width: 100%;
 }
-.Post_user_detail .Post_video_user_detail video {
-  width: 225px;
-  border-radius: 10px;
-  cursor: pointer;
-}
 .detail_user .Post_user_detail .Post_video_user_detail .video_user_detail {
   position: relative;
   /* left: 10%; */
@@ -2228,10 +2275,6 @@ body::-webkit-scrollbar{
   top: 0;
   left: 0;
   height: 100%;
-}
-#video_detail_mini .video_detail_mini_left .video_center {
-  text-align: center;
-  position: relative;
 }
 #video_detail_mini
   .video_detail_mini_left
@@ -2833,14 +2876,28 @@ body::-webkit-scrollbar{
   height: 530px;
   background-color: #000;
   margin:20px auto ;
+  /*position:relative;*/
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.links_video_post img{
+  margin-top: 20px;
+  text-align: center;
+  background-color: #000;
+  margin:20px auto ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
 }
 .links_video video {
   position: relative;
   z-index: 1;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 .links_video .controls_links_video i {
   position: absolute;
@@ -2849,6 +2906,33 @@ body::-webkit-scrollbar{
   z-index: 200;
   color: red;
 }
+/*.links_video .controls_video {*/
+/*  position: absolute;*/
+/*  right: 0;*/
+/*  bottom: 0;*/
+/*}*/
+
+/*.links_video .controls_video i {*/
+/*  position: absolute;*/
+/*  color: #fff;*/
+/*  right: 8px;*/
+/*  font-size: 20px;*/
+/*  bottom: 5px;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.links_video .controls_video i:focus .volumes{*/
+/*    color: red;*/
+/*}*/
+
+/*.links_video .controls_video input[type="range"] {*/
+/*  transform: rotate(-90deg);*/
+/*  position: absolute;*/
+/*  right: -46px;*/
+/*  bottom: 90px;*/
+/*  display:none;*/
+/*}*/
+
 .feeling {
   display: flex;
   justify-content: space-between;
