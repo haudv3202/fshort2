@@ -58,12 +58,21 @@ if(isset($_GET['about'])){
                 'avatar' => account_one_row($value['id_account'])['link_avatar'],
                 'comments' => $comments,
                 'status_like' => $status_like,
+                'follow' => $follow,
                 'id_user_post' => $value['id_account']
             ];
 
         }
 
         ++$_SESSION['count_for_post'];
+    }
+
+    //        follow
+    if(isset($_POST['follows'])){
+        $id_account_follow = $_POST['id_account_follow'];
+        $id_account_log = $_POST['id_log_follow'];
+        follow_user_new($id_account_follow,$id_account_log);
+        route('?index.php');
     }
 
     if(isset($_POST['submit_like'])){
@@ -88,7 +97,7 @@ if(isset($_GET['about'])){
         insert_comment($content,$id_account,$id_post);
         route('?about');
     }
-//    $allaccount = AllaccountRandom();
+    $ramdomFollow = AllaccountRandom();
     $VIEW_NAME = 'about.php';
     include_once './layout.php';
 }else if(isset($_GET['chat'])){

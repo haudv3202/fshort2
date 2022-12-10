@@ -1,7 +1,7 @@
 <script>
     console.log('%cStop!😫', 'color: red; font-size: 30px; font-weight: bold;');
     const array_user_detail = <?php echo json_encode($_SESSION['posts_video']); ?>;
-    // console.log(array_user_detail);
+    console.log(array_user_detail);
 
     const array_posts_user = <?php echo json_encode($_SESSION['posts_news']); ?>;
     console.log(array_posts_user);
