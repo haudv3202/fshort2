@@ -44,35 +44,36 @@
 </div>
 <?php 
               
-              foreach ($allaccount as $value){
-                
+              foreach ($ramdomFollow as $value){
+                  if($value['id'] != $_SESSION['info']['id'] && follows($_SESSION['info']['id'],$value['id'])['total_follow'] != 1){
                 ?>
               <!-- ==============list friends -->
               <div class="list_friends_root_right">
                 <div class="logo_name_videos">
-                  <img
-                    src="<?php echo account_one_row($value['id'])['link_avatar'] ?>"
-                    alt=""
-                  />
-                  <div class="text_logo_name_videos">
-                    <p>
-                      <?php echo $value['name'] ?>
-                      <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
-                    </p>
-                  </div>
+                    <a href="?detail_posts_other&id_account=<?php echo $value['id'] ?>">
+                        <img
+                                src="<?php echo account_one_row($value['id'])['link_avatar'] ?>"
+                                alt=""
+                        />
+                        <div class="text_logo_name_videos">
+                            <p>
+                                <?php echo $value['name'] ?>
+                                <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
+                            </p>
+                        </div>
+                    </a>
                 </div>
                 <div class="logout_right_root">
-                  <p
-                    onclick="followRight(this)"
-                    data-follow="1"
-                    class="follow_right_root"
-                  >
-                    Follow
-                  </p>
+                    <form action="" method="post">
+                        <input type="hidden" value="<?php echo $_SESSION['info']['id'] ?>" name="id_log_follow">
+                        <input type="hidden" value="<?php echo $value['id'] ?>" name="id_account_follow">
+                        <button type="submit" name="follows" class="follow_right_root">Follow</button>
+                    </form>
                 </div>
                 </div>
                 <?php 
                    }
+              }
                 ?>
                 <?php 
                    }

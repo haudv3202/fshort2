@@ -38,16 +38,18 @@ if(isset($_SESSION['success'])){
               <!-- ==============list friends -->
               <div class="list_friends_root_right">
                 <div class="logo_name_videos">
-                  <img
-                    src="<?php echo account_one_row($value['id'])['link_avatar'] ?>"
-                    alt=""
-                  />
-                  <div class="text_logo_name_videos">
-                    <p>
-                      <?php echo $value['name'] ?>
-                      <i class="bx bxs-check-circle" style="color: #2988bc"></i>
-                    </p>
-                  </div>
+                    <a href="?detail_video_other&id_account=<?php echo $value['id'] ?>">
+                        <img
+                                src="<?php echo account_one_row($value['id'])['link_avatar'] ?>"
+                                alt=""
+                        />
+                        <div class="text_logo_name_videos">
+                            <p>
+                                <?php echo $value['name'] ?>
+                                <i class="bx bxs-check-circle" style="color: #2988bc"></i>
+                            </p>
+                        </div>
+                    </a>
                 </div>
                 <div class="logout_right_root">
                     <form action="" method="post">
