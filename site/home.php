@@ -26,29 +26,14 @@ if(isset($_SESSION['success'])){
             <?php
             if (isset($_SESSION['info'])){
             ?>
-            <div class="user_login_right_root">
-                <div class="logo_name_videos">
-                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
-                    />
-                    <div class="text_logo_name_videos">
-                        <p>
-                            Cristiano Ronaldo
-                            <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
-                        </p>
-                        <p>November 4 at 3:28 AM ~ <i class="bx bx-world"></i></p>
-                    </div>
-                </div>
-                <div class="logout_right_root">
-                    <a href="">Chuyển</a>
-                </div>
-            </div>
             <div class="note_view_all_friends">
                 <p>Gợi ý cho bạn</p>
-                <p onclick="viewAll()" id="viewAll">Xem tất cả</p>
+<!--                <p onclick="viewAll()" id="viewAll">Xem tất cả</p>-->
             </div>
             <!-- ==============list friends -->
-            <?php 
-              foreach ($allaccount as $value){
+            <?php
+              foreach ($ramdomFollow as $value){
+                  if($value['id'] != $_SESSION['info']['id'] && follows($_SESSION['info']['id'],$value['id'])['total_follow'] != 1){
                   ?>
               <!-- ==============list friends -->
               <div class="list_friends_root_right">
@@ -65,16 +50,15 @@ if(isset($_SESSION['success'])){
                   </div>
                 </div>
                 <div class="logout_right_root">
-                  <p
-                    onclick="followRight(this)"
-                    data-follow="1"
-                    class="follow_right_root"
-                  >
-                    Follow
-                  </p>
+                    <form action="" method="post">
+                        <input type="hidden" value="<?php echo $_SESSION['info']['id'] ?>" name="id_log_follow">
+                        <input type="hidden" value="<?php echo $value['id'] ?>" name="id_account_follow">
+                        <button type="submit" name="follows" class="follow_right_root">Follow</button>
+                    </form>
                 </div>
               </div>
-                <?php 
+                <?php
+                  }
                 }
                 ?>
         </div>

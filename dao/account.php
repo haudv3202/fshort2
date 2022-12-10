@@ -38,7 +38,7 @@ function Allaccount(){
 }
 
 function AllaccountRandom(){
-    $sql = "SELECT * FROM account ORDER BY RAND() LIMIT 0,5";
+    $sql = "SELECT id,name,link_avatar FROM account ORDER BY RAND() LIMIT 0,6";
     return pdo_query_all($sql);
 }
 
