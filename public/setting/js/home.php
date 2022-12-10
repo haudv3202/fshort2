@@ -3,7 +3,7 @@
     const array_user_detail = <?php echo json_encode($_SESSION['posts_video']); ?>;
     // console.log(array_user_detail);
 
-    const array_posts_user = <?php echo json_encode($posts_news); ?>;
+    const array_posts_user = <?php echo json_encode($_SESSION['posts_news']); ?>;
     console.log(array_posts_user);
 
 
@@ -264,7 +264,7 @@
     About_home(array_posts_user);
     function checkLike(statuslike){
         if(statuslike == 1 ){
-            return "red";
+            return "#ed8c72";
         }else {
             return "gray";
         }
@@ -671,21 +671,21 @@
 
     // ================= follow right root==============//
 
-    let followcheckRight = "Follow";
-    function followRight() {
-        if (followcheckRight == "Follow") {
-            followcheckRight = "following";
-        } else {
-            followcheckRight = "Follow";
-        }
-        const btns = document.querySelectorAll(".follow_right_root");
-        for (let i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function () {
-                // debugger;
-                this.innerHTML = followcheckRight;
-            });
-        }
-    }
+    // let followcheckRight = "Follow";
+    // function followRight() {
+    //     if (followcheckRight == "Follow") {
+    //         followcheckRight = "following";
+    //     } else {
+    //         followcheckRight = "Follow";
+    //     }
+    //     const btns = document.querySelectorAll(".follow_right_root");
+    //     for (let i = 0; i < btns.length; i++) {
+    //         btns[i].addEventListener("click", function () {
+    //             // debugger;
+    //             this.innerHTML = followcheckRight;
+    //         });
+    //     }
+    // }
 
     // follow()
 
@@ -736,19 +736,19 @@
         }
     }
 
-    function viewAll() {
-        var viewallText = document.querySelector("#viewAll");
-        var viewall_friends_root_right = document.querySelector(
-            ".viewall_friends_root_right"
-        );
-        if (viewall_friends_root_right.style.display == "block") {
-            viewall_friends_root_right.style.display = "none";
-            viewallText.innerHTML = "Xem tất cả";
-        } else {
-            viewall_friends_root_right.style.display = "block";
-            viewallText.innerHTML = "Thu gọn";
-        }
-    }
+    // function viewAll() {
+    //     var viewallText = document.querySelector("#viewAll");
+    //     var viewall_friends_root_right = document.querySelector(
+    //         ".viewall_friends_root_right"
+    //     );
+    //     if (viewall_friends_root_right.style.display == "block") {
+    //         viewall_friends_root_right.style.display = "none";
+    //         viewallText.innerHTML = "Xem tất cả";
+    //     } else {
+    //         viewall_friends_root_right.style.display = "block";
+    //         viewallText.innerHTML = "Thu gọn";
+    //     }
+    // }
 
     // ============= check validate =================//
     function validate(event) {

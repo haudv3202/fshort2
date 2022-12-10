@@ -11,54 +11,59 @@ require_once '../dao/ban_dao.php';
 require_once '../App/Check_app/Check.php';
 require_once '../App/getid3/getid3.php';
 $_SESSION['posts_video'] = [] ;
-$posts_news = [] ;
+$_SESSION['posts_news']= [];
 if(isset($_GET['about'])){
     include_once('../cloudinary/post.php');
-    $arr = all_post_news();
-    $id_user = null;
-    if(!empty($_SESSION['info'])){
-        $id_user = $_SESSION['info']['id'];
-    }
+    $_SESSION['count_for_post'] = 0;
+    if($_SESSION['count_for_post'] == 0 ){
+        $arr = all_post_news();
+        $id_user = null;
+        if(!empty($_SESSION['info'])){
+            $id_user = $_SESSION['info']['id'];
+        }
 
-    foreach ($arr as $value){
-        $comments = [];
-        $status_like = null;
-        if(countLike($id_user,$value['id'])['totallike']>0){
-            $status_like = 1;
-        }else {
-            $status_like = 0;
-        }
-        $follow = null;
-        if(!empty(follow_user($value['id_account'],$id_user))){
-            $follow = 1;
-        }else {
-            $follow = 0;
-        }
-        foreach (comment_all($value['id']) as $value2 ){
-            $comments[] = [
-                'name_user_comment' => account_one_row($value2['id_account'])['name'],
-                'content' => $value2['content'],
-                'id_post' => $value2['id_post'],
-                'time_date' => $value2['create_date'],
-                'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
+        foreach ($arr as $value){
+            $comments = [];
+            $status_like = null;
+            if(countLike($id_user,$value['id'])['totallike']>0){
+                $status_like = 1;
+            }else {
+                $status_like = 0;
+            }
+            $follow = null;
+            if(!empty(follow_user($value['id_account'],$id_user))){
+                $follow = 1;
+            }else {
+                $follow = 0;
+            }
+            foreach (comment_all($value['id']) as $value2 ){
+                $comments[] = [
+                    'name_user_comment' => account_one_row($value2['id_account'])['name'],
+                    'content' => $value2['content'],
+                    'id_post' => $value2['id_post'],
+                    'time_date' => $value2['create_date'],
+                    'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
+                ];
+            }
+            $_SESSION['posts_news'][] = [
+                'id_user_log' => $id_user,
+                'id_post' => $value['id'],
+                'cate_id' => $value['cate_id'],
+                'name' => account_one_row($value['id_account'])['name'],
+                'time_create' => $value['create_date'],
+                'title' => str_replace('<br>', '<br><br>',nl2br($value['content'], FALSE)),
+                'link' => $value['link'],
+                'views' => $value['views'],
+                'likes' => $value['likes'],
+                'avatar' => account_one_row($value['id_account'])['link_avatar'],
+                'comments' => $comments,
+                'status_like' => $status_like,
+                'id_user_post' => $value['id_account']
             ];
-        }
-        $posts_news[] = [
-            'id_user_log' => $id_user,
-            'id_post' => $value['id'],
-            'cate_id' => $value['cate_id'],
-            'name' => account_one_row($value['id_account'])['name'],
-            'time_create' => $value['create_date'],
-            'title' => str_replace('<br>', '<br><br>',nl2br($value['content'], FALSE)),
-            'link' => $value['link'],
-            'views' => $value['views'],
-            'likes' => $value['likes'],
-            'avatar' => account_one_row($value['id_account'])['link_avatar'],
-            'comments' => $comments,
-            'status_like' => $status_like,
-            'id_user_post' => $value['id_account']
-        ];
 
+        }
+
+        ++$_SESSION['count_for_post'];
     }
 
     if(isset($_POST['submit_like'])){
@@ -83,7 +88,7 @@ if(isset($_GET['about'])){
         insert_comment($content,$id_account,$id_post);
         route('?about');
     }
-    $allaccount = AllaccountRandom();
+//    $allaccount = AllaccountRandom();
     $VIEW_NAME = 'about.php';
     include_once './layout.php';
 }else if(isset($_GET['chat'])){
@@ -132,7 +137,7 @@ if(isset($_GET['about'])){
     }
 
     foreach ($arr as $value){
-        $posts_news[] = [
+        $_SESSION['posts_news'][] = [
             'id_user_log' => $id_user,
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
@@ -201,7 +206,7 @@ if(isset($_GET['about'])){
 //        die();
 
     foreach ($arr as $value){
-        $posts_news[] = [
+        $_SESSION['posts_news'][] = [
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
             'time_create' => $value['create_date'],
@@ -542,9 +547,6 @@ else if(isset($_GET['logout'])){
             ];
         }
         ++$_SESSION['count_for'];
-    }else {
-        echo "chạy vào này rồi";
-        die();
     }
 
 //        follow
@@ -580,7 +582,7 @@ else if(isset($_GET['logout'])){
         insert_comment($content,$id_account,$id_post);
         route('?index.php');
     }
-    $allaccount = AllaccountRandom();
+    $ramdomFollow = AllaccountRandom();
     $VIEW_NAME = 'home.php';
     include_once './layout.php';
 }
