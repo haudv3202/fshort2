@@ -2836,7 +2836,7 @@ body::-webkit-scrollbar{
   border-radius: 50%;
   margin-right: 10px;
 }
-.logo_name_videos .text_logo_name_videos > p a {
+.logo_name_videos .text_logo_name_videos p a {
   text-decoration: none !important;
   color: black;
 }
@@ -3145,7 +3145,11 @@ body::-webkit-scrollbar{
 .postvideo form .logo_name_videos {
   margin: 10px 0 15px;
 }
-
+.logo_name_videos a {
+  display: flex;
+text-decoration: none;
+color: #151515;
+}
 .postnews form .logo_name_videos {
   margin: 10px 0 15px;
 }
@@ -3291,7 +3295,7 @@ body::-webkit-scrollbar{
 }
 .list_friends_root_right .text_logo_name_videos p:nth-child(1),
 .logout_right_root {
-  font-size: 13px;
+  font-size: 15px;
 }
 .logout_right_root a{
   text-decoration: none;
@@ -3302,12 +3306,12 @@ body::-webkit-scrollbar{
   transition: 0.2s linear;
   padding: 10px 15px;
 }
-.logout_right_root p {
-  text-decoration: none;
+.logout_right_root button {
+  border: none !important;
   color: #fff;
   cursor: pointer;
     background-color: #ed8c72;
-  border-radius: 25px;
+  border-radius: 30px;
   transition: 0.2s linear;
   padding: 10px 15px;
 }
