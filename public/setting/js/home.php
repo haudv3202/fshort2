@@ -3,7 +3,7 @@
     const array_user_detail = <?php echo json_encode($_SESSION['posts_video']); ?>;
     console.log(array_user_detail);
 
-    const array_posts_user = <?php echo json_encode($_SESSION['posts_news']); ?>;
+    const array_posts_user = <?php echo json_encode($posts_news); ?>;
     console.log(array_posts_user);
 
 
@@ -18,9 +18,29 @@
                 var follow = "";
                 var like = "";
                 var comment = "";
+                var comment_option = "";
 
-                if(`${item.id_user_log}` != 'null'){
+                if(`${item.id_user_log}` == `${item.id_user_post}`){
+                    comment_option += `
+                                 <h6 class="option_comments">
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                    <div class="option_1">
+                        <form action="" method="post">
+                            <input type="hidden" name="key_post" value="${video_comment.key_post}">
+                            <input type="hidden" name="id_account" value="${video_comment.id_comment}" >
+                            <input type="hidden" name="id_post" value="${video_comment.id_post}" >
+                            <button class="btn_option_comment" name="delete_comment" type="submit">Xóa</button>
+                        </form>
+                    </div>
+                </h6>`
+                }else {
+                    comment_option = "";
+                }
+
+                if( `${item.id_user_log}` != 'null'){
+
                     for (let video_comment of item.comments) {
+
                         Comments_video += `
             <div class="info_comment_video_page">
                 <img src="${video_comment.avatar_comment}" alt="">
@@ -33,6 +53,9 @@
                 <p>
                     ${video_comment.content}
                 </p>
+                 `+comment_option+`
+
+
             </div>
         `
                     }
@@ -160,12 +183,24 @@
                 <div class="text_logo_name_videos">
                 <p>${video_comment.name_user_comment}<i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
             <p>${video_comment.time_date} ~ <i class='bx bx-world'></i></p>
-        </div>
+            </div>
         </div>
             <div class="value_comment_user">
                 <p>
                     ${video_comment.content}
                 </p>
+
+                 <h6 class="option_comments">
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                    <div class="option_1">
+                        <form action="" method="post">
+                            <input type="hidden" name="key_post" value="${video_comment.key_post}">
+                            <input type="hidden" name="id_account" value="${video_comment.id_comment}" >
+                            <input type="hidden" name="id_post" value="${video_comment.id_post}" >
+                            <button class="btn_option_comment" name="delete_comment" type="submit">Xóa</button>
+                        </form>
+                    </div>
+                </h6>
             </div>
         `
                     }

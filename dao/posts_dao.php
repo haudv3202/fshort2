@@ -55,5 +55,10 @@ function PostUnLike($id_post){
     pdo_execute($sql);
 }
 
+function allLike($id_user){
+    $sql = "SELECT SUM(likes) as total_likes FROM posts WHERE 	id_account = '$id_user'";
+    return pdo_query_one($sql);
+}
+
 ?>
 
