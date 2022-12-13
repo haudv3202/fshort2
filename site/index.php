@@ -278,7 +278,7 @@ if(isset($_GET['about'])){
     }
 
     foreach ($arr as $value){
-        $_SESSION['posts_news'][] = [
+        $posts_news[] = [
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
             'time_create' => $value['create_date'],
