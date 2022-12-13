@@ -66,7 +66,15 @@
 
                 }else {
                     Comments_video +=` <div class="error_comment">
-            <a href="?login">Vui lòng đăng nhập để xem comment</a>
+                    <div class="testposstvd">
+               <div class="errol_post_Video" style="background:#ed8c72;padding: 0px 30px 30px;color:#fff;border-radius: 70px;">
+                <img src="../public/setting/img/logo.png" alt="">
+                <div class="style_errol_posst_video"></div>
+               <i onclick="show_comment(`+`${item.id_post}`+`)" class="bx bxs-x-circle"></i> 
+               <p >Vui lòng <a href="?login"> đăng nhập </a> để xem comment</p> 
+               </div>
+            </div>
+         
             </div>`
 
                     follow = "<a href='?login'>follow</a>"
@@ -279,9 +287,8 @@
                 ListVideouser.innerHTML += `
               <div class="video_user_detail" >
                           <a href="?detail_video_mini&id_post=${item.id_post}"><div class="vid_box"><video class="vid" src="${item.link}" type="video/mp4" type="video/mp4" muted loop></video></div></a>
-                          <div class="views_video_user_detail d-flex align-items-center">
-                            <i class='bx bx-play fs-4'></i><span class="view_video">0</span>
-                          </div>
+                          <i class='bx bx-dots-horizontal-rounded'></i>
+                        <p>Xoá Video</p>
                         </div>`;
             }
         }
@@ -471,7 +478,7 @@
 
         setTimeout(function () { x.innerHTML = "Đang duyệt" }, 100);
         setTimeout(function () { x.innerHTML = "Đang đăng . . ." }, 2000);
-        setTimeout(function () { x.innerHTML = "Đã đăng ! ! !" }, 5000);
+        setTimeout(function () { x.innerHTML = "Đã đăng ! ! !" }, 000);
         setTimeout(function () {
 
             x.classList.add("text_loader_hidden");

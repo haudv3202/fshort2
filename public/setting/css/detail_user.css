@@ -362,7 +362,7 @@ body::-webkit-scrollbar{
 .item_notifications button {
   width: max-content !important;
   color: #fff;
-  background-color: #2e88ff;
+  background-color: #0e51a8;
   border-radius: 8px;
   border: none;
   padding: 5px 10px;
@@ -680,18 +680,59 @@ body::-webkit-scrollbar{
 }
 .detail_user .Post_user_detail .Post_video_user_detail .video_user_detail {
   position: relative;
-  /* left: 10%; */
+  overflow: hidden;
 }
 .Post_user_detail
   .Post_video_user_detail
   .video_user_detail
-  .views_video_user_detail {
+  i {
   position: absolute;
   color: white;
-  left: 5%;
-  bottom: 5%;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
 }
-
+.Post_user_detail
+  .Post_video_user_detail
+  .video_user_detail
+  i::after{
+    width: 48px;
+    height: 41px;
+    position: absolute;
+    content: "";
+    top: 6px;
+    right: -12px;
+}
+.Post_user_detail
+  .Post_video_user_detail
+  .video_user_detail
+  i:hover ~ p{
+    right: 22px;
+    transition: .2s linear;
+  }
+.Post_user_detail
+  .Post_video_user_detail
+  .video_user_detail
+  p{
+    transition: .2s linear;
+    position: absolute;
+    color: white;
+    right: -130px;
+    top: 25px;
+   opacity: 1;
+   background-color: #ed8c72;
+   padding: 10px 15px;
+   border-radius: 20px;
+   cursor: pointer;
+  font-size: 13px;
+  }
+  .Post_user_detail
+  .Post_video_user_detail
+  .video_user_detail
+  p:hover{
+    right:22px;
+  }
 /* end post video user  */
 
 /* share user  */
@@ -3355,7 +3396,7 @@ color: #151515;
   z-index: 12;
   /* background-color: #fff; */
   margin-top: -60px;
-  background-image: url(../img/image-removebg-preview.png);
+  background-image: url(../img/logo.png);
   background-size: 200px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
