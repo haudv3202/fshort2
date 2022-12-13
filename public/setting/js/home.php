@@ -20,8 +20,11 @@
                 var comment = "";
                 var comment_option = "";
 
-                if(`${item.id_user_log}` == `${item.id_user_post}`){
-                    comment_option += `
+
+                if (`${item.id_user_log}` != 'null') {
+                    for (let video_comment of item.comments) {
+                        if (`${item.id_user_log}` == `${item.id_user_post}`) {
+                            comment_option = `
                                  <h6 class="option_comments">
                     <i class='bx bx-dots-horizontal-rounded'></i>
                     <div class="option_1">
@@ -33,13 +36,22 @@
                         </form>
                     </div>
                 </h6>`
-                }else {
-                    comment_option = "";
-                }
-
-                if( `${item.id_user_log}` != 'null'){
-
-                    for (let video_comment of item.comments) {
+                        } else if(`${item.id_user_log}` == `${video_comment.id_comment}`) {
+                            comment_option = `
+                                 <h6 class="option_comments">
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                    <div class="option_1">
+                        <form action="" method="post">
+                            <input type="hidden" name="key_post" value="${video_comment.key_post}">
+                            <input type="hidden" name="id_account" value="${video_comment.id_comment}" >
+                            <input type="hidden" name="id_post" value="${video_comment.id_post}" >
+                            <button class="btn_option_comment" name="delete_comment" type="submit">Xóa</button>
+                        </form>
+                    </div>
+                </h6>`
+                        }else {
+                            comment_option = "";
+                        }
 
                         Comments_video += `
             <div class="info_comment_video_page">
@@ -53,30 +65,30 @@
                 <p>
                     ${video_comment.content}
                 </p>
-                 `+comment_option+`
+                 ` + comment_option + `
 
 
             </div>
         `
                     }
-                    if(`${item.follow}` == 0){
+                    if (`${item.follow}` == 0) {
                         follow = ` <form action="" method="post">
                     <input name="id_account_follow" type="hidden" value="${item.id_user_post}"/>
                     <input name="id_log_follow" type="hidden" value="${item.id_user_log}"/>
                     <button name="follows"   class="btnFLLL">follow</button>
             </form>`
-                    }else  {
+                    } else {
                         follow = ""
                     }
 
-                    if(`${item.id_user_log}` == `${item.id_user_post}`){
+                    if (`${item.id_user_log}` == `${item.id_user_post}`) {
                         follow = ""
                     }
 
-                    like =`<form action=""  method="POST">
+                    like = `<form action=""  method="POST">
                 <input type="hidden" name="id_user" value="${item.id_user_log}">
                     <input type="hidden" name="id_post" value="${item.id_post}">
-                        <button type="submit" name="submit_like"> <i onclick="heartPost()" class='bx bxs-heart' style='color:`+ checkLike(`${item.status_like}`) +`;'></i></button>
+                        <button type="submit" name="submit_like"> <i onclick="heartPost()" class='bx bxs-heart' style='color:` + checkLike(`${item.status_like}`) + `;'></i></button>
             </form>`
 
                     comment = ` <form action="" method="post">
@@ -87,8 +99,8 @@
         <button type="submit" name="submit_comment_home"> Đăng</button>
       </form>`
 
-                }else {
-                    Comments_video +=` <div class="error_comment">
+                } else {
+                    Comments_video += ` <div class="error_comment">
             <a href="?login">Vui lòng đăng nhập để xem comment</a>
             </div>`
 
@@ -117,7 +129,7 @@
                 </div>
             </div>
 
-            <div class="btn_logo_name_video">`+ follow +
+            <div class="btn_logo_name_video">` + follow +
                     // <form action="" method="post">
                     //         <input name="id_account_follow" type="hidden" value="${item.id_user_post}"/>
                     //         <input name="id_log_follow" type="hidden" value="${item.id_user_log}"/>
@@ -141,9 +153,9 @@
     </div>
     <div class="feeling">
         <div class="icon_felling">
-        `+like+`
-            <i onclick="show_comment(`+`${item.id_post}`+`)" class='bx bx-message-rounded cmtPost'></i>
-            <i class='bx bx-share bx-flip-horizontal' onclick="geturlHome(`+`${item.id_post}`+`)"></i>
+        ` + like + `
+            <i onclick="show_comment(` + `${item.id_post}` + `)" class='bx bx-message-rounded cmtPost'></i>
+            <i class='bx bx-share bx-flip-horizontal' onclick="geturlHome(` + `${item.id_post}` + `)"></i>
         </div>
         <div class="infor_view">
             <p>${item.likes} lượt thích</p>
@@ -153,10 +165,10 @@
         <p><b>#manhcuongEntertaiment</b></p>
         <p>${item.title}</p>
     </div>
-<div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
+<div class="comment_video_page` + `${item.id_post}` + ` display" style='display: none;'>
 ` + Comments_video + `
 </div>
-    <div class="input_comment">`+comment+`
+    <div class="input_comment">` + comment + `
          </div>
 
     `;
@@ -175,8 +187,39 @@
                 var like = "";
                 var comment = "";
                 var follow = "";
-                if(`${item.id_user_log}` != 'null'){
+                var comment_option = "";
+
+
+
+                if (`${item.id_user_log}` != 'null') {
                     for (let video_comment of item.comments) {
+                        if (`${item.id_user_log}` == `${item.id_user_post}`) {
+                            comment_option = ` <h6 class="option_comments">
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                    <div class="option_1">
+                        <form action="" method="post">
+                            <input type="hidden" name="key_post" value="${video_comment.key_post}">
+                            <input type="hidden" name="id_account" value="${video_comment.id_comment}" >
+                            <input type="hidden" name="id_post" value="${video_comment.id_post}" >
+                            <button class="btn_option_comment" name="delete_comment" type="submit">Xóa</button>
+                        </form>
+                    </div>
+                </h6>`
+                        }else if(`${item.id_user_log}` == `${video_comment.id_comment}`) {
+                            comment_option = ` <h6 class="option_comments">
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                    <div class="option_1">
+                        <form action="" method="post">
+                            <input type="hidden" name="key_post" value="${video_comment.key_post}">
+                            <input type="hidden" name="id_account" value="${video_comment.id_comment}" >
+                            <input type="hidden" name="id_post" value="${video_comment.id_post}" >
+                            <button class="btn_option_comment" name="delete_comment" type="submit">Xóa</button>
+                        </form>
+                    </div>
+                </h6>`
+                        } else {
+                            comment_option = "";
+                        }
                         comments_news += `
             <div class="info_comment_video_page">
                 <img src="${video_comment.avatar_comment}" alt="">
@@ -190,39 +233,29 @@
                     ${video_comment.content}
                 </p>
 
-                 <h6 class="option_comments">
-                    <i class='bx bx-dots-horizontal-rounded'></i>
-                    <div class="option_1">
-                        <form action="" method="post">
-                            <input type="hidden" name="key_post" value="${video_comment.key_post}">
-                            <input type="hidden" name="id_account" value="${video_comment.id_comment}" >
-                            <input type="hidden" name="id_post" value="${video_comment.id_post}" >
-                            <button class="btn_option_comment" name="delete_comment" type="submit">Xóa</button>
-                        </form>
-                    </div>
-                </h6>
+                ` + comment_option + `
             </div>
         `
                     }
 
-                    if(`${item.follow}` == 0){
+                    if (`${item.follow}` == 0) {
                         follow = ` <form action="" method="post">
                     <input name="id_account_follow" type="hidden" value="${item.id_user_post}"/>
                     <input name="id_log_follow" type="hidden" value="${item.id_user_log}"/>
                     <button name="follows"   class="btnFLLL">follow</button>
             </form>`
-                    }else  {
+                    } else {
                         follow = ""
                     }
 
-                    if(`${item.id_user_log}` == `${item.id_user_post}`){
+                    if (`${item.id_user_log}` == `${item.id_user_post}`) {
                         follow = ""
                     }
 
-                    like =`<form action=""  method="POST">
+                    like = `<form action=""  method="POST">
                 <input type="hidden" name="id_user" value="${item.id_user_log}">
                     <input type="hidden" name="id_post" value="${item.id_post}">
-                        <button type="submit" name="submit_like"> <i onclick="heartPost()" class='bx bxs-heart' style='color:`+ checkLike(`${item.status_like}`) +`;'></i></button>
+                        <button type="submit" name="submit_like"> <i onclick="heartPost()" class='bx bxs-heart' style='color:` + checkLike(`${item.status_like}`) + `;'></i></button>
             </form>`
 
                     comment = `<form action="" method="post">
@@ -232,8 +265,8 @@
         <input type="text" name="content_video_about" required  placeholder="Thêm bình luận">
         <button type="submit" name="submit_comment_about"> Đăng</button>
       </form>`
-                }else {
-                    comments_news +=` <div class="error_comment">
+                } else {
+                    comments_news += ` <div class="error_comment">
             <a href="?login">Vui lòng đăng nhập để xem comment</a>
             </div>`
 
@@ -260,7 +293,7 @@
             </div>
         </div>
 
-        <div class="btn_logo_name_video">`+ follow +`
+        <div class="btn_logo_name_video">` + follow + `
             <!-- <input type="button" value="hello" id="test"> -->
 
         </div>
@@ -278,29 +311,30 @@
     </div>
 <div class="feeling">
         <div class="icon_felling">
-         `+like+`
-            <i onclick="show_comment(`+`${item.id_post}`+`)" class='bx bx-message-rounded cmtPost'></i>
-            <i class='bx bx-share bx-flip-horizontal' onclick="geturlHome(`+`${item.id_post}`+`)"></i>
+         ` + like + `
+            <i onclick="show_comment(` + `${item.id_post}` + `)" class='bx bx-message-rounded cmtPost'></i>
+            <i class='bx bx-share bx-flip-horizontal' onclick="geturlHome(` + `${item.id_post}` + `)"></i>
         </div>
         <div class="infor_view">
             <p>${item.likes} lượt thích</p>
         </div>
     </div>
-    <div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
-        `+ comments_news +`
+    <div class="comment_video_page` + `${item.id_post}` + ` display" style='display: none;'>
+        ` + comments_news + `
     </div>
     <div class="input_comment">
-       `+comment+`
+       ` + comment + `
     </div>
   `;
             }
         }
     }
     About_home(array_posts_user);
-    function checkLike(statuslike){
-        if(statuslike == 1 ){
+
+    function checkLike(statuslike) {
+        if (statuslike == 1) {
             return "#ed8c72";
-        }else {
+        } else {
             return "gray";
         }
     }
@@ -349,6 +383,7 @@
     var divvideohome = document.querySelector(".links_video");
     if (divvideohome) {
         var videos = document.getElementsByTagName("video");
+
         function checkScroll() {
             var fraction = 0.8; // Play when 80% of the player is visible.
 
@@ -402,17 +437,18 @@
     if (limit_text) {
         var limit_text_p = document.querySelectorAll(".content_news_page p")
         for (let i = 0; i < limit_text_p.length; i++) {
-            limit_text_p[i].style.display ="-webkit-box";
+            limit_text_p[i].style.display = "-webkit-box";
         }
+
         function ClickLimitText() {
             var limit_text_box = document.querySelectorAll(".content_news_page");
             var limit_text_text = document.querySelectorAll(".content_news_page p");
 
             for (let i = 0; i < limit_text_after.length; i++) {
-                if (limit_text_text[i].style.display == "-webkit-box"){
+                if (limit_text_text[i].style.display == "-webkit-box") {
                     // limit_text_after[i].innerHTML = "Ẩn Bớt";
                     limit_text_text[i].style.display = "";
-                }else{
+                } else {
                     // limit_text_after[i].innerHTML = "Xem thêm";
                     limit_text_text[i].style.display = "-webkit-box";
                 }
@@ -423,10 +459,10 @@
     var limit_text_after = document.querySelectorAll(".content_news_page_span_text");
     // console.log(limit_text_after);
     for (let i = 0; i < limit_text_after.length; i++) {
-        limit_text_after[i].addEventListener("click", ()=>{
-            if (limit_text_after[i].innerHTML == "Xem thêm"){
+        limit_text_after[i].addEventListener("click", () => {
+            if (limit_text_after[i].innerHTML == "Xem thêm") {
                 limit_text_after[i].innerHTML = "Ẩn Bớt";
-            }else{
+            } else {
                 limit_text_after[i].innerHTML = "Xem thêm";
             }
         });
@@ -504,10 +540,16 @@
         LogoHeader.classList.remove("logo_loader_hidden");
 
 
-        setTimeout(function () { x.innerHTML = "Đang duyệt" }, 100);
-        setTimeout(function () { x.innerHTML = "Đang đăng . . ." }, 2000);
-        setTimeout(function () { x.innerHTML = "Đã đăng ! ! !" }, 5000);
-        setTimeout(function () {
+        setTimeout(function() {
+            x.innerHTML = "Đang duyệt"
+        }, 100);
+        setTimeout(function() {
+            x.innerHTML = "Đang đăng . . ."
+        }, 2000);
+        setTimeout(function() {
+            x.innerHTML = "Đã đăng ! ! !"
+        }, 5000);
+        setTimeout(function() {
 
             x.classList.add("text_loader_hidden");
             loader.classList.add("loader-hidden");
@@ -530,10 +572,16 @@
         LogoHeader.classList.remove("logo_loader_hidden");
 
 
-        setTimeout(function () { x.innerHTML = "Đang duyệt" }, 100);
-        setTimeout(function () { x.innerHTML = "Đang đăng . . ." }, 2000);
-        setTimeout(function () { x.innerHTML = "Đã đăng ! ! !" }, 5000);
-        setTimeout(function () {
+        setTimeout(function() {
+            x.innerHTML = "Đang duyệt"
+        }, 100);
+        setTimeout(function() {
+            x.innerHTML = "Đang đăng . . ."
+        }, 2000);
+        setTimeout(function() {
+            x.innerHTML = "Đã đăng ! ! !"
+        }, 5000);
+        setTimeout(function() {
 
             x.classList.add("text_loader_hidden");
             loader.classList.add("loader-hidden");
@@ -567,6 +615,7 @@
     if (videocentermini) {
         var video = document.querySelector(".video_click_play");
         var playicon = document.querySelector(".icon_play_video_center");
+
         function play() {
             if (video.paused) {
                 video.play();
@@ -599,6 +648,7 @@
     var videocttime = document.querySelector(".video_center");
     if (videocttime) {
         var vid, playbtn, seekslider, curtimetext, durtimetext;
+
         function intializePlayer() {
             // Set object references
             vid = document.querySelector(".video_click_play");
@@ -610,10 +660,12 @@
             vid.addEventListener("timeupdate", seektimeupdate, false);
         }
         window.onload = intializePlayer;
+
         function vidSeek() {
             var seekto = vid.duration * (seekslider.value / 100);
             vid.currentTime = seekto;
         }
+
         function seektimeupdate() {
             var nt = vid.currentTime * (100 / vid.duration);
             seekslider.value = nt;
@@ -667,8 +719,8 @@
     //   }
     // }
 
-    function show_comment($id){
-        const cmtPost = document.querySelector(".comment_video_page"+$id);
+    function show_comment($id) {
+        const cmtPost = document.querySelector(".comment_video_page" + $id);
         cmtPost.classList.toggle("show");
     }
 
@@ -836,6 +888,7 @@
     var followdetailother = document.querySelector(".btn_edit_user_other_span");
     if (followdetailother) {
         followdetailother.innerHTML = "Follow";
+
         function followOther(btn) {
             var follow = btn.dataset.follow;
 
@@ -881,16 +934,16 @@
     checkcomment_ipvideo();
 
     // hover video play
-const Video = document.querySelectorAll(".vid");
-for (let i = 0; i <= Video.length; i++) {
-  Video[i].addEventListener("mouseover", function () {
-    Video[i].play();
-  });
-  Video[i].addEventListener("mouseout", function () {
-    Video[i].pause();
-    Video[i].load();
-  });
-}
+    const Video = document.querySelectorAll(".vid");
+    for (let i = 0; i <= Video.length; i++) {
+        Video[i].addEventListener("mouseover", function() {
+            Video[i].play();
+        });
+        Video[i].addEventListener("mouseout", function() {
+            Video[i].pause();
+            Video[i].load();
+        });
+    }
 
     // click heart Number
 
@@ -916,7 +969,7 @@ for (let i = 0; i <= Video.length; i++) {
     if (coll) {
         var i;
         for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
+            coll[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 var content = this.nextElementSibling;
                 if (content.style.display === "block") {
@@ -929,7 +982,7 @@ for (let i = 0; i <= Video.length; i++) {
     }
     // end minh anh js
     // url
-    function getURL(){
+    function getURL() {
         Toastify({
             text: "Sao chép thành công",
             duration: 3000,
@@ -943,23 +996,23 @@ for (let i = 0; i <= Video.length; i++) {
 
                 background: "linear-gradient(to right, #00b09b, #96c93d)",
 
-                borderRadius:'20px',
+                borderRadius: '20px',
             },
-            onClick: function(){} // Callback after click
+            onClick: function() {} // Callback after click
         }).showToast();
         navigator.clipboard.writeText(window.location.href);
     }
 
-    function geturlHome($id){
+    function geturlHome($id) {
         const href_current = window.location.href;
         let array_url = href_current.split("/");
         let url_detail = null;
-        if(array_url[5].localeCompare('?index.php') ==  0){
-             url_detail = href_current.replace("?index.php", "?detail_video_mini&id_post="+$id);
-        }else if(array_url[5].localeCompare('?home') ==  0){
-             url_detail = href_current.replace("?home", "?detail_video_mini&id_post="+$id);
-        }else if(array_url[5].localeCompare('?about') ==  0){
-            url_detail = href_current.replace("?about", "?detail_posts_mini&id_post="+$id);
+        if (array_url[5].localeCompare('?index.php') == 0) {
+            url_detail = href_current.replace("?index.php", "?detail_video_mini&id_post=" + $id);
+        } else if (array_url[5].localeCompare('?home') == 0) {
+            url_detail = href_current.replace("?home", "?detail_video_mini&id_post=" + $id);
+        } else if (array_url[5].localeCompare('?about') == 0) {
+            url_detail = href_current.replace("?about", "?detail_posts_mini&id_post=" + $id);
         }
         Toastify({
             text: "Sao chép thành công",
@@ -974,9 +1027,9 @@ for (let i = 0; i <= Video.length; i++) {
 
                 background: "linear-gradient(to right, #00b09b, #96c93d)",
 
-                borderRadius:'20px',
+                borderRadius: '20px',
             },
-            onClick: function(){} // Callback after click
+            onClick: function() {} // Callback after click
         }).showToast();
         navigator.clipboard.writeText(url_detail);
     }
@@ -986,23 +1039,27 @@ for (let i = 0; i <= Video.length; i++) {
     }
 
     // view
-    var triggerTime=5, fired=0;
-    function getCurTime(){
+    var triggerTime = 5,
+        fired = 0;
+
+    function getCurTime() {
         var myVideo = document.getElementsByTagName('Video')[0];
         myVideo.play();
-        var a=0;
-        myVideo.addEventListener("timeupdate",function(){
-            var timer=myVideo.currentTime.toFixed(2);
-            if (timer > triggerTime){
+        var a = 0;
+        myVideo.addEventListener("timeupdate", function() {
+            var timer = myVideo.currentTime.toFixed(2);
+            if (timer > triggerTime) {
                 if (!fired) {
                     a++; //in other words, increment the first time it's clicked, but then not again until after the variable has been reset to false, which happens at the end of the video.
-                    views.innerHTML=a;
+                    views.innerHTML = a;
                     console.log(a);
                 }
                 fired = true;
             }
         })
-        myVideo.addEventListener('ended', function(){fired=false;}, false);
+        myVideo.addEventListener('ended', function() {
+            fired = false;
+        }, false);
     }
     // end
 </script>
@@ -1014,7 +1071,4 @@ for (let i = 0; i <= Video.length; i++) {
             shortnames: true
         });
     });
-
-
 </script>
-
