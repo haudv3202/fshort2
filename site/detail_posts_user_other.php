@@ -42,19 +42,39 @@
                     </button>
                 </div>
             <?php }?>
+
+            <?php if($id_user_post != $_SESSION['info']['id']){?>
+                <?php if(isset($follow) && $follow == 1){?>
+                    <div class="unfollow">
+                        <form action="" method="post">
+                            <input type="hidden" name="id_account_follow" value="<?php echo $id_user_post; ?>">
+                            <input type="hidden" name="id_log_follow" value="<?php echo $_SESSION['info']['id']; ?>">
+                            <button type="submit" name="unfollows">Unfollow</button>
+                        </form>
+                    </div>
+                <?php }else{?>
+                    <div class="follow">
+                        <form action="" method="post">
+                            <input type="hidden" name="id_account_follow" value="<?php echo $id_user_post; ?>">
+                            <input type="hidden" name="id_log_follow" value="<?php echo $_SESSION['info']['id']; ?>">
+                            <button type="submit" name="follows">follow</button>
+                        </form>
+                    </div>
+                <?php }
+            }?>
         </div>
     </div>
     <div class="ms-4 mt-3 contact_user_detail">
         <div class="Interactive">
-            <h5 class="number_user_fl">1</h5>
+            <h5 class="number_user_fl"><?php echo $follow_number;?></h5>
             <span class="text_interactive">Đang Follow</span>
         </div>
         <div class="Interactive">
-            <h5 class="number_user_fl">1.5M</h5>
+            <h5 class="number_user_fl"><?php echo $follow_me;?></h5>
             <span class="text_interactive">Follower</span>
         </div>
         <div class="Interactive">
-            <h5 class="number_user_fl">100M</h5>
+            <h5 class="number_user_fl"><?php echo $all_likes;?></h5>
             <span class="text_interactive">Thích</span>
         </div>
     </div>

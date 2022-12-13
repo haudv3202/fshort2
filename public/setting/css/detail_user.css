@@ -3062,7 +3062,49 @@ body::-webkit-scrollbar{
   font-size: 15px;
   font-weight: 500;
   color: #575757ce;
-  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+}
+
+.value_comment_user .option_comments {
+  position:relative;
+}
+
+.value_comment_user .option_comments i {
+  font-size: 20px;
+  transform: rotate(90deg);
+}
+
+.value_comment_user .option_comments .option_1 {
+  display: none;
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.value_comment_user .option_comments:hover .option_1 {
+  display: block;
+  -webkit-animation: linear 1s;
+  animation: fadeIn 1s;
+  position: absolute;
+  background: #000;
+  border-radius: 10px;
+  top: 0;
+  left: 100%;
+}
+
+.value_comment_user .option_comments .btn_option_comment {
+  border: none;
+  background: none;
+  color: #ccc;
+  padding: 3px 12px;
+  cursor: pointer;
 }
 .input_comment form {
   display: flex;

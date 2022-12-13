@@ -7,11 +7,10 @@
     ?>
     <div class="video_detail_mini_left">
         <div class="video_center post_center">
-          <span>
             <img  class="posts_click_play"
                   src="<?php echo $value['link'] ?>"
+                  width="100%"
             ></img>
-          </span>
         </div>
         <div class="icon_video_center">
             <a onclick="goBack()" class="close_video_detail_mini">
