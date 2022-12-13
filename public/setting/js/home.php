@@ -123,6 +123,7 @@
 <!--                <input type="range" class="volumes">-->
 <!--        </div>-->
 
+
     </div>
     <div class="feeling">
         <div class="icon_felling">
@@ -135,7 +136,6 @@
         </div>
     </div>
     <div class="content_video_page">
-        <p><b>#manhcuongEntertaiment</b></p>
         <p>${item.title}</p>
     </div>
 <div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
@@ -284,17 +284,29 @@
         if (ListVideouser) {
             ListVideouser.innerHTML = "";
             for (let item of data) {
+                var delete_btn = "";
+                if(`${item.id_detail}` == `${item.id_user_log}`){
+                    delete_btn = `  <h6 class="option_video">
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                         <form action="" method="post" class="form_video">
+                            <input type="hidden" name="id" value="${item.id_post}">
+                            <input type="hidden" name="id_account" value="${item.id_user_log}">
+                            <button type="submit" name="delete_detail" class="btn-delete_home">Xoá</button>
+                         </form>
+                        </h6>`
+                }else {
+                    delete_btn = "";
+                }
                 ListVideouser.innerHTML += `
               <div class="video_user_detail" >
-                          <a href="?detail_video_mini&id_post=${item.id_post}"><div class="vid_box"><video class="vid" src="${item.link}" type="video/mp4" type="video/mp4" muted loop></video></div></a>
-                          <i class='bx bx-dots-horizontal-rounded'></i>
-                        <p>Xoá Video</p>
+                          <a href="?detail_video_mini&id_post=${item.id_post}"><div class="vid_box"><video class="vid" src="${item.link}" type="video/mp4" muted loop></video></div></a>
+
+                        `+delete_btn+`
                         </div>`;
             }
         }
     }
     Vieo_detail(array_user_detail);
-
     // render posts
     function Posts_user(datauser) {
         let ListPosts = document.querySelector(".Posts_user");

@@ -15,12 +15,12 @@
                 <div class="share_user_detail">
                     <i class='bx bx-share bx-flip-horizontal share_user_detail_i' ></i>
                     <ul class="coplink_user_detail">
-                        <li>
-                            <a
-                            ><i class="bx bxl-facebook"></i>
-                                <p>Chia Sẻ Với Facebook</p></a
-                            >
-                        </li>
+<!--                        <li>-->
+<!--                            <a-->
+<!--                            ><i class="bx bxl-facebook"></i>-->
+<!--                                <p>Chia Sẻ Với Facebook</p></a-->
+<!--                            >-->
+<!--                        </li>-->
                         <li>
                             <a  onclick="getURL();"
                             ><i class="bx bx-link-alt"></i>
@@ -89,10 +89,10 @@
             <span class="btn_video fs-5 fw-normal"
             ><a href="?detail_posts_other&id_account=<?php echo $user['id'] ?>">Bài Viết</a></span
             >
-            <span class="btn_video fs-5 fst-normal"
-            ><i class="bx bxs-lock-alt"></i
-                ><a href="?detail_video">Đã thích</a></span
-            >
+<!--            <span class="btn_video fs-5 fst-normal"-->
+<!--            ><i class="bx bxs-lock-alt"></i-->
+<!--                ><a href="?detail_video">Đã thích</a></span-->
+<!--            >-->
         </div>
         <div class="Posts_user">
             <!-- Render  -->

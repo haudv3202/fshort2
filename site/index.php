@@ -129,6 +129,13 @@ if(isset($_GET['about'])){
     if(!empty($_SESSION['info'])){
         $id_user = $_SESSION['info']['id'];
     }
+
+    //    follow người khác
+    $follow_number = follow_other($_SESSION['info']['id'])['total_follow'];
+// Số lượng lượt thích
+    $all_likes = allLike($_SESSION['info']['id'])['total_likes'];
+//    người khác follow mình
+    $follow_me = follow_me($_SESSION['info']['id'])['total_follow'];
     foreach ($arr as $value){
         $comments = [];
 
@@ -143,6 +150,7 @@ if(isset($_GET['about'])){
         }
         $_SESSION['posts_video'][] = [
             'id_user_log' => $id_user,
+            'id_detail' => $value['id_account'],
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
             'time_create' => $value['create_date'],
@@ -154,6 +162,13 @@ if(isset($_GET['about'])){
             'comments' => $comments
         ];
     }
+
+    if(isset($_POST['delete_detail'])){
+        $id = $_POST['id'];
+        $id_account = $_POST['id_account'];
+        delete_video($id,$id_account);
+        route('?detail_video');
+    }
     $VIEW_NAME = 'detail_video.php';
     include_once './layout.php';
 }else if(isset($_GET['detail_posts'])){
@@ -163,8 +178,15 @@ if(isset($_GET['about'])){
         $id_user = $_SESSION['info']['id'];
     }
 
+    //    follow người khác
+    $follow_number = follow_other($_SESSION['info']['id'])['total_follow'];
+// Số lượng lượt thích
+    $all_likes = allLike($_SESSION['info']['id'])['total_likes'];
+//    người khác follow mình
+    $follow_me = follow_me($_SESSION['info']['id'])['total_follow'];
+
     foreach ($arr as $value){
-        $_SESSION['posts_news'][] = [
+        $posts_news[] = [
             'id_user_log' => $id_user,
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
@@ -218,7 +240,8 @@ if(isset($_GET['about'])){
             ];
         }
         $_SESSION['posts_video'][] = [
-            // 'id_user_log' => $id_user,
+             'id_user_log' => $id_user,
+            'id_detail' => $id_user_post,
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
             'time_create' => $value['create_date'],
@@ -246,6 +269,13 @@ if(isset($_GET['about'])){
         $id_account_log = $_POST['id_log_follow'];
         unfollow_user($id_account_follow,$id_account_log);
         route('?detail_video_other&id_account='.$id_account_follow);
+    }
+
+    if(isset($_POST['delete_detail'])){
+        $id = $_POST['id'];
+        $id_account = $_POST['id_account'];
+        delete_video($id,$id_account);
+        route('?detail_video_other&id_account='.$id_account);
     }
     $VIEW_NAME = 'detail_video_user_other.php';
     include_once './layout.php';

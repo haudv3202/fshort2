@@ -76,7 +76,7 @@
         <div class="title_video_user_detail">
             <span class="btn_video fs-5 fw-normal"><a href="?detail_video_other&id_account=<?php echo $user['id'] ?>">Video</a></span>
             <span class="btn_video fs-5 fw-normal"><a href="?detail_posts_other&id_account=<?php echo $user['id'] ?>">Bài Viết</a></span>
-            <span class="btn_video fs-5 fst-normal"><i class="bx bxs-lock-alt"></i><a href="?detail_video">Đã thích</a></span>
+<!--            <span class="btn_video fs-5 fst-normal"><i class="bx bxs-lock-alt"></i><a href="?detail_video">Đã thích</a></span>-->
         </div>
         <div class="Post_video_user_detail ms-3 row">
             <!-- Render  -->
