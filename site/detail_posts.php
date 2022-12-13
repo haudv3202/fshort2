@@ -21,12 +21,12 @@
               <div class="share_user_detail">
                 <i class='bx bx-share bx-flip-horizontal share_user_detail_i' ></i>
                 <ul class="coplink_user_detail">
-                  <li>
-                    <a href=""
-                      ><i class="bx bxl-facebook"></i>
-                      <p>Chia Sẻ Với Facebook</p></a
-                    >
-                  </li>
+<!--                  <li>-->
+<!--                    <a href=""-->
+<!--                      ><i class="bx bxl-facebook"></i>-->
+<!--                      <p>Chia Sẻ Với Facebook</p></a-->
+<!--                    >-->
+<!--                  </li>-->
                   <li>
                     <a  onclick="getURL();"
                       ><i class="bx bx-link-alt"></i>
@@ -50,15 +50,15 @@
         </div>
         <div class="ms-4 mt-3 contact_user_detail">
           <div class="Interactive">
-            <h5 class="number_user_fl">1</h5>
+            <h5 class="number_user_fl"><?php echo $follow_number;?></h5>
             <span class="text_interactive">Đang Follow</span>
           </div>
           <div class="Interactive">
-            <h5 class="number_user_fl">1.5M</h5>
+            <h5 class="number_user_fl"><?php echo $follow_me;?></h5>
             <span class="text_interactive">Follower</span>
           </div>
           <div class="Interactive">
-            <h5 class="number_user_fl">100M</h5>
+            <h5 class="number_user_fl"><?php echo $all_likes;?></h5>
             <span class="text_interactive">Thích</span>
           </div>
         </div>
@@ -78,10 +78,10 @@
             <span class="btn_video fs-5 fw-normal"
               ><a href="?detail_posts">Bài Viết</a></span
             >
-            <span class="btn_video fs-5 fst-normal"
-              ><i class="bx bxs-lock-alt"></i
-              ><a href="?detail_video">Đã thích</a></span
-            >
+<!--            <span class="btn_video fs-5 fst-normal"-->
+<!--              ><i class="bx bxs-lock-alt"></i-->
+<!--              ><a href="?detail_video">Đã thích</a></span-->
+<!--            >-->
           </div>
           <div class="Posts_user">
             <!-- Render  -->

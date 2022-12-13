@@ -60,5 +60,10 @@ function allLike($id_user){
     return pdo_query_one($sql);
 }
 
+function delete_video($id,$id_user){
+    $sql = "DELETE  FROM posts WHERE id = '$id' AND id_account = '$id_user'";
+    pdo_execute($sql);
+}
+
 ?>
 
