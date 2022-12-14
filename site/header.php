@@ -88,6 +88,7 @@
                             </form>
                         </div>
                         <h3>Tất cả</h3>
+                        <?php if(isset($_SESSION['info']['role_id'])){?>
                         <div class="item_notifications">
                             <img
                                     src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
@@ -145,6 +146,11 @@
                                 ôi hàng cây xanh thắm dưới mái trường mến yêu huhu
                             </p>
                         </div>
+                        <?php }else {?>
+                        <div class="item_notifications">
+                                <p style="width: max-content;">Để xem Thông báo vui lòng<a href="?login" >Đăng nhập</p>
+                        </div>
+                        <?php }?>
                     </div>
                 </div>
 
@@ -153,6 +159,8 @@
                     <span>Thông báo</span>
                     <div class="aleart_notifications">
                         <h2>Thông Báo</h2>
+
+                            <?php if(isset($_SESSION['info']['role_id'])){?>
                         <h3>Trước đó</h3>
                         <div class="item_notifications">
                             <img
@@ -196,6 +204,11 @@
                             <p><b>ManhCuongEnterTaiment</b> đã bắt đầu theo dõi bạn</p>
                             <button>Theo dõi</button>
                         </div>
+                        <?php }else {?>
+                            <div class="item_notifications">
+                                <p>Để xem Thông báo vui lòng<a href="?login">Đăng nhập</p>
+                            </div>
+                        <?php }?>
                     </div>
                 </div>
                 <div class="img-login-header">
