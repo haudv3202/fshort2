@@ -111,7 +111,9 @@
 
                     `</div>
         </div>
-
+        <div class="content_video_page">
+            <p>${item.title}</p>
+        </div>      
     <div class="links_video">
 
   <a href="?detail_video_mini&id_post=${item.id_post}" ><video  width="100%" onplay="getCurTime();" id="Video" controls type="video/mp4" loop
