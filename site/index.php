@@ -73,11 +73,6 @@ if(isset($_GET['about'])){
 
         }
 
-
-
-
-
-
     //        follow
     if(isset($_POST['follows'])){
         $id_account_follow = $_POST['id_account_follow'];
