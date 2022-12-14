@@ -350,7 +350,6 @@ if(isset($_GET['about'])){
             }
         }else{
             $new_pass = $_SESSION['info']['password'];
-            echo "<script>alert('Mật Khẩu Cũ Không Đúng!!!!')</script>";
         }
         $links_avatar = null;
         if (!empty($_FILES['img_profile_update']) && $_FILES['img_profile_update']['error'] == 0 ){
