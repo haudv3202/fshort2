@@ -716,4 +716,4 @@ else if(isset($_GET['logout'])){
 }
 require_once('../public/setting/js/home.php');
 ?>
-<script src="../public/setting/js/ajax.js"></script>
+<!-- <script src="../public/setting/js/ajax.js"></script> -->
