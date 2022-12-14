@@ -38,6 +38,18 @@
                          </form>
                         </div>
                 </h6>`
+                        }else if(`${item.id_user_log}` == `${video_comment.id_comment}`){
+                            delete_comment = `<h6 class="option_comments">
+                                    <i class='bx bx-dots-horizontal-rounded'></i>
+                                    <div class="option_1">
+                                    <form action="" method="post" class="form_video">
+                                         <input type="hidden" name="id_account" value="${video_comment.id_comment}">
+                                        <input type="hidden" name="key_post" value="${video_comment.key_post}">
+                                        <input type="hidden" name="id_post" value="${video_comment.id_post}">
+                                        <button type="submit" name="delete_comment" class="btn_option_comment">Xoá</button>
+                                     </form>
+                                    </div>
+                            </h6>`
                         }else {
                             delete_comment = "";
                         }
@@ -203,6 +215,18 @@
                          </form>
                         </div>
                 </h6>`
+                        }else if(`${item.id_user_log}` == `${video_comment.id_comment}`){
+                            delete_comment = `<h6 class="option_comments">
+                                    <i class='bx bx-dots-horizontal-rounded'></i>
+                                    <div class="option_1">
+                                    <form action="" method="post" class="form_video">
+                                         <input type="hidden" name="id_account" value="${video_comment.id_comment}">
+                                        <input type="hidden" name="key_post" value="${video_comment.key_post}">
+                                        <input type="hidden" name="id_post" value="${video_comment.id_post}">
+                                        <button type="submit" name="delete_comment" class="btn_option_comment">Xoá</button>
+                                     </form>
+                                    </div>
+                            </h6>`
                         }else {
                             delete_comment = "";
                         }
