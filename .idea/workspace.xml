@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36fa856e-ab94-412b-8688-003ab55a3f4e" name="Changes" comment="fix setting">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_14_2022_5_05_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_14_2022_5_05_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/templates/aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/templates/aside.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/templates/header.php" afterDir="false" />
-    </list>
+    <list default="true" id="36fa856e-ab94-412b-8688-003ab55a3f4e" name="Changes" comment="haudv update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
