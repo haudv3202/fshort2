@@ -89,11 +89,11 @@ if(isset($_SESSION['success'])){
             <form   action="" method="post" enctype="multipart/form-data">
                 <h3>Create post</h3>
                 <div class="logo_name_videos">
-                    <img src="../public/setting/img/Anh-gai-xinh-Viet-Nam.jpg"
+                    <img src="<?php echo $_SESSION['info']['link_avatar'] ?>"
                     />
                     <div class="text_logo_name_videos">
                         <p>
-                            Cristiano Ronaldo
+                            <?php echo $_SESSION['info']['name'] ?>
                             <i class="bx bxs-check-circle" style="color: #2e88ff"></i>
                         </p>
                     </div>

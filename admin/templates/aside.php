@@ -11,6 +11,7 @@
     <div class="menu-block customscroll">
         <div class="sidebar-menu">
             <ul id="accordion-menu " class="pl-2">
+                <?php if(isset($_SESSION['info']) && $_SESSION['info']['role_id'] == 3){?>
                 <li>
                     <a href="?AllAccount" class="dropdown-toggle no-arrow text-decoration-none">
                        </i><i class='bx bxs-user-account' ></i><span class="mtext">Quản lí tài khoản</span>
@@ -31,6 +32,18 @@
                     <i class='bx bxs-user-plus'></i><span class="mtext">Tạo tài khoản</span>
                     </a>
                 </li>
+                <?php }else if(isset($_SESSION['info']) && $_SESSION['info']['role_id'] == 2){?>
+                    <li>
+                        <a href="?AllAccount" class="dropdown-toggle no-arrow text-decoration-none">
+                            </i><i class='bx bxs-user-account' ></i><span class="mtext">Quản lí tài khoản</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?bandAccount" class="dropdown-toggle no-arrow text-decoration-none">
+                            <i class='bx bx-user-x'></i><span class="mtext">Tài khoản bị cấm</span>
+                        </a>
+                    </li>
+                <?php }?>
             </ul>
         </div>
     </div>

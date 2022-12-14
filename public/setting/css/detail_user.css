@@ -286,11 +286,31 @@ body::-webkit-scrollbar{
   padding: 10px 20px;
   top: 45px;
   border-radius: 10px;
-  height: 450px;
+  /*height: 450px;*/
   left: -100px;
   overflow: auto;
   display: none;
+  width: 400px;
 }
+
+.upload_login_header .aleart_notifications p {
+  width:max-content;
+}
+
+.upload_login_header .aleart_notifications p a {
+  padding: 5px 8px;
+  text-decoration: none;
+  background-color: #2f496e;
+  margin:0 5px;
+  border-radius:14px;
+  color: #fff;
+}
+
+.upload_login_header .aleart_notifications p a:hover {
+  background-color: #2988bc;
+  transition: 0.2s linear;
+}
+
 .upload_login_header .aleart_notifications::-webkit-scrollbar {
   display: none;
 }
@@ -408,6 +428,19 @@ body::-webkit-scrollbar{
 .upload_login_header p i,
 .messs_header > i,
 .notification_header > i {
+  margin: 0 10px;
+  font-size: 20px;
+  width: 40px;
+  line-height: 40px;
+  height: 40px;
+  background-color: #2988bc;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+}
+.upload_login_header p i,
+.messs_header > i,
+.notification_header a i {
   margin: 0 10px;
   font-size: 20px;
   width: 40px;
