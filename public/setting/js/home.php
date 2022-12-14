@@ -18,9 +18,30 @@
                 var follow = "";
                 var like = "";
                 var comment = "";
+                var delete_comment = "";
+                var profile = "";
+
 
                 if(`${item.id_user_log}` != 'null'){
+                    profile = `
+                    <a href="?detail_video_other&id_account=${item.id_user_post}">${item.name}</a>`;
                     for (let video_comment of item.comments) {
+                        if(`${item.id_user_log}` == `${item.id_user_post}`){
+                            delete_comment = `<h6 class="option_comments">
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                        <div class="option_1">
+                        <form action="" method="post" class="form_video">
+                             <input type="hidden" name="id_account" value="${video_comment.id_comment}">
+                            <input type="hidden" name="key_post" value="${video_comment.key_post}">
+                            <input type="hidden" name="id_post" value="${video_comment.id_post}">
+                            <button type="submit" name="delete_comment" class="btn_option_comment">Xoá</button>
+                         </form>
+                        </div>
+                </h6>`
+                        }else {
+                            delete_comment = "";
+                        }
+
                         Comments_video += `
             <div class="info_comment_video_page">
                 <img src="${video_comment.avatar_comment}" alt="">
@@ -33,6 +54,7 @@
                 <p>
                     ${video_comment.content}
                 </p>
+               `+delete_comment+`
             </div>
         `
                     }
@@ -65,6 +87,7 @@
       </form>`
 
                 }else {
+                    profile =`<a href="?login">${item.name}</a>`;
                     Comments_video +=` <div class="error_comment">
                     <div class="testposstvd">
                <div class="errol_post_Video" style="background:#ed8c72;padding: 0px 30px 30px;color:#fff;border-radius: 70px;">
@@ -97,7 +120,7 @@
                 <img src="${item.avatar}"
                     alt="">
                 <div class="text_logo_name_videos">
-                    <p><a href="?detail_video_other&id_account=${item.id_user_post}">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                    <p>`+profile+`<i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                     <p>${item.time_create} <i class='bx bx-world'></i></p>
                 </div>
             </div>
@@ -138,7 +161,7 @@
         </div>
     </div>
     <div class="content_video_page">
-        <p>${item.title}</p>
+<!--        <p>${item.title}</p>-->
     </div>
 <div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
 ` + Comments_video + `
@@ -162,8 +185,26 @@
                 var like = "";
                 var comment = "";
                 var follow = "";
+                var delete_comment = "";
+                var profile = "";
                 if(`${item.id_user_log}` != 'null'){
+                    profile = `<a href="?detail_posts_other&id_account=${item.id_user_post}">${item.name}</a>`;
                     for (let video_comment of item.comments) {
+                        if(`${item.id_user_log}` == `${item.id_user_post}`){
+                            delete_comment = `<h6 class="option_comments">
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                        <div class="option_1">
+                        <form action="" method="post" class="form_video">
+                             <input type="hidden" name="id_account" value="${video_comment.id_comment}">
+                            <input type="hidden" name="key_post" value="${video_comment.key_post}">
+                            <input type="hidden" name="id_post" value="${video_comment.id_post}">
+                            <button type="submit" name="delete_comment" class="btn_option_comment">Xoá</button>
+                         </form>
+                        </div>
+                </h6>`
+                        }else {
+                            delete_comment = "";
+                        }
                         comments_news += `
             <div class="info_comment_video_page">
                 <img src="${video_comment.avatar_comment}" alt="">
@@ -176,10 +217,10 @@
                 <p>
                     ${video_comment.content}
                 </p>
+                `+delete_comment+`
             </div>
         `
                     }
-
                     if(`${item.follow}` == 0){
                         follow = ` <form action="" method="post">
                     <input name="id_account_follow" type="hidden" value="${item.id_user_post}"/>
@@ -208,6 +249,7 @@
         <button type="submit" name="submit_comment_about"> Đăng</button>
       </form>`
                 }else {
+                    profile = `<a href="?login">${item.name}</a>`
                     comments_news +=` <div class="error_comment">
             <a href="?login">Vui lòng đăng nhập để xem comment</a>
             </div>`
@@ -230,7 +272,7 @@
             <img src="${item.avatar}" alt="">
 
             <div class="text_logo_name_videos">
-                <p><a href="?detail_posts_other&id_account=${item.id_user_post}">${item.name}</a><i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
+                <p>`+profile+`<i class='bx bxs-check-circle' style='color:#2e88ff'></i></p>
                 <p>${item.time_create}<i class='bx bx-world'></i></p>
             </div>
         </div>
