@@ -162,17 +162,13 @@
             <p>${item.likes} lượt thích</p>
         </div>
     </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> develop
+
     <div class="content_video_page">
 <!--        <p>${item.title}</p>-->
     </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> develop
+
 <div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
 ` + Comments_video + `
 </div>
