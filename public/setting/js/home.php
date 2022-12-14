@@ -162,9 +162,17 @@
             <p>${item.likes} lượt thích</p>
         </div>
     </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> develop
     <div class="content_video_page">
 <!--        <p>${item.title}</p>-->
     </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> develop
 <div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
 ` + Comments_video + `
 </div>
@@ -336,8 +344,8 @@
                     delete_btn = `  <h6 class="option_video">
                         <i class='bx bx-dots-horizontal-rounded'></i>
                          <form action="" method="post" class="form_video">
-                            <input type="hidden" name="id" value="${item.id_post}">
-                            <input type="hidden" name="id_account" value="${item.id_user_log}">
+                            <input type="hidden" name="id" id="id_post" value="${item.id_post}">
+                            <input type="hidden" name="id_account" id="id_usser_log" value="${item.id_user_log}">
                             <button type="submit" name="delete_detail" class="btn-delete_home">Xoá</button>
                          </form>
                         </h6>`

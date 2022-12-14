@@ -692,3 +692,5 @@ else if(isset($_GET['logout'])){
     include_once './layout.php';
 }
 require_once('../public/setting/js/home.php');
+?>
+<!-- <script src="../public/setting/js/ajax.js"></script> -->
