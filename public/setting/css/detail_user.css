@@ -2938,9 +2938,13 @@ body::-webkit-scrollbar{
   text-decoration: none !important;
   color: black;
 }
-.text_logo_name_videos p:nth-child(2) {
+.text_logo_name_videos p:nth-child(2){
   color: gray;
   font-size: 10px;
+  display: flex;
+  align-items: center;
+}
+.text_logo_name_videos p:nth-child(1) {
   display: flex;
   align-items: center;
 }
@@ -3059,10 +3063,8 @@ body::-webkit-scrollbar{
 .feeling .infor_view p {
   margin: 0 10px;
 }
-.videos_page .content_video_page p:nth-child(2) {
-  font-weight: 100;
-  font-size: 15px;
-  margin-top: 20px;
+.videos_page .content_video_page{
+  margin:20px 0 20px 50px ;
 }
 
 .content_news_page p {
