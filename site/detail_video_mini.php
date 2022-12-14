@@ -53,19 +53,19 @@
                     <h3><?php echo account_one_row($value['id_account'])['name'] ?></h3>
                     <h4><span>#<?php echo account_one_row($value['id_account'])['id'] ?></span><span class="date_post_video_mini"><?php echo $value['create_date'] ?></span></h4>
                 </div>
-                <div class="setting_mini_video">
-                    <i
-                            class="bx bx-dots-horizontal-rounded share_user_mini_video_i"
-                    ></i>
-                    <ul class="coplink_user_mini_video">
-                        <li>
-                            <a href=""> <p>Cài đặt quyền riêng tư</p></a>
-                        </li>
-                        <li>
-                            <a href=""> <p>Xóa</p></a>
-                        </li>
-                    </ul>
-                </div>
+<!--                <div class="setting_mini_video">-->
+<!--                    <i-->
+<!--                            class="bx bx-dots-horizontal-rounded share_user_mini_video_i"-->
+<!--                    ></i>-->
+<!--                    <ul class="coplink_user_mini_video">-->
+<!--                        <li>-->
+<!--                            <a href=""> <p>Cài đặt quyền riêng tư</p></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href=""> <p>Xóa</p></a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
             </div>
         </div>
         <div class="title_mini_video">
@@ -109,7 +109,7 @@
                 <div class="user_comment_video_mini">
                     <div class="avatar_name_icon_mini_video">
                         <div class="avatar_mini_video">
-                            <img src="<?php echo account_one_row($value['id_account'])['link_avatar'] ?>" alt="">
+                            <img src="<?php echo account_one_row($value2['id_account'])['link_avatar'] ?>" alt="">
                         </div>
                         <div class="name_comment_mini_video">
                             <h4><?php echo account_one_row($value2['id_account'])['name'] ?></h4>

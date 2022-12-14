@@ -38,12 +38,10 @@
             if (isset($_SESSION['info'])){
               
                 ?>
-<div class="note_view_all_friends">
-  <p>Gợi ý cho bạn</p>
-  <p onclick="viewAll()" id="viewAll">Xem tất cả</p>
-</div>
+            <div class="note_view_all_friends">
+              <p>Gợi ý cho bạn</p>
+            </div>
 <?php 
-              
               foreach ($ramdomFollow as $value){
                   if($value['id'] != $_SESSION['info']['id'] && follows($_SESSION['info']['id'],$value['id'])['total_follow'] != 1){
                 ?>

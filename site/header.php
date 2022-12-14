@@ -20,8 +20,10 @@
 
     <link rel="stylesheet" href="../public/setting/css/detail_user.css" />
     <link rel="stylesheet" href="../public/setting/css/emojionearea.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../public/setting/js/emojionearea.min.js"></script>
+    <script type="text/javascript" src="../public/setting/js/ajax.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
@@ -32,12 +34,12 @@
         <div class="headerr">
             <div class="logo_search">
                 <div class="logo">
-                    <span>F</span>
-                    <span>S</span>
-                    <span>h</span>
-                    <span>o</span>
-                    <span>r</span>
-                    <span>t</span>
+                    <span><a href="?home">F</a></span>
+                    <span><a href="?home">S</a></span>
+                    <span><a href="?home">h</a></span>
+                    <span><a href="?home">o</a></span>
+                    <span><a href="?home">r</a></span>
+                    <span><a href="?home">t</a></span>
                 </div>
             </div>
 

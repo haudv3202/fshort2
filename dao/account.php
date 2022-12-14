@@ -63,6 +63,11 @@ function account_one_row($id){
     return pdo_query_one($sql);
 }
 
+function account_one_row_comment($id){
+    $sql = "SELECT link_avatar,name FROM account WHERE id = '$id'";
+    return pdo_query_one($sql);
+}
+
 function searchName($name){
     $sql = "SELECT * FROM account WHERE name LIKE '%$name%'";
     return pdo_query_all($sql);

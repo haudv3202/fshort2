@@ -24,26 +24,36 @@ Configuration::instance([
 //       ]);
     if(isset($_POST['sb_video'])){
         $video = $_FILES['videohome'];
+        $title = $_POST['title'];
+
 //        echo $video['size'];
 //        die();
-        if($video['size'] < 6291456){
-            $title = $_POST['title'];
-            $path = $video['tmp_name'];
-            $namevideo = $video['name'];
-            $name = explode(".",$namevideo);
-            $data = (new UploadApi())->upload($path, [
-                'resource_type' => 'video',
-                'public_id' => 'Fshort/video/' . $name[0],
-                'chunk_size' => 6000000,
-                 "height"=>1024, "width"=>576, "crop"=>"crop"
-                ]
-            );
-            new_post_video($title,$data['url'],1,$_SESSION['info']['id']);
-            route('index.php');
+        if($_POST['title'] != ""){
+            if($_FILES['videohome']['error'] == 0){
+                if($video['size'] < 6291456){
+                    $path = $video['tmp_name'];
+                    $namevideo = $video['name'];
+                    $name = explode(".",$namevideo);
+                    $data = (new UploadApi())->upload($path, [
+                            'resource_type' => 'video',
+                            'public_id' => 'Fshort/video/' . $name[0],
+                            'chunk_size' => 6000000,
+                            "height"=>1024, "width"=>576, "crop"=>"crop"
+                        ]
+                    );
+                    new_post_video($title,$data['url'],1,$_SESSION['info']['id']);
+                    route('index.php');
+                }else {
+                    echo "<script>alert('Kiểm tra lại kích thước video < 6mb')</script>";
+                    route('index.php');
+                }
+            }else {
+                echo "<script>alert('Không để trống File')</script>";
+            }
         }else {
-            echo "<script>alert('Kiểm tra lại kích thước video < 6mb')</script>";
-            route('index.php');
+            echo "<script>alert('Không để trống title')</script>";
         }
+
 
     }
 

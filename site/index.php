@@ -11,19 +11,18 @@ require_once '../dao/ban_dao.php';
 require_once '../App/Check_app/Check.php';
 require_once '../App/getid3/getid3.php';
 $_SESSION['posts_video'] = [] ;
-$_SESSION['posts_news']= [];
+$posts_news= [];
 if(isset($_GET['about'])){
     include_once('../cloudinary/post.php');
-    $_SESSION['count_for_post'] = 0;
-    if($_SESSION['count_for_post'] == 0 ){
         $arr = all_post_news();
+//        echo "<pre>";
+//        print_r($arr);
+//        die();
         $id_user = null;
         if(!empty($_SESSION['info'])){
             $id_user = $_SESSION['info']['id'];
         }
-
         foreach ($arr as $value){
-            $comments = [];
             $status_like = null;
             if(countLike($id_user,$value['id'])['totallike']>0){
                 $status_like = 1;
@@ -36,16 +35,22 @@ if(isset($_GET['about'])){
             }else {
                 $follow = 0;
             }
+            $comments = [];
+
             foreach (comment_all($value['id']) as $value2 ){
                 $comments[] = [
-                    'name_user_comment' => account_one_row($value2['id_account'])['name'],
+                    'key_post' => $value2['id'],
+                    'id_comment' => $value2['id_account'],
+                    'name_user_comment' => account_one_row_comment($value2['id_account'])['name'],
                     'content' => $value2['content'],
                     'id_post' => $value2['id_post'],
                     'time_date' => $value2['create_date'],
-                    'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
+                    'avatar_comment' => account_one_row_comment($value2['id_account'])['link_avatar']
                 ];
             }
-            $_SESSION['posts_news'][] = [
+
+
+            $posts_news[] = [
                 'id_user_log' => $id_user,
                 'id_post' => $value['id'],
                 'cate_id' => $value['cate_id'],
@@ -61,11 +66,16 @@ if(isset($_GET['about'])){
                 'follow' => $follow,
                 'id_user_post' => $value['id_account']
             ];
+//            echo "<pre>";
+//            print_r($comments);
+//            die();
 
         }
 
-        ++$_SESSION['count_for_post'];
-    }
+
+
+
+
 
     //        follow
     if(isset($_POST['follows'])){
@@ -97,6 +107,14 @@ if(isset($_GET['about'])){
         insert_comment($content,$id_account,$id_post);
         route('?about');
     }
+
+    if(isset($_POST['delete_comment'])){
+        $id_account = $_POST['id_account'];
+        $id_post = $_POST['id_post'];
+        $key_post = $_POST['key_post'];
+        delete_comment($key_post,$id_account,$id_post);
+        route('?about');
+    }
     $ramdomFollow = AllaccountRandom();
     $VIEW_NAME = 'about.php';
     include_once './layout.php';
@@ -111,6 +129,13 @@ if(isset($_GET['about'])){
     if(!empty($_SESSION['info'])){
         $id_user = $_SESSION['info']['id'];
     }
+
+    //    follow người khác
+    $follow_number = follow_other($_SESSION['info']['id'])['total_follow'];
+// Số lượng lượt thích
+    $all_likes = allLike($_SESSION['info']['id'])['total_likes'];
+//    người khác follow mình
+    $follow_me = follow_me($_SESSION['info']['id'])['total_follow'];
     foreach ($arr as $value){
         $comments = [];
 
@@ -125,6 +150,7 @@ if(isset($_GET['about'])){
         }
         $_SESSION['posts_video'][] = [
             'id_user_log' => $id_user,
+            'id_detail' => $value['id_account'],
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
             'time_create' => $value['create_date'],
@@ -136,6 +162,13 @@ if(isset($_GET['about'])){
             'comments' => $comments
         ];
     }
+
+    if(isset($_POST['delete_detail'])){
+        $id = $_POST['id'];
+        $id_account = $_POST['id_account'];
+        delete_video($id,$id_account);
+        route('?detail_video');
+    }
     $VIEW_NAME = 'detail_video.php';
     include_once './layout.php';
 }else if(isset($_GET['detail_posts'])){
@@ -145,8 +178,15 @@ if(isset($_GET['about'])){
         $id_user = $_SESSION['info']['id'];
     }
 
+    //    follow người khác
+    $follow_number = follow_other($_SESSION['info']['id'])['total_follow'];
+// Số lượng lượt thích
+    $all_likes = allLike($_SESSION['info']['id'])['total_likes'];
+//    người khác follow mình
+    $follow_me = follow_me($_SESSION['info']['id'])['total_follow'];
+
     foreach ($arr as $value){
-        $_SESSION['posts_news'][] = [
+        $posts_news[] = [
             'id_user_log' => $id_user,
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
@@ -164,21 +204,32 @@ if(isset($_GET['about'])){
     if(isset($_GET['id_account'])){
         $id_user_post = $_GET['id_account'];
     }
+//    Các bài đăng của tài khoản khác
     $arr = all_post_video_detail($id_user_post);
+//    Thông tin tài khoản khác
     $user = user_other($id_user_post);
-//        $user['id'] == $_SESSION['info']['id']
-//            print_r($user['id'] );
-//            print_r($_SESSION['info']['id']);
-//            if($_SESSION['info']['id'] == $user['id'] ){
-//                echo "đúng";
-//            }else {
-//                echo "sai";
-//            }
-//            die();
+//    follow người khác
+    $follow_number = follow_other($id_user_post)['total_follow'];
+// Số lượng lượt thích
+    $all_likes = allLike($id_user_post)['total_likes'];
+//    người khác follow mình
+    $follow_me = follow_me($id_user_post)['total_follow'];
+
+    $id_user = null;
+    if(!empty($_SESSION['info'])){
+        $id_user = $_SESSION['info']['id'];
+    }
+
+    $follow = null;
+
+    if(!empty(follow_user($id_user_post,$id_user))){
+        $follow = 1;
+    }else {
+        $follow = 0;
+    }
+
     foreach ($arr as $value){
-
         $comments = [];
-
         foreach (comment_all($value['id']) as $value2 ){
             $comments[] = [
                 'name_user_comment' => account_one_row($value2['id_account'])['name'],
@@ -189,7 +240,8 @@ if(isset($_GET['about'])){
             ];
         }
         $_SESSION['posts_video'][] = [
-            // 'id_user_log' => $id_user,
+             'id_user_log' => $id_user,
+            'id_detail' => $id_user_post,
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
             'time_create' => $value['create_date'],
@@ -198,24 +250,65 @@ if(isset($_GET['about'])){
             'views' => $value['views'],
             'likes' => $value['likes'],
             'avatar' => account_one_row($value['id_account'])['link_avatar'],
-            'comments' => $comments
+            'comments' => $comments,
+            'status_follow' => $follow
         ];
+    }
+
+    //        follow
+    if(isset($_POST['follows'])){
+        $id_account_follow = $_POST['id_account_follow'];
+        $id_account_log = $_POST['id_log_follow'];
+        follow_user_new($id_account_follow,$id_account_log);
+        route('?detail_video_other&id_account='.$id_account_follow);
+    }
+
+    //        unfollow
+    if(isset($_POST['unfollows'])){
+        $id_account_follow = $_POST['id_account_follow'];
+        $id_account_log = $_POST['id_log_follow'];
+        unfollow_user($id_account_follow,$id_account_log);
+        route('?detail_video_other&id_account='.$id_account_follow);
+    }
+
+    if(isset($_POST['delete_detail'])){
+        $id = $_POST['id'];
+        $id_account = $_POST['id_account'];
+        delete_video($id,$id_account);
+        route('?detail_video_other&id_account='.$id_account);
     }
     $VIEW_NAME = 'detail_video_user_other.php';
     include_once './layout.php';
 }else if(isset($_GET['detail_posts_other'])){
-    $id_user_post = null;
+        $id_user_post = null;
     if(isset($_GET['id_account'])){
         $id_user_post = $_GET['id_account'];
     }
     $arr = all_post_news_detail($id_user_post);
     $user = user_other($id_user_post);
-//        echo "<pre>";
-//        print_r($arr);
-//        die();
+
+    //    follow người khác
+    $follow_number = follow_other($id_user_post)['total_follow'];
+// Số lượng lượt thích
+    $all_likes = allLike($id_user_post)['total_likes'];
+//    người khác follow mình
+    $follow_me = follow_me($id_user_post)['total_follow'];
+
+    $id_user = null;
+    if(!empty($_SESSION['info'])){
+        $id_user = $_SESSION['info']['id'];
+    }
+
+    $follow = null;
+
+    if(!empty(follow_user($id_user_post,$id_user))){
+        $follow = 1;
+    }else {
+        $follow = 0;
+    }
 
     foreach ($arr as $value){
-        $_SESSION['posts_news'][] = [
+        $posts_news[] = [
             'id_post' => $value['id'],
             'name' => account_one_row($value['id_account'])['name'],
             'time_create' => $value['create_date'],
@@ -224,6 +317,22 @@ if(isset($_GET['about'])){
             'views' => $value['views'],
             'likes' => $value['likes'],
             'avatar' => account_one_row($value['id_account'])['link_avatar']];
+    }
+
+    //        follow
+    if(isset($_POST['follows'])){
+        $id_account_follow = $_POST['id_account_follow'];
+        $id_account_log = $_POST['id_log_follow'];
+        follow_user_new($id_account_follow,$id_account_log);
+        route('?detail_posts_other&id_account='.$id_account_follow);
+    }
+
+    //        unfollow
+    if(isset($_POST['unfollows'])){
+        $id_account_follow = $_POST['id_account_follow'];
+        $id_account_log = $_POST['id_log_follow'];
+        unfollow_user($id_account_follow,$id_account_log);
+        route('?detail_posts_other&id_account='.$id_account_follow);
     }
     $VIEW_NAME = 'detail_posts_user_other.php';
     include_once './layout.php';
@@ -531,11 +640,13 @@ else if(isset($_GET['logout'])){
 
             foreach (comment_all($value['id']) as $value2 ){
                 $comments[] = [
+                    'key_post' => $value2['id'],
+                    'id_comment' => $value2['id_account'],
                     'name_user_comment' => account_one_row($value2['id_account'])['name'],
                     'content' => $value2['content'],
                     'id_post' => $value2['id_post'],
                     'time_date' => $value2['create_date'],
-                    'avatar_comment' => account_one_row($value['id_account'])['link_avatar']
+                    'avatar_comment' => account_one_row($value2['id_account'])['link_avatar']
                 ];
             }
             $_SESSION['posts_video'][] = [
@@ -591,8 +702,18 @@ else if(isset($_GET['logout'])){
         insert_comment($content,$id_account,$id_post);
         route('?index.php');
     }
+
+    if(isset($_POST['delete_comment'])){
+        $id_account = $_POST['id_account'];
+        $id_post = $_POST['id_post'];
+        $key_post = $_POST['key_post'];
+        delete_comment($key_post,$id_account,$id_post);
+        route('?index.php');
+    }
     $ramdomFollow = AllaccountRandom();
     $VIEW_NAME = 'home.php';
     include_once './layout.php';
 }
 require_once('../public/setting/js/home.php');
+?>
+<script src="../public/setting/js/ajax.js"></script>
