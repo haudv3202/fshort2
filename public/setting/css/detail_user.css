@@ -685,7 +685,7 @@ body::-webkit-scrollbar{
 .Post_user_detail
   .Post_video_user_detail
   .video_user_detail
-  i {
+  .option_video {
   position: absolute;
   color: white;
   right: 20px;
@@ -693,46 +693,70 @@ body::-webkit-scrollbar{
   cursor: pointer;
   font-size: 20px;
 }
+
 .Post_user_detail
-  .Post_video_user_detail
-  .video_user_detail
-  i::after{
-    width: 48px;
-    height: 41px;
-    position: absolute;
-    content: "";
-    top: 6px;
-    right: -12px;
+.Post_video_user_detail
+.video_user_detail
+.option_video:hover .form_video {
+  display: block;
 }
-.Post_user_detail
-  .Post_video_user_detail
-  .video_user_detail
-  i:hover ~ p{
-    right: 22px;
-    transition: .2s linear;
-  }
-.Post_user_detail
-  .Post_video_user_detail
-  .video_user_detail
-  p{
-    transition: .2s linear;
-    position: absolute;
-    color: white;
-    right: -130px;
-    top: 25px;
-   opacity: 1;
-   background-color: #ed8c72;
-   padding: 10px 15px;
-   border-radius: 20px;
-   cursor: pointer;
+
+.Post_user_detail .Post_video_user_detail .form_video {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  display: none;
+}
+
+.Post_user_detail .Post_video_user_detail .form_video .btn-delete_home {
+  background-color: #ed8c72;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
   font-size: 13px;
-  }
-  .Post_user_detail
-  .Post_video_user_detail
-  .video_user_detail
-  p:hover{
-    right:22px;
-  }
+  border: none;
+  color: white;
+}
+/*.Post_user_detail*/
+/*  .Post_video_user_detail*/
+/*  .video_user_detail*/
+/*  i::after{*/
+/*    width: 48px;*/
+/*    height: 41px;*/
+/*    position: absolute;*/
+/*    content: "";*/
+/*    top: 6px;*/
+/*    right: -12px;*/
+/*}*/
+/*.Post_user_detail*/
+/*  .Post_video_user_detail*/
+/*  .video_user_detail*/
+/*  i:hover ~ p{*/
+/*    right: 22px;*/
+/*    transition: .2s linear;*/
+/*  }*/
+/*.Post_user_detail*/
+/*  .Post_video_user_detail*/
+/*  .video_user_detail*/
+/*  p{*/
+/*    transition: .2s linear;*/
+/*    position: absolute;*/
+/*    color: white;*/
+/*    right: -130px;*/
+/*    top: 25px;*/
+/*   opacity: 1;*/
+/*   background-color: #ed8c72;*/
+/*   padding: 10px 15px;*/
+/*   border-radius: 20px;*/
+/*   cursor: pointer;*/
+/*  font-size: 13px;*/
+/*  }*/
+/*  .Post_user_detail*/
+/*  .Post_video_user_detail*/
+/*  .video_user_detail*/
+/*  p:hover{*/
+/*    right:22px;*/
+/*  }*/
 /* end post video user  */
 
 /* share user  */
@@ -3064,7 +3088,49 @@ body::-webkit-scrollbar{
   font-size: 15px;
   font-weight: 500;
   color: #575757ce;
-  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+}
+
+.value_comment_user .option_comments {
+  position:relative;
+}
+
+.value_comment_user .option_comments i {
+  font-size: 20px;
+  transform: rotate(90deg);
+}
+
+.value_comment_user .option_comments .option_1 {
+  display: none;
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.value_comment_user .option_comments:hover .option_1 {
+  display: block;
+  -webkit-animation: linear 1s;
+  animation: fadeIn 1s;
+  position: absolute;
+  background: #000;
+  border-radius: 10px;
+  top: 0;
+  left: 100%;
+}
+
+.value_comment_user .option_comments .btn_option_comment {
+  border: none;
+  background: none;
+  color: #ccc;
+  padding: 3px 12px;
+  cursor: pointer;
 }
 .input_comment form {
   display: flex;

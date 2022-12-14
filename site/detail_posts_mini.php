@@ -7,11 +7,10 @@
     ?>
     <div class="video_detail_mini_left">
         <div class="video_center post_center">
-          <span>
             <img  class="posts_click_play"
                   src="<?php echo $value['link'] ?>"
+                  width="100%"
             ></img>
-          </span>
         </div>
         <div class="icon_video_center">
             <a onclick="goBack()" class="close_video_detail_mini">
@@ -32,19 +31,19 @@
                     <h3><?php echo account_one_row($value['id_account'])['name'] ?></h3>
                     <h4><span>#<?php echo account_one_row($value['id_account'])['id'] ?></span><span class="date_post_video_mini"><?php echo $value['create_date'] ?></span></h4>
                 </div>
-                <div class="setting_mini_video">
-                    <i
-                            class="bx bx-dots-horizontal-rounded share_user_mini_video_i"
-                    ></i>
-                    <ul class="coplink_user_mini_video">
-                        <li>
-                            <a href=""> <p>Cài đặt quyền riêng tư</p></a>
-                        </li>
-                        <li>
-                            <a href=""> <p>Xóa</p></a>
-                        </li>
-                    </ul>
-                </div>
+<!--                <div class="setting_mini_video">-->
+<!--                    <i-->
+<!--                            class="bx bx-dots-horizontal-rounded share_user_mini_video_i"-->
+<!--                    ></i>-->
+<!--                    <ul class="coplink_user_mini_video">-->
+<!--                        <li>-->
+<!--                            <a href=""> <p>Cài đặt quyền riêng tư</p></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href=""> <p>Xóa</p></a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
             </div>
         </div>
         <div class="title_mini_video content_posts_mini">
