@@ -64,7 +64,7 @@ if(isset($_GET['about'])){
                 'comments' => $comments,
                 'status_like' => $status_like,
                 'follow' => $follow,
-                'comment_total' => total_comment($value['id_account'],$value['id'])['total_comment'],
+                'comment_total' => total_comment($value['id'])['total_comment'],
                 'id_user_post' => $value['id_account']
             ];
 //            echo "<pre>";
@@ -72,11 +72,6 @@ if(isset($_GET['about'])){
 //            die();
 
         }
-
-
-
-
-
 
     //        follow
     if(isset($_POST['follows'])){
@@ -644,12 +639,13 @@ else if(isset($_GET['logout'])){
                 'comments' => $comments,
                 'status_like' => $status_like,
                 'follow' => $follow,
-                'comment_total' => total_comment($value['id_account'],$value['id'])['total_comment'],
+                'comment_total' => total_comment($value['id'])['total_comment'],
                 'id_user_post' => $value['id_account']
             ];
         }
         ++$_SESSION['count_for'];
     }
+
 
 //        follow
     if(isset($_POST['follows'])){
