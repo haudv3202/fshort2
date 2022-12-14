@@ -157,22 +157,13 @@
             <i class='bx bx-share bx-flip-horizontal' onclick="geturlHome(`+`${item.id_post}`+`)"></i>
         </div>
         <div class="infor_view">
-
             <p>${item.comment_total} bình luận</p>
             <p>${item.likes} lượt thích</p>
         </div>
     </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> develop
     <div class="content_video_page">
-<!--        <p>${item.title}</p>-->
-    </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> develop
+    </div>
 <div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
 ` + Comments_video + `
 </div>

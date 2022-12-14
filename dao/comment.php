@@ -14,8 +14,8 @@ function delete_comment($id,$id_account,$id_post){
          return pdo_execute($sql);
 }
 
-function total_comment($id_account,$id_post){
-        $sql = "SELECT COUNT(id_account) as total_comment FROM comments WHERE id_account = '$id_account' AND id_post ='$id_post'";
+function total_comment($id_post){
+        $sql = "SELECT COUNT(*) as total_comment FROM comments WHERE id_post ='$id_post'";
         return pdo_query_one($sql);
 }
 ?>
