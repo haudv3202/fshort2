@@ -161,7 +161,7 @@
         </div>
     </div>
     <div class="content_video_page">
-        <p>${item.title}</p>
+<!--        <p>${item.title}</p>-->
     </div>
 <div class="comment_video_page`+`${item.id_post}`+` display" style='display: none;'>
 ` + Comments_video + `
