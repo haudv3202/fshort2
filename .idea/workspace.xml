@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36fa856e-ab94-412b-8688-003ab55a3f4e" name="Changes" comment="fix setting">
-      <change beforePath="$PROJECT_DIR$/cloudinary/video.php" beforeDir="false" afterPath="$PROJECT_DIR$/cloudinary/video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/posts_dao.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/posts_dao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/detail_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/detail_posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/detail_posts_user_other.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/detail_posts_user_other.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/detail_video.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/detail_video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/detail_video_mini.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/detail_video_mini.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/detail_video_user_other.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/detail_video_user_other.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/setting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_14_2022_5_05_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_14_2022_5_05_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/templates/aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/templates/aside.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/templates/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="future/haudv3202/check_merge" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -504,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670947558021</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="haudv update">
+      <created>1671012512843</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1671012512843</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +537,8 @@
     <MESSAGE value="fix css update login band" />
     <MESSAGE value="update follow nhanh" />
     <MESSAGE value="update delete comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="update delete comment" />
+    <MESSAGE value="haudv update" />
+    <option name="LAST_COMMIT_MESSAGE" value="haudv update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
