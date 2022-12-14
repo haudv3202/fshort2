@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36fa856e-ab94-412b-8688-003ab55a3f4e" name="Changes" comment="haudv update" />
+    <list default="true" id="36fa856e-ab94-412b-8688-003ab55a3f4e" name="Changes" comment="fix setting">
+      <change beforePath="$PROJECT_DIR$/dao/comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/comment.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
