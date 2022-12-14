@@ -157,7 +157,8 @@
             <i class='bx bx-share bx-flip-horizontal' onclick="geturlHome(`+`${item.id_post}`+`)"></i>
         </div>
         <div class="infor_view">
-            <p>${item.likes} bình luận</p>
+
+            <p>${item.comment_total} bình luận</p>
             <p>${item.likes} lượt thích</p>
         </div>
     </div>
@@ -301,7 +302,7 @@
             <i class='bx bx-share bx-flip-horizontal' onclick="geturlHome(`+`${item.id_post}`+`)"></i>
         </div>
         <div class="infor_view">
-            <p>${item.likes} bình luận</p>  
+            <p>${item.comment_total} bình luận</p>
             <p>${item.likes} lượt thích</p>
         </div>
     </div>
